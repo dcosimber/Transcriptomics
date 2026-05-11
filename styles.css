@@ -158,8 +158,14 @@ h4 {
   font-size: 0.92rem;
 }
 
+.margin-sidebar {
+  padding-top: 0.35rem;
+}
+
 #TOC {
   padding-left: 0.4rem;
+  position: sticky;
+  top: 4.25rem;
 }
 
 #TOC > h2 {

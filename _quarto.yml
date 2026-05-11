@@ -47,7 +47,7 @@ format:
     respect-user-color-scheme: true
     css: styles.css
     toc: true
-    toc-location: left
+    toc-location: right
     toc-depth: 3
     number-sections: true
 
