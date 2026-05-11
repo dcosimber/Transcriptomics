@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "title": "Holofishcolour project",
     "section": "",
     "text": "1 Overview\nThis document presents the transcriptomic analysis conducted within the HOLOFISHCOLOUR project, aimed at characterising the molecular mechanisms associated with pigmentation disorders in turbot (Scophthalmus maximus).\nRNA-seq data were processed using the nf-core/rnaseq pipeline, ensuring a reproducible and standardised workflow for quality control, alignment, quantification and downstream analyses.\nThe report has been structured as a unified, navigable document generated with Quarto, integrating results, figures and quality-control summaries into a single HTML output.",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#objectives",
     "href": "index.html#objectives",
-    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "title": "Holofishcolour project",
     "section": "1.1 Objectives",
     "text": "1.1 Objectives\nThe main objectives of this analysis are:\n\nTo assess the quality of RNA-seq data using comprehensive QC metrics.\nTo obtain reliable gene-level expression estimates.\nTo explore transcriptional differences associated with pigmentation phenotypes.\nTo generate publication-ready outputs suitable for downstream statistical and functional analyses.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#experimental-design-brief",
     "href": "index.html#experimental-design-brief",
-    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "title": "Holofishcolour project",
     "section": "1.2 Experimental design (brief)",
     "text": "1.2 Experimental design (brief)\n\nSpecies: Scophthalmus maximus (turbot)\n\nTissue: (e.g. skin / intestine / specify when ready)\n\nLibrary type: Stranded mRNA-seq\n\nSequencing platform: Illumina\n\nAnalysis pipeline: nf-core/rnaseq\n\nDetailed methodological information is provided in the corresponding Methods section.",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "index.html#structure-of-the-report",
     "href": "index.html#structure-of-the-report",
-    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "title": "Holofishcolour project",
     "section": "1.3 Structure of the report",
     "text": "1.3 Structure of the report\nThe analysis is organised into the following sections:\n\nIntroduction\nBiological background and motivation of the transcriptomic study.\nMethods (nf-core / RNA-seq pipeline)\nDescription of the computational workflow, software versions and key parameters.\nQuality control (MultiQC)\nAssessment of sequencing quality, mapping performance and quantification metrics.\nAlignment and quantification\nSummary of alignment results and expression estimates.\nDifferential expression analysis\nIdentification of differentially expressed genes and downstream interpretation.",
     "crumbs": [
@@ -42,7 +42,7 @@
   {
     "objectID": "index.html#reproducibility-and-data-provenance",
     "href": "index.html#reproducibility-and-data-provenance",
-    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "title": "Holofishcolour project",
     "section": "1.4 Reproducibility and data provenance",
     "text": "1.4 Reproducibility and data provenance\nAll analyses were performed on the CESGA HPC infrastructure.\nPipeline outputs were generated using nf-core standards and selectively integrated into this report to ensure clarity, traceability and reproducibility.",
     "crumbs": [

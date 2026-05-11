@@ -1,20 +1,16 @@
 project:
   type: book
-  execute-dir: project
   output-dir: docs
 
 book:
-  title: "HOLOFISHCOLOUR — Transcriptomic Analysis"
-  navbar:
+  title: "Holofishcolour project"
+  site-url: "https://dcosimber.github.io/Transcriptomics/"
+  sidebar:
     search: true
-    pinned: true
-  search:
-    location: navbar
-    type: overlay
   author:
     - name: Daniel Costas
       orcid: 0000-0003-4384-8469
-      email: dcostas@iim.csic.es
+      email: daniel.costas.imbernon@gmail.com
       affiliations:
         - name: Instituto de Investigaciones Marinas (IIM-CSIC)
           city: Vigo
@@ -26,7 +22,6 @@ book:
           url: https://acuabiotec.csic.es
 
   date: last-modified
-  date-format: "MMMM D, YYYY"
   chapters:
     - index.qmd
     - chapters/01_intro.qmd
@@ -41,14 +36,15 @@ csl: apa-6th-edition.csl
 
 format:
   html:
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    number-sections: true
+    smooth-scroll: true
+    anchor-sections: true
+    css: styles.css
     theme:
       light: cosmo
       dark: darkly
-    respect-user-color-scheme: true
-    css: styles.css
-    toc: true
-    toc-location: right
-    toc-depth: 3
-    number-sections: true
 
 editor: visual

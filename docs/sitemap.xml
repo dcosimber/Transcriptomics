@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dcosimber.github.io/Transcriptomics/index.html</loc>
+    <lastmod>2026-05-11T21:46:23.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dcosimber.github.io/Transcriptomics/chapters/01_intro.html</loc>
+    <lastmod>2026-05-11T21:46:23.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dcosimber.github.io/Transcriptomics/chapters/02_methods_nfcore.html</loc>
+    <lastmod>2026-05-11T22:54:31.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dcosimber.github.io/Transcriptomics/chapters/03_results.html</loc>
+    <lastmod>2026-05-11T21:46:23.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dcosimber.github.io/Transcriptomics/chapters/03_qc_multiqc.html</loc>
+    <lastmod>2026-05-11T21:46:23.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dcosimber.github.io/Transcriptomics/chapters/04_alignment_quant.html</loc>
+    <lastmod>2026-05-11T21:46:23.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dcosimber.github.io/Transcriptomics/chapters/05_differential_expression.html</loc>
+    <lastmod>2026-05-11T21:46:23.000Z</lastmod>
+  </url>
+</urlset>
