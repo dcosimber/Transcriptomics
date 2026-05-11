@@ -1,0 +1,322 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "section": "",
+    "text": "1 Overview\nThis document presents the transcriptomic analysis conducted within the HOLOFISHCOLOUR project, aimed at characterising the molecular mechanisms associated with pigmentation disorders in turbot (Scophthalmus maximus).\nRNA-seq data were processed using the nf-core/rnaseq pipeline, ensuring a reproducible and standardised workflow for quality control, alignment, quantification and downstream analyses.\nThe report has been structured as a unified, navigable document generated with Quarto, integrating results, figures and quality-control summaries into a single HTML output.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#objectives",
+    "href": "index.html#objectives",
+    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "section": "1.1 Objectives",
+    "text": "1.1 Objectives\nThe main objectives of this analysis are:\n\nTo assess the quality of RNA-seq data using comprehensive QC metrics.\nTo obtain reliable gene-level expression estimates.\nTo explore transcriptional differences associated with pigmentation phenotypes.\nTo generate publication-ready outputs suitable for downstream statistical and functional analyses.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#experimental-design-brief",
+    "href": "index.html#experimental-design-brief",
+    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "section": "1.2 Experimental design (brief)",
+    "text": "1.2 Experimental design (brief)\n\nSpecies: Scophthalmus maximus (turbot)\n\nTissue: (e.g. skin / intestine / specify when ready)\n\nLibrary type: Stranded mRNA-seq\n\nSequencing platform: Illumina\n\nAnalysis pipeline: nf-core/rnaseq\n\nDetailed methodological information is provided in the corresponding Methods section.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#structure-of-the-report",
+    "href": "index.html#structure-of-the-report",
+    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "section": "1.3 Structure of the report",
+    "text": "1.3 Structure of the report\nThe analysis is organised into the following sections:\n\nIntroduction\nBiological background and motivation of the transcriptomic study.\nMethods (nf-core / RNA-seq pipeline)\nDescription of the computational workflow, software versions and key parameters.\nQuality control (MultiQC)\nAssessment of sequencing quality, mapping performance and quantification metrics.\nAlignment and quantification\nSummary of alignment results and expression estimates.\nDifferential expression analysis\nIdentification of differentially expressed genes and downstream interpretation.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#reproducibility-and-data-provenance",
+    "href": "index.html#reproducibility-and-data-provenance",
+    "title": "HOLOFISHCOLOUR — Transcriptomic Analysis",
+    "section": "1.4 Reproducibility and data provenance",
+    "text": "1.4 Reproducibility and data provenance\nAll analyses were performed on the CESGA HPC infrastructure.\nPipeline outputs were generated using nf-core standards and selectively integrated into this report to ensure clarity, traceability and reproducibility.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html",
+    "href": "chapters/01_intro.html",
+    "title": "2  Introduction",
+    "section": "",
+    "text": "3 Objectives\nPigmentation disorders represent one of the major biological and economic constraints in flatfish aquaculture. In turbot (Scophthalmus maximus), these abnormalities mainly manifest as pseudo-albinism on the ocular side and hypermelanosis on the blind side, leading to a substantial reduction in market value and production efficiency. Such defects originate during early development, particularly around metamorphosis, when asymmetric body patterning and pigmentation are established, and are thought to result from complex interactions between genetic background and environmental factors such as nutrition, light regime, and rearing conditions (Yúfera, 2018; Matsumoto1990?; Hamre2013?).\nDespite decades of research, the molecular mechanisms underlying pigmentation disorders in flatfish remain only partially understood. Previous studies have implicated key biological processes including melanocyte differentiation, neural crest cell migration, retinoid and thyroid hormone signaling, and calcium homeostasis as central drivers of pigment cell development and maintenance (Seikai & Matsumoto, 1994; Yao, Zhang, Li, Hu, & Li, 2022; Taguchi2008?). However, much of the available evidence is based on candidate-gene approaches or interspecific comparisons, and comprehensive transcriptome-wide analyses in turbot are still limited.\nHigh-throughput RNA sequencing (RNA-seq) provides a powerful, unbiased approach to investigate complex phenotypes by enabling genome-wide quantification of gene expression. In pigmentation research, transcriptomic studies have successfully identified differentially expressed genes and regulatory pathways associated with melanogenesis, chromatophore development, and pigment cell survival in several flatfish and teleost species (Li et al., 2021; Liu et al., 2016). These approaches are particularly well suited to disentangle the polygenic architecture of pigmentation disorders, which are unlikely to be explained by single major-effect loci alone.\nWithin the HOLOFISHCOLOUR project, transcriptomic characterization constitutes a key component for linking genomic variation to functional biological mechanisms. By comparing gene expression profiles between normally pigmented and malpigmented turbot across biologically relevant tissues, this task aims to identify molecular signatures associated with pigmentation anomalies and to complement ongoing genomic, histological, and microbiome analyses. Together, these integrative results will contribute to a holistic, multi-omics understanding of pigmentation disorders in turbot aquaculture.\nEl objetivo principal de esta tarea fue realizar un perfil transcriptómico global de la piel de rodaballos (Scophthalmus maximus) tanto con fenotipo pigmentario normal como malpigmentado, con el objetivbo de:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#experimental-design-and-sampling",
+    "href": "chapters/01_intro.html#experimental-design-and-sampling",
+    "title": "2  Introduction",
+    "section": "4.1 Experimental design and Sampling",
+    "text": "4.1 Experimental design and Sampling",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#fishes",
+    "href": "chapters/01_intro.html#fishes",
+    "title": "2  Introduction",
+    "section": "4.2 Fishes",
+    "text": "4.2 Fishes\nThree individuals per phenotype (normal vs malpigmented) were selected from tanks E6 and E8, where pigmentation differences were most pronounced.\n\nTank E6: offspring from two different parental pairs.\n\nTank E8: half-sib family (shared mother, two different fathers).\n\nFrom each individual, skin and intestine samples were collected.\n\n\n4.2.1 Sample Types and Pigmentation Categories\n\nNormally pigmented fish:\n\nPigmented skin (dark) on the ocular side\nNon-pigmented skin (light) on the blind side\n\nMalpigmented fish:\n\nPigmented and non-pigmented skin on both ocular and blind sides\n\n\n\n\n\n4.2.2 Sample Overview\nTable 1. Samples selected for transcriptomic analysis\n\n\n\n\n\n\n\n\n\n\n\n\nSample ID\nTissue\nTank\nIndividual No.\nPigmentation phenotype\nSurface\nPigmentation\n\n\n\n\nP31\nSkin\nE6\n46\nNormal\nOcular\nDark\n\n\nP32\nSkin\nE6\n46\nNormal\nBlind\nLight\n\n\nP33\nSkin\nE8\n52\nNormal\nOcular\nDark\n\n\nP34\nSkin\nE8\n52\nNormal\nBlind\nLight\n\n\nP35\nSkin\nE8\n70\nNormal\nOcular\nDark\n\n\nP36\nSkin\nE8\n70\nNormal\nBlind\nLight\n\n\nP41\nSkin\nE8\n142\nMalpigmented\nOcular\nDark\n\n\nP42\nSkin\nE8\n142\nMalpigmented\nOcular\nLight\n\n\nP43\nSkin\nE8\n142\nMalpigmented\nBlind\nDark\n\n\nP44\nSkin\nE8\n131\nMalpigmented\nBlind\nLight\n\n\nP45\nSkin\nE6\n130\nMalpigmented\nOcular\nDark\n\n\nP46\nSkin\nE6\n130\nMalpigmented\nOcular\nLight\n\n\nP47\nSkin\nE6\n130\nMalpigmented\nBlind\nDark\n\n\nP48\nSkin\nE6\n130\nMalpigmented\nBlind\nLight\n\n\nP49\nSkin\nE6\n26\nMalpigmented\nOcular\nDark\n\n\nP50\nSkin\nE6\n26\nMalpigmented\nOcular\nLight\n\n\nP51\nSkin\nE6\n26\nMalpigmented\nBlind\nDark\n\n\nP52\nSkin\nE6\n26\nMalpigmented\nBlind\nLight\n\n\nP1G\nSkin\n—\n56\nNormal\n—\n—\n\n\nP2G\nSkin\n—\n34\nNormal\n—\n—\n\n\nPNKD\nSkin\n—\n—\nAmbicolor\n—\n—\n\n\nPNKV\nSkin\n—\n—\nAmbicolor\n—\n—\n\n\nIT1G\nIntestine\n—\n—\n—\n—\n—\n\n\nITPNK\nIntestine\n—\n—\n—\n—\n—",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#sample-collection",
+    "href": "chapters/01_intro.html#sample-collection",
+    "title": "2  Introduction",
+    "section": "4.3 Sample Collection",
+    "text": "4.3 Sample Collection\n\n4.3.1 Skin Sampling\nFish were maintained at −80 °C and placed on ice prior to sampling to prevent rapid thawing. While still frozen, approximately 20 mg of skin tissue were excised using sterile dissection tools.\nMuscle tissue was carefully removed by gentle scraping to avoid contamination.\n\n\n\nFigure 1. Skin sampling for transcriptomic analysis. A–B: Sampling areas in pseudo-albino and normally pigmented turbot. Areas outlined with yellow dashed lines correspond to non-pigmented skin, whereas areas outlined in red correspond to pigmented skin. C: Skin incision and sample collection.\n\n\n\n\n\n4.3.2 3.2 Intestinal Sampling\nIntestinal samples were obtained by ventral dissection. The visceral mass was removed, and intestinal contents were gently expelled before collecting the posterior intestine segment.\nFigure 2. Intestinal sampling procedure.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#rna-extraction-and-quality-assessment",
+    "href": "chapters/01_intro.html#rna-extraction-and-quality-assessment",
+    "title": "2  Introduction",
+    "section": "4.4 4. RNA Extraction and Quality Assessment",
+    "text": "4.4 4. RNA Extraction and Quality Assessment\n\n4.4.1 4.1 RNA Isolation\nTotal RNA was extracted using a TRIzol™ + Phasemaker™ Tubes protocol, followed by purification with the RNeasy Mini Kit (Qiagen).\nRNA concentration was measured using NanoDrop™ One, and integrity was assessed by 1.5% agarose gel electrophoresis.\n\n\n\nSample\nDNA concentration (ng/µl)\nA260/A280\nA260/A230\n\n\n\n\nP31\n1142.7\n2.14\n2.10\n\n\nP32\n813.4\n2.14\n2.18\n\n\nIT11\n534.3\n2.13\n2.00\n\n\nP33\n338.9\n2.12\n2.24\n\n\nP34\n440.5\n2.10\n2.27\n\n\nIT12\n974.0\n2.13\n2.36\n\n\nP35\n299.3\n2.12\n1.08\n\n\nP36\n308.8\n2.13\n2.18\n\n\nIT13\n367.6\n2.13\n1.99\n\n\nP37\n191.5\n2.10\n2.20\n\n\nP38\n209.5\n2.14\n2.05\n\n\nP39\n827.3\n2.15\n2.31\n\n\nP40\n359.5\n2.14\n2.17\n\n\nIT14\n822.9\n2.14\n2.31\n\n\nP41\n583.6\n2.10\n2.29\n\n\nP42\n506.5\n2.10\n2.15\n\n\nP43\n588.0\n2.10\n2.33\n\n\nP44\n1028.3\n2.13\n2.14\n\n\nIT15\n727.2\n2.10\n2.29\n\n\n\n\n\n\n\nFigure X. Integrity of total RNA assessed by agarose gel electrophoresis (1.5%, 100 mV, 30 min). Each gel corresponds to a batch of samples listed in the table above.\n\n\n\n\n4.4.2 RNA Extraction Quality Metrics\nTable 2. RNA concentration and purity metrics\n\n\n\nSample\nConcentration (ng/µl)\nA260/A280\nA260/A230\n\n\n\n\nP31\n1142.7\n2.14\n2.10\n\n\nP32\n813.4\n2.14\n2.18\n\n\nP33\n338.9\n2.12\n2.24\n\n\nP34\n440.5\n2.10\n2.27\n\n\nP35\n299.3\n2.12\n1.08\n\n\nP36\n308.8\n2.13\n2.18",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#rna-seq-library-preparation-and-sequencing",
+    "href": "chapters/01_intro.html#rna-seq-library-preparation-and-sequencing",
+    "title": "2  Introduction",
+    "section": "4.5 RNA-Seq Library Preparation and Sequencing",
+    "text": "4.5 RNA-Seq Library Preparation and Sequencing\nTranscriptome sequencing (RNA-Seq) was performed through the Plant and Animal Whole Genome Sequencing (WOBI) service (Table 4.1), outsourced to Novogene (quotation NVUK2024021911). Messenger RNA (mRNA) libraries were constructed using a strand-specific protocol, preserving transcript orientation information and enabling accurate downstream expression analyses.\nLibrary preparation was based on poly(A) enrichment to selectively capture mature mRNA transcripts. Sequencing was carried out on an Illumina NovaSeq X Plus platform using a paired-end strategy with a read length of 150 base pairs (2 × 150 bp, PE150).\nSequencing quality criteria were defined to ensure high data reliability, with at least 85% of bases achieving a Phred quality score ≥ Q30. A minimum sequencing output of 6 Gb per sample was guaranteed, providing sufficient depth and coverage for subsequent differential gene expression analyses. In total, 50 RNA-Seq libraries were successfully sequenced.\n\n\n\nTable 4.1: RNA-Seq specifications\n\n\n\n\n\nParameter\nDescription\n\n\n\n\nSequencing platform\nIllumina NovaSeq X Plus\n\n\nRead configuration\nPaired-end (2 × 150 bp)\n\n\nLibrary preparation\nStrand-specific mRNA (poly(A) enrichment)\n\n\nQuality threshold\n≥ 85% of bases with Q score ≥ 30\n\n\nData output\n≥ 6 Gb per sample\n\n\nNumber of libraries\n50",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#rna-quality-control",
+    "href": "chapters/01_intro.html#rna-quality-control",
+    "title": "2  Introduction",
+    "section": "4.6 RNA Quality Control",
+    "text": "4.6 RNA Quality Control\nRNA quality assessment was performed as a mandatory quality control step prior to RNA-Seq library preparation and sequencing. RNA concentration, integrity, and purity metrics were evaluated by Novogene using the Agilent 5400 Bioanalyzer, following standard procedures for transcriptomic applications.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/01_intro.html#bioinformatic-analysis",
+    "href": "chapters/01_intro.html#bioinformatic-analysis",
+    "title": "2  Introduction",
+    "section": "4.7 Bioinformatic analysis",
+    "text": "4.7 Bioinformatic analysis\n\n\n\n\nLi, Y., Hu, Y., Zheng, W., Cui, Z., Cheng, J., Cheng, P., & Zhang, T. (2021). Insights into the heritable variation of hypermelanosis in Chinese tongue sole (Cynoglossus semilaevis): Potential for future selective breeding. Aquaculture, 539, 736617. https://doi.org/10.1016/J.AQUACULTURE.2021.736617\n\n\nLiu, F., Yang, Y., Li, Y., Guo, H., Dai, H., Gao, J., … Chen, S. (2016). Phenotypic and genetic parameter estimation of juvenile growth and bottom color traits in half-smooth tongue sole, Cynoglossus semilaevis. Acta Oceanologica Sinica, 35(10), 83–87. https://doi.org/10.1007/S13131-016-0888-8/METRICS\n\n\nSeikai, T., & Matsumoto, J. (1994). Mechanism of Pseudoalbinism in Flatfish: An Association Between Pigment Cell and Skin Differentiation. Journal of the World Aquaculture Society, 25(1), 78–85. https://doi.org/10.1111/J.1749-7345.1994.TB00807.X;PAGEGROUP:STRING:PUBLICATION\n\n\nYao, N., Zhang, Y., Li, Y., Hu, Y., & Li, H. (2022). Genetic analysis of hypermelanosis in Chinese tongue sole (Cynoglossus semilaevis). Frontiers in Marine Science, 9, 1002292. https://doi.org/10.3389/FMARS.2022.1002292/BIBTEX\n\n\nYúfera, M. (2018). Emerging issues in fish larvae research. Emerging Issues in Fish Larvae Research, 1–296. https://doi.org/10.1007/978-3-319-73244-2/COVER",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html",
+    "href": "chapters/02_methods_nfcore.html",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "",
+    "text": "3.1 Objetivo del procesamiento primario\nEste capitulo documenta la primera capa computacional del proyecto: el procesamiento de lecturas RNA-seq crudas con nf-core/rnaseq. El objetivo de esta fase no es todavia contrastar hipotesis biologicas, sino transformar los ficheros FASTQ en una matriz de expresion trazable, reproducible y suficientemente controlada como para sostener el analisis estadistico posterior.\nEn este proyecto, nf-core/rnaseq se utilizo como flujo de trabajo principal para control de calidad, recorte de lecturas, alineamiento frente al genoma de referencia de rodaballo, cuantificacion con Salmon y agregacion de metricas con MultiQC. La salida de esta fase constituye la base sobre la que despues se construyen los modulos de exploracion, expresion diferencial y enriquecimiento funcional.\nEl procesamiento primario persigue cuatro objetivos tecnicos:\nEn terminos practicos, esta fase separa el problema bioinformatico en dos niveles. Primero se genera una representacion cuantitativa estandarizada de la expresion; despues, en el subproyecto analysis/, se filtran muestras, se definen contrastes biologicos y se ajustan modelos de expresion diferencial.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#objetivo-del-procesamiento-primario",
+    "href": "chapters/02_methods_nfcore.html#objetivo-del-procesamiento-primario",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "",
+    "text": "Verificar la calidad de las lecturas y detectar problemas de secuenciacion, adaptadores o composicion anomala.\nAlinear las lecturas contra una referencia genomica coherente con la anotacion utilizada.\nCuantificar la expresion a nivel de transcrito y gen de forma reproducible.\nProducir informes integrados que permitan auditar cada muestra antes de pasar al analisis estadistico.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#entradas-del-pipeline",
+    "href": "chapters/02_methods_nfcore.html#entradas-del-pipeline",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.2 Entradas del pipeline",
+    "text": "3.2 Entradas del pipeline\nEl pipeline recibio como entrada una samplesheet con las muestras del experimento y ficheros FASTQ pareados. Los datos fueron procesados en CESGA y las salidas se guardaron bajo:\nresults/nfcore_rnaseq/\nLa configuracion principal del ultimo run documentado en pipeline_info se resume en Table 3.1.\n\n\n\nTable 3.1: Configuracion principal del run nf-core/rnaseq utilizado para generar las matrices primarias.\n\n\n\n\n\n\n\n\n\nParametro\nValor utilizado\n\n\n\n\nPipeline\nnf-core/rnaseq\n\n\nVersion del workflow\nv3.25.0-g891468c\n\n\nMotor de ejecucion\nNextflow 25.10.3\n\n\nEstrategia de alineamiento/cuantificacion\nstar_salmon\n\n\nRecorte de lecturas\nfastp\n\n\nArgumentos extra de fastp\n--detect_adapter_for_pe\n\n\nFASTA de referencia\nScophthalmus_maximus.ASM1334776v1.dna.toplevel.fa.gz\n\n\nGTF de referencia\nScophthalmus_maximus.ASM1334776v1.113.gtf.gz\n\n\nCarpeta de salida\nresults/nfcore_rnaseq\n\n\nTitulo MultiQC\nHolofish turbot RNA-seq\n\n\nRecursos maximos configurados\n32 CPUs, 160 GB RAM, 24 h",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#referencia-genomica-y-anotacion",
+    "href": "chapters/02_methods_nfcore.html#referencia-genomica-y-anotacion",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.3 Referencia genomica y anotacion",
+    "text": "3.3 Referencia genomica y anotacion\nLas lecturas se procesaron contra la referencia de Scophthalmus maximus ASM1334776v1 de Ensembl release 113. Se utilizo el FASTA dna.toplevel, que incluye cromosomas, contigs no colocados y scaffolds, junto con la anotacion completa en formato GTF.\nEsta decision es importante para un experimento de RNA-seq en una especie no modelo: restringir el alineamiento solo a cromosomas principales podria perder lecturas procedentes de regiones anotadas en scaffolds o contigs no integrados. La combinacion dna.toplevel + GTF de Ensembl mantiene la coherencia entre coordenadas genomicas, anotacion de genes y cuantificacion.\n\n\n\n\n\n\nNoteIdentificadores de genes\n\n\n\nEl identificador primario que se conserva a lo largo del analisis es el identificador Ensembl de rodaballo (ENSSMAG...). Los simbolos de genes, nombres funcionales u ortologos se tratan como anotaciones auxiliares, no como claves primarias. Esta regla evita ambiguedades durante la integracion con resultados de expresion diferencial y enriquecimiento funcional.\n\n\n\n3.3.1 Resumen de la referencia\n\n\n\nTable 3.2: Referencia genomica y anotacion utilizadas por el pipeline nf-core/rnaseq.\n\n\n\n\n\nCaracteristica\nValor\n\n\n\n\nEspecie\nScophthalmus maximus\n\n\nEnsamblado\nASM1334776v1\n\n\nFuente\nEnsembl release 113\n\n\nFASTA\ndna.toplevel.fa.gz\n\n\nAnotacion\ngtf.gz\n\n\nUso principal\nAlineamiento STAR y cuantificacion Salmon",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#arquitectura-del-flujo-nf-core",
+    "href": "chapters/02_methods_nfcore.html#arquitectura-del-flujo-nf-core",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.4 Arquitectura del flujo nf-core",
+    "text": "3.4 Arquitectura del flujo nf-core\nEl flujo star_salmon combina alineamiento splice-aware con STAR y cuantificacion transcriptomica con Salmon. A grandes rasgos, la ejecucion siguio la estructura de Table 3.3.\n\n\n\nTable 3.3: Modulos principales de nf-core/rnaseq y salidas que se reutilizan en el proyecto.\n\n\n\n\n\n\n\n\n\n\nEtapa\nHerramienta principal\nSalida relevante\n\n\n\n\nValidacion de FASTQ\nfq / fq-lint\nInformes de integridad de FASTQ\n\n\nControl de calidad inicial\nFastQC\nInformes por muestra y lectura\n\n\nRecorte y filtrado\nfastp 1.0.1\nLecturas filtradas, metricas de calidad y adaptadores\n\n\nPreparacion de referencia\nSTAR / Salmon index\nIndices reproducibles de genoma y transcriptoma\n\n\nAlineamiento\nSTAR 2.7.11b\nBAM alineados y metricas de mapeo\n\n\nMarcado de duplicados\nPicard 3.4.0\nPorcentaje de duplicacion\n\n\nCuantificacion\nSalmon 1.10.3\nAbundancias por transcrito\n\n\nAgregacion de matrices\ntximeta / SummarizedExperiment\nMatrices gene-level y transcript-level\n\n\nInforme integrado\nMultiQC\nResumen HTML, tablas y figuras comparativas",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#control-de-calidad-de-lecturas",
+    "href": "chapters/02_methods_nfcore.html#control-de-calidad-de-lecturas",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.5 Control de calidad de lecturas",
+    "text": "3.5 Control de calidad de lecturas\nEl recorte de adaptadores y filtrado de lecturas se realizo con fastp. Las metricas agregadas de MultiQC indican una retencion alta de lecturas tras filtrado y una calidad global consistente entre muestras.\n\n\n\nTable 3.4: Resumen de calidad y filtrado de lecturas obtenido a partir de multiqc_general_stats.txt.\n\n\n\n\n\n\n\n\n\nMetrica MultiQC\nResumen del run\n\n\n\n\nNumero de muestras procesadas\n24\n\n\nLecturas que sobreviven al filtrado\nMedia 98.45%; rango 97.92-98.84%\n\n\nBases Q30 tras filtrado\nMedia 94.71%; rango 93.23-95.81%\n\n\nDuplicacion estimada por fastp\nMedia 22.35%; rango 9.86-32.10%\n\n\nLongitud media antes de filtrado\n150 bp por lectura\n\n\n\n\n\n\nLa proporcion de lecturas que pasan los filtros de fastp fue elevada en todas las muestras, lo que sugiere que el proceso de limpieza no elimino una fraccion problematica del experimento. En RNA-seq, esta observacion es relevante porque perdidas muy desiguales entre muestras podrian introducir sesgos de profundidad o composicion antes del modelado estadistico.\n\n\n\n\n\n\nFigure 3.1: Porcentaje de lecturas que sobreviven al filtrado de fastp. La figura procede de MultiQC y resume el resultado por muestra.\n\n\n\nLa calidad por ciclo despues del filtrado se mantuvo alta a lo largo de la lectura. Esta figura es util como comprobacion visual rapida: caidas abruptas al final de las lecturas, perfiles muy divergentes entre muestras o valores bajos de calidad podrian justificar un filtrado mas agresivo o una revision especifica de bibliotecas.\n\n\n\n\n\n\nFigure 3.2: Calidad por ciclo en Read 1 despues del filtrado con fastp.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#alineamiento-con-star",
+    "href": "chapters/02_methods_nfcore.html#alineamiento-con-star",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.6 Alineamiento con STAR",
+    "text": "3.6 Alineamiento con STAR\nEl alineamiento se realizo con STAR contra el genoma de referencia de rodaballo. La tasa media de alineamiento fue alta y estable, con una media del 97.52% de lecturas mapeadas y un rango de 96.31-98.31%. La proporcion de lecturas unicamente alineadas fue tambien consistente, con una media del 90.09% y un rango de 86.56-91.71%.\n\n\n\nTable 3.5: Resumen de alineamiento derivado de las tablas MultiQC de STAR y samtools.\n\n\n\n\n\n\n\n\n\nMetrica STAR / samtools\nResumen del run\n\n\n\n\nLecturas STAR por muestra\nMedia 24.51 millones; rango 20.15-42.92 millones\n\n\nLecturas mapeadas\nMedia 97.52%; rango 96.31-98.31%\n\n\nLecturas unicamente mapeadas\nMedia 90.09%; rango 86.56-91.71%\n\n\nLecturas multimapeadas\nBajas en relacion con el total mapeado\n\n\nResultado general\nAlineamiento robusto y comparable entre muestras\n\n\n\n\n\n\nLa figura de MultiQC permite comparar rapidamente la composicion del alineamiento entre muestras. En este run no se observa un patron extremo que sugiera fallo global de alineamiento en una muestra concreta.\n\n\n\n\n\n\nFigure 3.3: Resumen porcentual de alineamiento STAR por muestra.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#informacion-de-cadena-de-la-biblioteca",
+    "href": "chapters/02_methods_nfcore.html#informacion-de-cadena-de-la-biblioteca",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.7 Informacion de cadena de la biblioteca",
+    "text": "3.7 Informacion de cadena de la biblioteca\nLa comprobacion de strandedness es una salvaguarda importante en RNA-seq. Una especificacion incorrecta de la orientacion de la biblioteca puede degradar la cuantificacion y afectar la interpretacion de genes solapantes o regiones antisense. nf-core/rnaseq agrega esta informacion en MultiQC para contrastar la composicion observada con el modelo de biblioteca esperado.\n\n\n\n\n\n\nFigure 3.4: Composicion de strandedness estimada por nf-core/rnaseq y resumida en MultiQC.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#cuantificacion-con-salmon-y-matrices-resultantes",
+    "href": "chapters/02_methods_nfcore.html#cuantificacion-con-salmon-y-matrices-resultantes",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.8 Cuantificacion con Salmon y matrices resultantes",
+    "text": "3.8 Cuantificacion con Salmon y matrices resultantes\nTras el alineamiento, el flujo star_salmon produjo cuantificaciones transcriptomicas con Salmon y matrices agregadas a nivel de gen. Para el analisis downstream de este proyecto se conserva Salmon como fuente primaria de conteos y TPM, mientras que otras estrategias de conteo se tratan como recursos secundarios o de sensibilidad.\nLas salidas principales reutilizadas en analysis/ son:\nresults/nfcore_rnaseq/star_salmon/salmon.merged.gene.SummarizedExperiment.rds\nresults/nfcore_rnaseq/star_salmon/salmon.merged.gene_counts.tsv\nresults/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv\nEstas matrices son el puente entre la ejecucion nf-core y el analisis estadistico modular del proyecto. En particular, el objeto SummarizedExperiment y las tablas gene-level permiten importar conteos de forma consistente, mantener metadatos de muestra y construir los modelos de DESeq2 sin volver a procesar FASTQ o BAM.\n\n\n\n\n\n\nTipDecision de analisis downstream\n\n\n\nSalmon gene-level se adopta como matriz principal para expresion diferencial. featureCounts y HTSeq pueden usarse como comprobaciones de sensibilidad, pero no sustituyen la matriz primaria salvo decision explicita.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#salidas-auditables-del-run",
+    "href": "chapters/02_methods_nfcore.html#salidas-auditables-del-run",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.9 Salidas auditables del run",
+    "text": "3.9 Salidas auditables del run\nLa organizacion de salidas de nf-core permite auditar el procesamiento desde distintos niveles de detalle:\n\n\n\nTable 3.6: Estructura de salidas nf-core/rnaseq relevante para la documentacion y el analisis posterior.\n\n\n\n\n\n\n\n\n\n\nCarpeta\nContenido\nUso en este proyecto\n\n\n\n\nfastp/\nInformes HTML/JSON y logs por muestra\nDiagnostico de filtrado, adaptadores y calidad\n\n\nfastqc/\nQC antes y despues de trimming\nRevision de calidad por lectura\n\n\nstar_salmon/\nBAM, cuantificaciones Salmon y matrices combinadas\nEntrada principal para analisis downstream\n\n\nmultiqc/star_salmon/\nInforme integrado, tablas y figuras\nResumen comparativo y documentacion del run\n\n\npipeline_info/\nParametros, versiones y metadatos de ejecucion\nReproducibilidad y trazabilidad",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_methods_nfcore.html#lectura-critica-de-esta-fase",
+    "href": "chapters/02_methods_nfcore.html#lectura-critica-de-esta-fase",
+    "title": "3  Procesamiento bioinformatico con nf-core/rnaseq",
+    "section": "3.10 Lectura critica de esta fase",
+    "text": "3.10 Lectura critica de esta fase\nEl procesamiento primario produjo un conjunto de salidas tecnicamente solido: las lecturas sobreviven al filtrado en alta proporcion, la calidad post-filtrado es elevada, el alineamiento contra el genoma de rodaballo es alto y las matrices gene-level estan disponibles para modelado estadistico. Esta conclusion no implica que todas las muestras deban entrar automaticamente en todos los analisis biologicos. La seleccion final de muestras, exclusion de tejidos no objetivo y definicion de contrastes se realiza despues, dentro del subproyecto analysis/, usando PCA, metadatos biologicos y criterios experimentales.\nPor tanto, la funcion de este capitulo es documentar la procedencia y calidad de la matriz primaria. Los capitulos siguientes se centran en la inspeccion exploratoria, la estructura de los datos y la interpretacion biologica de las diferencias transcriptomicas asociadas a pigmentacion y superficie corporal.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento bioinformatico con nf-core/rnaseq</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_results.html",
+    "href": "chapters/03_results.html",
+    "title": "4  RNA Integrity Number (RIN): technical background",
+    "section": "",
+    "text": "The complete quality control results for all submitted samples are summarized in Table 4.1, including RNA concentration, total RNA amount, RNA Integrity Number (RIN), and final QC status. Representative electropherograms generated during the analysis are shown in Figure 4.1.\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n\n\n\nFigure 4.1: Representative RNA electropherograms illustrating different levels of RNA integrity (RIN = 10, 5, and 3).\n\n\n\nThe RNA Integrity Number (RIN) is a numerical score ranging from 1 (fully degraded RNA) to 10 (intact RNA), widely used to assess total RNA quality. RIN values are computed from automated electrophoretic analyses performed on platforms such as the Agilent Bioanalyzer.\nThe RIN algorithm evaluates multiple features of the electropherogram, including:\n\nThe presence, height, and sharpness of ribosomal RNA peaks (primarily 18S and 28S rRNA in eukaryotes). High-quality RNA typically displays well-defined 18S and 28S peaks with an approximate 2:1 intensity ratio.\nBackground signal and degree of fragmentation. Degraded RNA is characterized by reduced or absent ribosomal peaks and increased signal corresponding to low-molecular-weight fragments.\nOverall signal distribution across fragment sizes, reflecting progressive RNA degradation.\n\nIn high-quality samples, electropherograms show sharp and well-resolved rRNA peaks with low background noise. In contrast, degraded samples exhibit flattened or missing rRNA peaks and a pronounced accumulation of short RNA fragments.\n\n\nMost samples exhibited RIN values between 7.0 and 9.8, which are generally considered suitable for RNA-Seq library construction and downstream differential gene expression analyses. RNA concentrations also fell within acceptable ranges for library preparation, although moderate variability among samples was observed.\nTwo samples deviated from the expected quality standards:\n\nIT12 showed a low RIN value (3.8), indicating substantial RNA degradation. This sample was classified as Fail and deemed unsuitable for RNA-Seq.\nIT16 displayed an intermediate RIN value of 6.0, suggesting partial degradation that could compromise sequencing quality and data interpretation.\n\nAdditionally, ITPNK exhibited slight genomic DNA contamination, as indicated in the Novogene QC report. Despite this observation, the sample passed overall QC criteria.\nGiven that the sequencing budget covered 24 RNA-Seq libraries and 26 samples were initially submitted, samples IT12 and IT16 were excluded from sequencing. The remaining samples met the quality requirements for transcriptomic analysis and were retained for RNA-Seq library preparation and sequencing.\n\nQC SummaryBioanalyzer Electropherograms\n\n\n\n\n\nTable 4.1: Summary of RNA concentration, integrity (RIN), and QC status for samples assessed prior to RNA-Seq library preparation.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo.\nSample\nConcentration (ng/µl)\nVolume (µl)\nTotal amount (µg)\nRIN\nSample QC Results\n\n\n\n\n1\nP31\n1851.34\n16\n29.62141\n7.7\nPass\n\n\n2\nP32\n2022.42\n16\n32.35878\n8.3\nPass\n\n\n3\nP33\n483.84\n13\n6.28990\n8.8\nPass\n\n\n4\nP34\n826.81\n17\n14.05583\n8.8\nPass\n\n\n5\nP35\n430.00\n16\n6.87994\n8.2\nPass\n\n\n6\nP36\n447.89\n16\n7.16622\n7.2\nPass\n\n\n7\nP41\n1270.12\n16\n20.32186\n9.3\nPass\n\n\n8\nP42\n888.98\n19\n16.89067\n8.8\nPass\n\n\n9\nP43\n1343.73\n19\n25.53087\n8.0\nPass\n\n\n10\nP44\n1961.08\n18\n35.29941\n7.8\nPass\n\n\n11\nP45\n709.86\n18\n12.77749\n8.1\nPass\n\n\n12\nP46\n768.56\n18\n13.83416\n8.9\nPass\n\n\n13\nP47\n342.27\n19\n6.50313\n8.5\nPass\n\n\n14\nP48\n404.26\n17\n6.87242\n7.8\nPass\n\n\n15\nP49\n954.50\n16\n15.27201\n8.8\nPass\n\n\n16\nP50\n295.43\n16\n4.72680\n9.6\nPass\n\n\n17\nP51\n2511.00\n13\n32.64302\n9.5\nPass\n\n\n18\nP52\n578.87\n15\n8.68312\n9.8\nPass\n\n\n19\nP1G\n150.06\n16\n2.40097\n8.9\nPass\n\n\n20\nP2G\n192.33\n16\n3.07729\n9.0\nPass\n\n\n21\nPNKD\n417.18\n18\n7.50923\n8.7\nPass\n\n\n22\nPNKV\n221.19\n17\n3.76027\n8.4\nPass\n\n\n23\nIT12\n2422.80\n17\n41.18753\n3.8\nFail\n\n\n24\nIT16\n2988.15\n18\n53.78664\n6.0\nPass\n\n\n25\nIT1G\n2842.68\n16\n45.48292\n7.8\nPass\n\n\n26\nITPNK\n4493.36\n18\n80.88050\n7.1\nPass\n\n\n\n\n\n\n\n\n\n\nIT12IT16IT1GITPNKPNKDPNKVP1GP2GP31P32P33P34P35P36P41P42P43P44P45P46P47P48P49P50P51P52\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure: RNA quality control electropherograms generated using the Agilent 5400 Bioanalyzer. Each tab corresponds to one sample and displays the characteristic 18S and 28S rRNA peaks and fragment size distribution used to assess RNA integrity prior to sequencing.\n\n\n\n\n\n\n\n\n\n\nNoteTechnical notes from the Novogene RNA QC report\n\n\n\nQ1. What is the influence of RNA concentration on library construction?\nRNA concentration determines the total RNA input available for library preparation. Insufficient RNA input may result in low library yield or library construction failure. Additional RNA concentration steps may increase degradation risk.\nQ2. Does genomic DNA contamination affect poly(A)-enriched mRNA library preparation?\nGenomic DNA is not retained during poly(A) enrichment–based mRNA library preparation. Therefore, low-level genomic DNA contamination does not affect downstream library construction when samples pass QC.\nQ3. What RNA purification methods are used and how much RNA loss is expected?\nRNA purification is typically performed using column-based or magnetic bead–based methods. RNA loss after purification is expected to be approximately 60%, depending on the purification strategy and initial RNA quality.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>RNA Integrity Number (RIN): technical background</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_qc_multiqc.html",
+    "href": "chapters/03_qc_multiqc.html",
+    "title": "5  RNA-seq data processing and quality assessment",
+    "section": "",
+    "text": "5.1 Overview of sequencing data\nBrief overview of the RNA-seq dataset processed in this report:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>RNA-seq data processing and quality assessment</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_qc_multiqc.html#overview-of-sequencing-data",
+    "href": "chapters/03_qc_multiqc.html#overview-of-sequencing-data",
+    "title": "5  RNA-seq data processing and quality assessment",
+    "section": "",
+    "text": "Samples: [N] libraries (paired-end)\nLibrary type: stranded mRNA-seq\nRead configuration: 2 × 150 bp (PE150)\nTarget yield: ~6 Gb per sample (Novogene service specifications)\n\n\nReplace [N] with the final number of sequenced libraries included in nf-core/rnaseq.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>RNA-seq data processing and quality assessment</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_qc_multiqc.html#quality-control-summary-multiqc",
+    "href": "chapters/03_qc_multiqc.html#quality-control-summary-multiqc",
+    "title": "5  RNA-seq data processing and quality assessment",
+    "section": "5.2 Quality control summary (MultiQC)",
+    "text": "5.2 Quality control summary (MultiQC)\nThe complete MultiQC report generated by the nf-core/rnaseq pipeline is embedded below. This report aggregates QC metrics across all samples, including sequencing quality (FastQC), trimming summaries (Trim Galore), alignment statistics (STAR), and quantification metrics (Salmon).\n\n\n\n\nIf the embedded report does not display properly, open it directly here:\nMultiQC report",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>RNA-seq data processing and quality assessment</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_qc_multiqc.html#read-trimming-and-filtering",
+    "href": "chapters/03_qc_multiqc.html#read-trimming-and-filtering",
+    "title": "5  RNA-seq data processing and quality assessment",
+    "section": "5.3 Read trimming and filtering",
+    "text": "5.3 Read trimming and filtering\nSummarise the main trimming outcomes reported in MultiQC:\n\nAdapter sequences: [removed / not detected]\n\nReads retained after trimming: [~X%]\n\nAny notable sample outliers: [yes/no]\n\n\nKeep this section short unless you had real issues (e.g., heavy adapter contamination or strong sample-to-sample variability).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>RNA-seq data processing and quality assessment</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_qc_multiqc.html#alignment-to-the-reference-genome-star",
+    "href": "chapters/03_qc_multiqc.html#alignment-to-the-reference-genome-star",
+    "title": "5  RNA-seq data processing and quality assessment",
+    "section": "5.4 Alignment to the reference genome (STAR)",
+    "text": "5.4 Alignment to the reference genome (STAR)\nKey mapping metrics from STAR (as reported in MultiQC):\n\nUniquely mapped reads: [median X%, range Y–Z%]\n\nMulti-mapped reads: [median X%]\n\nUnmapped reads: [median X%]\n\nOverall, alignment rates were [consistent / variable] across samples, with [no / a few] technical outliers.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>RNA-seq data processing and quality assessment</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_qc_multiqc.html#transcript-quantification-salmon",
+    "href": "chapters/03_qc_multiqc.html#transcript-quantification-salmon",
+    "title": "5  RNA-seq data processing and quality assessment",
+    "section": "5.5 Transcript quantification (Salmon)",
+    "text": "5.5 Transcript quantification (Salmon)\nQuantification metrics reported by Salmon:\n\nMapping rate: [median X%, range Y–Z%]\n\nNumber of expressed genes detected: [approx. X]\n\nOverall, quantification profiles were [consistent] and suitable for downstream differential expression analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>RNA-seq data processing and quality assessment</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_qc_multiqc.html#summary-of-data-quality",
+    "href": "chapters/03_qc_multiqc.html#summary-of-data-quality",
+    "title": "5  RNA-seq data processing and quality assessment",
+    "section": "5.6 Summary of data quality",
+    "text": "5.6 Summary of data quality\nOverall, the RNA-seq dataset showed [high] sequencing quality, [effective] trimming, and [robust] alignment/quantification performance across samples, supporting its suitability for downstream differential expression and functional analyses.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>RNA-seq data processing and quality assessment</span>"
+    ]
+  }
+]
