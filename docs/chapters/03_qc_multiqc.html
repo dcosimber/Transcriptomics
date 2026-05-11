@@ -331,16 +331,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#decisión-global-de-qc" id="toc-decisión-global-de-qc" class="nav-link active" data-scroll-target="#decisión-global-de-qc"><span class="header-section-number">5.1</span> Decisión global de QC</a></li>
-  <li><a href="#informe-multiqc-completo" id="toc-informe-multiqc-completo" class="nav-link" data-scroll-target="#informe-multiqc-completo"><span class="header-section-number">5.2</span> Informe MultiQC completo</a></li>
-  <li><a href="#lectura-técnica-de-los-paneles-principales" id="toc-lectura-técnica-de-los-paneles-principales" class="nav-link" data-scroll-target="#lectura-técnica-de-los-paneles-principales"><span class="header-section-number">5.3</span> Lectura técnica de los paneles principales</a>
+  <li><a href="#resumen-ejecutivo-del-qc" id="toc-resumen-ejecutivo-del-qc" class="nav-link active" data-scroll-target="#resumen-ejecutivo-del-qc"><span class="header-section-number">5.1</span> Resumen ejecutivo del QC</a></li>
+  <li><a href="#general-statistics" id="toc-general-statistics" class="nav-link" data-scroll-target="#general-statistics"><span class="header-section-number">5.2</span> General statistics</a></li>
+  <li><a href="#fastp-filtrado-calidad-y-composición" id="toc-fastp-filtrado-calidad-y-composición" class="nav-link" data-scroll-target="#fastp-filtrado-calidad-y-composición"><span class="header-section-number">5.3</span> fastp: filtrado, calidad y composición</a>
   <ul class="collapse">
-  <li><a href="#lecturas-y-filtrado" id="toc-lecturas-y-filtrado" class="nav-link" data-scroll-target="#lecturas-y-filtrado"><span class="header-section-number">5.3.1</span> Lecturas y filtrado</a></li>
-  <li><a href="#calidad-de-bases" id="toc-calidad-de-bases" class="nav-link" data-scroll-target="#calidad-de-bases"><span class="header-section-number">5.3.2</span> Calidad de bases</a></li>
-  <li><a href="#alineamiento" id="toc-alineamiento" class="nav-link" data-scroll-target="#alineamiento"><span class="header-section-number">5.3.3</span> Alineamiento</a></li>
-  <li><a href="#duplicación-y-complejidad" id="toc-duplicación-y-complejidad" class="nav-link" data-scroll-target="#duplicación-y-complejidad"><span class="header-section-number">5.3.4</span> Duplicación y complejidad</a></li>
+  <li><a href="#interpretación-técnica-y-biológica-de-fastp" id="toc-interpretación-técnica-y-biológica-de-fastp" class="nav-link" data-scroll-target="#interpretación-técnica-y-biológica-de-fastp"><span class="header-section-number">5.3.1</span> Interpretación técnica y biológica de fastp</a></li>
   </ul></li>
-  <li><a href="#lectura-biológica-del-qc" id="toc-lectura-biológica-del-qc" class="nav-link" data-scroll-target="#lectura-biológica-del-qc"><span class="header-section-number">5.4</span> Lectura biológica del QC</a></li>
+  <li><a href="#star-alineamiento-contra-el-genoma-de-referencia" id="toc-star-alineamiento-contra-el-genoma-de-referencia" class="nav-link" data-scroll-target="#star-alineamiento-contra-el-genoma-de-referencia"><span class="header-section-number">5.4</span> STAR: alineamiento contra el genoma de referencia</a></li>
+  <li><a href="#samtools-métricas-de-bam-alineado" id="toc-samtools-métricas-de-bam-alineado" class="nav-link" data-scroll-target="#samtools-métricas-de-bam-alineado"><span class="header-section-number">5.5</span> Samtools: métricas de BAM alineado</a></li>
+  <li><a href="#picard-duplicación-y-complejidad-de-biblioteca" id="toc-picard-duplicación-y-complejidad-de-biblioteca" class="nav-link" data-scroll-target="#picard-duplicación-y-complejidad-de-biblioteca"><span class="header-section-number">5.6</span> Picard: duplicación y complejidad de biblioteca</a></li>
+  <li><a href="#strand-check-orientación-de-la-biblioteca" id="toc-strand-check-orientación-de-la-biblioteca" class="nav-link" data-scroll-target="#strand-check-orientación-de-la-biblioteca"><span class="header-section-number">5.7</span> Strand check: orientación de la biblioteca</a></li>
+  <li><a href="#versiones-de-software" id="toc-versiones-de-software" class="nav-link" data-scroll-target="#versiones-de-software"><span class="header-section-number">5.8</span> Versiones de software</a></li>
+  <li><a href="#conclusión-del-qc-integrado" id="toc-conclusión-del-qc-integrado" class="nav-link" data-scroll-target="#conclusión-del-qc-integrado"><span class="header-section-number">5.9</span> Conclusión del QC integrado</a></li>
   </ul>
 </nav>
     </div>
@@ -367,185 +369,494 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>El informe <strong>MultiQC</strong> actúa como el panel de control del preprocesamiento. Mientras el capítulo anterior resume las decisiones y métricas principales, este capítulo documenta cómo se revisó el conjunto completo de resultados generado por <code>nf-core/rnaseq</code>.</p>
-<p>MultiQC no reemplaza al análisis estadístico; su papel es detectar si existe algún problema técnico suficientemente fuerte como para condicionar la interpretación biológica. En este proyecto se utilizó para revisar, de forma conjunta, <strong>calidad de lectura</strong>, <strong>filtrado</strong>, <strong>alineamiento</strong>, <strong>duplicación</strong>, <strong>strandedness</strong> y <strong>versiones de software</strong>.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Cómo leer este capítulo">
+<p>El informe <strong>MultiQC</strong> se utiliza aquí como una fuente estructurada de resultados, no como una captura aislada. La idea es que el lector pueda seguir el control de calidad <strong>herramienta por herramienta</strong>, viendo las mismas figuras exportadas por MultiQC y consultando las tablas originales en formato copiable.</p>
+<p>Este capítulo documenta los módulos principales generados por <code>nf-core/rnaseq</code> en la rama <code>star_salmon</code>: <strong>fastp</strong>, <strong>STAR</strong>, <strong>Samtools</strong>, <strong>Picard</strong>, <strong>strand check</strong> y <strong>versiones de software</strong>. La interpretación combina dos niveles: una lectura <em>técnica</em>, centrada en si las bibliotecas son válidas para el análisis downstream, y una lectura <em>biológica</em>, centrada en si los resultados permiten confiar en la señal transcriptómica posterior.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Informe original">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Cómo leer este capítulo
+<span class="screen-reader-only">Tip</span>Informe original
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La tabla <a href="#tbl-qc-decision-matrix" class="quarto-xref">Table&nbsp;<span>5.1</span></a> resume la decisión técnica por módulo. El informe interactivo completo está embebido más abajo para inspección detallada. Las métricas numéricas principales se documentan en <a href="02_methods_nfcore.html#tbl-run-summary" class="quarto-xref">Table&nbsp;<span>3.4</span></a> y <a href="02_methods_nfcore.html#tbl-sample-qc" class="quarto-xref">Table&nbsp;<span>3.5</span></a>.</p>
+<p>El informe MultiQC completo se conserva como anexo navegable. Las secciones siguientes integran sus figuras y tablas principales dentro del libro, pero el HTML original sigue disponible para inspección interactiva.</p>
+<div class="multiqc-link-row">
+<p><a class="btn btn-primary" href="../multiqc/star_salmon/multiqc_report.html" target="_blank" rel="noopener">Abrir informe MultiQC completo</a> <a class="btn btn-outline-secondary" href="../multiqc/star_salmon/multiqc_report_data/multiqc_general_stats.txt" target="_blank" rel="noopener">Descargar tabla General Stats</a></p>
 </div>
 </div>
-<section id="decisión-global-de-qc" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="decisión-global-de-qc"><span class="header-section-number">5.1</span> Decisión global de QC</h2>
-<p>El resultado global del control de calidad fue favorable: no se detectó un patrón que obligue a descartar muestras por fallo técnico general. Las diferencias observadas entre bibliotecas son compatibles con variación habitual en RNA-seq bulk y se evaluarán de nuevo en la exploración multivariante.</p>
+</div>
+<section id="resumen-ejecutivo-del-qc" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="resumen-ejecutivo-del-qc"><span class="header-section-number">5.1</span> Resumen ejecutivo del QC</h2>
+<p>El control de calidad global fue favorable. El lote contiene <strong>24 muestras</strong>, todas con tasas altas de filtrado y alineamiento. No se detectó un patrón técnico que justifique excluir muestras en esta fase. Algunos extremos moderados deben seguirse en PCA y análisis exploratorio, especialmente <code>P44</code>, <code>P47</code>, <code>P49</code> y <code>PNKIT</code>.</p>
+<div class="metric-grid">
+<div class="metric-card">
+<p><strong>24</strong></p>
+<p>Muestras procesadas por <code>nf-core/rnaseq</code>.</p>
+</div>
+<div class="metric-card">
+<p><strong>98.45%</strong></p>
+<p>Retención media de lecturas tras <code>fastp</code>.</p>
+</div>
+<div class="metric-card">
+<p><strong>97.52%</strong></p>
+<p>Alineamiento medio total con <strong>STAR</strong>.</p>
+</div>
+<div class="metric-card">
+<p><strong>90.09%</strong></p>
+<p>Alineamiento único medio con <strong>STAR</strong>.</p>
+</div>
+<div class="metric-card">
+<p><strong>97.0%</strong></p>
+<p>Orientación media inferida como <em>reverse</em> por Salmon.</p>
+</div>
+</div>
 <div id="tbl-qc-decision-matrix" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-qc-decision-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.1: Matriz de decisión técnica basada en el informe MultiQC de <code>nf-core/rnaseq</code>.
+Table&nbsp;5.1: Matriz de decisión técnica derivada de las tablas y figuras exportadas por MultiQC.
 </figcaption>
 <div aria-describedby="tbl-qc-decision-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Módulo QC</th>
-<th>Resultado observado</th>
+<th>Módulo MultiQC</th>
+<th style="text-align: right;">Resultado observado</th>
 <th>Decisión técnica</th>
-<th>Consecuencia downstream</th>
+<th>Lectura biológica</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>fastp / trimming</td>
-<td>Retención media <strong>98.45%</strong>; mínimo <strong>97.92%</strong> (<code>P49</code>)</td>
+<td><code>fastp</code> filtering</td>
+<td style="text-align: right;">Retención media <strong>98.45%</strong>; mínimo <strong>97.92%</strong> (<code>P49</code>)</td>
 <td>Aceptar</td>
-<td>No se detecta pérdida masiva de lecturas</td>
+<td>No hay pérdida diferencial fuerte de lecturas</td>
 </tr>
 <tr class="even">
-<td>Calidad post-filtrado</td>
-<td>Q30 medio <strong>94.71%</strong>; mínimo <strong>93.23%</strong> (<code>P49</code>)</td>
+<td><code>fastp</code> Q30</td>
+<td style="text-align: right;">Q30 post-filtrado medio <strong>94.71%</strong>; mínimo <strong>93.23%</strong> (<code>P49</code>)</td>
 <td>Aceptar</td>
-<td>Calidad suficiente para cuantificación</td>
+<td>Calidad suficiente para cuantificación transcriptómica</td>
 </tr>
 <tr class="odd">
-<td>Adaptadores</td>
-<td>Media <strong>5.24%</strong>; máximo <strong>9.67%</strong> (<code>PNKIT</code>)</td>
+<td><code>fastp</code> adapters</td>
+<td style="text-align: right;">Media <strong>5.24%</strong>; máximo <strong>9.67%</strong> (<code>PNKIT</code>)</td>
 <td>Aceptar con recorte</td>
-<td>fastp controla la señal de adaptadores</td>
+<td>La señal de adaptadores queda controlada por trimming</td>
 </tr>
 <tr class="even">
-<td>GC post-filtrado</td>
-<td>Media <strong>49.36%</strong>; rango <strong>47.34-51.23%</strong></td>
+<td><code>STAR</code> alignment</td>
+<td style="text-align: right;">Media <strong>97.52%</strong>; mínimo <strong>96.31%</strong> (<code>P44</code>)</td>
 <td>Aceptar</td>
-<td>Sin composición anómala fuerte</td>
+<td>Buena compatibilidad muestra-referencia</td>
 </tr>
 <tr class="odd">
-<td>STAR mapping</td>
-<td>Media <strong>97.52%</strong>; mínimo <strong>96.31%</strong> (<code>P44</code>)</td>
-<td>Aceptar</td>
-<td>Buena compatibilidad con referencia</td>
-</tr>
-<tr class="even">
-<td>STAR unique mapping</td>
-<td>Media <strong>90.09%</strong>; mínimo <strong>86.56%</strong> (<code>P44</code>)</td>
+<td><code>STAR</code> unique alignment</td>
+<td style="text-align: right;">Media <strong>90.09%</strong>; mínimo <strong>86.56%</strong> (<code>P44</code>)</td>
 <td>Vigilar <code>P44</code></td>
-<td>Revisar en PCA, no excluir automáticamente</td>
-</tr>
-<tr class="odd">
-<td>Duplicación</td>
-<td>Media <strong>22.35%</strong>; máximo <strong>32.10%</strong> (<code>P47</code>)</td>
-<td>Vigilar <code>P47</code></td>
-<td>Interpretar junto con complejidad y expresión</td>
+<td>Revisar en PCA, no excluir por QC primario</td>
 </tr>
 <tr class="even">
-<td>Strandedness</td>
-<td>Composición revisada en MultiQC</td>
+<td><code>Picard</code> duplicates</td>
+<td style="text-align: right;">Media <strong>54.31%</strong>; máximo <strong>78.80%</strong> (<code>P49</code>)</td>
+<td>Vigilar complejidad</td>
+<td>Interpretar junto con abundancia de transcritos y profundidad</td>
+</tr>
+<tr class="odd">
+<td><code>Strand check</code></td>
+<td style="text-align: right;"><strong>24/24</strong> muestras inferidas como <code>reverse</code></td>
 <td>Aceptar</td>
-<td>No se detecta incoherencia global de orientación</td>
+<td>Diseño de biblioteca coherente</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Interpretación">
+<div class="callout callout-style-default callout-note callout-titled" title="Criterio de interpretación">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Interpretación
+<span class="screen-reader-only">Note</span>Criterio de interpretación
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El criterio aplicado aquí es conservador: una muestra no se excluye por ser el mínimo o máximo de una métrica. Se busca un patrón técnico coherente de fallo. En este lote, los extremos son moderados y deben seguirse en PCA y modelos downstream.</p>
+<p>Una muestra no se elimina por ser el mínimo o máximo de una métrica. En RNA-seq bulk, algunas métricas como duplicación o profundidad pueden variar por razones biológicas y técnicas. La exclusión requiere un patrón consistente de fallo, no un valor extremo aislado.</p>
 </div>
 </div>
 </section>
-<section id="informe-multiqc-completo" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="informe-multiqc-completo"><span class="header-section-number">5.2</span> Informe MultiQC completo</h2>
-<p>El informe completo se incluye para que cualquier lector pueda explorar los paneles originales generados por <code>nf-core/rnaseq</code>. Es especialmente útil para revisar valores por muestra, versiones de software y figuras interactivas que no se muestran de forma exhaustiva en este libro.</p>
-<div class="multiqc-frame">
-<iframe src="../multiqc/star_salmon/multiqc_report.html" title="MultiQC report for the HOLOFISHCOLOUR RNA-seq preprocessing">
-</iframe>
-</div>
-<p>Si el informe embebido no se carga correctamente, puede abrirse directamente aquí:</p>
-<p><a href="../multiqc/star_salmon/multiqc_report.html">Abrir informe MultiQC completo</a></p>
-</section>
-<section id="lectura-técnica-de-los-paneles-principales" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="lectura-técnica-de-los-paneles-principales"><span class="header-section-number">5.3</span> Lectura técnica de los paneles principales</h2>
-<section id="lecturas-y-filtrado" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="lecturas-y-filtrado"><span class="header-section-number">5.3.1</span> Lecturas y filtrado</h3>
-<p>Los paneles de <strong>fastp</strong> muestran que el filtrado fue homogéneo entre muestras. La retención media de lecturas fue <strong>98.45%</strong>, y la muestra con menor retención (<code>P49</code>) conservó <strong>97.92%</strong> de lecturas. Esta consistencia reduce la probabilidad de que los contrastes posteriores estén sesgados por pérdidas diferenciales de lectura.</p>
-<p>La señal de adaptadores fue controlada por el recorte automático. El máximo se observó en <code>PNKIT</code> (<strong>9.67%</strong>), pero la muestra mantuvo una retención alta (<strong>98.74%</strong>), por lo que no hay evidencia de un fallo severo de biblioteca.</p>
-</section>
-<section id="calidad-de-bases" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="calidad-de-bases"><span class="header-section-number">5.3.2</span> Calidad de bases</h3>
-<p>La calidad post-filtrado fue alta: el porcentaje medio de bases Q30 fue <strong>94.71%</strong>. El mínimo (<code>P49</code>, <strong>93.23%</strong>) sigue siendo compatible con RNA-seq cuantitativo. Por tanto, no se observa una muestra con degradación clara de calidad de bases.</p>
-</section>
-<section id="alineamiento" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="alineamiento"><span class="header-section-number">5.3.3</span> Alineamiento</h3>
-<p>Los paneles de <strong>STAR</strong> muestran una tasa de alineamiento total muy alta, con media <strong>97.52%</strong>. Esto sugiere tres cosas:</p>
-<ul>
-<li>Las lecturas proceden mayoritariamente del organismo esperado.</li>
-<li>La referencia <strong>ASM1334776v1</strong> es adecuada para este lote.</li>
-<li>No hay una señal fuerte de contaminación o incompatibilidad muestra-referencia.</li>
-</ul>
-<p>La métrica más sensible es el alineamiento único. <code>P44</code> muestra el valor mínimo (<strong>86.56%</strong>), por debajo de la media pero no en un rango que indique colapso técnico. Esta muestra queda marcada como <strong>punto de vigilancia</strong>, no como exclusión automática.</p>
-</section>
-<section id="duplicación-y-complejidad" class="level3" data-number="5.3.4">
-<h3 data-number="5.3.4" class="anchored" data-anchor-id="duplicación-y-complejidad"><span class="header-section-number">5.3.4</span> Duplicación y complejidad</h3>
-<p>La duplicación estimada por fastp tuvo una media de <strong>22.35%</strong>. <code>P47</code> mostró el máximo (<strong>32.10%</strong>). En RNA-seq bulk, la duplicación puede aumentar por baja complejidad técnica, pero también por expresión real de un conjunto de transcritos muy abundantes. Por eso se interpreta junto con PCA, distribución de conteos y resultados de expresión diferencial.</p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Muestras a vigilar">
+<section id="general-statistics" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="general-statistics"><span class="header-section-number">5.2</span> General statistics</h2>
+<p>La tabla <strong>General Statistics</strong> de MultiQC resume en una sola matriz las métricas clave de todos los módulos. Es el punto de partida para detectar si una muestra se separa simultáneamente en varias dimensiones de QC: calidad, trimming, alineamiento, duplicación y mapeo.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Lectura rápida">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Muestras a vigilar
+<span class="screen-reader-only">Important</span>Lectura rápida
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>P44</code>, <code>P47</code>, <code>P49</code> y <code>PNKIT</code> concentran algunos valores extremos moderados. Ninguna de estas muestras queda descartada por el preprocesamiento, pero deben revisarse en el análisis exploratorio.</p>
+<p>No hay una muestra que falle globalmente en todas las métricas. <code>P49</code> combina menor retención relativa, menor Q30 y mayor duplicación Picard, por lo que debe marcarse como muestra de seguimiento. <code>P44</code> presenta el alineamiento único más bajo, pero mantiene una tasa total de alineamiento alta.</p>
 </div>
 </div>
+<details class="multiqc-details" open="">
+<summary>
+Tabla MultiQC: General Statistics
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/multiqc_general_stats.txt" data-caption="General Statistics exportada por MultiQC. La tabla se puede seleccionar en la web o copiar como TSV con el botón.">
+
+</div>
+</details>
+</section>
+<section id="fastp-filtrado-calidad-y-composición" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="fastp-filtrado-calidad-y-composición"><span class="header-section-number">5.3</span> fastp: filtrado, calidad y composición</h2>
+<p><code>fastp</code> realiza el control de calidad inicial de las lecturas, detecta y recorta adaptadores, filtra lecturas de baja calidad y resume la calidad por ciclo antes de enviar los FASTQ al alineamiento. En este proyecto, el filtrado fue homogéneo: la mayoría de las lecturas se conservaron y la calidad post-filtrado quedó en un rango alto.</p>
+<div id="fig-multiqc-fastp-filtered" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-fastp-filtered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp_filtered_reads_plot-pct.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-filtered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Lecturas conservadas y descartadas tras el filtrado con fastp. La figura procede del SVG exportado por MultiQC.
+</figcaption>
+</figure>
+</div>
+<p>La figura <a href="#fig-multiqc-fastp-filtered" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> muestra que la fracción de lecturas descartadas es baja en todas las muestras. El mínimo de retención fue <code>P49</code> con <strong>97.92%</strong>, todavía dentro de un rango aceptable para RNA-seq bulk. La muestra <code>PNKIT</code> presentó la mayor señal de adaptadores (<strong>9.67%</strong>), pero mantuvo <strong>98.74%</strong> de lecturas retenidas, indicando que el recorte fue efectivo.</p>
+<div id="fig-multiqc-fastp-quality" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-fastp-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp-seq-quality-plot_Read_1_After_filtering.svg" class="img-fluid figure-img"></p>
+<figcaption>Read 1 después del filtrado.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp-seq-quality-plot_Read_2_After_filtering.svg" class="img-fluid figure-img"></p>
+<figcaption>Read 2 después del filtrado.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Calidad por ciclo después del filtrado con <code>fastp</code>. Las curvas altas y homogéneas apoyan que la señal de baja calidad fue eliminada antes del alineamiento.
+</figcaption>
+</figure>
+</div>
+<div id="fig-multiqc-fastp-gc" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-fastp-gc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp-seq-content-gc-plot_Read_1_After_filtering.svg" class="img-fluid figure-img"></p>
+<figcaption>Contenido GC de Read 1 después del filtrado.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp-seq-content-gc-plot_Read_2_After_filtering.svg" class="img-fluid figure-img"></p>
+<figcaption>Contenido GC de Read 2 después del filtrado.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-gc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Contenido GC por ciclo tras el filtrado. No se observa una desviación extrema que sugiera contaminación o sesgo fuerte de composición.
+</figcaption>
+</figure>
+</div>
+<div id="fig-multiqc-fastp-insert" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-fastp-insert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp-insert-size-plot.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-insert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: Distribución de tamaños de inserto estimada por fastp.
+</figcaption>
+</figure>
+</div>
+<p>La distribución de tamaños de inserto en <a href="#fig-multiqc-fastp-insert" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> es útil para comprobar que las bibliotecas paired-end tienen una geometría razonable. Una distribución coherente reduce el riesgo de problemas graves de preparación de biblioteca o de mezcla de muestras.</p>
+<details class="multiqc-details">
+<summary>
+Tabla MultiQC: fastp filtered reads
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/fastp_filtered_reads_plot.txt" data-caption="Tabla de lecturas pasadas y descartadas por fastp, exportada por MultiQC.">
+
+</div>
+</details>
+<section id="interpretación-técnica-y-biológica-de-fastp" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="interpretación-técnica-y-biológica-de-fastp"><span class="header-section-number">5.3.1</span> Interpretación técnica y biológica de fastp</h3>
+<p>Técnicamente, <code>fastp</code> no detecta una degradación generalizada del lote. La combinación de alta retención, Q30 elevado y perfiles GC estables apoya continuar con el alineamiento. Biológicamente, esto es importante porque reduce la probabilidad de que las diferencias de expresión posteriores estén impulsadas por pérdidas diferenciales de lectura entre condiciones.</p>
 </section>
 </section>
-<section id="lectura-biológica-del-qc" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="lectura-biológica-del-qc"><span class="header-section-number">5.4</span> Lectura biológica del QC</h2>
-<p>Desde el punto de vista biológico, el QC es importante porque define cuánto podemos confiar en que las diferencias posteriores reflejen variación transcriptómica real y no artefactos de biblioteca.</p>
-<p>En este caso, la evidencia técnica favorece continuar:</p>
-<ul>
-<li>La calidad de lectura es alta y comparable.</li>
-<li>El alineamiento es fuerte frente a rodaballo.</li>
-<li>La cuantificación gene-level puede considerarse técnicamente estable.</li>
-<li>Las exclusiones posteriores, como las muestras <code>PNK*</code>, deben justificarse por diseño experimental o comportamiento exploratorio, no por fallo primario de FASTQ/alineamiento.</li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled" title="Conclusión QC">
+<section id="star-alineamiento-contra-el-genoma-de-referencia" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="star-alineamiento-contra-el-genoma-de-referencia"><span class="header-section-number">5.4</span> STAR: alineamiento contra el genoma de referencia</h2>
+<p><code>STAR</code> evalúa si las lecturas filtradas son compatibles con el genoma de referencia utilizado por el pipeline. En este lote, el alineamiento total fue muy alto, con una media de <strong>97.52%</strong>. La muestra con menor alineamiento total fue <code>P44</code> (<strong>96.31%</strong>), que sigue siendo un valor sólido.</p>
+<div id="fig-multiqc-star-alignment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-star-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../multiqc/star_salmon/multiqc_report_plots/svg/star_alignment_plot-pct.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-star-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: Resumen de alineamiento STAR por muestra.
+</figcaption>
+</figure>
+</div>
+<p>La figura <a href="#fig-multiqc-star-alignment" class="quarto-xref">Figure&nbsp;<span>5.5</span></a> muestra una proporción dominante de lecturas alineadas en todas las muestras. El alineamiento único medio fue <strong>90.09%</strong>, con mínimo en <code>P44</code> (<strong>86.56%</strong>) y máximo en <code>P48</code> (<strong>91.71%</strong>). Esta variación no sugiere un fallo de referencia, contaminación general ni baja calidad masiva.</p>
+<details class="multiqc-details">
+<summary>
+Tabla MultiQC: STAR summary
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/star_summary_table.txt" data-caption="Tabla completa de métricas STAR exportada por MultiQC.">
+
+</div>
+</details>
+<div class="callout callout-style-default callout-note callout-titled" title="Lectura técnica">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Conclusión QC
+<span class="screen-reader-only">Note</span>Lectura técnica
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El informe MultiQC respalda el uso de las salidas <code>star_salmon</code> como base del análisis downstream. La documentación de QC no elimina la necesidad de PCA ni de revisión de metadatos, pero sí descarta un fallo técnico evidente como explicación principal de la estructura global de los datos.</p>
+<p><code>P44</code> queda como punto de vigilancia por su menor alineamiento único. La decisión correcta es conservarla en esta fase y comprobar si se comporta como outlier en PCA, clustering de muestras y distribución de conteos.</p>
 </div>
 </div>
+</section>
+<section id="samtools-métricas-de-bam-alineado" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="samtools-métricas-de-bam-alineado"><span class="header-section-number">5.5</span> Samtools: métricas de BAM alineado</h2>
+<p><code>Samtools</code> resume propiedades de los BAM ya alineados. Sus paneles funcionan como una comprobación posterior a STAR: mapeo, pares correctamente emparejados y proporciones de alineamientos. En este run no aparece una señal global de BAM problemático.</p>
+<div id="fig-multiqc-samtools-alignment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-samtools-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../multiqc/star_salmon/multiqc_report_plots/svg/samtools_alignment_plot-pct.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-samtools-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.6: Resumen de alineamiento de Samtools.
+</figcaption>
+</figure>
+</div>
+<p>La figura <a href="#fig-multiqc-samtools-alignment" class="quarto-xref">Figure&nbsp;<span>5.6</span></a> complementa a STAR y confirma que las muestras mantienen un comportamiento consistente una vez generados los BAM. Las tablas originales se conservan abajo para auditoría y copia directa.</p>
+<details class="multiqc-details">
+<summary>
+Tabla MultiQC: Samtools flagstat counts
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/samtools-flagstat-table.txt" data-caption="Tabla Samtools flagstat con conteos exportada por MultiQC.">
+
+</div>
+</details>
+<details class="multiqc-details">
+<summary>
+Tabla MultiQC: Samtools flagstat percentages
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/samtools-flagstat-pct-table.txt" data-caption="Tabla Samtools flagstat con porcentajes exportada por MultiQC.">
+
+</div>
+</details>
+</section>
+<section id="picard-duplicación-y-complejidad-de-biblioteca" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="picard-duplicación-y-complejidad-de-biblioteca"><span class="header-section-number">5.6</span> Picard: duplicación y complejidad de biblioteca</h2>
+<p><code>Picard MarkDuplicates</code> estima duplicación a nivel de alineamiento. Este valor suele ser más alto que la duplicación aproximada de <code>fastp</code> porque se calcula después del mapeo y considera pares alineados y coordenadas genómicas. En el lote, la duplicación Picard media fue <strong>54.31%</strong>, con mínimo en <code>IT1G</code> (<strong>26.09%</strong>) y máximo en <code>P49</code> (<strong>78.80%</strong>).</p>
+<div id="fig-multiqc-picard-dups" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-picard-dups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../multiqc/star_salmon/multiqc_report_plots/svg/picard_deduplication-pct.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-picard-dups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.7: Duplicación estimada por Picard MarkDuplicates.
+</figcaption>
+</figure>
+</div>
+<p>La figura <a href="#fig-multiqc-picard-dups" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> no debe leerse como un criterio automático de exclusión. En RNA-seq, una duplicación alta puede reflejar baja complejidad técnica, pero también la presencia de transcritos muy abundantes. La interpretación final debe cruzarse con profundidad, PCA y distribución de expresión.</p>
+<details class="multiqc-details">
+<summary>
+Tabla MultiQC: Picard MarkDuplicates
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/multiqc_picard_dups.txt" data-caption="Tabla Picard MarkDuplicates exportada por MultiQC.">
+
+</div>
+</details>
+<div class="callout callout-style-default callout-warning callout-titled" title="Puntos de seguimiento">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Puntos de seguimiento
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>P49</code>, <code>P43</code>, <code>P47</code> y <code>P44</code> presentan duplicación Picard alta. No se descartan aquí, pero conviene revisarlas en la exploración multivariante y comprobar si concentran patrones de expresión anómalos.</p>
+</div>
+</div>
+</section>
+<section id="strand-check-orientación-de-la-biblioteca" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="strand-check-orientación-de-la-biblioteca"><span class="header-section-number">5.7</span> Strand check: orientación de la biblioteca</h2>
+<p>El módulo de <em>strand check</em> compara la orientación esperada con la inferida por Salmon. En este análisis, las <strong>24/24 muestras</strong> fueron inferidas como <code>reverse</code>, con una proporción media de <strong>97.0%</strong> y rango aproximado <strong>96.6-97.6%</strong>.</p>
+<div id="fig-multiqc-strand-check" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiqc-strand-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../multiqc/star_salmon/multiqc_report_plots/svg/strand_check_composition_bargraph.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-strand-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.8: Composición de orientación inferida por strand check.
+</figcaption>
+</figure>
+</div>
+<p>La coherencia en <a href="#fig-multiqc-strand-check" class="quarto-xref">Figure&nbsp;<span>5.8</span></a> es una buena señal de reproducibilidad técnica: no hay evidencia de mezcla de orientación entre bibliotecas ni de configuración incorrecta de strandedness en el pipeline.</p>
+<details class="multiqc-details">
+<summary>
+Tabla MultiQC: strand check summary
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/multiqc_strand_check_summary_table.txt" data-caption="Tabla de orientación inferida exportada por MultiQC.">
+
+</div>
+</details>
+</section>
+<section id="versiones-de-software" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="versiones-de-software"><span class="header-section-number">5.8</span> Versiones de software</h2>
+<p>La reproducibilidad del análisis depende de fijar no solo los parámetros, sino también las versiones de software. MultiQC exporta una tabla de versiones por proceso, que se conserva aquí como parte del registro computacional del proyecto.</p>
+<details class="multiqc-details" open="">
+<summary>
+Tabla MultiQC: software versions
+</summary>
+<div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/multiqc_software_versions.txt" data-caption="Versiones de software detectadas por MultiQC para los procesos del pipeline.">
+
+</div>
+</details>
+</section>
+<section id="conclusión-del-qc-integrado" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="conclusión-del-qc-integrado"><span class="header-section-number">5.9</span> Conclusión del QC integrado</h2>
+<p>El informe integrado apoya continuar con las salidas <code>star_salmon</code> como base del análisis downstream. La señal técnica principal es consistente: <strong>alta calidad post-filtrado</strong>, <strong>alineamiento sólido contra la referencia</strong>, <strong>orientación de biblioteca coherente</strong> y ausencia de un fallo global de muestra.</p>
+<p>La lectura biológica es, por tanto, prudente pero positiva: si aparecen patrones fuertes en PCA o expresión diferencial, no hay evidencia en este QC primario de que deban atribuirse de entrada a un fallo general de secuenciación o alineamiento. Las muestras señaladas deben acompañar la interpretación, no bloquearla.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Decisión">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Decisión
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se mantienen todas las muestras para la exploración downstream. La exclusión, si ocurre más adelante, deberá justificarse con evidencia combinada de PCA, metadatos, distribución de conteos y coherencia con el diseño experimental.</p>
+</div>
+</div>
+<script>
+(function () {
+  function splitTsv(text) {
+    return text.trim().split(/\r?\n/).map(function (line) {
+      return line.split("\t");
+    });
+  }
+
+  function buildCell(tag, value) {
+    var cell = document.createElement(tag);
+    cell.textContent = value;
+    return cell;
+  }
+
+  function renderTable(container, text) {
+    var rows = splitTsv(text);
+    if (!rows.length) return;
+
+    var caption = container.getAttribute("data-caption") || "Tabla exportada por MultiQC";
+    var actions = document.createElement("div");
+    actions.className = "multiqc-table-actions";
+
+    var captionNode = document.createElement("p");
+    captionNode.className = "multiqc-table-caption";
+    captionNode.textContent = caption;
+
+    var copyButton = document.createElement("button");
+    copyButton.className = "multiqc-copy-button";
+    copyButton.type = "button";
+    copyButton.textContent = "Copiar TSV";
+    copyButton.addEventListener("click", function () {
+      if (!navigator.clipboard) {
+        copyButton.textContent = "Selecciona la tabla para copiar";
+        return;
+      }
+      navigator.clipboard.writeText(text).then(function () {
+        copyButton.textContent = "Copiado";
+        window.setTimeout(function () {
+          copyButton.textContent = "Copiar TSV";
+        }, 1600);
+      });
+    });
+
+    actions.appendChild(captionNode);
+    actions.appendChild(copyButton);
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "multiqc-copy-table-wrapper";
+
+    var table = document.createElement("table");
+    table.className = "multiqc-copy-table";
+
+    var thead = document.createElement("thead");
+    var headRow = document.createElement("tr");
+    rows[0].forEach(function (value) {
+      headRow.appendChild(buildCell("th", value));
+    });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement("tbody");
+    rows.slice(1).forEach(function (row) {
+      var tr = document.createElement("tr");
+      row.forEach(function (value) {
+        tr.appendChild(buildCell("td", value));
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+
+    wrapper.appendChild(table);
+    container.replaceChildren(actions, wrapper);
+  }
+
+  document.querySelectorAll(".multiqc-table[data-src]").forEach(function (container) {
+    var src = container.getAttribute("data-src");
+    fetch(src)
+      .then(function (response) {
+        if (!response.ok) throw new Error(response.status + " " + response.statusText);
+        return response.text();
+      })
+      .then(function (text) {
+        renderTable(container, text);
+      })
+      .catch(function () {
+        container.textContent = "No se pudo cargar la tabla MultiQC: " + src;
+      });
+  });
+})();
+</script>
 
 
 </section>

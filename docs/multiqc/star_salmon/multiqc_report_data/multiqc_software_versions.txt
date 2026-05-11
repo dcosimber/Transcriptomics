@@ -1,0 +1,27 @@
+Sample	cat	python	perl	fastp	fq	gunzip	rsem	picard	salmon	samtools	bioconductor-summarizedexperiment	gawk	star	bioconductor-tximeta	nf-core/rnaseq	Nextflow
+CAT_FASTQ	9.5															
+CUSTOM_GTFFILTER		3.9.5														
+CUSTOM_TX2GENE		3.10.4														
+EAUTILS_GTF2BED			5.26.2													
+FQ_LINT					0.12.0											
+FQ_LINT_AFTER_TRIMMING					0.12.0											
+FQ_SUBSAMPLE					0.12.0											
+GUNZIP_FASTA						1.13										
+GUNZIP_GTF						1.13										
+MAKE_TRANSCRIPTS_FASTA							1.3.1									
+PICARD_MARKDUPLICATES								3.4.0								
+SALMON_INDEX									1.10.3							
+SALMON_QUANT									1.10.3							
+SAMTOOLS_FAIDX										1.23.1						
+SAMTOOLS_FLAGSTAT										1.23.1						
+SAMTOOLS_IDXSTATS										1.23.1						
+SAMTOOLS_INDEX										1.23.1						
+SAMTOOLS_SORT										1.23.1						
+SAMTOOLS_STATS										1.23.1						
+SE_GENE_UNIFIED											1.32.0					
+SE_TRANSCRIPT_UNIFIED											1.32.0					
+STAR_ALIGN										1.21		5.1.0	2.7.11b			
+STAR_GENOMEGENERATE										1.21		5.1.0	2.7.11b			
+TXIMETA_TXIMPORT														1.20.1		
+Workflow															v3.25.0-g891468c	25.10.3
+fastp				1.0.1												

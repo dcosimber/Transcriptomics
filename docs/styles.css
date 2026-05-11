@@ -271,19 +271,106 @@ figcaption {
   margin-top: 0.45em;
 }
 
-.multiqc-frame {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 1rem;
-  margin-bottom: 1.4rem;
+/* MultiQC integration */
+.multiqc-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
 }
 
-.multiqc-frame iframe {
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+  margin: 1.1rem 0 1.45rem;
+}
+
+.metric-card {
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  background: rgba(0, 0, 0, 0.018);
+}
+
+.metric-card p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.metric-card strong {
   display: block;
-  width: 100%;
-  min-height: 850px;
-  border: 0;
+  font-size: 1.55rem;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.multiqc-details {
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  margin: 1rem 0 1.35rem;
+}
+
+.multiqc-details summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.multiqc-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0.85rem 0 0.55rem;
+}
+
+.multiqc-table-caption {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: #5f6b7a;
+  text-align: left;
+}
+
+.multiqc-copy-button {
+  flex: 0 0 auto;
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  border-radius: 8px;
+  padding: 0.32rem 0.62rem;
+  background: rgba(13, 110, 253, 0.08);
+  color: #0d6efd;
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.multiqc-copy-button:hover {
+  background: rgba(13, 110, 253, 0.14);
+}
+
+.multiqc-copy-table-wrapper {
+  max-height: 520px;
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.multiqc-copy-table {
+  width: max-content;
+  min-width: 100%;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.32;
+}
+
+.multiqc-copy-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.multiqc-copy-table td {
+  white-space: nowrap;
 }
 
 
@@ -403,4 +490,28 @@ html.quarto-dark button.quarto-color-scheme-toggle {
 
 .quarto-dark code {
   color: inherit;
+}
+
+.quarto-dark .metric-card,
+.quarto-dark .multiqc-details {
+  border-color: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.quarto-dark .multiqc-table-caption {
+  color: #c7d0d9;
+}
+
+.quarto-dark .multiqc-copy-button {
+  border-color: rgba(140, 186, 255, 0.38);
+  background: rgba(140, 186, 255, 0.10);
+  color: #b9d5ff;
+}
+
+.quarto-dark .multiqc-copy-button:hover {
+  background: rgba(140, 186, 255, 0.18);
+}
+
+.quarto-dark .multiqc-copy-table-wrapper {
+  border-color: rgba(255, 255, 255, 0.10);
 }
