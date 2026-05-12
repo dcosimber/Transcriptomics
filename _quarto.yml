@@ -34,7 +34,7 @@ book:
     - chapters/05_differential_expression.qmd
 
 bibliography: references.bib
-csl: apa-6th-edition.csl
+csl: vancouver-brackets.csl
 
 format:
   html:

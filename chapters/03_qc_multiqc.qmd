@@ -1,8 +1,8 @@
 # Control de calidad integrado con MultiQC
 
-El informe **MultiQC** se utiliza aquí como una fuente estructurada de resultados, no como una captura aislada. La idea es que el lector pueda seguir el control de calidad **herramienta por herramienta**, viendo las mismas figuras exportadas por MultiQC y consultando las tablas originales en formato copiable.
+El informe **[MultiQC](https://seqera.io/multiqc/)** se utiliza aquí como una fuente estructurada de resultados, no como una captura aislada [@Ewels2016MultiQC]. La idea es que el lector pueda seguir el control de calidad **herramienta por herramienta**, viendo las mismas figuras exportadas por MultiQC y consultando las tablas originales en formato copiable.
 
-Este capítulo documenta los módulos principales generados por `nf-core/rnaseq` en la rama `star_salmon`: **fastp**, **STAR**, **Samtools**, **Picard**, **strand check** y **versiones de software**. La interpretación combina dos niveles: una lectura *técnica*, centrada en si las bibliotecas son válidas para el análisis downstream, y una lectura *biológica*, centrada en si los resultados permiten confiar en la señal transcriptómica posterior.
+Este capítulo documenta los módulos principales generados por **[`nf-core/rnaseq`](https://nf-co.re/rnaseq)** en la rama `star_salmon`, ejecutada sobre **[Nextflow](https://www.nextflow.io/)** [@Ewels2020Nfcore; @DiTommaso2017Nextflow]: **fastp**, **STAR**, **Samtools**, **Picard**, **strand check** y **versiones de software**. La interpretación combina dos niveles: una lectura *técnica*, centrada en si las bibliotecas son válidas para el análisis downstream, y una lectura *biológica*, centrada en si los resultados permiten confiar en la señal transcriptómica posterior.
 
 ::: {.callout-tip title="Informe original"}
 El informe MultiQC completo se conserva como anexo navegable. Las secciones siguientes integran sus figuras y tablas principales dentro del libro, pero el HTML original sigue disponible para inspección interactiva.
@@ -21,13 +21,13 @@ El control de calidad global fue favorable. El lote contiene **24 muestras**, to
 ::: {.metric-card}
 **24**
 
-Muestras procesadas por `nf-core/rnaseq`.
+Muestras procesadas por [`nf-core/rnaseq`](https://nf-co.re/rnaseq).
 :::
 
 ::: {.metric-card}
 **98.45%**
 
-Retención media de lecturas tras `fastp`.
+Retención media de lecturas tras [`fastp`](https://github.com/OpenGene/fastp).
 :::
 
 ::: {.metric-card}
@@ -45,7 +45,7 @@ Alineamiento único medio con **STAR**.
 ::: {.metric-card}
 **97.0%**
 
-Orientación media inferida como *reverse* por Salmon.
+Orientación media inferida como *reverse* por [Salmon](https://combine-lab.github.io/salmon/).
 :::
 :::
 
@@ -80,9 +80,9 @@ No hay una muestra que falle globalmente en todas las métricas. `P49` combina m
 <div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/multiqc_general_stats.txt" data-caption="General Statistics exportada por MultiQC. La tabla se puede seleccionar en la web o copiar como TSV con el botón."></div>
 </details>
 
-## fastp: filtrado, calidad y composición
+## [fastp](https://github.com/OpenGene/fastp): filtrado, calidad y composición
 
-`fastp` realiza el control de calidad inicial de las lecturas, detecta y recorta adaptadores, filtra lecturas de baja calidad y resume la calidad por ciclo antes de enviar los FASTQ al alineamiento. En este proyecto, el filtrado fue homogéneo: la mayoría de las lecturas se conservaron y la calidad post-filtrado quedó en un rango alto.
+[`fastp`](https://github.com/OpenGene/fastp) es un preprocesador de FASTQ que combina **control de calidad**, **detección/recorte de adaptadores**, **filtrado por calidad**, evaluación de contenido de bases y generación de informes HTML/JSON [@Chen2018Fastp]. En este apartado se evalúa si el paso de trimming conserva suficientes lecturas, elimina señales técnicas evidentes y deja perfiles de calidad adecuados antes del alineamiento. En este proyecto, el filtrado fue homogéneo: la mayoría de las lecturas se conservaron y la calidad post-filtrado quedó en un rango alto.
 
 ![Lecturas conservadas y descartadas tras el filtrado con fastp. La figura procede del SVG exportado por MultiQC.](../multiqc/star_salmon/multiqc_report_plots/svg/fastp_filtered_reads_plot-pct.svg){#fig-multiqc-fastp-filtered}
 
@@ -117,9 +117,9 @@ La distribución de tamaños de inserto en @fig-multiqc-fastp-insert es útil pa
 
 Técnicamente, `fastp` no detecta una degradación generalizada del lote. La combinación de alta retención, Q30 elevado y perfiles GC estables apoya continuar con el alineamiento. Biológicamente, esto es importante porque reduce la probabilidad de que las diferencias de expresión posteriores estén impulsadas por pérdidas diferenciales de lectura entre condiciones.
 
-## STAR: alineamiento contra el genoma de referencia
+## [STAR](https://github.com/alexdobin/STAR): alineamiento contra el genoma de referencia
 
-`STAR` evalúa si las lecturas filtradas son compatibles con el genoma de referencia utilizado por el pipeline. En este lote, el alineamiento total fue muy alto, con una media de **97.52%**. La muestra con menor alineamiento total fue `P44` (**96.31%**), que sigue siendo un valor sólido.
+[`STAR`](https://github.com/alexdobin/STAR) es un alineador de RNA-seq diseñado para mapear lecturas contra un genoma de referencia teniendo en cuenta la estructura discontinua de los transcritos, especialmente los empalmes exon-exon [@Dobin2013STAR]. En este apartado se evalúa si las lecturas filtradas son compatibles con la referencia genómica y si el porcentaje de alineamiento único es suficiente para cuantificación robusta. En este lote, el alineamiento total fue muy alto, con una media de **97.52%**. La muestra con menor alineamiento total fue `P44` (**96.31%**), que sigue siendo un valor sólido.
 
 ![Resumen de alineamiento STAR por muestra.](../multiqc/star_salmon/multiqc_report_plots/svg/star_alignment_plot-pct.svg){#fig-multiqc-star-alignment}
 
@@ -134,9 +134,9 @@ La figura @fig-multiqc-star-alignment muestra una proporción dominante de lectu
 `P44` queda como punto de vigilancia por su menor alineamiento único. La decisión correcta es conservarla en esta fase y comprobar si se comporta como outlier en PCA, clustering de muestras y distribución de conteos.
 :::
 
-## Samtools: métricas de BAM alineado
+## [Samtools](https://www.htslib.org/): métricas de BAM alineado
 
-`Samtools` resume propiedades de los BAM ya alineados. Sus paneles funcionan como una comprobación posterior a STAR: mapeo, pares correctamente emparejados y proporciones de alineamientos. En este run no aparece una señal global de BAM problemático.
+[`Samtools`](https://www.htslib.org/) es una suite para manipular y auditar archivos de alineamiento en formatos SAM/BAM/CRAM [@Danecek2021Samtools]. En este apartado se comprueba el comportamiento de los BAM después del alineamiento: proporción de lecturas mapeadas, pares correctamente emparejados, flags de alineamiento y consistencia general del archivo alineado. Sus paneles funcionan como una comprobación posterior a STAR. En este run no aparece una señal global de BAM problemático.
 
 ![Resumen de alineamiento de Samtools.](../multiqc/star_salmon/multiqc_report_plots/svg/samtools_alignment_plot-pct.svg){#fig-multiqc-samtools-alignment}
 
@@ -152,9 +152,9 @@ La figura @fig-multiqc-samtools-alignment complementa a STAR y confirma que las 
 <div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/samtools-flagstat-pct-table.txt" data-caption="Tabla Samtools flagstat con porcentajes exportada por MultiQC."></div>
 </details>
 
-## Picard: duplicación y complejidad de biblioteca
+## [Picard](https://broadinstitute.github.io/picard/): duplicación y complejidad de biblioteca
 
-`Picard MarkDuplicates` estima duplicación a nivel de alineamiento. Este valor suele ser más alto que la duplicación aproximada de `fastp` porque se calcula después del mapeo y considera pares alineados y coordenadas genómicas. En el lote, la duplicación Picard media fue **54.31%**, con mínimo en `IT1G` (**26.09%**) y máximo en `P49` (**78.80%**).
+[`Picard`](https://broadinstitute.github.io/picard/) es un conjunto de herramientas para manipular datos de secuenciación en formatos SAM/BAM/CRAM y VCF [@BroadInstitutePicard]. Aquí se usa el módulo `MarkDuplicates`, que estima duplicación a nivel de alineamiento. Este valor suele ser más alto que la duplicación aproximada de `fastp` porque se calcula después del mapeo y considera pares alineados y coordenadas genómicas. En el lote, la duplicación Picard media fue **54.31%**, con mínimo en `IT1G` (**26.09%**) y máximo en `P49` (**78.80%**).
 
 ![Duplicación estimada por Picard MarkDuplicates.](../multiqc/star_salmon/multiqc_report_plots/svg/picard_deduplication-pct.svg){#fig-multiqc-picard-dups}
 
@@ -169,9 +169,9 @@ La figura @fig-multiqc-picard-dups no debe leerse como un criterio automático d
 `P49`, `P43`, `P47` y `P44` presentan duplicación Picard alta. No se descartan aquí, pero conviene revisarlas en la exploración multivariante y comprobar si concentran patrones de expresión anómalos.
 :::
 
-## Strand check: orientación de la biblioteca
+## [Salmon](https://combine-lab.github.io/salmon/) / strand check: orientación de la biblioteca
 
-El módulo de *strand check* compara la orientación esperada con la inferida por Salmon. En este análisis, las **24/24 muestras** fueron inferidas como `reverse`, con una proporción media de **97.0%** y rango aproximado **96.6-97.6%**.
+[Salmon](https://combine-lab.github.io/salmon/) es una herramienta de cuantificación transcriptómica rápida y consciente de sesgos que puede inferir propiedades de la biblioteca durante el proceso de cuantificación [@Patro2017Salmon]. En este apartado, el módulo de *strand check* compara la orientación esperada con la orientación inferida por Salmon a partir de las lecturas. Esta comprobación permite detectar errores de configuración de strandedness o mezcla de bibliotecas con orientaciones incompatibles. En este análisis, las **24/24 muestras** fueron inferidas como `reverse`, con una proporción media de **97.0%** y rango aproximado **96.6-97.6%**.
 
 ![Composición de orientación inferida por strand check.](../multiqc/star_salmon/multiqc_report_plots/svg/strand_check_composition_bargraph.svg){#fig-multiqc-strand-check}
 
@@ -184,7 +184,7 @@ La coherencia en @fig-multiqc-strand-check es una buena señal de reproducibilid
 
 ## Versiones de software
 
-La reproducibilidad del análisis depende de fijar no solo los parámetros, sino también las versiones de software. MultiQC exporta una tabla de versiones por proceso, que se conserva aquí como parte del registro computacional del proyecto.
+La reproducibilidad del análisis depende de fijar no solo los parámetros, sino también las versiones de software. MultiQC exporta una tabla de versiones por proceso, que se conserva aquí como parte del registro computacional del proyecto. Esta tabla conecta el resultado biológico con el entorno computacional real: pipeline, módulos, herramientas y versiones ejecutadas.
 
 <details class="multiqc-details" open>
 <summary>Tabla MultiQC: software versions</summary>
@@ -201,12 +201,51 @@ La lectura biológica es, por tanto, prudente pero positiva: si aparecen patrone
 Se mantienen todas las muestras para la exploración downstream. La exclusión, si ocurre más adelante, deberá justificarse con evidencia combinada de PCA, metadatos, distribución de conteos y coherencia con el diseño experimental.
 :::
 
+## Referencias {.unnumbered}
+
+::: {#refs}
+:::
+
 <script>
 (function () {
   function splitTsv(text) {
-    return text.trim().split(/\r?\n/).map(function (line) {
+    return text.replace(/\r?\n$/, "").split(/\r?\n/).map(function (line) {
       return line.split("\t");
     });
+  }
+
+  function isNumeric(value) {
+    return /^[-+]?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?$/i.test(value.trim());
+  }
+
+  function formatValue(value) {
+    var trimmed = value.trim();
+    if (trimmed === "") return "";
+    if (trimmed.toLowerCase() === "nan") return "NA";
+    if (!isNumeric(trimmed)) return value;
+
+    var number = Number(trimmed);
+    if (!Number.isFinite(number)) return value;
+
+    var nearestInteger = Math.round(number);
+    if (Math.abs(number - nearestInteger) < 1e-9) {
+      return String(nearestInteger);
+    }
+
+    return number.toFixed(2);
+  }
+
+  function formatRows(rows) {
+    return rows.map(function (row, rowIndex) {
+      if (rowIndex === 0) return row;
+      return row.map(formatValue);
+    });
+  }
+
+  function rowsToTsv(rows) {
+    return rows.map(function (row) {
+      return row.join("\t");
+    }).join("\n");
   }
 
   function buildCell(tag, value) {
@@ -216,8 +255,9 @@ Se mantienen todas las muestras para la exploración downstream. La exclusión, 
   }
 
   function renderTable(container, text) {
-    var rows = splitTsv(text);
+    var rows = formatRows(splitTsv(text));
     if (!rows.length) return;
+    var formattedText = rowsToTsv(rows);
 
     var caption = container.getAttribute("data-caption") || "Tabla exportada por MultiQC";
     var actions = document.createElement("div");
@@ -236,7 +276,7 @@ Se mantienen todas las muestras para la exploración downstream. La exclusión, 
         copyButton.textContent = "Selecciona la tabla para copiar";
         return;
       }
-      navigator.clipboard.writeText(text).then(function () {
+      navigator.clipboard.writeText(formattedText).then(function () {
         copyButton.textContent = "Copiado";
         window.setTimeout(function () {
           copyButton.textContent = "Copiar TSV";
