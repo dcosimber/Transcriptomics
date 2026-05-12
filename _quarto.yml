@@ -10,7 +10,7 @@ book:
   title: "Holofishcolour project"
   site-url: "https://dcosimber.github.io/Transcriptomics/"
   sidebar:
-    logo: images/holofishcolour_logo.svg
+    logo: images/holofishcolour_logo.png
     logo-alt: "HOLOFISHCOLOUR"
     logo-href: index.html
     search: true
