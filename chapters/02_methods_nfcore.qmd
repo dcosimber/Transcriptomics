@@ -2,7 +2,7 @@
 
 Este capítulo describe la **fase de preprocesamiento primario** del RNA-seq de HOLOFISHCOLOUR. Su función es convertir los ficheros FASTQ en una matriz de expresión reproducible, auditada y preparada para el análisis estadístico posterior. En esta etapa todavía no se prueban hipótesis biológicas; se evalúa si los datos tienen la calidad técnica necesaria para sostener comparaciones transcriptómicas entre regiones de piel normal y pseudoalbina.
 
-El procesamiento se realizó con **`nf-core/rnaseq`**, usando el perfil **`star_salmon`**: control de calidad de lecturas, recorte con **fastp**, alineamiento con **STAR**, cuantificación con **Salmon** y consolidación de métricas con **MultiQC**.
+El procesamiento se realizó con **`nf-core/rnaseq`**, usando el perfil **`star_salmon`**: control de calidad de lecturas, recorte con **fastp**, alineamiento con **STAR**, cuantificación con **Salmon**, controles post-alineamiento y consolidación de métricas con **MultiQC**.
 
 ::: {.callout-note title="Lectura rápida del capítulo"}
 El preprocesamiento produjo un conjunto de datos técnicamente sólido: **24 bibliotecas** procesadas, **98.45%** de lecturas retenidas tras filtrado, **94.71%** de bases Q30, **97.52%** de alineamiento medio y **90.09%** de lecturas unívocamente alineadas. Estos valores apoyan el uso de las matrices **Salmon gene-level** como entrada principal del análisis diferencial.
@@ -48,6 +48,10 @@ Las rutas y parámetros clave se resumen en @tbl-nfcore-config. La tabla está r
 La combinación **STAR + Salmon** permite conservar evidencia de alineamiento genómico, útil para auditar tasas de mapeo y calidad de BAM, y al mismo tiempo obtener cuantificaciones transcriptómicas/gene-level preparadas para importación downstream. En este proyecto, la matriz **Salmon gene-level** se toma como entrada primaria para DESeq2.
 :::
 
+::: {.callout-note title="fastp, no Trim Galore"}
+En esta ejecución **no se usó Trim Galore**. `nf-core/rnaseq` puede configurarse con distintos motores de trimming, pero aquí el recorte y filtrado de lecturas paired-end se realizó con **[`fastp`](https://github.com/OpenGene/fastp)** mediante `--detect_adapter_for_pe`. Por tanto, las métricas de adaptadores, bases descartadas, calidad post-filtrado y retención de lecturas deben leerse en los apartados de `fastp`, no en una sección de Trim Galore.
+:::
+
 ## Referencia genómica y anotación
 
 Las lecturas se alinearon contra el ensamblado **ASM1334776v1** de *Scophthalmus maximus* procedente de **Ensembl release 113**. Se utilizó el FASTA `dna.toplevel`, que incluye cromosomas, contigs no colocados y scaffolds, junto con la anotación completa en formato GTF.
@@ -84,10 +88,19 @@ El flujo de trabajo puede leerse como una cadena de control de calidad progresiv
 | Índices | STAR / Salmon | Índices genómicos/transcriptómicos | Reproducibilidad de referencia |
 | Alineamiento | STAR | BAM y métricas de mapeo | Compatibilidad muestra-referencia |
 | Duplicados | Picard | Porcentaje de duplicación | Complejidad de biblioteca |
+| QC RNA-seq post-alineamiento | Qualimap | Informes RNA-seq QC por muestra | Origen genómico de lecturas y sesgo 5'-3' |
+| Sesgos post-alineamiento | RSeQC | Distribución de lecturas, junctions y strandedness | Coherencia de biblioteca y anotación |
+| Duplicación dependiente de expresión | dupRadar | Gráficos por muestra | Distinguir duplicación técnica de señal de expresión alta |
+| Conteo sobre anotación | featureCounts | Conteos por gen/feature | Matriz alternativa para contraste técnico |
+| Reconstrucción/transcritos | StringTie | Abundancias y ficheros Ballgown | Recurso secundario de cuantificación/transcritos |
 | Cuantificación | Salmon | Abundancias por transcrito/gen | Entrada a matrices de expresión |
 | Integración | MultiQC | Figuras y tablas comparativas | Revisión global del run |
 
 : Etapas principales del procesamiento primario y uso de sus salidas.
+:::
+
+::: {.callout-important title="Módulos presentes pero todavía no todos integrados en figuras"}
+El capítulo de QC integrado prioriza por ahora los módulos que quedaron agregados en el HTML de MultiQC copiado a la web: `fastp`, `STAR`, `Samtools`, `Picard`, `strand check` y versiones. El directorio completo de resultados también contiene salidas de **Qualimap**, **RSeQC**, **dupRadar**, **featureCounts** y **StringTie**. En cambio, **Preseq** no se ejecutó (`skip_preseq: true`). Las salidas post-alineamiento forman parte de la auditoría técnica y deben incorporarse progresivamente cuando se documente el QC con mayor detalle.
 :::
 
 ## Rendimiento global del run

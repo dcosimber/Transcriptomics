@@ -377,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Este capítulo describe la <strong>fase de preprocesamiento primario</strong> del RNA-seq de HOLOFISHCOLOUR. Su función es convertir los ficheros FASTQ en una matriz de expresión reproducible, auditada y preparada para el análisis estadístico posterior. En esta etapa todavía no se prueban hipótesis biológicas; se evalúa si los datos tienen la calidad técnica necesaria para sostener comparaciones transcriptómicas entre regiones de piel normal y pseudoalbina.</p>
-<p>El procesamiento se realizó con <strong><code>nf-core/rnaseq</code></strong>, usando el perfil <strong><code>star_salmon</code></strong>: control de calidad de lecturas, recorte con <strong>fastp</strong>, alineamiento con <strong>STAR</strong>, cuantificación con <strong>Salmon</strong> y consolidación de métricas con <strong>MultiQC</strong>.</p>
+<p>El procesamiento se realizó con <strong><code>nf-core/rnaseq</code></strong>, usando el perfil <strong><code>star_salmon</code></strong>: control de calidad de lecturas, recorte con <strong>fastp</strong>, alineamiento con <strong>STAR</strong>, cuantificación con <strong>Salmon</strong>, controles post-alineamiento y consolidación de métricas con <strong>MultiQC</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Lectura rápida del capítulo">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -495,6 +495,19 @@ Tabla&nbsp;3.1: Configuración principal del preprocesamiento con <code>nf-core/
 </div>
 <div class="callout-body-container callout-body">
 <p>La combinación <strong>STAR + Salmon</strong> permite conservar evidencia de alineamiento genómico, útil para auditar tasas de mapeo y calidad de BAM, y al mismo tiempo obtener cuantificaciones transcriptómicas/gene-level preparadas para importación downstream. En este proyecto, la matriz <strong>Salmon gene-level</strong> se toma como entrada primaria para DESeq2.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="fastp, no Trim Galore">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>fastp, no Trim Galore
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En esta ejecución <strong>no se usó Trim Galore</strong>. <code>nf-core/rnaseq</code> puede configurarse con distintos motores de trimming, pero aquí el recorte y filtrado de lecturas paired-end se realizó con <strong><a href="https://github.com/OpenGene/fastp"><code>fastp</code></a></strong> mediante <code>--detect_adapter_for_pe</code>. Por tanto, las métricas de adaptadores, bases descartadas, calidad post-filtrado y retención de lecturas deben leerse en los apartados de <code>fastp</code>, no en una sección de Trim Galore.</p>
 </div>
 </div>
 </section>
@@ -633,12 +646,42 @@ Tabla&nbsp;3.3: Etapas principales del procesamiento primario y uso de sus salid
 <td>Complejidad de biblioteca</td>
 </tr>
 <tr class="odd">
+<td>QC RNA-seq post-alineamiento</td>
+<td>Qualimap</td>
+<td>Informes RNA-seq QC por muestra</td>
+<td>Origen genómico de lecturas y sesgo 5’-3’</td>
+</tr>
+<tr class="even">
+<td>Sesgos post-alineamiento</td>
+<td>RSeQC</td>
+<td>Distribución de lecturas, junctions y strandedness</td>
+<td>Coherencia de biblioteca y anotación</td>
+</tr>
+<tr class="odd">
+<td>Duplicación dependiente de expresión</td>
+<td>dupRadar</td>
+<td>Gráficos por muestra</td>
+<td>Distinguir duplicación técnica de señal de expresión alta</td>
+</tr>
+<tr class="even">
+<td>Conteo sobre anotación</td>
+<td>featureCounts</td>
+<td>Conteos por gen/feature</td>
+<td>Matriz alternativa para contraste técnico</td>
+</tr>
+<tr class="odd">
+<td>Reconstrucción/transcritos</td>
+<td>StringTie</td>
+<td>Abundancias y ficheros Ballgown</td>
+<td>Recurso secundario de cuantificación/transcritos</td>
+</tr>
+<tr class="even">
 <td>Cuantificación</td>
 <td>Salmon</td>
 <td>Abundancias por transcrito/gen</td>
 <td>Entrada a matrices de expresión</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Integración</td>
 <td>MultiQC</td>
 <td>Figuras y tablas comparativas</td>
@@ -648,6 +691,19 @@ Tabla&nbsp;3.3: Etapas principales del procesamiento primario y uso de sus salid
 </table>
 </div>
 </figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Módulos presentes pero todavía no todos integrados en figuras">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Módulos presentes pero todavía no todos integrados en figuras
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El capítulo de QC integrado prioriza por ahora los módulos que quedaron agregados en el HTML de MultiQC copiado a la web: <code>fastp</code>, <code>STAR</code>, <code>Samtools</code>, <code>Picard</code>, <code>strand check</code> y versiones. El directorio completo de resultados también contiene salidas de <strong>Qualimap</strong>, <strong>RSeQC</strong>, <strong>dupRadar</strong>, <strong>featureCounts</strong> y <strong>StringTie</strong>. En cambio, <strong>Preseq</strong> no se ejecutó (<code>skip_preseq: true</code>). Las salidas post-alineamiento forman parte de la auditoría técnica y deben incorporarse progresivamente cuando se documente el QC con mayor detalle.</p>
+</div>
 </div>
 </section>
 <section id="rendimiento-global-del-run" class="level2" data-number="3.5">
