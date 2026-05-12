@@ -113,8 +113,8 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 0.9rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.25rem;
   margin-bottom: 0.2rem;
   min-height: auto;
 }
@@ -128,8 +128,13 @@ h4 {
   border-radius: 0;
 }
 
-#quarto-sidebar .sidebar-title > div:not(.sidebar-logo-container) {
+/* Hide only the text title below the logo; keep sidebar tools available */
+#quarto-sidebar .sidebar-title > a {
   display: none !important;
+}
+
+#quarto-sidebar .sidebar-tools-main {
+  display: block !important;
 }
 
 #quarto-sidebar .sidebar-menu-container {
@@ -460,13 +465,19 @@ code {
 a.quarto-color-scheme-toggle,
 button.quarto-color-scheme-toggle {
   position: fixed !important;
-  top: 14px !important;
-  right: 18px !important;
+  top: 16px !important;
+  right: 20px !important;
   left: auto !important;
   bottom: auto !important;
-  z-index: 2000 !important;
+  z-index: 3000 !important;
   border-radius: 999px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  min-height: 2.2rem;
   padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
@@ -484,6 +495,7 @@ html.quarto-dark #quarto-color-scheme-toggle,
 html.quarto-dark a.quarto-color-scheme-toggle,
 html.quarto-dark button.quarto-color-scheme-toggle {
   background: rgba(33, 37, 41, 0.88);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 
