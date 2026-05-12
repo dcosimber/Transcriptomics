@@ -2,7 +2,7 @@
 # HOLOFISHCOLOUR transcriptomics
 
 ::: {.project-brand}
-![](images/holofishcolour_logo.png){fig-alt="Logotipo oficial de HOLOFISHCOLOUR" .project-logo}
+![](images/holofishcolour_logo.png){fig-alt="Logotipo oficial de HOLOFISHCOLOUR" .project-logo .nolightbox}
 :::
 
 Este libro documenta el análisis transcriptómico desarrollado dentro del proyecto **HOLOFISHCOLOUR**, centrado en caracterizar los mecanismos moleculares asociados a la pigmentación y malpigmentación en rodaballo (*Scophthalmus maximus*).
