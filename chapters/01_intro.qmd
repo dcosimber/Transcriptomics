@@ -1,185 +1,151 @@
-# Introduction
+# Introducción
 
-Pigmentation disorders represent one of the major biological and economic constraints in flatfish aquaculture. In turbot (*Scophthalmus maximus*), these abnormalities mainly manifest as pseudo-albinism on the ocular side and hypermelanosis on the blind side, leading to a substantial reduction in market value and production efficiency. Such defects originate during early development, particularly around metamorphosis, when asymmetric body patterning and pigmentation are established, and are thought to result from complex interactions between genetic background and environmental factors such as nutrition, light regime, and rearing conditions [@Matsumoto1990; @Hamre2013; @Yufera2018].
+La pigmentación es un rasgo visible, integrador y económicamente relevante en acuicultura. En peces, el patrón de coloración refleja la organización de distintos tipos de cromatóforos, la regulación neuroendocrina del tegumento y la interacción del animal con su ambiente de cría [@Nusslein-Volhard2017; @Vissio2021]. En especies planas, como el rodaballo (*Scophthalmus maximus*), esta dimensión adquiere una complejidad adicional: durante la metamorfosis se establece una asimetría corporal marcada, con una cara ocular normalmente pigmentada y una cara ciega reducida en pigmentación. Cuando este programa de diferenciación se altera, aparecen fenotipos de malpigmentación que pueden afectar al valor comercial, a la calidad percibida y a la interpretación biológica del estado del animal [@Seikai1994; @Vissio2021].
 
-Despite decades of research, the molecular mechanisms underlying pigmentation disorders in flatfish remain only partially understood. Previous studies have implicated key biological processes including melanocyte differentiation, neural crest cell migration, retinoid and thyroid hormone signaling, and calcium homeostasis as central drivers of pigment cell development and maintenance [@Seikai1994; @Taguchi2008; @Yao2022]. However, much of the available evidence is based on candidate-gene approaches or interspecific comparisons, and comprehensive transcriptome-wide analyses in turbot are still limited.
+El rodaballo es una especie estratégica para la acuicultura marina europea y, de forma particular, para el sector gallego [@Fernandez-Gonzalez2021a]. Además, dispone de recursos genómicos consolidados, lo que facilita abordar preguntas funcionales mediante aproximaciones de expresión génica a escala transcriptómica [@Martinez2021]. En este contexto, el proyecto **HOLOFISHCOLOUR** plantea la malpigmentación no como un rasgo aislado, sino como un fenotipo complejo que puede emerger de la interacción entre **genoma**, **transcriptoma**, **histología**, **microbiota**, desarrollo y ambiente de cultivo.
 
-High-throughput RNA sequencing (RNA-seq) provides a powerful, unbiased approach to investigate complex phenotypes by enabling genome-wide quantification of gene expression. In pigmentation research, transcriptomic studies have successfully identified differentially expressed genes and regulatory pathways associated with melanogenesis, chromatophore development, and pigment cell survival in several flatfish and teleost species [@Liu2016; @Li2021]. These approaches are particularly well suited to disentangle the polygenic architecture of pigmentation disorders, which are unlikely to be explained by single major-effect loci alone.
+::: {.callout-note}
+## Idea central
 
-Within the HOLOFISHCOLOUR project, transcriptomic characterization constitutes a key component for linking genomic variation to functional biological mechanisms. By comparing gene expression profiles between normally pigmented and malpigmented turbot across biologically relevant tissues, this task aims to identify molecular signatures associated with pigmentation anomalies and to complement ongoing genomic, histological, and microbiome analyses. Together, these integrative results will contribute to a holistic, multi-omics understanding of pigmentation disorders in turbot aquaculture.
-
-# Objectives
-
-El objetivo principal de esta tarea fue realizar un perfil transcriptómico global de la piel de rodaballos (*Scophthalmus maximus*) tanto con fenotipo pigmentario normal como malpigmentado, con el objetivbo de:
-
--   Caracterizar globalmente los patrones de expresión génica asociados a los fenotipos de pigmentación.
--   Identificar los genes diferencialmente expresados entre individuos bien pigmentados y mal pigmentados.
--   Explorar los mecanismos y rutas metabólicas potencialmente involucradas las malformaciones pigmentarias en rodaballo.
-
-1.  RNA isolation and quality
-
-    ![Figure 1. Skin sampling for transcriptomic analysis. A–B: Sampling areas in pseudo-albino and normally pigmented turbot. Areas outlined with yellow dashed lines correspond to non-pigmented skin, whereas areas outlined in red correspond to pigmented skin. C: Skin incision and sample collection.](/figures/01_intro/Figure_1_skin_sampling.png)
-
-2.  RNA library construction and high-throughput sequencing.\
-
-3.  Bioinformatic processing and differential expression analysis.
-
-------------------------------------------------------------------------
-
-# Materials and Methods
-
-## Experimental design and Sampling
-
-## Fishes
-
-Three individuals per phenotype (normal vs malpigmented) were selected from tanks **E6** and **E8**, where pigmentation differences were most pronounced.
-
--   **Tank E6:** offspring from two different parental pairs.\
--   **Tank E8:** half-sib family (shared mother, two different fathers).
-
-From each individual, **skin and intestine** samples were collected.
-
-------------------------------------------------------------------------
-
-### Sample Types and Pigmentation Categories
-
--   **Normally pigmented fish:**
-    -   Pigmented skin (dark) on the ocular side
-    -   Non-pigmented skin (light) on the blind side
--   **Malpigmented fish:**
-    -   Pigmented and non-pigmented skin on both ocular and blind sides
-
-------------------------------------------------------------------------
-
-### Sample Overview
-
-**Table 1. Samples selected for transcriptomic analysis**
-
-| Sample ID | Tissue | Tank | Individual No. | Pigmentation phenotype | Surface | Pigmentation |
-|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-| P31 | Skin | E6 | 46 | Normal | Ocular | Dark |
-| P32 | Skin | E6 | 46 | Normal | Blind | Light |
-| P33 | Skin | E8 | 52 | Normal | Ocular | Dark |
-| P34 | Skin | E8 | 52 | Normal | Blind | Light |
-| P35 | Skin | E8 | 70 | Normal | Ocular | Dark |
-| P36 | Skin | E8 | 70 | Normal | Blind | Light |
-| P41 | Skin | E8 | 142 | Malpigmented | Ocular | Dark |
-| P42 | Skin | E8 | 142 | Malpigmented | Ocular | Light |
-| P43 | Skin | E8 | 142 | Malpigmented | Blind | Dark |
-| P44 | Skin | E8 | 131 | Malpigmented | Blind | Light |
-| P45 | Skin | E6 | 130 | Malpigmented | Ocular | Dark |
-| P46 | Skin | E6 | 130 | Malpigmented | Ocular | Light |
-| P47 | Skin | E6 | 130 | Malpigmented | Blind | Dark |
-| P48 | Skin | E6 | 130 | Malpigmented | Blind | Light |
-| P49 | Skin | E6 | 26 | Malpigmented | Ocular | Dark |
-| P50 | Skin | E6 | 26 | Malpigmented | Ocular | Light |
-| P51 | Skin | E6 | 26 | Malpigmented | Blind | Dark |
-| P52 | Skin | E6 | 26 | Malpigmented | Blind | Light |
-| P1G | Skin | — | 56 | Normal | — | — |
-| P2G | Skin | — | 34 | Normal | — | — |
-| PNKD | Skin | — | — | Ambicolor | — | — |
-| PNKV | Skin | — | — | Ambicolor | — | — |
-| IT1G | Intestine | — | — | — | — | — |
-| ITPNK | Intestine | — | — | — | — | — |
-
-------------------------------------------------------------------------
-
-## Sample Collection
-
-### Skin Sampling
-
-Fish were maintained at −80 °C and placed on ice prior to sampling to prevent rapid thawing. While still frozen, approximately **20 mg of skin tissue** were excised using sterile dissection tools.
-
-Muscle tissue was carefully removed by gentle scraping to avoid contamination.
-
-![**Figure 1.** Skin sampling for transcriptomic analysis. A–B: Sampling areas in pseudo-albino and normally pigmented turbot. Areas outlined with yellow dashed lines correspond to non-pigmented skin, whereas areas outlined in red correspond to pigmented skin. C: Skin incision and sample collection.](/figures/01_intro/Figure_1_skin_sampling.png)
-
-------------------------------------------------------------------------
-
-### 3.2 Intestinal Sampling
-
-Intestinal samples were obtained by ventral dissection. The visceral mass was removed, and intestinal contents were gently expelled before collecting the posterior intestine segment.
-
-*Figure 2. Intestinal sampling procedure.*
-
-------------------------------------------------------------------------
-
-## 4. RNA Extraction and Quality Assessment
-
-### 4.1 RNA Isolation
-
-Total RNA was extracted using a **TRIzol™ + Phasemaker™ Tubes** protocol, followed by purification with the **RNeasy Mini Kit (Qiagen)**.
-
-RNA concentration was measured using **NanoDrop™ One**, and integrity was assessed by **1.5% agarose gel electrophoresis**.
-
-| Sample | DNA concentration (ng/µl) | A260/A280 | A260/A230 |
-|:------:|:-------------------------:|:---------:|:---------:|
-|  P31   |          1142.7           |   2.14    |   2.10    |
-|  P32   |           813.4           |   2.14    |   2.18    |
-|  IT11  |           534.3           |   2.13    |   2.00    |
-|  P33   |           338.9           |   2.12    |   2.24    |
-|  P34   |           440.5           |   2.10    |   2.27    |
-|  IT12  |           974.0           |   2.13    |   2.36    |
-|  P35   |           299.3           |   2.12    |   1.08    |
-|  P36   |           308.8           |   2.13    |   2.18    |
-|  IT13  |           367.6           |   2.13    |   1.99    |
-|  P37   |           191.5           |   2.10    |   2.20    |
-|  P38   |           209.5           |   2.14    |   2.05    |
-|  P39   |           827.3           |   2.15    |   2.31    |
-|  P40   |           359.5           |   2.14    |   2.17    |
-|  IT14  |           822.9           |   2.14    |   2.31    |
-|  P41   |           583.6           |   2.10    |   2.29    |
-|  P42   |           506.5           |   2.10    |   2.15    |
-|  P43   |           588.0           |   2.10    |   2.33    |
-|  P44   |          1028.3           |   2.13    |   2.14    |
-|  IT15  |           727.2           |   2.10    |   2.29    |
-
-------------------------------------------------------------------------
-
-![Figure X. Integrity of total RNA assessed by agarose gel electrophoresis (1.5%, 100 mV, 30 min). Each gel corresponds to a batch of samples listed in the table above.](/figures/01_intro/gel_bands.png)
-
-### RNA Extraction Quality Metrics
-
-**Table 2. RNA concentration and purity metrics**
-
-| Sample | Concentration (ng/µl) | A260/A280 | A260/A230 |
-|--------|-----------------------|-----------|-----------|
-| P31    | 1142.7                | 2.14      | 2.10      |
-| P32    | 813.4                 | 2.14      | 2.18      |
-| P33    | 338.9                 | 2.12      | 2.24      |
-| P34    | 440.5                 | 2.10      | 2.27      |
-| P35    | 299.3                 | 2.12      | 1.08      |
-| P36    | 308.8                 | 2.13      | 2.18      |
-
-------------------------------------------------------------------------
-
-## RNA-Seq Library Preparation and Sequencing
-
-Transcriptome sequencing (RNA-Seq) was performed through the *Plant and Animal Whole Genome Sequencing (WOBI)* service (@tbl-rnaseq-specs), outsourced to Novogene (quotation **NVUK2024021911**). Messenger RNA (mRNA) libraries were constructed using a strand-specific protocol, preserving transcript orientation information and enabling accurate downstream expression analyses.
-
-Library preparation was based on poly(A) enrichment to selectively capture mature mRNA transcripts. Sequencing was carried out on an Illumina NovaSeq X Plus platform using a paired-end strategy with a read length of 150 base pairs (2 × 150 bp, PE150).
-
-Sequencing quality criteria were defined to ensure high data reliability, with at least 85% of bases achieving a Phred quality score ≥ Q30. A minimum sequencing output of 6 Gb per sample was guaranteed, providing sufficient depth and coverage for subsequent differential gene expression analyses. In total, 50 RNA-Seq libraries were successfully sequenced.
-
-::: {#tbl-rnaseq-specs}
-| Parameter           | Description                               |
-|:--------------------|:------------------------------------------|
-| Sequencing platform | Illumina NovaSeq X Plus                   |
-| Read configuration  | Paired-end (2 × 150 bp)                   |
-| Library preparation | Strand-specific mRNA (poly(A) enrichment) |
-| Quality threshold   | ≥ 85% of bases with Q score ≥ 30          |
-| Data output         | ≥ 6 Gb per sample                         |
-| Number of libraries | 50                                        |
-
-: RNA-Seq specifications
+La comparación de pieles pigmentadas y no pigmentadas, tanto en peces normales como en peces malpigmentados, permite buscar señales moleculares asociadas a la formación, mantenimiento o pérdida local de pigmentación. El RNA-seq aporta una lectura funcional del tejido: no dice solo qué variantes existen, sino qué programas biológicos están activos en cada región.
 :::
 
-------------------------------------------------------------------------
+## Pigmentación y malpigmentación en peces planos
 
-## RNA Quality Control
+La coloración de la piel en peces depende principalmente de la distribución, abundancia y estado funcional de los cromatóforos. Entre ellos, los **melanóforos** participan en la síntesis y depósito de melanina, los **xantóforos** contribuyen a tonalidades amarillas o anaranjadas y los **iridóforos** generan efectos reflectantes. Estos tipos celulares derivan de linajes asociados a la cresta neural y se organizan durante el desarrollo bajo control de rutas de señalización, migración celular, diferenciación y comunicación tisular [@Nusslein-Volhard2017].
 
-RNA quality assessment was performed as a mandatory quality control step prior to RNA-Seq library preparation and sequencing. RNA concentration, integrity, and purity metrics were evaluated by Novogene using the **Agilent 5400 Bioanalyzer**, following standard procedures for transcriptomic applications.
+En peces planos, la pigmentación está íntimamente ligada a la metamorfosis. El establecimiento correcto de la cara ocular y la cara ciega implica una diferenciación asimétrica de la piel. Los fenotipos anómalos más relevantes incluyen el **pseudoalbinismo**, caracterizado por pérdida o reducción de pigmentación donde debería existir coloración, y la **hipermelanosis**, en la que aparecen manchas pigmentadas en regiones normalmente claras de la cara ciega [@Seikai1994; @Li2022a]. Estas alteraciones no son meramente cosméticas: pueden indicar cambios en la diferenciación de la piel, en el estado de los cromatóforos, en rutas endocrinas y en respuestas al ambiente de cultivo [@Vissio2021].
 
+La evidencia acumulada en otras especies planas sugiere que la malpigmentación es un rasgo **multifactorial**. En lenguado senegalés, por ejemplo, el pseudoalbinismo se ha asociado con cambios transcriptómicos en piel e intestino, además de modificaciones estructurales y del microbioma [@Pinto2019]. En lenguado japonés se han descrito redes mRNA-miRNA asociadas al albinismo, con genes y rutas vinculadas a melanogénesis y metabolismo de tirosina [@Wang2017]. En lenguado chino, los estudios de hipermelanosis han identificado genes candidatos y redes lncRNA-miRNA-mRNA implicadas en la pigmentación de la cara ciega [@Li2022; @Li2022a]. Estos trabajos refuerzan una idea importante para este proyecto: la malpigmentación puede leerse como una alteración local de programas moleculares de desarrollo, diferenciación y mantenimiento tisular.
 
-## Bioinformatic analysis
+## Por qué RNA-seq
 
+El RNA-seq permite cuantificar la expresión de miles de genes de forma simultánea, sin restringir el análisis a una lista previa de candidatos. Esto es especialmente útil para un fenotipo como la pigmentación, donde pueden converger rutas de **melanogénesis**, metabolismo de aminoácidos y pigmentos, matriz extracelular, señalización neuroendocrina, respuesta inmune, estrés celular y comunicación entre tipos celulares.
+
+En los últimos años, la transcriptómica se ha consolidado como una estrategia potente para estudiar fenotipos de coloración en peces. En rodaballo, se ha utilizado para explorar la regulación del color corporal bajo distintos espectros de luz, apuntando a genes como *tyr*, *tyrp1*, *dct*, *slc24a5* y *oca2*, además de rutas relacionadas con señalización neural y calcio [@Wu2024]. Estudios recientes en rodaballo dorado también señalan la implicación de tejidos reguladores, como hígado e hipófisis, y de rutas endocrinas relacionadas con hormona tiroidea [@Liu2026]. Aunque estos fenotipos no son idénticos a la malpigmentación observada en HOLOFISHCOLOUR, proporcionan un marco comparativo valioso para interpretar genes y procesos que puedan aparecer diferencialmente expresados.
+
+::: {.callout-tip}
+## Lectura biológica
+
+Si aparecen genes clásicos de pigmentación, como *tyr*, *tyrp1*, *dct*, *mc1r*, *oca2* o *slc45a2*, la interpretación será directa hacia melanogénesis o biogénesis de melanosomas. Si aparecen rutas de colágeno, matriz extracelular, inmunidad, estrés o neuroendocrinas, la lectura será más amplia: la diferencia pigmentaria podría estar ligada al estado funcional del tejido, no únicamente al número de melanóforos.
+:::
+
+## Evidencia transcriptómica previa
+
+La @tbl-literature-summary resume trabajos especialmente relevantes para situar el análisis de HOLOFISHCOLOUR. La selección prioriza estudios de peces planos, rodaballo y fenotipos de pigmentación abordados mediante transcriptómica o aproximaciones multi-ómicas.
+
+::: {#tbl-literature-summary}
+| Referencia | Especie | Fenotipo o contraste | Aportación para HOLOFISHCOLOUR |
+|:--|:--|:--|:--|
+| Seikai y Matsumoto [@Seikai1994] | Lenguado japonés | Pseudoalbinismo en peces planos | Vincula la malpigmentación con una alteración de la diferenciación asimétrica de la piel durante la metamorfosis. |
+| Wang et al. [@Wang2017] | Lenguado japonés | Albinismo frente a pigmentación normal | Integra RNA-seq y miRNA-seq e identifica rutas de melanogénesis, metabolismo de tirosina y redes reguladoras. |
+| Pinto et al. [@Pinto2019] | Lenguado senegalés | Pseudoalbinismo | Conecta transcriptómica de piel e intestino con cambios estructurales y microbioma, reforzando la visión multi-ómica. |
+| Li et al. [@Li2022a] | Lenguado chino | Hipermelanosis de la cara ciega | Propone genes candidatos de hipermelanosis, incluyendo transportadores y genes asociados a melanogénesis. |
+| Li et al. [@Li2022] | Lenguado chino | Hipermelanosis de la cara ciega | Construye redes lncRNA-miRNA-mRNA, útiles para interpretar regulación no codificante. |
+| Wu et al. [@Wu2024] | Rodaballo | Color corporal bajo distintos espectros de luz | Aporta genes y rutas de coloración en la misma especie, incluyendo melanogénesis, señalización neural y calcio. |
+| Liu et al. [@Liu2026] | Rodaballo | Coloración dorada frente a tipo salvaje | Sitúa la pigmentación del rodaballo en un marco transcriptómico y endocrino, con énfasis en hormona tiroidea. |
+| Blandon et al. [@Blandon2024] | Platija sureña | Pseudoalbinismo | Relaciona hipopigmentación con piel, cerebro, matriz extracelular, estrés ambiental e inmunidad. |
+
+: Estudios de referencia para interpretar la transcriptómica de pigmentación en HOLOFISHCOLOUR.
+:::
+
+## Objetivos del análisis transcriptómico
+
+El objetivo general de esta parte del proyecto es caracterizar el perfil transcriptómico de piel de rodaballo en regiones con distinta pigmentación y en individuos con fenotipo normal o malpigmentado. A partir de ese objetivo general, el análisis se organiza en cuatro metas:
+
+1. **Evaluar la calidad y coherencia de las bibliotecas RNA-seq**, desde las lecturas crudas hasta la asignación al genoma de referencia.
+2. **Comparar patrones de expresión génica** entre piel pigmentada y no pigmentada, considerando el fenotipo global del individuo y la cara corporal muestreada.
+3. **Identificar genes y rutas diferencialmente expresadas** potencialmente asociadas a melanogénesis, diferenciación celular, matriz extracelular, señalización endocrina o respuesta al ambiente.
+4. **Generar una base reproducible de resultados** que pueda integrarse con otras capas de HOLOFISHCOLOUR, como histología, genómica y microbioma.
+
+## Diseño experimental
+
+El diseño parte de individuos de rodaballo con fenotipo **normal** y **malpigmentado**, seleccionados en los tanques **E6** y **E8**, donde las diferencias de pigmentación eran evidentes. En el tanque E6 se incluyeron descendientes de dos parejas parentales; en el tanque E8 se trabajó con una familia de medios hermanos, con una madre compartida y dos padres distintos. Esta estructura es importante porque permite interpretar los resultados teniendo en cuenta tanto el fenotipo de pigmentación como el posible componente familiar.
+
+La unidad biológica principal de esta fase es la **piel**, muestreada en regiones pigmentadas y no pigmentadas. La @tbl-sample-groups resume la lógica experimental de las muestras procesadas en el flujo nf-core/rnaseq documentado en este libro.
+
+::: {#tbl-sample-groups}
+| Grupo | Fenotipo del individuo | Región muestreada | Interpretación esperada |
+|:--|:--|:--|:--|
+| Piel ocular pigmentada normal | Normal | Cara ocular, piel oscura | Referencia de pigmentación esperada en rodaballo. |
+| Piel ciega clara normal | Normal | Cara ciega, piel clara | Referencia de ausencia fisiológica de pigmentación. |
+| Piel oscura en malpigmentados | Malpigmentado | Cara ocular o ciega, piel pigmentada | Permite estudiar pigmentación mantenida o ectópica. |
+| Piel clara en malpigmentados | Malpigmentado | Cara ocular o ciega, piel no pigmentada | Permite estudiar pérdida local o ausencia anómala de pigmentación. |
+| Muestras complementarias | Normal, ambicolor o intestinal | Piel adicional o intestino | Material de apoyo para control, exploración o análisis integrativos posteriores. |
+
+: Estructura conceptual de los grupos de muestras incluidos en el análisis.
+:::
+
+## Muestras documentadas en este libro
+
+La @tbl-samples-intro recoge las muestras incluidas en la documentación bioinformática actual. La nomenclatura distingue muestras de piel (`P`) y muestras intestinales (`IT`). En capítulos posteriores, el control de calidad y el alineamiento se revisan a partir de los resultados generados por **nf-core/rnaseq** y **MultiQC** para este conjunto de bibliotecas.
+
+::: {#tbl-samples-intro}
+| Muestra | Tejido | Tanque | Individuo | Fenotipo | Cara | Pigmentación |
+|:--|:--|:--|:--|:--|:--|:--|
+| P31 | Piel | E6 | 46 | Normal | Ocular | Oscura |
+| P32 | Piel | E6 | 46 | Normal | Ciega | Clara |
+| P33 | Piel | E8 | 52 | Normal | Ocular | Oscura |
+| P34 | Piel | E8 | 52 | Normal | Ciega | Clara |
+| P35 | Piel | E8 | 70 | Normal | Ocular | Oscura |
+| P36 | Piel | E8 | 70 | Normal | Ciega | Clara |
+| P41 | Piel | E8 | 142 | Malpigmentado | Ocular | Oscura |
+| P42 | Piel | E8 | 142 | Malpigmentado | Ocular | Clara |
+| P43 | Piel | E8 | 142 | Malpigmentado | Ciega | Oscura |
+| P44 | Piel | E8 | 131 | Malpigmentado | Ciega | Clara |
+| P45 | Piel | E6 | 130 | Malpigmentado | Ocular | Oscura |
+| P46 | Piel | E6 | 130 | Malpigmentado | Ocular | Clara |
+| P47 | Piel | E6 | 130 | Malpigmentado | Ciega | Oscura |
+| P48 | Piel | E6 | 130 | Malpigmentado | Ciega | Clara |
+| P49 | Piel | E6 | 26 | Malpigmentado | Ocular | Oscura |
+| P50 | Piel | E6 | 26 | Malpigmentado | Ocular | Clara |
+| P51 | Piel | E6 | 26 | Malpigmentado | Ciega | Oscura |
+| P52 | Piel | E6 | 26 | Malpigmentado | Ciega | Clara |
+| P1G | Piel | ND | 56 | Normal | ND | ND |
+| P2G | Piel | ND | 34 | Normal | ND | ND |
+| PNKD | Piel | ND | ND | Ambicolor | ND | ND |
+| PNKV | Piel | ND | ND | Ambicolor | ND | ND |
+| IT1G | Intestino | ND | ND | ND | ND | ND |
+| ITPNK | Intestino | ND | ND | ND | ND | ND |
+
+: Muestras incluidas en la fase documentada del análisis RNA-seq.
+:::
+
+## Secuenciación y marco técnico
+
+Las bibliotecas RNA-seq se generaron a partir de mRNA enriquecido por selección de poli(A), con protocolo específico de hebra y secuenciación paired-end de 150 pb. La @tbl-rnaseq-specs sintetiza las especificaciones técnicas de la fase de secuenciación. Esta información se desarrolla con más detalle en los capítulos metodológicos, donde se documentan el preprocesamiento, el control de calidad, el alineamiento contra el genoma de referencia y la cuantificación de expresión.
+
+::: {#tbl-rnaseq-specs}
+| Parámetro | Descripción |
+|:--|:--|
+| Plataforma | Illumina NovaSeq X Plus |
+| Configuración de lectura | Paired-end, 2 x 150 pb |
+| Preparación de librerías | mRNA específico de hebra, enriquecido por poli(A) |
+| Criterio de calidad contratado | Al menos 85% de bases con Q30 o superior |
+| Salida mínima esperada | Al menos 6 Gb por muestra |
+| Servicio | Novogene, WOBI Plant and Animal Whole Genome Sequencing |
+
+: Especificaciones generales de las bibliotecas RNA-seq.
+:::
+
+## Estructura del análisis bioinformático
+
+El análisis documentado en este libro comienza con el procesamiento reproducible de las lecturas mediante **nf-core/rnaseq**, un flujo de trabajo que integra control de calidad, recorte o filtrado de lecturas, alineamiento, cuantificación y generación de informes agregados. La primera capa interpretativa se apoya en **MultiQC**, que permite revisar de forma conjunta métricas de calidad, complejidad, alineamiento y asignación de lecturas.
+
+La lógica del análisis es progresiva:
+
+1. **Preprocesamiento y control de calidad:** comprobar si las lecturas son suficientemente limpias, si la longitud y calidad son coherentes y si existen muestras problemáticas.
+2. **Alineamiento y cuantificación:** evaluar qué proporción de lecturas se asigna al genoma de referencia y qué fracción contribuye a regiones informativas para expresión génica.
+3. **Exploración de estructura global:** revisar agrupamientos, efectos de muestra, tejido, pigmentación o lote.
+4. **Expresión diferencial e interpretación funcional:** identificar genes y rutas asociados a las comparaciones biológicas de interés.
+
+::: {.callout-important}
+## Criterio de interpretación
+
+Las diferencias de expresión no deben interpretarse de forma aislada. En este proyecto se considerarán junto con el tipo de tejido, la localización corporal, el fenotipo del individuo, la calidad de la biblioteca y, cuando estén disponibles, evidencias histológicas o microbiológicas.
+:::
+
+## Referencias {.unnumbered}
+
+::: {#refs}
+:::

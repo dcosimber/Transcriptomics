@@ -4,6 +4,8 @@ project:
   resources:
     - multiqc/
 
+lang: es
+
 book:
   title: "Holofishcolour project"
   site-url: "https://dcosimber.github.io/Transcriptomics/"

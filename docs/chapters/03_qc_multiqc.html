@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
@@ -81,17 +81,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
@@ -268,13 +268,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03_qc_multiqc.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -288,13 +288,13 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Holofishcolour project</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -308,7 +308,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -348,7 +348,7 @@ div.csl-indent {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
   <li><a href="#resumen-ejecutivo-del-qc" id="toc-resumen-ejecutivo-del-qc" class="nav-link active" data-scroll-target="#resumen-ejecutivo-del-qc"><span class="header-section-number">5.1</span> Resumen ejecutivo del QC</a></li>
@@ -390,8 +390,8 @@ div.csl-indent {
 </header>
 
 
-<p>El informe <strong><a href="https://seqera.io/multiqc/">MultiQC</a></strong> se utiliza aquí como una fuente estructurada de resultados, no como una captura aislada <span class="citation" data-cites="Ewels2016MultiQC">[<a href="03_qc_multiqc.html#ref-Ewels2016MultiQC" role="doc-biblioref">1</a>]</span>. La idea es que el lector pueda seguir el control de calidad <strong>herramienta por herramienta</strong>, viendo las mismas figuras exportadas por MultiQC y consultando las tablas originales en formato copiable.</p>
-<p>Este capítulo documenta los módulos principales generados por <strong><a href="https://nf-co.re/rnaseq"><code>nf-core/rnaseq</code></a></strong> en la rama <code>star_salmon</code>, ejecutada sobre <strong><a href="https://www.nextflow.io/">Nextflow</a></strong> <span class="citation" data-cites="Ewels2020Nfcore DiTommaso2017Nextflow">[<a href="03_qc_multiqc.html#ref-Ewels2020Nfcore" role="doc-biblioref">2</a>,<a href="03_qc_multiqc.html#ref-DiTommaso2017Nextflow" role="doc-biblioref">3</a>]</span>: <strong>fastp</strong>, <strong>STAR</strong>, <strong>Samtools</strong>, <strong>Picard</strong>, <strong>strand check</strong> y <strong>versiones de software</strong>. La interpretación combina dos niveles: una lectura <em>técnica</em>, centrada en si las bibliotecas son válidas para el análisis downstream, y una lectura <em>biológica</em>, centrada en si los resultados permiten confiar en la señal transcriptómica posterior.</p>
+<p>El informe <strong><a href="https://seqera.io/multiqc/">MultiQC</a></strong> se utiliza aquí como una fuente estructurada de resultados, no como una captura aislada <span class="citation" data-cites="Ewels2016MultiQC">[<a href="01_intro.html#ref-Ewels2016MultiQC" role="doc-biblioref">1</a>]</span>. La idea es que el lector pueda seguir el control de calidad <strong>herramienta por herramienta</strong>, viendo las mismas figuras exportadas por MultiQC y consultando las tablas originales en formato copiable.</p>
+<p>Este capítulo documenta los módulos principales generados por <strong><a href="https://nf-co.re/rnaseq"><code>nf-core/rnaseq</code></a></strong> en la rama <code>star_salmon</code>, ejecutada sobre <strong><a href="https://www.nextflow.io/">Nextflow</a></strong> <span class="citation" data-cites="Ewels2020Nfcore DiTommaso2017Nextflow">[<a href="01_intro.html#ref-Ewels2020Nfcore" role="doc-biblioref">2</a>,<a href="01_intro.html#ref-DiTommaso2017Nextflow" role="doc-biblioref">3</a>]</span>: <strong>fastp</strong>, <strong>STAR</strong>, <strong>Samtools</strong>, <strong>Picard</strong>, <strong>strand check</strong> y <strong>versiones de software</strong>. La interpretación combina dos niveles: una lectura <em>técnica</em>, centrada en si las bibliotecas son válidas para el análisis downstream, y una lectura <em>biológica</em>, centrada en si los resultados permiten confiar en la señal transcriptómica posterior.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Informe original">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -436,7 +436,7 @@ div.csl-indent {
 <div id="tbl-qc-decision-matrix" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-qc-decision-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5.1: Matriz de decisión técnica derivada de las tablas y figuras exportadas por MultiQC.
+Tabla&nbsp;5.1: Matriz de decisión técnica derivada de las tablas y figuras exportadas por MultiQC.
 </figcaption>
 <div aria-describedby="tbl-qc-decision-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -508,7 +508,7 @@ Table&nbsp;5.1: Matriz de decisión técnica derivada de las tablas y figuras ex
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Criterio de interpretación
+<span class="screen-reader-only">Nota</span>Criterio de interpretación
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -525,7 +525,7 @@ Table&nbsp;5.1: Matriz de decisión técnica derivada de las tablas y figuras ex
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Lectura rápida
+<span class="screen-reader-only">Importante</span>Lectura rápida
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -543,18 +543,18 @@ Tabla MultiQC: General Statistics
 </section>
 <section id="fastp-filtrado-calidad-y-composición" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="fastp-filtrado-calidad-y-composición"><span class="header-section-number">5.3</span> <a href="https://github.com/OpenGene/fastp">fastp</a>: filtrado, calidad y composición</h2>
-<p><a href="https://github.com/OpenGene/fastp"><code>fastp</code></a> es un preprocesador de FASTQ que combina <strong>control de calidad</strong>, <strong>detección/recorte de adaptadores</strong>, <strong>filtrado por calidad</strong>, evaluación de contenido de bases y generación de informes HTML/JSON <span class="citation" data-cites="Chen2018Fastp">[<a href="03_qc_multiqc.html#ref-Chen2018Fastp" role="doc-biblioref">4</a>]</span>. En este apartado se evalúa si el paso de trimming conserva suficientes lecturas, elimina señales técnicas evidentes y deja perfiles de calidad adecuados antes del alineamiento. En este proyecto, el filtrado fue homogéneo: la mayoría de las lecturas se conservaron y la calidad post-filtrado quedó en un rango alto.</p>
+<p><a href="https://github.com/OpenGene/fastp"><code>fastp</code></a> es un preprocesador de FASTQ que combina <strong>control de calidad</strong>, <strong>detección/recorte de adaptadores</strong>, <strong>filtrado por calidad</strong>, evaluación de contenido de bases y generación de informes HTML/JSON <span class="citation" data-cites="Chen2018Fastp">[<a href="01_intro.html#ref-Chen2018Fastp" role="doc-biblioref">4</a>]</span>. En este apartado se evalúa si el paso de trimming conserva suficientes lecturas, elimina señales técnicas evidentes y deja perfiles de calidad adecuados antes del alineamiento. En este proyecto, el filtrado fue homogéneo: la mayoría de las lecturas se conservaron y la calidad post-filtrado quedó en un rango alto.</p>
 <div id="fig-multiqc-fastp-filtered" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multiqc-fastp-filtered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp_filtered_reads_plot-pct.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-filtered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Lecturas conservadas y descartadas tras el filtrado con fastp. La figura procede del SVG exportado por MultiQC.
+Figura&nbsp;5.1: Lecturas conservadas y descartadas tras el filtrado con fastp. La figura procede del SVG exportado por MultiQC.
 </figcaption>
 </figure>
 </div>
-<p>La figura <a href="#fig-multiqc-fastp-filtered" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> muestra que la fracción de lecturas descartadas es baja en todas las muestras. El mínimo de retención fue <code>P49</code> con <strong>97.92%</strong>, todavía dentro de un rango aceptable para RNA-seq bulk. La muestra <code>PNKIT</code> presentó la mayor señal de adaptadores (<strong>9.67%</strong>), pero mantuvo <strong>98.74%</strong> de lecturas retenidas, indicando que el recorte fue efectivo.</p>
+<p>La figura <a href="#fig-multiqc-fastp-filtered" class="quarto-xref">Figura&nbsp;<span>5.1</span></a> muestra que la fracción de lecturas descartadas es baja en todas las muestras. El mínimo de retención fue <code>P49</code> con <strong>97.92%</strong>, todavía dentro de un rango aceptable para RNA-seq bulk. La muestra <code>PNKIT</code> presentó la mayor señal de adaptadores (<strong>9.67%</strong>), pero mantuvo <strong>98.74%</strong> de lecturas retenidas, indicando que el recorte fue efectivo.</p>
 <div id="fig-multiqc-fastp-quality" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multiqc-fastp-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -578,7 +578,7 @@ Figure&nbsp;5.1: Lecturas conservadas y descartadas tras el filtrado con fastp. 
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: Calidad por ciclo después del filtrado con <code>fastp</code>. Las curvas altas y homogéneas apoyan que la señal de baja calidad fue eliminada antes del alineamiento.
+Figura&nbsp;5.2: Calidad por ciclo después del filtrado con <code>fastp</code>. Las curvas altas y homogéneas apoyan que la señal de baja calidad fue eliminada antes del alineamiento.
 </figcaption>
 </figure>
 </div>
@@ -605,7 +605,7 @@ Figure&nbsp;5.2: Calidad por ciclo después del filtrado con <code>fastp</code>.
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-gc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.3: Contenido GC por ciclo tras el filtrado. No se observa una desviación extrema que sugiera contaminación o sesgo fuerte de composición.
+Figura&nbsp;5.3: Contenido GC por ciclo tras el filtrado. No se observa una desviación extrema que sugiera contaminación o sesgo fuerte de composición.
 </figcaption>
 </figure>
 </div>
@@ -615,11 +615,11 @@ Figure&nbsp;5.3: Contenido GC por ciclo tras el filtrado. No se observa una desv
 <img src="../multiqc/star_salmon/multiqc_report_plots/svg/fastp-insert-size-plot.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-fastp-insert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.4: Distribución de tamaños de inserto estimada por fastp.
+Figura&nbsp;5.4: Distribución de tamaños de inserto estimada por fastp.
 </figcaption>
 </figure>
 </div>
-<p>La distribución de tamaños de inserto en <a href="#fig-multiqc-fastp-insert" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> es útil para comprobar que las bibliotecas paired-end tienen una geometría razonable. Una distribución coherente reduce el riesgo de problemas graves de preparación de biblioteca o de mezcla de muestras.</p>
+<p>La distribución de tamaños de inserto en <a href="#fig-multiqc-fastp-insert" class="quarto-xref">Figura&nbsp;<span>5.4</span></a> es útil para comprobar que las bibliotecas paired-end tienen una geometría razonable. Una distribución coherente reduce el riesgo de problemas graves de preparación de biblioteca o de mezcla de muestras.</p>
 <details class="multiqc-details">
 <summary>
 Tabla MultiQC: fastp filtered reads
@@ -635,18 +635,18 @@ Tabla MultiQC: fastp filtered reads
 </section>
 <section id="star-alineamiento-contra-el-genoma-de-referencia" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="star-alineamiento-contra-el-genoma-de-referencia"><span class="header-section-number">5.4</span> <a href="https://github.com/alexdobin/STAR">STAR</a>: alineamiento contra el genoma de referencia</h2>
-<p><a href="https://github.com/alexdobin/STAR"><code>STAR</code></a> es un alineador de RNA-seq diseñado para mapear lecturas contra un genoma de referencia teniendo en cuenta la estructura discontinua de los transcritos, especialmente los empalmes exon-exon <span class="citation" data-cites="Dobin2013STAR">[<a href="03_qc_multiqc.html#ref-Dobin2013STAR" role="doc-biblioref">5</a>]</span>. En este apartado se evalúa si las lecturas filtradas son compatibles con la referencia genómica y si el porcentaje de alineamiento único es suficiente para cuantificación robusta. En este lote, el alineamiento total fue muy alto, con una media de <strong>97.52%</strong>. La muestra con menor alineamiento total fue <code>P44</code> (<strong>96.31%</strong>), que sigue siendo un valor sólido.</p>
+<p><a href="https://github.com/alexdobin/STAR"><code>STAR</code></a> es un alineador de RNA-seq diseñado para mapear lecturas contra un genoma de referencia teniendo en cuenta la estructura discontinua de los transcritos, especialmente los empalmes exon-exon <span class="citation" data-cites="Dobin2013STAR">[<a href="01_intro.html#ref-Dobin2013STAR" role="doc-biblioref">5</a>]</span>. En este apartado se evalúa si las lecturas filtradas son compatibles con la referencia genómica y si el porcentaje de alineamiento único es suficiente para cuantificación robusta. En este lote, el alineamiento total fue muy alto, con una media de <strong>97.52%</strong>. La muestra con menor alineamiento total fue <code>P44</code> (<strong>96.31%</strong>), que sigue siendo un valor sólido.</p>
 <div id="fig-multiqc-star-alignment" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multiqc-star-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../multiqc/star_salmon/multiqc_report_plots/svg/star_alignment_plot-pct.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-star-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.5: Resumen de alineamiento STAR por muestra.
+Figura&nbsp;5.5: Resumen de alineamiento STAR por muestra.
 </figcaption>
 </figure>
 </div>
-<p>La figura <a href="#fig-multiqc-star-alignment" class="quarto-xref">Figure&nbsp;<span>5.5</span></a> muestra una proporción dominante de lecturas alineadas en todas las muestras. El alineamiento único medio fue <strong>90.09%</strong>, con mínimo en <code>P44</code> (<strong>86.56%</strong>) y máximo en <code>P48</code> (<strong>91.71%</strong>). Esta variación no sugiere un fallo de referencia, contaminación general ni baja calidad masiva.</p>
+<p>La figura <a href="#fig-multiqc-star-alignment" class="quarto-xref">Figura&nbsp;<span>5.5</span></a> muestra una proporción dominante de lecturas alineadas en todas las muestras. El alineamiento único medio fue <strong>90.09%</strong>, con mínimo en <code>P44</code> (<strong>86.56%</strong>) y máximo en <code>P48</code> (<strong>91.71%</strong>). Esta variación no sugiere un fallo de referencia, contaminación general ni baja calidad masiva.</p>
 <details class="multiqc-details">
 <summary>
 Tabla MultiQC: STAR summary
@@ -661,7 +661,7 @@ Tabla MultiQC: STAR summary
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Lectura técnica
+<span class="screen-reader-only">Nota</span>Lectura técnica
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -671,18 +671,18 @@ Tabla MultiQC: STAR summary
 </section>
 <section id="samtools-métricas-de-bam-alineado" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="samtools-métricas-de-bam-alineado"><span class="header-section-number">5.5</span> <a href="https://www.htslib.org/">Samtools</a>: métricas de BAM alineado</h2>
-<p><a href="https://www.htslib.org/"><code>Samtools</code></a> es una suite para manipular y auditar archivos de alineamiento en formatos SAM/BAM/CRAM <span class="citation" data-cites="Danecek2021Samtools">[<a href="03_qc_multiqc.html#ref-Danecek2021Samtools" role="doc-biblioref">6</a>]</span>. En este apartado se comprueba el comportamiento de los BAM después del alineamiento: proporción de lecturas mapeadas, pares correctamente emparejados, flags de alineamiento y consistencia general del archivo alineado. Sus paneles funcionan como una comprobación posterior a STAR. En este run no aparece una señal global de BAM problemático.</p>
+<p><a href="https://www.htslib.org/"><code>Samtools</code></a> es una suite para manipular y auditar archivos de alineamiento en formatos SAM/BAM/CRAM <span class="citation" data-cites="Danecek2021Samtools">[<a href="01_intro.html#ref-Danecek2021Samtools" role="doc-biblioref">6</a>]</span>. En este apartado se comprueba el comportamiento de los BAM después del alineamiento: proporción de lecturas mapeadas, pares correctamente emparejados, flags de alineamiento y consistencia general del archivo alineado. Sus paneles funcionan como una comprobación posterior a STAR. En este run no aparece una señal global de BAM problemático.</p>
 <div id="fig-multiqc-samtools-alignment" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multiqc-samtools-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../multiqc/star_salmon/multiqc_report_plots/svg/samtools_alignment_plot-pct.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-samtools-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.6: Resumen de alineamiento de Samtools.
+Figura&nbsp;5.6: Resumen de alineamiento de Samtools.
 </figcaption>
 </figure>
 </div>
-<p>La figura <a href="#fig-multiqc-samtools-alignment" class="quarto-xref">Figure&nbsp;<span>5.6</span></a> complementa a STAR y confirma que las muestras mantienen un comportamiento consistente una vez generados los BAM. Las tablas originales se conservan abajo para auditoría y copia directa.</p>
+<p>La figura <a href="#fig-multiqc-samtools-alignment" class="quarto-xref">Figura&nbsp;<span>5.6</span></a> complementa a STAR y confirma que las muestras mantienen un comportamiento consistente una vez generados los BAM. Las tablas originales se conservan abajo para auditoría y copia directa.</p>
 <details class="multiqc-details">
 <summary>
 Tabla MultiQC: Samtools flagstat counts
@@ -702,18 +702,18 @@ Tabla MultiQC: Samtools flagstat percentages
 </section>
 <section id="picard-duplicación-y-complejidad-de-biblioteca" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="picard-duplicación-y-complejidad-de-biblioteca"><span class="header-section-number">5.6</span> <a href="https://broadinstitute.github.io/picard/">Picard</a>: duplicación y complejidad de biblioteca</h2>
-<p><a href="https://broadinstitute.github.io/picard/"><code>Picard</code></a> es un conjunto de herramientas para manipular datos de secuenciación en formatos SAM/BAM/CRAM y VCF <span class="citation" data-cites="BroadInstitutePicard">[<a href="03_qc_multiqc.html#ref-BroadInstitutePicard" role="doc-biblioref">7</a>]</span>. Aquí se usa el módulo <code>MarkDuplicates</code>, que estima duplicación a nivel de alineamiento. Este valor suele ser más alto que la duplicación aproximada de <code>fastp</code> porque se calcula después del mapeo y considera pares alineados y coordenadas genómicas. En el lote, la duplicación Picard media fue <strong>54.31%</strong>, con mínimo en <code>IT1G</code> (<strong>26.09%</strong>) y máximo en <code>P49</code> (<strong>78.80%</strong>).</p>
+<p><a href="https://broadinstitute.github.io/picard/"><code>Picard</code></a> es un conjunto de herramientas para manipular datos de secuenciación en formatos SAM/BAM/CRAM y VCF <span class="citation" data-cites="BroadInstitutePicard">[<a href="01_intro.html#ref-BroadInstitutePicard" role="doc-biblioref">7</a>]</span>. Aquí se usa el módulo <code>MarkDuplicates</code>, que estima duplicación a nivel de alineamiento. Este valor suele ser más alto que la duplicación aproximada de <code>fastp</code> porque se calcula después del mapeo y considera pares alineados y coordenadas genómicas. En el lote, la duplicación Picard media fue <strong>54.31%</strong>, con mínimo en <code>IT1G</code> (<strong>26.09%</strong>) y máximo en <code>P49</code> (<strong>78.80%</strong>).</p>
 <div id="fig-multiqc-picard-dups" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multiqc-picard-dups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../multiqc/star_salmon/multiqc_report_plots/svg/picard_deduplication-pct.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-picard-dups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.7: Duplicación estimada por Picard MarkDuplicates.
+Figura&nbsp;5.7: Duplicación estimada por Picard MarkDuplicates.
 </figcaption>
 </figure>
 </div>
-<p>La figura <a href="#fig-multiqc-picard-dups" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> no debe leerse como un criterio automático de exclusión. En RNA-seq, una duplicación alta puede reflejar baja complejidad técnica, pero también la presencia de transcritos muy abundantes. La interpretación final debe cruzarse con profundidad, PCA y distribución de expresión.</p>
+<p>La figura <a href="#fig-multiqc-picard-dups" class="quarto-xref">Figura&nbsp;<span>5.7</span></a> no debe leerse como un criterio automático de exclusión. En RNA-seq, una duplicación alta puede reflejar baja complejidad técnica, pero también la presencia de transcritos muy abundantes. La interpretación final debe cruzarse con profundidad, PCA y distribución de expresión.</p>
 <details class="multiqc-details">
 <summary>
 Tabla MultiQC: Picard MarkDuplicates
@@ -728,7 +728,7 @@ Tabla MultiQC: Picard MarkDuplicates
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Puntos de seguimiento
+<span class="screen-reader-only">Advertencia</span>Puntos de seguimiento
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -738,18 +738,18 @@ Tabla MultiQC: Picard MarkDuplicates
 </section>
 <section id="salmon-strand-check-orientación-de-la-biblioteca" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="salmon-strand-check-orientación-de-la-biblioteca"><span class="header-section-number">5.7</span> <a href="https://combine-lab.github.io/salmon/">Salmon</a> / strand check: orientación de la biblioteca</h2>
-<p><a href="https://combine-lab.github.io/salmon/">Salmon</a> es una herramienta de cuantificación transcriptómica rápida y consciente de sesgos que puede inferir propiedades de la biblioteca durante el proceso de cuantificación <span class="citation" data-cites="Patro2017Salmon">[<a href="03_qc_multiqc.html#ref-Patro2017Salmon" role="doc-biblioref">8</a>]</span>. En este apartado, el módulo de <em>strand check</em> compara la orientación esperada con la orientación inferida por Salmon a partir de las lecturas. Esta comprobación permite detectar errores de configuración de strandedness o mezcla de bibliotecas con orientaciones incompatibles. En este análisis, las <strong>24/24 muestras</strong> fueron inferidas como <code>reverse</code>, con una proporción media de <strong>97.0%</strong> y rango aproximado <strong>96.6-97.6%</strong>.</p>
+<p><a href="https://combine-lab.github.io/salmon/">Salmon</a> es una herramienta de cuantificación transcriptómica rápida y consciente de sesgos que puede inferir propiedades de la biblioteca durante el proceso de cuantificación <span class="citation" data-cites="Patro2017Salmon">[<a href="01_intro.html#ref-Patro2017Salmon" role="doc-biblioref">8</a>]</span>. En este apartado, el módulo de <em>strand check</em> compara la orientación esperada con la orientación inferida por Salmon a partir de las lecturas. Esta comprobación permite detectar errores de configuración de strandedness o mezcla de bibliotecas con orientaciones incompatibles. En este análisis, las <strong>24/24 muestras</strong> fueron inferidas como <code>reverse</code>, con una proporción media de <strong>97.0%</strong> y rango aproximado <strong>96.6-97.6%</strong>.</p>
 <div id="fig-multiqc-strand-check" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-multiqc-strand-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../multiqc/star_salmon/multiqc_report_plots/svg/strand_check_composition_bargraph.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiqc-strand-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.8: Composición de orientación inferida por strand check.
+Figura&nbsp;5.8: Composición de orientación inferida por strand check.
 </figcaption>
 </figure>
 </div>
-<p>La coherencia en <a href="#fig-multiqc-strand-check" class="quarto-xref">Figure&nbsp;<span>5.8</span></a> es una buena señal de reproducibilidad técnica: no hay evidencia de mezcla de orientación entre bibliotecas ni de configuración incorrecta de strandedness en el pipeline.</p>
+<p>La coherencia en <a href="#fig-multiqc-strand-check" class="quarto-xref">Figura&nbsp;<span>5.8</span></a> es una buena señal de reproducibilidad técnica: no hay evidencia de mezcla de orientación entre bibliotecas ni de configuración incorrecta de strandedness en el pipeline.</p>
 <details class="multiqc-details">
 <summary>
 Tabla MultiQC: strand check summary
@@ -781,7 +781,7 @@ Tabla MultiQC: software versions
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Decisión
+<span class="screen-reader-only">Importante</span>Decisión
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -791,86 +791,30 @@ Tabla MultiQC: software versions
 </section>
 <section id="referencias" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="referencias">Referencias</h2>
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Ewels2016MultiQC" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Ewels P., Magnusson M., Lundin S., Kaller M.
-<span class="nocase">MultiQC: summarize analysis results for multiple
-tools and samples in a single report</span>. Bioinformatics; 2016;
-32(19):3047–3048. doi:<a href="https://doi.org/10.1093/bioinformatics/btw354">10.1093/bioinformatics/btw354</a>
-<a href="https://doi.org/10.1093/bioinformatics/btw354">https://doi.org/10.1093/bioinformatics/btw354</a></div>
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Ewels P., Magnusson M., Lundin S., Kaller M. <span>MultiQC: summarize analysis results for multiple tools and samples in a single report</span>. Bioinformatics; 2016; 32(19):3047-3048. doi:<a href="https://doi.org/10.1093/bioinformatics/btw354">10.1093/bioinformatics/btw354</a> <a href="https://doi.org/10.1093/bioinformatics/btw354">https://doi.org/10.1093/bioinformatics/btw354</a></div>
 </div>
 <div id="ref-Ewels2020Nfcore" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Ewels P. A., Peltzer A., Fillinger S., Patel
-H., Alneberg J., Wilm A., Garcia M. U., Di Tommaso P., Nahnsen S. <span class="nocase">The nf-core framework for community-curated
-bioinformatics pipelines</span>. Nature Biotechnology; 2020;
-38(3):276–278. doi:<a href="https://doi.org/10.1038/s41587-020-0439-x">10.1038/s41587-020-0439-x</a>
-<a href="https://doi.org/10.1038/s41587-020-0439-x">https://doi.org/10.1038/s41587-020-0439-x</a></div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Ewels P. A., Peltzer A., Fillinger S., Patel H., Alneberg J., Wilm A., Garcia M. U., Di Tommaso P., Nahnsen S. <span>The nf-core framework for community-curated bioinformatics pipelines</span>. Nature Biotechnology; 2020; 38(3):276-278. doi:<a href="https://doi.org/10.1038/s41587-020-0439-x">10.1038/s41587-020-0439-x</a> <a href="https://doi.org/10.1038/s41587-020-0439-x">https://doi.org/10.1038/s41587-020-0439-x</a></div>
 </div>
 <div id="ref-DiTommaso2017Nextflow" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Di
-Tommaso P., Chatzou M., Floden E. W., Barja P. P., Palumbo E., Notredame
-C. <span class="nocase">Nextflow enables reproducible computational
-workflows</span>. Nature Biotechnology; 2017; 35(4):316–319. doi:<a href="https://doi.org/10.1038/nbt.3820">10.1038/nbt.3820</a> <a href="https://doi.org/10.1038/nbt.3820">https://doi.org/10.1038/nbt.3820</a></div>
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Di Tommaso P., Chatzou M., Floden E. W., Barja P. P., Palumbo E., Notredame C. <span>Nextflow enables reproducible computational workflows</span>. Nature Biotechnology; 2017; 35(4):316-319. doi:<a href="https://doi.org/10.1038/nbt.3820">10.1038/nbt.3820</a> <a href="https://doi.org/10.1038/nbt.3820">https://doi.org/10.1038/nbt.3820</a></div>
 </div>
 <div id="ref-Chen2018Fastp" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Chen S., Zhou Y., Chen Y., Gu J. <span class="nocase">fastp: an ultra-fast all-in-one FASTQ
-preprocessor</span>. Bioinformatics; 2018; 34(17):i884–i890. doi:<a href="https://doi.org/10.1093/bioinformatics/bty560">10.1093/bioinformatics/bty560</a>
-<a href="https://doi.org/10.1093/bioinformatics/bty560">https://doi.org/10.1093/bioinformatics/bty560</a></div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Chen S., Zhou Y., Chen Y., Gu J. <span>fastp: an ultra-fast all-in-one FASTQ preprocessor</span>. Bioinformatics; 2018; 34(17):i884-i890. doi:<a href="https://doi.org/10.1093/bioinformatics/bty560">10.1093/bioinformatics/bty560</a> <a href="https://doi.org/10.1093/bioinformatics/bty560">https://doi.org/10.1093/bioinformatics/bty560</a></div>
 </div>
 <div id="ref-Dobin2013STAR" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Dobin A., Davis C. A., Schlesinger F., Drenkow
-J., Zaleski C., Jha S., Batut P., Chaisson M., Gingeras T. R. <span class="nocase">STAR: ultrafast universal RNA-seq aligner</span>.
-Bioinformatics; 2013; 29(1):15–21. doi:<a href="https://doi.org/10.1093/bioinformatics/bts635">10.1093/bioinformatics/bts635</a>
-<a href="https://doi.org/10.1093/bioinformatics/bts635">https://doi.org/10.1093/bioinformatics/bts635</a></div>
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Dobin A., Davis C. A., Schlesinger F., Drenkow J., Zaleski C., Jha S., Batut P., Chaisson M., Gingeras T. R. <span>STAR: ultrafast universal RNA-seq aligner</span>. Bioinformatics; 2013; 29(1):15-21. doi:<a href="https://doi.org/10.1093/bioinformatics/bts635">10.1093/bioinformatics/bts635</a> <a href="https://doi.org/10.1093/bioinformatics/bts635">https://doi.org/10.1093/bioinformatics/bts635</a></div>
 </div>
 <div id="ref-Danecek2021Samtools" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Danecek P., Bonfield J. K., Liddle J., Marshall
-J., Ohan V., Pollard M. O., Whitwham A., Keane T., McCarthy S. A.,
-Davies R. M., Li H. <span class="nocase">Twelve years of SAMtools and
-BCFtools</span>. GigaScience; 2021; 10(2):giab008. doi:<a href="https://doi.org/10.1093/gigascience/giab008">10.1093/gigascience/giab008</a>
-<a href="https://doi.org/10.1093/gigascience/giab008">https://doi.org/10.1093/gigascience/giab008</a></div>
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Danecek P., Bonfield J. K., Liddle J., Marshall J., Ohan V., Pollard M. O., Whitwham A., Keane T., McCarthy S. A., Davies R. M., Li H. <span>Twelve years of SAMtools and BCFtools</span>. GigaScience; 2021; 10(2):giab008. doi:<a href="https://doi.org/10.1093/gigascience/giab008">10.1093/gigascience/giab008</a> <a href="https://doi.org/10.1093/gigascience/giab008">https://doi.org/10.1093/gigascience/giab008</a></div>
 </div>
 <div id="ref-BroadInstitutePicard" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Broad Institute. <span class="nocase">Picard
-toolkit</span>. 2026. <a href="https://broadinstitute.github.io/picard/">https://broadinstitute.github.io/picard/</a></div>
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Broad Institute. <span>Picard toolkit</span>. 2026. <a href="https://broadinstitute.github.io/picard/">https://broadinstitute.github.io/picard/</a></div>
 </div>
 <div id="ref-Patro2017Salmon" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Patro R., Duggal G., Love M. I., Irizarry R.
-A., Kingsford C. <span class="nocase">Salmon provides fast and
-bias-aware quantification of transcript expression</span>. Nature
-Methods; 2017; 14(4):417–419. doi:<a href="https://doi.org/10.1038/nmeth.4197">10.1038/nmeth.4197</a> <a href="https://doi.org/10.1038/nmeth.4197">https://doi.org/10.1038/nmeth.4197</a></div>
-</div>
-<div id="ref-Yao2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Yao
-N., Zhang Y., Li Y., Hu Y., Li H. <span class="nocase">Genetic analysis
-of hypermelanosis in Chinese tongue sole (Cynoglossus
-semilaevis)</span>. Frontiers in Marine Science; 2022; 9:1002292. doi:<a href="https://doi.org/10.3389/FMARS.2022.1002292/BIBTEX">10.3389/FMARS.2022.1002292/BIBTEX</a></div>
-</div>
-<div id="ref-Seikai1994" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Seikai T., Matsumoto J. <span class="nocase">Mechanism of Pseudoalbinism in Flatfish: An Association
-Between Pigment Cell and Skin Differentiation</span>. Journal of the
-World Aquaculture Society; 1994; 25(1):78–85. doi:<a href="https://doi.org/10.1111/J.1749-7345.1994.TB00807.X;PAGEGROUP:STRING:PUBLICATION">10.1111/J.1749-7345.1994.TB00807.X;PAGEGROUP:STRING:PUBLICATION</a>
-<a href="/doi/pdf/10.1111/j.1749-7345.1994.tb00807.x https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-7345.1994.tb00807.x https://onlinelibrary.wiley.com/doi/10.1111/j.1749-7345.1994.tb00807.x">/doi/pdf/10.1111/j.1749-7345.1994.tb00807.x
-https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-7345.1994.tb00807.x
-https://onlinelibrary.wiley.com/doi/10.1111/j.1749-7345.1994.tb00807.x</a></div>
-</div>
-<div id="ref-Yufera2018" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">Yúfera M. <span class="nocase">Emerging issues
-in fish larvae research</span>. Emerging Issues in Fish Larvae Research;
-2018; 1–296. doi:<a href="https://doi.org/10.1007/978-3-319-73244-2/COVER">10.1007/978-3-319-73244-2/COVER</a></div>
-</div>
-<div id="ref-Li2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Li
-Y., Hu Y., Zheng W., Cui Z., Cheng J., Cheng P., Zhang T. <span class="nocase">Insights into the heritable variation of hypermelanosis
-in Chinese tongue sole (Cynoglossus semilaevis): Potential for future
-selective breeding</span>. Aquaculture; 2021; 539:736617. doi:<a href="https://doi.org/10.1016/J.AQUACULTURE.2021.736617">10.1016/J.AQUACULTURE.2021.736617</a></div>
-</div>
-<div id="ref-Liu2016" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Liu F., Yang Y., Li Y., Guo H., Dai H., Gao J.,
-Zhang Y., Ma J., Liu Y., Wei Z., Shao C., Chen S. <span class="nocase">Phenotypic and genetic parameter estimation of juvenile
-growth and bottom color traits in half-smooth tongue sole, Cynoglossus
-semilaevis</span>. Acta Oceanologica Sinica; 2016; 35(10):83–87. doi:<a href="https://doi.org/10.1007/S13131-016-0888-8/METRICS">10.1007/S13131-016-0888-8/METRICS</a>
-<a href="https://link.springer.com/article/10.1007/s13131-016-0888-8">https://link.springer.com/article/10.1007/s13131-016-0888-8</a></div>
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Patro R., Duggal G., Love M. I., Irizarry R. A., Kingsford C. <span>Salmon provides fast and bias-aware quantification of transcript expression</span>. Nature Methods; 2017; 14(4):417-419. doi:<a href="https://doi.org/10.1038/nmeth.4197">10.1038/nmeth.4197</a> <a href="https://doi.org/10.1038/nmeth.4197">https://doi.org/10.1038/nmeth.4197</a></div>
 </div>
 </div>
 <script>
@@ -1041,12 +985,12 @@ semilaevis</span>. Acta Oceanologica Sinica; 2016; 35(10):83–87. doi:<a href="
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copiado");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copiado");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
