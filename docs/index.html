@@ -251,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">HOLOFISHCOLOUR transcriptomics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -264,7 +264,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="index.html" class="sidebar-logo-link">
+      <img src="./images/holofishcolour_logo.svg" alt="HOLOFISHCOLOUR" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/holofishcolour_logo.svg" alt="HOLOFISHCOLOUR" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Holofishcolour project</a> 
         <div class="sidebar-tools-main">
@@ -282,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">HOLOFISHCOLOUR transcriptomics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -331,12 +335,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">1</span> Overview</a>
+  <li><a href="#holofishcolour-transcriptomics" id="toc-holofishcolour-transcriptomics" class="nav-link active" data-scroll-target="#holofishcolour-transcriptomics"><span class="header-section-number">1</span> HOLOFISHCOLOUR transcriptomics</a>
   <ul class="collapse">
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><span class="header-section-number">1.1</span> Objectives</a></li>
-  <li><a href="#experimental-design-brief" id="toc-experimental-design-brief" class="nav-link" data-scroll-target="#experimental-design-brief"><span class="header-section-number">1.2</span> Experimental design (brief)</a></li>
-  <li><a href="#structure-of-the-report" id="toc-structure-of-the-report" class="nav-link" data-scroll-target="#structure-of-the-report"><span class="header-section-number">1.3</span> Structure of the report</a></li>
-  <li><a href="#reproducibility-and-data-provenance" id="toc-reproducibility-and-data-provenance" class="nav-link" data-scroll-target="#reproducibility-and-data-provenance"><span class="header-section-number">1.4</span> Reproducibility and data provenance</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">1.1</span> Objetivos</a></li>
+  <li><a href="#diseño-experimental" id="toc-diseño-experimental" class="nav-link" data-scroll-target="#diseño-experimental"><span class="header-section-number">1.2</span> Diseño experimental</a></li>
+  <li><a href="#estructura-del-libro" id="toc-estructura-del-libro" class="nav-link" data-scroll-target="#estructura-del-libro"><span class="header-section-number">1.3</span> Estructura del libro</a></li>
+  <li><a href="#reproducibilidad" id="toc-reproducibilidad" class="nav-link" data-scroll-target="#reproducibilidad"><span class="header-section-number">1.4</span> Reproducibilidad</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -390,61 +394,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Overview</h1>
-<p>This document presents the transcriptomic analysis conducted within the <strong>HOLOFISHCOLOUR</strong> project, aimed at characterising the molecular mechanisms associated with pigmentation disorders in turbot (<em>Scophthalmus maximus</em>).</p>
-<p>RNA-seq data were processed using the <strong>nf-core/rnaseq</strong> pipeline, ensuring a reproducible and standardised workflow for quality control, alignment, quantification and downstream analyses.</p>
-<p>The report has been structured as a unified, navigable document generated with <strong>Quarto</strong>, integrating results, figures and quality-control summaries into a single HTML output.</p>
-<hr>
-<section id="objectives" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="objectives"><span class="header-section-number">1.1</span> Objectives</h2>
-<p>The main objectives of this analysis are:</p>
+<section id="holofishcolour-transcriptomics" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> HOLOFISHCOLOUR transcriptomics</h1>
+<div class="project-brand">
+<p><img src="images/holofishcolour_logo.svg" class="project-logo img-fluid" alt="Logotipo oficial de HOLOFISHCOLOUR"></p>
+</div>
+<p>Este libro documenta el análisis transcriptómico desarrollado dentro del proyecto <strong>HOLOFISHCOLOUR</strong>, centrado en caracterizar los mecanismos moleculares asociados a la pigmentación y malpigmentación en rodaballo (<em>Scophthalmus maximus</em>).</p>
+<p>Los datos RNA-seq se procesaron mediante <strong>nf-core/rnaseq</strong>, siguiendo un flujo reproducible para control de calidad, preprocesamiento de lecturas, alineamiento, cuantificación y análisis posteriores. La documentación se organiza como un libro <strong>Quarto</strong> navegable, con resultados, figuras, tablas y enlaces al informe MultiQC integrado.</p>
+<section id="objetivos" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1.1</span> Objetivos</h2>
+<p>Los objetivos principales de esta documentación son:</p>
 <ul>
-<li>To assess the quality of RNA-seq data using comprehensive QC metrics.</li>
-<li>To obtain reliable gene-level expression estimates.</li>
-<li>To explore transcriptional differences associated with pigmentation phenotypes.</li>
-<li>To generate publication-ready outputs suitable for downstream statistical and functional analyses.</li>
+<li>evaluar la calidad de las bibliotecas RNA-seq mediante métricas agregadas de control de calidad;</li>
+<li>obtener estimaciones fiables de expresión génica;</li>
+<li>explorar diferencias transcriptómicas asociadas a fenotipos y regiones de pigmentación;</li>
+<li>generar una base trazable, reproducible y publicable para el análisis funcional posterior.</li>
 </ul>
-<hr>
 </section>
-<section id="experimental-design-brief" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="experimental-design-brief"><span class="header-section-number">1.2</span> Experimental design (brief)</h2>
-<ul>
-<li><strong>Species:</strong> <em>Scophthalmus maximus</em> (turbot)<br>
-</li>
-<li><strong>Tissue:</strong> (e.g.&nbsp;skin / intestine / specify when ready)<br>
-</li>
-<li><strong>Library type:</strong> Stranded mRNA-seq<br>
-</li>
-<li><strong>Sequencing platform:</strong> Illumina<br>
-</li>
-<li><strong>Analysis pipeline:</strong> nf-core/rnaseq</li>
-</ul>
-<p>Detailed methodological information is provided in the corresponding Methods section.</p>
-<hr>
+<section id="diseño-experimental" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="diseño-experimental"><span class="header-section-number">1.2</span> Diseño experimental</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Especie</td>
+<td style="text-align: left;">Rodaballo, <em>Scophthalmus maximus</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tejido principal</td>
+<td style="text-align: left;">Piel</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fenotipos</td>
+<td style="text-align: left;">Normal y malpigmentado</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tipo de librería</td>
+<td style="text-align: left;">mRNA-seq específico de hebra</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plataforma</td>
+<td style="text-align: left;">Illumina NovaSeq X Plus</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Flujo bioinformático</td>
+<td style="text-align: left;">nf-core/rnaseq</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="structure-of-the-report" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="structure-of-the-report"><span class="header-section-number">1.3</span> Structure of the report</h2>
-<p>The analysis is organised into the following sections:</p>
+<section id="estructura-del-libro" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="estructura-del-libro"><span class="header-section-number">1.3</span> Estructura del libro</h2>
 <ol type="1">
-<li><p><strong>Introduction</strong><br>
-Biological background and motivation of the transcriptomic study.</p></li>
-<li><p><strong>Methods (nf-core / RNA-seq pipeline)</strong><br>
-Description of the computational workflow, software versions and key parameters.</p></li>
-<li><p><strong>Quality control (MultiQC)</strong><br>
-Assessment of sequencing quality, mapping performance and quantification metrics.</p></li>
-<li><p><strong>Alignment and quantification</strong><br>
-Summary of alignment results and expression estimates.</p></li>
-<li><p><strong>Differential expression analysis</strong><br>
-Identification of differentially expressed genes and downstream interpretation.</p></li>
+<li><strong>Introducción:</strong> contexto biológico, justificación y diseño general.</li>
+<li><strong>Preprocesamiento con nf-core/rnaseq:</strong> flujo computacional, software y parámetros.</li>
+<li><strong>Resultados:</strong> organización global de salidas y análisis.</li>
+<li><strong>Control de calidad con MultiQC:</strong> evaluación de calidad, filtrado, alineamiento y métricas agregadas.</li>
+<li><strong>Alineamiento y cuantificación:</strong> resumen de asignación al genoma y estimación de expresión.</li>
+<li><strong>Expresión diferencial:</strong> identificación e interpretación de genes diferencialmente expresados.</li>
 </ol>
-<hr>
 </section>
-<section id="reproducibility-and-data-provenance" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="reproducibility-and-data-provenance"><span class="header-section-number">1.4</span> Reproducibility and data provenance</h2>
-<p>All analyses were performed on the CESGA HPC infrastructure.<br>
-Pipeline outputs were generated using nf-core standards and selectively integrated into this report to ensure clarity, traceability and reproducibility.</p>
-<!-- trigger pages -->
+<section id="reproducibilidad" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="reproducibilidad"><span class="header-section-number">1.4</span> Reproducibilidad</h2>
+<p>Los análisis se ejecutaron en la infraestructura HPC de <strong>CESGA</strong>. Las salidas del pipeline se integran selectivamente en esta web para mantener claridad, trazabilidad y conexión directa con los resultados originales.</p>
 
 
 </section>

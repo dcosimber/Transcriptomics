@@ -1,62 +1,43 @@
 
-# Overview
+# HOLOFISHCOLOUR transcriptomics
 
-This document presents the transcriptomic analysis conducted within the **HOLOFISHCOLOUR** project, aimed at characterising the molecular mechanisms associated with pigmentation disorders in turbot (*Scophthalmus maximus*).  
+::: {.project-brand}
+![](images/holofishcolour_logo.svg){fig-alt="Logotipo oficial de HOLOFISHCOLOUR" .project-logo}
+:::
 
-RNA-seq data were processed using the **nf-core/rnaseq** pipeline, ensuring a reproducible and standardised workflow for quality control, alignment, quantification and downstream analyses.
+Este libro documenta el análisis transcriptómico desarrollado dentro del proyecto **HOLOFISHCOLOUR**, centrado en caracterizar los mecanismos moleculares asociados a la pigmentación y malpigmentación en rodaballo (*Scophthalmus maximus*).
 
-The report has been structured as a unified, navigable document generated with **Quarto**, integrating results, figures and quality-control summaries into a single HTML output.
+Los datos RNA-seq se procesaron mediante **nf-core/rnaseq**, siguiendo un flujo reproducible para control de calidad, preprocesamiento de lecturas, alineamiento, cuantificación y análisis posteriores. La documentación se organiza como un libro **Quarto** navegable, con resultados, figuras, tablas y enlaces al informe MultiQC integrado.
 
----
+## Objetivos
 
-## Objectives
+Los objetivos principales de esta documentación son:
 
-The main objectives of this analysis are:
+- evaluar la calidad de las bibliotecas RNA-seq mediante métricas agregadas de control de calidad;
+- obtener estimaciones fiables de expresión génica;
+- explorar diferencias transcriptómicas asociadas a fenotipos y regiones de pigmentación;
+- generar una base trazable, reproducible y publicable para el análisis funcional posterior.
 
-- To assess the quality of RNA-seq data using comprehensive QC metrics.
-- To obtain reliable gene-level expression estimates.
-- To explore transcriptional differences associated with pigmentation phenotypes.
-- To generate publication-ready outputs suitable for downstream statistical and functional analyses.
+## Diseño experimental
 
----
+| Elemento | Descripción |
+|:--|:--|
+| Especie | Rodaballo, *Scophthalmus maximus* |
+| Tejido principal | Piel |
+| Fenotipos | Normal y malpigmentado |
+| Tipo de librería | mRNA-seq específico de hebra |
+| Plataforma | Illumina NovaSeq X Plus |
+| Flujo bioinformático | nf-core/rnaseq |
 
-## Experimental design (brief)
+## Estructura del libro
 
-- **Species:** *Scophthalmus maximus* (turbot)  
-- **Tissue:** (e.g. skin / intestine / specify when ready)  
-- **Library type:** Stranded mRNA-seq  
-- **Sequencing platform:** Illumina  
-- **Analysis pipeline:** nf-core/rnaseq  
+1. **Introducción:** contexto biológico, justificación y diseño general.
+2. **Preprocesamiento con nf-core/rnaseq:** flujo computacional, software y parámetros.
+3. **Resultados:** organización global de salidas y análisis.
+4. **Control de calidad con MultiQC:** evaluación de calidad, filtrado, alineamiento y métricas agregadas.
+5. **Alineamiento y cuantificación:** resumen de asignación al genoma y estimación de expresión.
+6. **Expresión diferencial:** identificación e interpretación de genes diferencialmente expresados.
 
-Detailed methodological information is provided in the corresponding Methods section.
+## Reproducibilidad
 
----
-
-## Structure of the report
-
-The analysis is organised into the following sections:
-
-1. **Introduction**  
-   Biological background and motivation of the transcriptomic study.
-
-2. **Methods (nf-core / RNA-seq pipeline)**  
-   Description of the computational workflow, software versions and key parameters.
-
-3. **Quality control (MultiQC)**  
-   Assessment of sequencing quality, mapping performance and quantification metrics.
-
-4. **Alignment and quantification**  
-   Summary of alignment results and expression estimates.
-
-5. **Differential expression analysis**  
-   Identification of differentially expressed genes and downstream interpretation.
-
----
-
-## Reproducibility and data provenance
-
-All analyses were performed on the CESGA HPC infrastructure.  
-Pipeline outputs were generated using nf-core standards and selectively integrated into this report to ensure clarity, traceability and reproducibility.
-
-
-<!-- trigger pages -->
+Los análisis se ejecutaron en la infraestructura HPC de **CESGA**. Las salidas del pipeline se integran selectivamente en esta web para mantener claridad, trazabilidad y conexión directa con los resultados originales.

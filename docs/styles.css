@@ -99,6 +99,34 @@ h4 {
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+/* Hide sidebar title text and keep the project logo as the visual anchor */
+#quarto-sidebar .sidebar-title-text {
+  display: none !important;
+}
+
+#quarto-sidebar .sidebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.9rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
+  min-height: auto;
+}
+
+#quarto-sidebar .sidebar-logo {
+  max-width: 230px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0;
+}
+
+#quarto-sidebar .sidebar-title > div:not(.sidebar-logo-container) {
+  display: none !important;
+}
+
 #quarto-sidebar .sidebar-menu-container {
   margin-top: 0.6rem;
 }
@@ -209,6 +237,21 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   opacity: 0.75;
+}
+
+.project-brand {
+  margin: 0.4rem auto 1.7rem;
+  text-align: center;
+}
+
+.project-brand p {
+  text-align: center;
+}
+
+.project-logo {
+  width: min(100%, 560px);
+  height: auto;
+  border-radius: 0;
 }
 
 

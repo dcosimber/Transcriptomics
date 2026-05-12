@@ -10,6 +10,9 @@ book:
   title: "Holofishcolour project"
   site-url: "https://dcosimber.github.io/Transcriptomics/"
   sidebar:
+    logo: images/holofishcolour_logo.svg
+    logo-alt: "HOLOFISHCOLOUR"
+    logo-href: index.html
     search: true
   author:
     - name: Daniel Costas

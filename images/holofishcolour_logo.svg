@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" role="img" aria-labelledby="title desc">
+  <title id="title">HOLOFISHCOLOUR project logo</title>
+  <desc id="desc">Flatfish silhouette with a DNA helix across the body and the text HOLOFISHCOLOUR.</desc>
+  <defs>
+    <linearGradient id="bodyGradient" x1="0.23" y1="0.2" x2="0.76" y2="0.82">
+      <stop offset="0" stop-color="#9a8968"/>
+      <stop offset="0.58" stop-color="#766746"/>
+      <stop offset="1" stop-color="#9a8968"/>
+    </linearGradient>
+    <linearGradient id="bellyGradient" x1="0.25" y1="0.12" x2="0.75" y2="0.92">
+      <stop offset="0" stop-color="#f3ead8"/>
+      <stop offset="1" stop-color="#d9cbb0"/>
+    </linearGradient>
+    <linearGradient id="dnaBlue" x1="0.1" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#062f5f"/>
+      <stop offset="1" stop-color="#005384"/>
+    </linearGradient>
+    <linearGradient id="dnaTeal" x1="0.1" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00a7a2"/>
+      <stop offset="1" stop-color="#0bb7ad"/>
+    </linearGradient>
+    <clipPath id="fishClip">
+      <path d="M145 317 C235 171 401 116 573 166 C660 191 711 249 762 226 C810 204 829 178 851 195 C878 216 889 282 889 348 C889 414 878 480 851 501 C829 518 810 492 762 470 C711 447 660 505 573 530 C401 580 235 525 145 379 C116 370 100 350 100 348 C100 346 116 326 145 317Z"/>
+    </clipPath>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="11" flood-color="#14213d" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="760" fill="transparent"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M145 317 C235 171 401 116 573 166 C660 191 711 249 762 226 C810 204 829 178 851 195 C878 216 889 282 889 348 C889 414 878 480 851 501 C829 518 810 492 762 470 C711 447 660 505 573 530 C401 580 235 525 145 379 C116 370 100 350 100 348 C100 346 116 326 145 317Z" fill="url(#bodyGradient)"/>
+    <path d="M137 389 C246 520 405 562 575 515 C661 491 714 442 770 467 C700 508 638 557 541 594 C380 656 218 589 137 389Z" fill="url(#bellyGradient)" clip-path="url(#fishClip)" opacity="0.96"/>
+
+    <g fill="#62563b" opacity="0.66">
+      <circle cx="316" cy="268" r="14"/>
+      <circle cx="396" cy="320" r="9"/>
+      <circle cx="464" cy="306" r="13"/>
+      <circle cx="555" cy="323" r="17"/>
+      <circle cx="612" cy="286" r="9"/>
+      <circle cx="661" cy="330" r="9"/>
+      <circle cx="507" cy="235" r="18"/>
+      <circle cx="422" cy="244" r="9"/>
+    </g>
+    <g fill="#b7a889" opacity="0.72">
+      <circle cx="346" cy="496" r="9"/>
+      <circle cx="410" cy="493" r="16"/>
+      <circle cx="504" cy="529" r="12"/>
+      <circle cx="571" cy="484" r="12"/>
+      <circle cx="637" cy="470" r="8"/>
+    </g>
+
+    <g fill="none" stroke="#f8f8f8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M270 303 C303 348 300 398 270 439"/>
+      <path d="M332 335 C374 309 414 308 419 331 C424 360 383 371 345 376"/>
+      <path d="M336 374 C382 377 423 388 412 414"/>
+      <path d="M858 318 C831 331 807 337 786 340"/>
+      <path d="M862 376 C832 362 807 357 785 354"/>
+      <path d="M854 424 C825 401 802 390 780 383"/>
+    </g>
+
+    <g fill="#ffffff">
+      <circle cx="207" cy="328" r="18"/>
+      <circle cx="207" cy="374" r="18"/>
+    </g>
+    <g fill="#2b2f28">
+      <circle cx="213" cy="323" r="8"/>
+      <circle cx="213" cy="369" r="8"/>
+    </g>
+    <path d="M147 355 C126 340 113 334 103 341 C106 360 120 371 142 377" fill="#ffffff" opacity="0.96"/>
+  </g>
+
+  <g fill="#7e7156">
+    <rect x="318" y="131" width="10" height="31" rx="2" transform="rotate(-68 323 147)"/>
+    <rect x="343" y="123" width="10" height="34" rx="2" transform="rotate(-74 348 140)"/>
+    <rect x="370" y="117" width="10" height="36" rx="2" transform="rotate(-80 375 135)"/>
+    <rect x="398" y="113" width="10" height="38" rx="2" transform="rotate(-86 403 132)"/>
+    <rect x="427" y="112" width="10" height="39" rx="2" transform="rotate(-92 432 132)"/>
+    <rect x="456" y="114" width="10" height="39" rx="2" transform="rotate(-98 461 133)"/>
+    <rect x="485" y="118" width="10" height="38" rx="2" transform="rotate(-104 490 137)"/>
+    <rect x="513" y="124" width="10" height="36" rx="2" transform="rotate(-111 518 142)"/>
+    <rect x="540" y="132" width="10" height="34" rx="2" transform="rotate(-118 545 149)"/>
+    <rect x="566" y="144" width="10" height="31" rx="2" transform="rotate(-126 571 160)"/>
+    <rect x="591" y="157" width="10" height="28" rx="2" transform="rotate(-134 596 171)"/>
+
+    <rect x="327" y="585" width="10" height="31" rx="2" transform="rotate(72 332 601)"/>
+    <rect x="353" y="595" width="10" height="34" rx="2" transform="rotate(78 358 612)"/>
+    <rect x="381" y="601" width="10" height="36" rx="2" transform="rotate(84 386 619)"/>
+    <rect x="410" y="604" width="10" height="38" rx="2" transform="rotate(90 415 623)"/>
+    <rect x="439" y="604" width="10" height="39" rx="2" transform="rotate(96 444 624)"/>
+    <rect x="468" y="601" width="10" height="38" rx="2" transform="rotate(102 473 620)"/>
+    <rect x="497" y="595" width="10" height="36" rx="2" transform="rotate(109 502 613)"/>
+    <rect x="524" y="586" width="10" height="34" rx="2" transform="rotate(116 529 603)"/>
+    <rect x="549" y="574" width="10" height="31" rx="2" transform="rotate(124 554 590)"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M404 386 C467 285 531 285 594 386 C633 448 672 448 711 386" stroke="url(#dnaBlue)" stroke-width="13"/>
+    <path d="M404 386 C467 487 531 487 594 386 C633 324 672 324 711 386" stroke="url(#dnaTeal)" stroke-width="13"/>
+    <path d="M606 386 C653 306 695 306 742 386" stroke="url(#dnaTeal)" stroke-width="11"/>
+    <path d="M606 386 C653 466 695 466 742 386" stroke="url(#dnaTeal)" stroke-width="11"/>
+
+    <g stroke-width="6">
+      <path d="M444 339 L444 432" stroke="#063c6b"/>
+      <path d="M475 321 L475 451" stroke="#063c6b"/>
+      <path d="M506 321 L506 451" stroke="#063c6b"/>
+      <path d="M537 340 L537 432" stroke="#063c6b"/>
+      <path d="M626 342 L626 430" stroke="#009d9a"/>
+      <path d="M655 326 L655 446" stroke="#009d9a"/>
+      <path d="M684 342 L684 430" stroke="#009d9a"/>
+      <path d="M716 359 L716 413" stroke="#009d9a"/>
+    </g>
+  </g>
+
+  <g font-family="Avenir Next, Montserrat, Helvetica, Arial, sans-serif" font-weight="700" font-size="54" letter-spacing="21">
+    <text x="91" y="696" fill="#063462">HOLOFISH</text>
+    <text x="558" y="696" fill="#0aa9a4">COLOUR</text>
+  </g>
+</svg>

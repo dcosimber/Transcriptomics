@@ -4,49 +4,49 @@
     "href": "index.html",
     "title": "Holofishcolour project",
     "section": "",
-    "text": "1 Overview\nThis document presents the transcriptomic analysis conducted within the HOLOFISHCOLOUR project, aimed at characterising the molecular mechanisms associated with pigmentation disorders in turbot (Scophthalmus maximus).\nRNA-seq data were processed using the nf-core/rnaseq pipeline, ensuring a reproducible and standardised workflow for quality control, alignment, quantification and downstream analyses.\nThe report has been structured as a unified, navigable document generated with Quarto, integrating results, figures and quality-control summaries into a single HTML output.",
+    "text": "1 HOLOFISHCOLOUR transcriptomics\nEste libro documenta el análisis transcriptómico desarrollado dentro del proyecto HOLOFISHCOLOUR, centrado en caracterizar los mecanismos moleculares asociados a la pigmentación y malpigmentación en rodaballo (Scophthalmus maximus).\nLos datos RNA-seq se procesaron mediante nf-core/rnaseq, siguiendo un flujo reproducible para control de calidad, preprocesamiento de lecturas, alineamiento, cuantificación y análisis posteriores. La documentación se organiza como un libro Quarto navegable, con resultados, figuras, tablas y enlaces al informe MultiQC integrado.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>HOLOFISHCOLOUR transcriptomics</span>"
     ]
   },
   {
-    "objectID": "index.html#objectives",
-    "href": "index.html#objectives",
+    "objectID": "index.html#objetivos",
+    "href": "index.html#objetivos",
     "title": "Holofishcolour project",
-    "section": "1.1 Objectives",
-    "text": "1.1 Objectives\nThe main objectives of this analysis are:\n\nTo assess the quality of RNA-seq data using comprehensive QC metrics.\nTo obtain reliable gene-level expression estimates.\nTo explore transcriptional differences associated with pigmentation phenotypes.\nTo generate publication-ready outputs suitable for downstream statistical and functional analyses.",
+    "section": "1.1 Objetivos",
+    "text": "1.1 Objetivos\nLos objetivos principales de esta documentación son:\n\nevaluar la calidad de las bibliotecas RNA-seq mediante métricas agregadas de control de calidad;\nobtener estimaciones fiables de expresión génica;\nexplorar diferencias transcriptómicas asociadas a fenotipos y regiones de pigmentación;\ngenerar una base trazable, reproducible y publicable para el análisis funcional posterior.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>HOLOFISHCOLOUR transcriptomics</span>"
     ]
   },
   {
-    "objectID": "index.html#experimental-design-brief",
-    "href": "index.html#experimental-design-brief",
+    "objectID": "index.html#diseño-experimental",
+    "href": "index.html#diseño-experimental",
     "title": "Holofishcolour project",
-    "section": "1.2 Experimental design (brief)",
-    "text": "1.2 Experimental design (brief)\n\nSpecies: Scophthalmus maximus (turbot)\n\nTissue: (e.g. skin / intestine / specify when ready)\n\nLibrary type: Stranded mRNA-seq\n\nSequencing platform: Illumina\n\nAnalysis pipeline: nf-core/rnaseq\n\nDetailed methodological information is provided in the corresponding Methods section.",
+    "section": "1.2 Diseño experimental",
+    "text": "1.2 Diseño experimental\n\n\n\nElemento\nDescripción\n\n\n\n\nEspecie\nRodaballo, Scophthalmus maximus\n\n\nTejido principal\nPiel\n\n\nFenotipos\nNormal y malpigmentado\n\n\nTipo de librería\nmRNA-seq específico de hebra\n\n\nPlataforma\nIllumina NovaSeq X Plus\n\n\nFlujo bioinformático\nnf-core/rnaseq",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>HOLOFISHCOLOUR transcriptomics</span>"
     ]
   },
   {
-    "objectID": "index.html#structure-of-the-report",
-    "href": "index.html#structure-of-the-report",
+    "objectID": "index.html#estructura-del-libro",
+    "href": "index.html#estructura-del-libro",
     "title": "Holofishcolour project",
-    "section": "1.3 Structure of the report",
-    "text": "1.3 Structure of the report\nThe analysis is organised into the following sections:\n\nIntroduction\nBiological background and motivation of the transcriptomic study.\nMethods (nf-core / RNA-seq pipeline)\nDescription of the computational workflow, software versions and key parameters.\nQuality control (MultiQC)\nAssessment of sequencing quality, mapping performance and quantification metrics.\nAlignment and quantification\nSummary of alignment results and expression estimates.\nDifferential expression analysis\nIdentification of differentially expressed genes and downstream interpretation.",
+    "section": "1.3 Estructura del libro",
+    "text": "1.3 Estructura del libro\n\nIntroducción: contexto biológico, justificación y diseño general.\nPreprocesamiento con nf-core/rnaseq: flujo computacional, software y parámetros.\nResultados: organización global de salidas y análisis.\nControl de calidad con MultiQC: evaluación de calidad, filtrado, alineamiento y métricas agregadas.\nAlineamiento y cuantificación: resumen de asignación al genoma y estimación de expresión.\nExpresión diferencial: identificación e interpretación de genes diferencialmente expresados.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>HOLOFISHCOLOUR transcriptomics</span>"
     ]
   },
   {
-    "objectID": "index.html#reproducibility-and-data-provenance",
-    "href": "index.html#reproducibility-and-data-provenance",
+    "objectID": "index.html#reproducibilidad",
+    "href": "index.html#reproducibilidad",
     "title": "Holofishcolour project",
-    "section": "1.4 Reproducibility and data provenance",
-    "text": "1.4 Reproducibility and data provenance\nAll analyses were performed on the CESGA HPC infrastructure.\nPipeline outputs were generated using nf-core standards and selectively integrated into this report to ensure clarity, traceability and reproducibility.",
+    "section": "1.4 Reproducibilidad",
+    "text": "1.4 Reproducibilidad\nLos análisis se ejecutaron en la infraestructura HPC de CESGA. Las salidas del pipeline se integran selectivamente en esta web para mantener claridad, trazabilidad y conexión directa con los resultados originales.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Overview</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>HOLOFISHCOLOUR transcriptomics</span>"
     ]
   },
   {
