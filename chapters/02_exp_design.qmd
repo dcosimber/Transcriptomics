@@ -84,8 +84,8 @@ La @tbl-rna-extraction-nanodrop corresponde al control de extracción inicial y 
 <table>
 <thead>
 <tr>
-<th>Nº tubo</th>
-<th>Conc. NanoDrop (ng/µl)</th>
+<th>Muestra</th>
+<th>NanoDrop (ng/µl)</th>
 <th>A260/A280</th>
 <th>A260/A230</th>
 <th>Integridad en gel de agarosa 1.5%, 100 mV, 30 min</th>
@@ -148,12 +148,6 @@ La @tbl-rna-extraction-nanodrop corresponde al control de extracción inicial y 
 </tr>
 <tr><td>P2G</td><td>121.6</td><td>2.12</td><td>2.07</td></tr>
 <tr><td>IT1G</td><td>1117.5</td><td>2.11</td><td>2.31</td></tr>
-<tr>
-<td>PNKD</td><td>168.7</td><td>2.13</td><td>1.52</td>
-<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: PNKD, PNKV y PNKIT"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" alt="Gel de agarosa para PNKD, PNKV y PNKIT"></a></td>
-</tr>
-<tr><td>PNKV</td><td>173.9</td><td>2.13</td><td>1.56</td></tr>
-<tr><td>PNKIT</td><td>2583.5</td><td>2.15</td><td>2.28</td></tr>
 </tbody>
 </table>
 
