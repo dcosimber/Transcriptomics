@@ -158,21 +158,29 @@ La @tbl-rna-extraction-nanodrop corresponde al control de extracción inicial y 
 Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original `Resumen_extracciones.docx`; cada imagen abarca el bloque de muestras cargadas conjuntamente en el mismo gel.
 :::
 
-La evaluación de calidad fue realizada por Novogene mediante **Agilent 5400 Bioanalyzer**. Los resultados completos se resumen en la @tbl-rna-qc, mientras que los electroferogramas individuales se muestran en la @fig-rna-electropherograms mediante un panel de selección por muestra.
-
 ### Control de calidad para preparación de bibliotecas: Bioanalyzer y RIN
 
-::: callout-note
-## RNA Integrity Number (RIN): contexto técnico
+La evaluación de calidad final del ARN fue realizada por Novogene mediante **Agilent 5400 Bioanalyzer**, como paso previo a la preparación de bibliotecas RNA-seq. Este control permitió evaluar de forma conjunta la concentración, la integridad y la pureza del ARN. Los resultados completos se resumen en la @tbl-rna-qc, mientras que los electroferogramas individuales se muestran en la @fig-rna-electropherograms mediante un panel de selección por muestra.
 
-El **RNA Integrity Number (RIN)** es una puntuación de **1** a **10** que resume el grado de integridad del ARN total. Valores cercanos a **10** indican ARN íntegro, con picos ribosomales bien definidos y bajo fondo de fragmentación; valores bajos indican degradación progresiva.
+El **RNA Integrity Number (RIN)** es un parámetro numérico que oscila entre **1** y **10** y que se emplea para evaluar la calidad del ARN total extraído de una muestra. Se calcula a partir de un análisis electroforético automatizado que separa los fragmentos de ARN según su tamaño molecular y genera un **electroferograma**, es decir, una representación de la intensidad de señal en función del tamaño de los fragmentos.
 
-En muestras eucariotas, el algoritmo tiene en cuenta la forma global del electroferograma, la presencia y resolución de los picos de ARN ribosomal **18S** y **28S**, la señal de fondo y la acumulación de fragmentos de bajo peso molecular. Para RNA-seq, valores de RIN superiores a 7 suelen considerarse adecuados para la construcción de bibliotecas, aunque la aceptabilidad final depende del tipo de muestra, la estrategia de librería y los criterios del proveedor.
+El algoritmo de RIN analiza varias propiedades del perfil electroforético:
+
+-   **Altura y nitidez de los picos ribosomales**. En ARN eucariota íntegro se esperan picos bien definidos de **18S** y **28S**, con una proporción aproximada de **2:1**.
+-   **Nivel de fondo y fragmentación**. El ARN degradado muestra una señal más difusa, acumulación de fragmentos pequeños y pérdida progresiva de picos definidos.
+-   **Distribución global de la señal**. A medida que aumenta la degradación, crece la señal en regiones de bajo peso molecular y se reduce la resolución del perfil.
+
+![Electroferogramas típicos que ilustran la relación entre integridad del ARN y perfil electroforético. El ARN intacto (RIN = 10) muestra picos ribosomales 18S y 28S definidos; el ARN parcialmente degradado (RIN = 5) presenta picos menos pronunciados y mayor dispersión; el ARN fuertemente degradado (RIN = 3) muestra ausencia de picos definidos y acumulación de fragmentos pequeños.](../figures/02_exp_design/rin_integrity_examples.png){#fig-rin-profiles width="80%"}
+
+::: {.callout-note title="Interpretación técnica del RIN"}
+En una muestra de alta calidad, el electroferograma presenta picos de **18S** y **28S** altos y definidos, bajo nivel de fondo y poca señal asociada a fragmentos cortos. Cuando la muestra está degradada, los picos ribosomales se atenúan o desaparecen y aumenta la señal correspondiente a fragmentos de menor tamaño molecular, como se resume en la @fig-rin-profiles.
 :::
 
-La mayoría de las muestras presentaron **RIN entre 7.0 y 9.8**, un rango compatible con la preparación de bibliotecas RNA-seq y con análisis posteriores de expresión diferencial. La muestra **IT12** mostró un **RIN de 3.8**, indicativo de degradación marcada, y fue clasificada como *Fail*. La muestra **IT16** presentó un valor intermedio (**RIN = 6.0**), compatible con degradación parcial. Además, **ITPNK** fue aceptada aunque el informe técnico indicó una ligera contaminación genómica.
+En el **QC Report de Novogene**, la mayoría de las muestras mostraron concentraciones adecuadas para la construcción de bibliotecas, aunque con una variabilidad esperable entre tejidos y extracciones. La concentración más alta correspondió a **ITPNK** (**4493.36 ng/µl**), mientras que **P1G** presentó una de las concentraciones más bajas (**150.06 ng/µl**). En ambos casos, la concentración fue evaluada junto con la integridad y el resultado global de QC.
 
-Dado que el presupuesto de secuenciación cubría **24 bibliotecas RNA-seq** y se habían enviado **26 muestras**, se excluyeron **IT12** e **IT16** de la fase de secuenciación. Las muestras restantes cumplieron los criterios de calidad necesarios para continuar con la preparación de bibliotecas.
+Respecto a la integridad, la mayoría de las muestras presentaron **RIN entre 7.0 y 9.8**, un rango compatible con preparación de bibliotecas RNA-seq y análisis posteriores de expresión diferencial. Dos muestras requirieron atención especial: **IT12** mostró un **RIN de 3.8**, indicativo de degradación marcada, y fue clasificada como *Fail*; **IT16** presentó un valor intermedio (**RIN = 6.0**), compatible con degradación parcial y con potencial impacto sobre la calidad de la librería y la interpretación de los datos. Además, **ITPNK** fue aceptada aunque el informe técnico indicó una **ligera contaminación genómica**.
+
+En conjunto, el control de calidad indicó que la mayoría de las muestras cumplían los estándares requeridos para el análisis transcriptómico. Dado que el presupuesto de Novogene contemplaba **24 bibliotecas RNA-seq** y se habían enviado **26 muestras**, se decidió excluir **IT12** e **IT16** de la secuenciación. Las muestras restantes fueron retenidas para la preparación de bibliotecas.
 
 :::::: panel-tabset
 ## Resumen QC
