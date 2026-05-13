@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Introducción – Holofishcolour project</title>
+<title>3&nbsp; Diseño experimental – Holofishcolour project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/02_exp_design.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../chapters/02_methods_nfcore.html" rel="next">
+<link href="../chapters/01_intro.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -67,6 +47,9 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -271,7 +254,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01_intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02_exp_design.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -311,13 +294,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/02_exp_design.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/02_exp_design.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental</span></span></a>
   </div>
 </li>
@@ -361,15 +344,10 @@ div.csl-indent {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#pigmentación-y-malpigmentación-en-peces-planos" id="toc-pigmentación-y-malpigmentación-en-peces-planos" class="nav-link active" data-scroll-target="#pigmentación-y-malpigmentación-en-peces-planos"><span class="header-section-number">2.1</span> Pigmentación y malpigmentación en peces planos</a></li>
-  <li><a href="#por-qué-rna-seq" id="toc-por-qué-rna-seq" class="nav-link" data-scroll-target="#por-qué-rna-seq"><span class="header-section-number">2.2</span> Por qué RNA-seq</a></li>
-  <li><a href="#evidencia-transcriptómica-previa" id="toc-evidencia-transcriptómica-previa" class="nav-link" data-scroll-target="#evidencia-transcriptómica-previa"><span class="header-section-number">2.3</span> Evidencia transcriptómica previa</a></li>
-  <li><a href="#objetivos-del-análisis-transcriptómico" id="toc-objetivos-del-análisis-transcriptómico" class="nav-link" data-scroll-target="#objetivos-del-análisis-transcriptómico"><span class="header-section-number">2.4</span> Objetivos del análisis transcriptómico</a></li>
-  <li><a href="#diseño-experimental" id="toc-diseño-experimental" class="nav-link" data-scroll-target="#diseño-experimental"><span class="header-section-number">2.5</span> Diseño experimental</a></li>
-  <li><a href="#muestras-documentadas-en-este-libro" id="toc-muestras-documentadas-en-este-libro" class="nav-link" data-scroll-target="#muestras-documentadas-en-este-libro"><span class="header-section-number">2.6</span> Muestras documentadas en este libro</a></li>
-  <li><a href="#secuenciación-y-marco-técnico" id="toc-secuenciación-y-marco-técnico" class="nav-link" data-scroll-target="#secuenciación-y-marco-técnico"><span class="header-section-number">2.7</span> Secuenciación y marco técnico</a></li>
-  <li><a href="#estructura-del-análisis-bioinformático" id="toc-estructura-del-análisis-bioinformático" class="nav-link" data-scroll-target="#estructura-del-análisis-bioinformático"><span class="header-section-number">2.8</span> Estructura del análisis bioinformático</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#toma-de-muestras" id="toc-toma-de-muestras" class="nav-link active" data-scroll-target="#toma-de-muestras"><span class="header-section-number">3.1</span> Toma de muestras</a></li>
+  <li><a href="#muestras-documentadas-en-este-libro" id="toc-muestras-documentadas-en-este-libro" class="nav-link" data-scroll-target="#muestras-documentadas-en-este-libro"><span class="header-section-number">3.2</span> Muestras documentadas en este libro</a></li>
+  <li><a href="#extracción-de-arn-y-control-de-calidad" id="toc-extracción-de-arn-y-control-de-calidad" class="nav-link" data-scroll-target="#extracción-de-arn-y-control-de-calidad"><span class="header-section-number">3.3</span> Extracción de ARN y control de calidad</a></li>
+  <li><a href="#secuenciación-y-marco-técnico" id="toc-secuenciación-y-marco-técnico" class="nav-link" data-scroll-target="#secuenciación-y-marco-técnico"><span class="header-section-number">3.4</span> Secuenciación y marco técnico</a></li>
   </ul>
 </nav>
     </div>
@@ -379,7 +357,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental</span></h1>
 </div>
 
 
@@ -396,142 +374,38 @@ div.csl-indent {
 </header>
 
 
-<p>La pigmentación es un rasgo visible, integrador y económicamente relevante en acuicultura. En peces, el patrón de coloración refleja la organización de distintos tipos de cromatóforos, la regulación neuroendocrina del tegumento y la interacción del animal con su ambiente de cría <span class="citation" data-cites="Nusslein-Volhard2017 Vissio2021">[<a href="01_intro.html#ref-Nusslein-Volhard2017" role="doc-biblioref">1</a>,<a href="01_intro.html#ref-Vissio2021" role="doc-biblioref">2</a>]</span>. En especies planas, como el rodaballo (<em>Scophthalmus maximus</em>), esta dimensión adquiere una complejidad adicional: durante la metamorfosis se establece una asimetría corporal marcada, con una cara ocular normalmente pigmentada y una cara ciega reducida en pigmentación. Cuando este programa de diferenciación se altera, aparecen fenotipos de malpigmentación que pueden afectar al valor comercial, a la calidad percibida y a la interpretación biológica del estado del animal <span class="citation" data-cites="Seikai1994 Vissio2021">[<a href="01_intro.html#ref-Vissio2021" role="doc-biblioref">2</a>,<a href="01_intro.html#ref-Seikai1994" role="doc-biblioref">3</a>]</span>.</p>
-<p>El rodaballo es una especie estratégica para la acuicultura marina europea y, de forma particular, para el sector gallego <span class="citation" data-cites="Fernandez-Gonzalez2021a">[<a href="01_intro.html#ref-Fernandez-Gonzalez2021a" role="doc-biblioref">4</a>]</span>. Además, dispone de recursos genómicos consolidados, lo que facilita abordar preguntas funcionales mediante aproximaciones de expresión génica a escala transcriptómica <span class="citation" data-cites="Martinez2021">[<a href="01_intro.html#ref-Martinez2021" role="doc-biblioref">5</a>]</span>. En este contexto, el proyecto <strong>HOLOFISHCOLOUR</strong> plantea la malpigmentación no como un rasgo aislado, sino como un fenotipo complejo que puede emerger de la interacción entre <strong>genoma</strong>, <strong>transcriptoma</strong>, <strong>histología</strong>, <strong>microbiota</strong>, desarrollo y ambiente de cultivo.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>El diseño parte de individuos de rodaballo con fenotipo <strong>normal</strong> y <strong>malpigmentado</strong>, seleccionados en los tanques <strong>E6</strong> y <strong>E8</strong>, donde las diferencias de pigmentación eran evidentes. En el tanque E6 se incluyeron descendientes de dos parejas parentales; en el tanque E8 se trabajó con una familia de medios hermanos, con una madre compartida y dos padres distintos. Esta estructura permite interpretar los resultados teniendo en cuenta tanto el fenotipo de pigmentación como el posible componente familiar.</p>
+<section id="toma-de-muestras" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="toma-de-muestras"><span class="header-section-number">3.1</span> Toma de muestras</h2>
+<p>Se tomaron fragmentos de piel de aproximadamente 20 mg con material de disección estéril (<a href="#fig-sampling" class="quarto-xref">Figura&nbsp;<span>3.1</span></a>). Los fragmentos se rasparon cuidadosamente con la cuchilla del bisturí para eliminar la parte de músculo y evitar posibles interferencias de este tejido en el posterior análisis de RNA-seq.</p>
+<p>Se tomaron muestras de peces con fenotipo pigmentario normal (control) y peces pseudoalbinos o malpigmentados. En los rodaballos control se recogieron dos tipos de muestras de piel: pigmentada, de color oscuro, en el lado ocular; y no pigmentada, de color claro, en el lado ciego. En los rodaballos pseudoalbinos se recogieron cuatro tipos de muestras:</p>
+<ul>
+<li>Lado ocular
+<ul>
+<li>Pigmentada, correspondiente a pigmentación normal.</li>
+<li>No pigmentada, correspondiente a pigmentación anormal.</li>
+</ul></li>
+<li>Lado ciego
+<ul>
+<li>Pigmentada, correspondiente a pigmentación anormal.</li>
+<li>No pigmentada, correspondiente a pigmentación anormal.</li>
+</ul></li>
+</ul>
+<div id="fig-sampling" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/paste-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;3.1: Toma de muestras de piel para el análisis transcriptómico. A-B: zonas de muestreo en rodaballos pseudoalbinos y control. Las zonas delimitadas con punteado amarillo corresponden a zonas no pigmentadas, y las delimitadas en rojo corresponden a zonas pigmentadas. C: corte y recogida de muestra de piel."><img src="images/paste-1.png" class="img-fluid figure-img"></a>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Idea central
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La comparación de pieles pigmentadas y no pigmentadas, tanto en peces normales como en peces malpigmentados, permite buscar señales moleculares asociadas a la formación, mantenimiento o pérdida local de pigmentación. El RNA-seq aporta una lectura funcional del tejido: no dice solo qué variantes existen, sino qué programas biológicos están activos en cada región.</p>
-</div>
-</div>
-<section id="pigmentación-y-malpigmentación-en-peces-planos" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="pigmentación-y-malpigmentación-en-peces-planos"><span class="header-section-number">2.1</span> Pigmentación y malpigmentación en peces planos</h2>
-<p>La coloración de la piel en peces depende principalmente de la distribución, abundancia y estado funcional de los cromatóforos. Entre ellos, los <strong>melanóforos</strong> participan en la síntesis y depósito de melanina, los <strong>xantóforos</strong> contribuyen a tonalidades amarillas o anaranjadas y los <strong>iridóforos</strong> generan efectos reflectantes. Estos tipos celulares derivan de linajes asociados a la cresta neural y se organizan durante el desarrollo bajo control de rutas de señalización, migración celular, diferenciación y comunicación tisular <span class="citation" data-cites="Nusslein-Volhard2017">[<a href="01_intro.html#ref-Nusslein-Volhard2017" role="doc-biblioref">1</a>]</span>.</p>
-<p>En peces planos, la pigmentación está íntimamente ligada a la metamorfosis. El establecimiento correcto de la cara ocular y la cara ciega implica una diferenciación asimétrica de la piel. Los fenotipos anómalos más relevantes incluyen el <strong>pseudoalbinismo</strong>, caracterizado por pérdida o reducción de pigmentación donde debería existir coloración, y la <strong>hipermelanosis</strong>, en la que aparecen manchas pigmentadas en regiones normalmente claras de la cara ciega <span class="citation" data-cites="Seikai1994 Li2022a">[<a href="01_intro.html#ref-Seikai1994" role="doc-biblioref">3</a>,<a href="01_intro.html#ref-Li2022a" role="doc-biblioref">6</a>]</span>. Estas alteraciones no son meramente cosméticas: pueden indicar cambios en la diferenciación de la piel, en el estado de los cromatóforos, en rutas endocrinas y en respuestas al ambiente de cultivo <span class="citation" data-cites="Vissio2021">[<a href="01_intro.html#ref-Vissio2021" role="doc-biblioref">2</a>]</span>.</p>
-<p>La evidencia acumulada en otras especies planas sugiere que la malpigmentación es un rasgo <strong>multifactorial</strong>. En lenguado senegalés, por ejemplo, el pseudoalbinismo se ha asociado con cambios transcriptómicos en piel e intestino, además de modificaciones estructurales y del microbioma <span class="citation" data-cites="Pinto2019">[<a href="01_intro.html#ref-Pinto2019" role="doc-biblioref">7</a>]</span>. En lenguado japonés se han descrito redes mRNA-miRNA asociadas al albinismo, con genes y rutas vinculadas a melanogénesis y metabolismo de tirosina <span class="citation" data-cites="Wang2017">[<a href="01_intro.html#ref-Wang2017" role="doc-biblioref">8</a>]</span>. En lenguado chino, los estudios de hipermelanosis han identificado genes candidatos y redes lncRNA-miRNA-mRNA implicadas en la pigmentación de la cara ciega <span class="citation" data-cites="Li2022 Li2022a">[<a href="01_intro.html#ref-Li2022a" role="doc-biblioref">6</a>,<a href="01_intro.html#ref-Li2022" role="doc-biblioref">9</a>]</span>. Estos trabajos refuerzan una idea importante para este proyecto: la malpigmentación puede leerse como una alteración local de programas moleculares de desarrollo, diferenciación y mantenimiento tisular.</p>
-</section>
-<section id="por-qué-rna-seq" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="por-qué-rna-seq"><span class="header-section-number">2.2</span> Por qué RNA-seq</h2>
-<p>El RNA-seq permite cuantificar la expresión de miles de genes de forma simultánea, sin restringir el análisis a una lista previa de candidatos. Esto es especialmente útil para un fenotipo como la pigmentación, donde pueden converger rutas de <strong>melanogénesis</strong>, metabolismo de aminoácidos y pigmentos, matriz extracelular, señalización neuroendocrina, respuesta inmune, estrés celular y comunicación entre tipos celulares.</p>
-<p>En los últimos años, la transcriptómica se ha consolidado como una estrategia potente para estudiar fenotipos de coloración en peces. En rodaballo, se ha utilizado para explorar la regulación del color corporal bajo distintos espectros de luz, apuntando a genes como <em>tyr</em>, <em>tyrp1</em>, <em>dct</em>, <em>slc24a5</em> y <em>oca2</em>, además de rutas relacionadas con señalización neural y calcio <span class="citation" data-cites="Wu2024">[<a href="01_intro.html#ref-Wu2024" role="doc-biblioref">10</a>]</span>. Estudios recientes en rodaballo dorado también señalan la implicación de tejidos reguladores, como hígado e hipófisis, y de rutas endocrinas relacionadas con hormona tiroidea <span class="citation" data-cites="Liu2026">[<a href="01_intro.html#ref-Liu2026" role="doc-biblioref">11</a>]</span>. Aunque estos fenotipos no son idénticos a la malpigmentación observada en HOLOFISHCOLOUR, proporcionan un marco comparativo valioso para interpretar genes y procesos que puedan aparecer diferencialmente expresados.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Lectura biológica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Si aparecen genes clásicos de pigmentación, como <em>tyr</em>, <em>tyrp1</em>, <em>dct</em>, <em>mc1r</em>, <em>oca2</em> o <em>slc45a2</em>, la interpretación será directa hacia melanogénesis o biogénesis de melanosomas. Si aparecen rutas de colágeno, matriz extracelular, inmunidad, estrés o neuroendocrinas, la lectura será más amplia: la diferencia pigmentaria podría estar ligada al estado funcional del tejido, no únicamente al número de melanóforos.</p>
-</div>
-</div>
-</section>
-<section id="evidencia-transcriptómica-previa" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="evidencia-transcriptómica-previa"><span class="header-section-number">2.3</span> Evidencia transcriptómica previa</h2>
-<p>La <a href="#tbl-literature-summary" class="quarto-xref">Tabla&nbsp;<span>2.1</span></a> resume trabajos especialmente relevantes para situar el análisis de HOLOFISHCOLOUR. La selección prioriza estudios de peces planos, rodaballo y fenotipos de pigmentación abordados mediante transcriptómica o aproximaciones multi-ómicas.</p>
-<div id="tbl-literature-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-literature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;2.1: Estudios de referencia para interpretar la transcriptómica de pigmentación en HOLOFISHCOLOUR.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.1: Toma de muestras de piel para el análisis transcriptómico. A-B: zonas de muestreo en rodaballos pseudoalbinos y control. Las zonas delimitadas con punteado amarillo corresponden a zonas no pigmentadas, y las delimitadas en rojo corresponden a zonas pigmentadas. C: corte y recogida de muestra de piel.
 </figcaption>
-<div aria-describedby="tbl-literature-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Referencia</th>
-<th style="text-align: left;">Especie</th>
-<th style="text-align: left;">Fenotipo o contraste</th>
-<th style="text-align: left;">Aportación para HOLOFISHCOLOUR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Seikai y Matsumoto <span class="citation" data-cites="Seikai1994">[<a href="01_intro.html#ref-Seikai1994" role="doc-biblioref">3</a>]</span></td>
-<td style="text-align: left;">Lenguado japonés</td>
-<td style="text-align: left;">Pseudoalbinismo en peces planos</td>
-<td style="text-align: left;">Vincula la malpigmentación con una alteración de la diferenciación asimétrica de la piel durante la metamorfosis.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Wang et al. <span class="citation" data-cites="Wang2017">[<a href="01_intro.html#ref-Wang2017" role="doc-biblioref">8</a>]</span></td>
-<td style="text-align: left;">Lenguado japonés</td>
-<td style="text-align: left;">Albinismo frente a pigmentación normal</td>
-<td style="text-align: left;">Integra RNA-seq y miRNA-seq e identifica rutas de melanogénesis, metabolismo de tirosina y redes reguladoras.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Pinto et al. <span class="citation" data-cites="Pinto2019">[<a href="01_intro.html#ref-Pinto2019" role="doc-biblioref">7</a>]</span></td>
-<td style="text-align: left;">Lenguado senegalés</td>
-<td style="text-align: left;">Pseudoalbinismo</td>
-<td style="text-align: left;">Conecta transcriptómica de piel e intestino con cambios estructurales y microbioma, reforzando la visión multi-ómica.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Li et al. <span class="citation" data-cites="Li2022a">[<a href="01_intro.html#ref-Li2022a" role="doc-biblioref">6</a>]</span></td>
-<td style="text-align: left;">Lenguado chino</td>
-<td style="text-align: left;">Hipermelanosis de la cara ciega</td>
-<td style="text-align: left;">Propone genes candidatos de hipermelanosis, incluyendo transportadores y genes asociados a melanogénesis.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Li et al. <span class="citation" data-cites="Li2022">[<a href="01_intro.html#ref-Li2022" role="doc-biblioref">9</a>]</span></td>
-<td style="text-align: left;">Lenguado chino</td>
-<td style="text-align: left;">Hipermelanosis de la cara ciega</td>
-<td style="text-align: left;">Construye redes lncRNA-miRNA-mRNA, útiles para interpretar regulación no codificante.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Wu et al. <span class="citation" data-cites="Wu2024">[<a href="01_intro.html#ref-Wu2024" role="doc-biblioref">10</a>]</span></td>
-<td style="text-align: left;">Rodaballo</td>
-<td style="text-align: left;">Color corporal bajo distintos espectros de luz</td>
-<td style="text-align: left;">Aporta genes y rutas de coloración en la misma especie, incluyendo melanogénesis, señalización neural y calcio.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Liu et al. <span class="citation" data-cites="Liu2026">[<a href="01_intro.html#ref-Liu2026" role="doc-biblioref">11</a>]</span></td>
-<td style="text-align: left;">Rodaballo</td>
-<td style="text-align: left;">Coloración dorada frente a tipo salvaje</td>
-<td style="text-align: left;">Sitúa la pigmentación del rodaballo en un marco transcriptómico y endocrino, con énfasis en hormona tiroidea.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Blandon et al. <span class="citation" data-cites="Blandon2024">[<a href="01_intro.html#ref-Blandon2024" role="doc-biblioref">12</a>]</span></td>
-<td style="text-align: left;">Platija sureña</td>
-<td style="text-align: left;">Pseudoalbinismo</td>
-<td style="text-align: left;">Relaciona hipopigmentación con piel, cerebro, matriz extracelular, estrés ambiental e inmunidad.</td>
-</tr>
-</tbody>
-</table>
-</div>
 </figure>
 </div>
-</section>
-<section id="objetivos-del-análisis-transcriptómico" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="objetivos-del-análisis-transcriptómico"><span class="header-section-number">2.4</span> Objetivos del análisis transcriptómico</h2>
-<p>El objetivo general de esta parte del proyecto es caracterizar el perfil transcriptómico de piel de rodaballo en regiones con distinta pigmentación y en individuos con fenotipo normal o malpigmentado. A partir de ese objetivo general, el análisis se organiza en cuatro metas:</p>
-<ol type="1">
-<li><strong>Evaluar la calidad y coherencia de las bibliotecas RNA-seq</strong>, desde las lecturas crudas hasta la asignación al genoma de referencia.</li>
-<li><strong>Comparar patrones de expresión génica</strong> entre piel pigmentada y no pigmentada, considerando el fenotipo global del individuo y la cara corporal muestreada.</li>
-<li><strong>Identificar genes y rutas diferencialmente expresadas</strong> potencialmente asociadas a melanogénesis, diferenciación celular, matriz extracelular, señalización endocrina o respuesta al ambiente.</li>
-<li><strong>Generar una base reproducible de resultados</strong> que pueda integrarse con otras capas de HOLOFISHCOLOUR, como histología, genómica y microbioma.</li>
-</ol>
-</section>
-<section id="diseño-experimental" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="diseño-experimental"><span class="header-section-number">2.5</span> Diseño experimental</h2>
-<p>El diseño parte de individuos de rodaballo con fenotipo <strong>normal</strong> y <strong>malpigmentado</strong>, seleccionados en los tanques <strong>E6</strong> y <strong>E8</strong>, donde las diferencias de pigmentación eran evidentes. En el tanque E6 se incluyeron descendientes de dos parejas parentales; en el tanque E8 se trabajó con una familia de medios hermanos, con una madre compartida y dos padres distintos. Esta estructura es importante porque permite interpretar los resultados teniendo en cuenta tanto el fenotipo de pigmentación como el posible componente familiar.</p>
-<p>La unidad biológica principal de esta fase es la <strong>piel</strong>, muestreada en regiones pigmentadas y no pigmentadas. La <a href="02_exp_design.html#tbl-sample-groups" class="quarto-xref">Tabla&nbsp;<span>3.1</span></a> resume la lógica experimental de las muestras procesadas en el flujo nf-core/rnaseq documentado en este libro.</p>
+<p>La unidad biológica principal de esta fase es la <strong>piel</strong>, muestreada en regiones pigmentadas y no pigmentadas. La <a href="#tbl-sample-groups" class="quarto-xref">Tabla&nbsp;<span>3.1</span></a> resume la lógica experimental de las muestras procesadas en el flujo nf-core/rnaseq documentado en este libro.</p>
 <div id="tbl-sample-groups" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sample-groups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;2.2: Estructura conceptual de los grupos de muestras incluidos en el análisis.
+Tabla&nbsp;3.1: Estructura conceptual de los grupos de muestras incluidos en el análisis.
 </figcaption>
 <div aria-describedby="tbl-sample-groups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -586,24 +460,24 @@ Tabla&nbsp;2.2: Estructura conceptual de los grupos de muestras incluidos en el 
 </figure>
 </div>
 </section>
-<section id="muestras-documentadas-en-este-libro" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="muestras-documentadas-en-este-libro"><span class="header-section-number">2.6</span> Muestras documentadas en este libro</h2>
-<p>La <a href="02_exp_design.html#tbl-samples-intro" class="quarto-xref">Tabla&nbsp;<span>3.2</span></a> recoge las muestras incluidas en la documentación bioinformática actual. La nomenclatura distingue muestras de piel (<code>P</code>) y muestras intestinales (<code>IT</code>). En capítulos posteriores, el control de calidad y el alineamiento se revisan a partir de los resultados generados por <strong>nf-core/rnaseq</strong> y <strong>MultiQC</strong> para este conjunto de bibliotecas.</p>
+<section id="muestras-documentadas-en-este-libro" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="muestras-documentadas-en-este-libro"><span class="header-section-number">3.2</span> Muestras documentadas en este libro</h2>
+<p>La <a href="#tbl-samples-intro" class="quarto-xref">Tabla&nbsp;<span>3.2</span></a> recoge las muestras incluidas en la documentación bioinformática actual. La nomenclatura distingue muestras de piel (<code>P</code>) y muestras intestinales (<code>IT</code>). En capítulos posteriores, el control de calidad y el alineamiento se revisan a partir de los resultados generados por <strong>nf-core/rnaseq</strong> y <strong>MultiQC</strong> para este conjunto de bibliotecas.</p>
 <div id="tbl-samples-intro" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-samples-intro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;2.3: Muestras incluidas en la fase documentada del análisis RNA-seq.
+Tabla&nbsp;3.2: Muestras incluidas en la fase documentada del análisis RNA-seq.
 </figcaption>
 <div aria-describedby="tbl-samples-intro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
+<col style="width: 11%">
 <col style="width: 14%">
+<col style="width: 10%">
 <col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 10%">
+<col style="width: 18%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -816,6 +690,24 @@ Tabla&nbsp;2.3: Muestras incluidas en la fase documentada del análisis RNA-seq.
 <td style="text-align: left;">ND</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">IT12</td>
+<td style="text-align: left;">Intestino</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IT16</td>
+<td style="text-align: left;">Intestino</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+<td style="text-align: left;">ND</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">IT1G</td>
 <td style="text-align: left;">Intestino</td>
 <td style="text-align: left;">ND</td>
@@ -839,13 +731,330 @@ Tabla&nbsp;2.3: Muestras incluidas en la fase documentada del análisis RNA-seq.
 </figure>
 </div>
 </section>
-<section id="secuenciación-y-marco-técnico" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="secuenciación-y-marco-técnico"><span class="header-section-number">2.7</span> Secuenciación y marco técnico</h2>
-<p>Las bibliotecas RNA-seq se generaron a partir de mRNA enriquecido por selección de poli(A), con protocolo específico de hebra y secuenciación paired-end de 150 pb. La <a href="02_exp_design.html#tbl-rnaseq-specs" class="quarto-xref">Tabla&nbsp;<span>3.4</span></a> sintetiza las especificaciones técnicas de la fase de secuenciación. Esta información se desarrolla con más detalle en los capítulos metodológicos, donde se documentan el preprocesamiento, el control de calidad, el alineamiento contra el genoma de referencia y la cuantificación de expresión.</p>
+<section id="extracción-de-arn-y-control-de-calidad" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="extracción-de-arn-y-control-de-calidad"><span class="header-section-number">3.3</span> Extracción de ARN y control de calidad</h2>
+<p>El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol<sup>TM</sup> y columnas Phasemaker<sup>TM</sup> Tubes (Thermo Fisher), seguido de purificación en columna. La integridad del ARN se evaluó mediante RIN y la cantidad disponible se registró antes de la preparación de bibliotecas.</p>
+<p>Las imágenes de control de calidad se almacenaron con el identificador de ácido nucleico asignado por el proveedor. Por ese motivo, la <a href="#tbl-rna-qc" class="quarto-xref">Tabla&nbsp;<span>3.3</span></a> relaciona cada nombre de muestra usado en el análisis con su <code>Nucleic Acid ID</code> y enlaza directamente la imagen de QC correspondiente. La muestra <code>IT12</code> no superó el criterio de calidad por RIN bajo, mientras que <code>ITPNK</code> fue aceptada con una observación de ligera contaminación genómica.</p>
+<div id="tbl-rna-qc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rna-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;3.3: Equivalencia entre nombres de muestra, identificadores de ácido nucleico, métricas de calidad de ARN e imágenes de control de calidad.
+</figcaption>
+<div aria-describedby="tbl-rna-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Muestra</th>
+<th style="text-align: left;">Nucleic Acid ID</th>
+<th style="text-align: right;">Concentración (ng/ul)</th>
+<th style="text-align: right;">Volumen (ul)</th>
+<th style="text-align: right;">Cantidad total (ug)</th>
+<th style="text-align: right;">RIN</th>
+<th style="text-align: left;">QC</th>
+<th style="text-align: left;">Observación</th>
+<th style="text-align: left;">Imagen QC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">P31</td>
+<td style="text-align: left;">EKRN240028385-1A</td>
+<td style="text-align: right;">1851.34</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">29.62141</td>
+<td style="text-align: right;">7.7</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028385-1A 0ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P32</td>
+<td style="text-align: left;">EKRN240028386-1A</td>
+<td style="text-align: right;">2022.42</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">32.35878</td>
+<td style="text-align: right;">8.3</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028386-1A 2741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P33</td>
+<td style="text-align: left;">EKRN240028387-1A</td>
+<td style="text-align: right;">483.84</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">6.28990</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028387-1A D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P34</td>
+<td style="text-align: left;">EKRN240028388-1A</td>
+<td style="text-align: right;">826.81</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">14.05583</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028388-1A D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P35</td>
+<td style="text-align: left;">EKRN240028389-1A</td>
+<td style="text-align: right;">430.00</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">6.87994</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028389-1A A24C77CE-2846-448D-BA32-BE5B352A9628.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P36</td>
+<td style="text-align: left;">EKRN240028390-1A</td>
+<td style="text-align: right;">447.89</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">7.16622</td>
+<td style="text-align: right;">7.2</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028390-1A 09F7647A-7D63-4EC1-8448-546D44B0F700.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P41</td>
+<td style="text-align: left;">EKRN240028391-1A</td>
+<td style="text-align: right;">1270.12</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">20.32186</td>
+<td style="text-align: right;">9.3</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028391-1A 4DAD28B7-C028-44C2-B5E2-90586469B12E.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P42</td>
+<td style="text-align: left;">EKRN240028392-1A</td>
+<td style="text-align: right;">888.98</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">16.89067</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028392-1A D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P43</td>
+<td style="text-align: left;">EKRN240028393-1A</td>
+<td style="text-align: right;">1343.73</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">25.53087</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028393-1A 5BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P44</td>
+<td style="text-align: left;">EKRN240028394-1A</td>
+<td style="text-align: right;">1961.08</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">35.29941</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028394-1A D7433F06-BC78-45B6-9198-416D03AC6785.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P45</td>
+<td style="text-align: left;">EKRN240028395-1A</td>
+<td style="text-align: right;">709.86</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">12.77749</td>
+<td style="text-align: right;">8.1</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028395-1A 75ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P46</td>
+<td style="text-align: left;">EKRN240028396-1A</td>
+<td style="text-align: right;">768.56</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">13.83416</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028396-1A 621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P47</td>
+<td style="text-align: left;">EKRN240028397-1A</td>
+<td style="text-align: right;">342.27</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">6.50313</td>
+<td style="text-align: right;">8.5</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028397-1A EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P48</td>
+<td style="text-align: left;">EKRN240028398-1A</td>
+<td style="text-align: right;">404.26</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">6.87242</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028398-1A F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P49</td>
+<td style="text-align: left;">EKRN240028399-1A</td>
+<td style="text-align: right;">954.50</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">15.27201</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028399-1A 57F88317-BDA3-4595-92B7-66008084A4B7.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P50</td>
+<td style="text-align: left;">EKRN240028400-1A</td>
+<td style="text-align: right;">295.43</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">4.72680</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028400-1A 1A791172-7746-440C-8A51-41D22C219EDB.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P51</td>
+<td style="text-align: left;">EKRN240028401-1A</td>
+<td style="text-align: right;">2511.00</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">32.64302</td>
+<td style="text-align: right;">9.5</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028401-1A EBD7638C-4382-40CC-984D-4D351B61B948.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P52</td>
+<td style="text-align: left;">EKRN240028402-1A</td>
+<td style="text-align: right;">578.87</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">8.68312</td>
+<td style="text-align: right;">9.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028402-1A 39B46501-27EE-470D-B8AA-B65E87CFBC13.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1G</td>
+<td style="text-align: left;">EKRN240028403-1A</td>
+<td style="text-align: right;">150.06</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2.40097</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028403-1A D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P2G</td>
+<td style="text-align: left;">EKRN240028404-1A</td>
+<td style="text-align: right;">192.33</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">3.07729</td>
+<td style="text-align: right;">9.0</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028404-1A 1EE8F273-552A-4118-8A01-7C359D493290.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PNKD</td>
+<td style="text-align: left;">EKRN240028405-1A</td>
+<td style="text-align: right;">417.18</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">7.50923</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028405-1A 74312C80-27BF-4516-A106-54CA8D077D38.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PNKV</td>
+<td style="text-align: left;">EKRN240028406-1A</td>
+<td style="text-align: right;">221.19</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">3.76027</td>
+<td style="text-align: right;">8.4</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028406-1A 133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IT12</td>
+<td style="text-align: left;">EKRN240028407-1A</td>
+<td style="text-align: right;">2422.80</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">41.18753</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: left;">Fail</td>
+<td style="text-align: left;">Unqualified RIN</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028407-1A 3E4AC179-9D72-407B-8450-2FEADFA581EC.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IT16</td>
+<td style="text-align: left;">EKRN240028408-1A</td>
+<td style="text-align: right;">2988.15</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">53.78664</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028408-1A 206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG">QC</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IT1G</td>
+<td style="text-align: left;">EKRN240028409-1A</td>
+<td style="text-align: right;">2842.68</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">45.48292</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028409-1A 3EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG">QC</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ITPNK</td>
+<td style="text-align: left;">EKRN240028410-1A</td>
+<td style="text-align: right;">4493.36</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">80.88050</td>
+<td style="text-align: right;">7.1</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">Slight genomic contamination</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028410-1A AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG">QC</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="secuenciación-y-marco-técnico" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="secuenciación-y-marco-técnico"><span class="header-section-number">3.4</span> Secuenciación y marco técnico</h2>
+<p>Las bibliotecas RNA-seq se generaron a partir de mRNA enriquecido por selección de poli(A), con protocolo específico de hebra y secuenciación paired-end de 150 pb. La <a href="#tbl-rnaseq-specs" class="quarto-xref">Tabla&nbsp;<span>3.4</span></a> sintetiza las especificaciones técnicas de la fase de secuenciación. Esta información se desarrolla con más detalle en los capítulos metodológicos, donde se documentan el preprocesamiento, el control de calidad, el alineamiento contra el genoma de referencia y la cuantificación de expresión.</p>
 <div id="tbl-rnaseq-specs" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rnaseq-specs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;2.4: Especificaciones generales de las bibliotecas RNA-seq.
+Tabla&nbsp;3.4: Especificaciones generales de las bibliotecas RNA-seq.
 </figcaption>
 <div aria-describedby="tbl-rnaseq-specs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -888,199 +1097,6 @@ Tabla&nbsp;2.4: Especificaciones generales de las bibliotecas RNA-seq.
 </table>
 </div>
 </figure>
-</div>
-</section>
-<section id="estructura-del-análisis-bioinformático" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="estructura-del-análisis-bioinformático"><span class="header-section-number">2.8</span> Estructura del análisis bioinformático</h2>
-<p>El análisis documentado en este libro comienza con el procesamiento reproducible de las lecturas mediante <strong>nf-core/rnaseq</strong>, un flujo de trabajo que integra control de calidad, recorte o filtrado de lecturas, alineamiento, cuantificación y generación de informes agregados. La primera capa interpretativa se apoya en <strong>MultiQC</strong>, que permite revisar de forma conjunta métricas de calidad, complejidad, alineamiento y asignación de lecturas.</p>
-<p>La lógica del análisis es progresiva:</p>
-<ol type="1">
-<li><strong>Preprocesamiento y control de calidad:</strong> comprobar si las lecturas son suficientemente limpias, si la longitud y calidad son coherentes y si existen muestras problemáticas.</li>
-<li><strong>Alineamiento y cuantificación:</strong> evaluar qué proporción de lecturas se asigna al genoma de referencia y qué fracción contribuye a regiones informativas para expresión génica.</li>
-<li><strong>Exploración de estructura global:</strong> revisar agrupamientos, efectos de muestra, tejido, pigmentación o lote.</li>
-<li><strong>Expresión diferencial e interpretación funcional:</strong> identificar genes y rutas asociados a las comparaciones biológicas de interés.</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Criterio de interpretación
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Las diferencias de expresión no deben interpretarse de forma aislada. En este proyecto se considerarán junto con el tipo de tejido, la localización corporal, el fenotipo del individuo, la calidad de la biblioteca y, cuando estén disponibles, evidencias histológicas o microbiológicas.</p>
-</div>
-</div>
-</section>
-<section id="referencias" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="referencias">Referencias</h2>
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-Martinez2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Martínez P., Robledo D., Taboada X., Blanco A.,
-Moser M., Maroso F., Hermida M., Gómez-Tato A., Álvarez-Blázquez B.,
-Cabaleiro S., Piferrer F., Bouza C., Lien S., Viñas A. M. <span class="nocase">A genome-wide association study, supported by a new
-chromosome-level genome assembly, suggests sox2 as a main driver of the
-undifferentiatiated ZZ/ZW sex determination of turbot (Scophthalmus
-maximus)</span>. Genomics; 2021; 113(4):1705–1718. doi:<a href="https://doi.org/10.1016/J.YGENO.2021.04.007">10.1016/J.YGENO.2021.04.007</a>
-<a href="https://www.sciencedirect.com/science/article/pii/S0888754321001336">https://www.sciencedirect.com/science/article/pii/S0888754321001336</a></div>
-</div>
-<div id="ref-Ewels2016MultiQC" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Ewels P., Magnusson M., Lundin S., Kaller M.
-<span class="nocase">MultiQC: summarize analysis results for multiple
-tools and samples in a single report</span>. Bioinformatics; 2016;
-32(19):3047–3048. doi:<a href="https://doi.org/10.1093/bioinformatics/btw354">10.1093/bioinformatics/btw354</a>
-<a href="https://doi.org/10.1093/bioinformatics/btw354">https://doi.org/10.1093/bioinformatics/btw354</a></div>
-</div>
-<div id="ref-Ewels2020Nfcore" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Ewels P. A., Peltzer A., Fillinger S., Patel
-H., Alneberg J., Wilm A., Garcia M. U., Di Tommaso P., Nahnsen S. <span class="nocase">The nf-core framework for community-curated
-bioinformatics pipelines</span>. Nature Biotechnology; 2020;
-38(3):276–278. doi:<a href="https://doi.org/10.1038/s41587-020-0439-x">10.1038/s41587-020-0439-x</a>
-<a href="https://doi.org/10.1038/s41587-020-0439-x">https://doi.org/10.1038/s41587-020-0439-x</a></div>
-</div>
-<div id="ref-DiTommaso2017Nextflow" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Di
-Tommaso P., Chatzou M., Floden E. W., Barja P. P., Palumbo E., Notredame
-C. <span class="nocase">Nextflow enables reproducible computational
-workflows</span>. Nature Biotechnology; 2017; 35(4):316–319. doi:<a href="https://doi.org/10.1038/nbt.3820">10.1038/nbt.3820</a> <a href="https://doi.org/10.1038/nbt.3820">https://doi.org/10.1038/nbt.3820</a></div>
-</div>
-<div id="ref-Chen2018Fastp" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Chen S., Zhou Y., Chen Y., Gu J. <span class="nocase">fastp: an ultra-fast all-in-one FASTQ
-preprocessor</span>. Bioinformatics; 2018; 34(17):i884–i890. doi:<a href="https://doi.org/10.1093/bioinformatics/bty560">10.1093/bioinformatics/bty560</a>
-<a href="https://doi.org/10.1093/bioinformatics/bty560">https://doi.org/10.1093/bioinformatics/bty560</a></div>
-</div>
-<div id="ref-Dobin2013STAR" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Dobin A., Davis C. A., Schlesinger F., Drenkow
-J., Zaleski C., Jha S., Batut P., Chaisson M., Gingeras T. R. <span class="nocase">STAR: ultrafast universal RNA-seq aligner</span>.
-Bioinformatics; 2013; 29(1):15–21. doi:<a href="https://doi.org/10.1093/bioinformatics/bts635">10.1093/bioinformatics/bts635</a>
-<a href="https://doi.org/10.1093/bioinformatics/bts635">https://doi.org/10.1093/bioinformatics/bts635</a></div>
-</div>
-<div id="ref-Danecek2021Samtools" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Danecek P., Bonfield J. K., Liddle J., Marshall
-J., Ohan V., Pollard M. O., Whitwham A., Keane T., McCarthy S. A.,
-Davies R. M., Li H. <span class="nocase">Twelve years of SAMtools and
-BCFtools</span>. GigaScience; 2021; 10(2):giab008. doi:<a href="https://doi.org/10.1093/gigascience/giab008">10.1093/gigascience/giab008</a>
-<a href="https://doi.org/10.1093/gigascience/giab008">https://doi.org/10.1093/gigascience/giab008</a></div>
-</div>
-<div id="ref-BroadInstitutePicard" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Broad Institute. <span class="nocase">Picard
-toolkit</span>. 2026. <a href="https://broadinstitute.github.io/picard/">https://broadinstitute.github.io/picard/</a></div>
-</div>
-<div id="ref-Patro2017Salmon" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Patro R., Duggal G., Love M. I., Irizarry R.
-A., Kingsford C. <span class="nocase">Salmon provides fast and
-bias-aware quantification of transcript expression</span>. Nature
-Methods; 2017; 14(4):417–419. doi:<a href="https://doi.org/10.1038/nmeth.4197">10.1038/nmeth.4197</a> <a href="https://doi.org/10.1038/nmeth.4197">https://doi.org/10.1038/nmeth.4197</a></div>
-</div>
-<div id="ref-Li2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">Li
-Y., Hu Y., Cheng P., Chen S. <span class="nocase">Identification of
-Potential Blind-Side Hypermelanosis-Related lncRNA–miRNA–mRNA Regulatory
-Network in a Flatfish Species, Chinese Tongue Sole (Cynoglossus
-semilaevis)</span>. Frontiers in Genetics; 2022; 12:817117. doi:<a href="https://doi.org/10.3389/FGENE.2021.817117/BIBTEX">10.3389/FGENE.2021.817117/BIBTEX</a>
-<a href="http://rfam.xfam.org/">http://rfam.xfam.org/</a></div>
-</div>
-<div id="ref-Wang2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">Wang N., Wang R., Wang R., Tian Y., Shao C.,
-Jia X., Chen S. <span class="nocase">The integrated analysis of RNA-seq
-and microRNA-seq depicts miRNA-mRNA networks involved in Japanese
-flounder (Paralichthys olivaceus) albinism</span>. PLOS ONE; 2017;
-12(8):e0181761. doi:<a href="https://doi.org/10.1371/JOURNAL.PONE.0181761">10.1371/JOURNAL.PONE.0181761</a>
-<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181761">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181761</a></div>
-</div>
-<div id="ref-Seikai1994" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">Seikai T., Matsumoto J. <span class="nocase">Mechanism of Pseudoalbinism in Flatfish: An Association
-Between Pigment Cell and Skin Differentiation</span>. Journal of the
-World Aquaculture Society; 1994; 25(1):78–85. doi:<a href="https://doi.org/10.1111/J.1749-7345.1994.TB00807.X;PAGEGROUP:STRING:PUBLICATION">10.1111/J.1749-7345.1994.TB00807.X;PAGEGROUP:STRING:PUBLICATION</a>
-<a href="/doi/pdf/10.1111/j.1749-7345.1994.tb00807.x https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-7345.1994.tb00807.x https://onlinelibrary.wiley.com/doi/10.1111/j.1749-7345.1994.tb00807.x">/doi/pdf/10.1111/j.1749-7345.1994.tb00807.x
-https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-7345.1994.tb00807.x
-https://onlinelibrary.wiley.com/doi/10.1111/j.1749-7345.1994.tb00807.x</a></div>
-</div>
-<div id="ref-Pinto2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">Pinto P. I. S., Guerreiro C. C., Costa R. A.,
-Martinez-Blanch J. F., Carballo C., Codoñer F. M., Manchado M., Power D.
-M. <span class="nocase">Understanding pseudo-albinism in sole (Solea
-senegalensis): a transcriptomics and metagenomics approach</span>.
-Scientific Reports 2019 9:1; 2019; 9(1):1–16. doi:<a href="https://doi.org/10.1038/s41598-019-49501-6">10.1038/s41598-019-49501-6</a>
-<a href="https://www.nature.com/articles/s41598-019-49501-6">https://www.nature.com/articles/s41598-019-49501-6</a></div>
-</div>
-<div id="ref-Blandon2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">Blandon I. R., DiBona E., Battenhouse A.,
-Vargas S., Mace C., Seemann F. <span class="nocase">Analysis of the Skin
-and Brain Transcriptome of Normally Pigmented and Pseudo-Albino Southern
-Flounder (Paralichthys lethostigma) Juveniles to Study the Molecular
-Mechanisms of Hypopigmentation and Its Implications for Species Survival
-in the Natural Envi</span>. International Journal of Molecular Sciences
-2024, Vol. 25, Page 7775; 2024; 25(14):7775. doi:<a href="https://doi.org/10.3390/IJMS25147775">10.3390/IJMS25147775</a> <a href="https://www.mdpi.com/1422-0067/25/14/7775/htm https://www.mdpi.com/1422-0067/25/14/7775">https://www.mdpi.com/1422-0067/25/14/7775/htm
-https://www.mdpi.com/1422-0067/25/14/7775</a></div>
-</div>
-<div id="ref-Vissio2021" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">Vissio P. G., Darias M. J., Di Yorio M. P.,
-Pérez Sirkin D. I., Delgadin T. H. <span class="nocase">Fish skin
-pigmentation in aquaculture: The influence of rearing conditions and its
-neuroendocrine regulation</span>. General and Comparative Endocrinology;
-2021; 301. doi:<a href="https://doi.org/10.1016/J.YGCEN.2020.113662">10.1016/J.YGCEN.2020.113662</a></div>
-</div>
-<div id="ref-Li2022a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">Li
-Y., Cheng P., Li M., Hu Y., Cui Z., Zhang C., Chen S. <span class="nocase">Transcriptome analysis and candidate gene identification
-reveals insights into the molecular mechanisms of hypermelanosis in
-Chinese tongue sole (Cynoglossus semilaevis)</span>. Aquaculture and
-Fisheries; 2022; 7(6):601–609. doi:<a href="https://doi.org/10.1016/J.AAF.2021.02.003">10.1016/J.AAF.2021.02.003</a></div>
-</div>
-<div id="ref-Nusslein-Volhard2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">Nüsslein-Volhard C., Singh A. P. <span class="nocase">How fish color their skin: A paradigm for development and
-evolution of adult patterns</span>. BioEssays; 2017; 39(3):1600231.
-doi:<a href="https://doi.org/10.1002/BIES.201600231">10.1002/BIES.201600231</a>
-<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/bies.201600231 https://onlinelibrary.wiley.com/doi/abs/10.1002/bies.201600231 https://onlinelibrary.wiley.com/doi/10.1002/bies.201600231">https://onlinelibrary.wiley.com/doi/full/10.1002/bies.201600231
-https://onlinelibrary.wiley.com/doi/abs/10.1002/bies.201600231
-https://onlinelibrary.wiley.com/doi/10.1002/bies.201600231</a></div>
-</div>
-<div id="ref-Fernandez-Gonzalez2021a" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div class="csl-right-inline">Fernández-González R., Pérez-Pérez M.,
-Garza-Gil M. D. <span class="nocase">An analysis of production factors
-for Galician-farmed turbot: From boom to stagnation</span>. Aquaculture
-Economics and Management; 2021; 25(3):320–338. doi:<a href="https://doi.org/10.1080/13657305.2020.1840659;PAGE:STRING:ARTICLE/CHAPTER">10.1080/13657305.2020.1840659;PAGE:STRING:ARTICLE/CHAPTER</a>
-<a href="https://www.tandfonline.com/doi/pdf/10.1080/13657305.2020.1840659">https://www.tandfonline.com/doi/pdf/10.1080/13657305.2020.1840659</a></div>
-</div>
-<div id="ref-Wu2024" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">Wu
-L., Sun W., Zhou J., Li Y., Li J., Song Z., Song C., Xu S., Yue X., Li
-X. <span class="nocase">Comparative transcriptome analysis reveals
-growth and molecular pathway of body color regulation in turbot
-(Scophthalmus maximus) exposed to different light spectrum</span>.
-Comparative Biochemistry and Physiology Part D: Genomics and Proteomics;
-2024; 49:101165. doi:<a href="https://doi.org/10.1016/J.CBD.2023.101165">10.1016/J.CBD.2023.101165</a></div>
-</div>
-<div id="ref-Liu2026" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[20] </div><div class="csl-right-inline">Liu Z., Shi Y., Yang M., Zhao H., Zhong J., Sun
-Z., Huang Z., Gao Y., Wang H., Ma A. <span class="nocase">Comparative
-transcriptomics reveals the potential mechanism underlying the formation
-of golden body color in turbot (Scophthalmus maximus)</span>.
-Aquaculture; 2026; 612:743276. doi:<a href="https://doi.org/10.1016/j.aquaculture.2025.743276">10.1016/j.aquaculture.2025.743276</a>
-<a href="https://doi.org/10.1016/j.aquaculture.2025.743276">https://doi.org/10.1016/j.aquaculture.2025.743276</a></div>
-</div>
-<div id="ref-GarciaAlcalde2012Qualimap" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">García-Alcalde F., Okonechnikov K., Carbonell
-J., Cruz L. M., Götz S., Tarazona S., Dopazo J., Meyer T. F., Conesa A.
-<span class="nocase">Qualimap: evaluating next-generation sequencing
-alignment data</span>. Bioinformatics; 2012; 28(20):2678–2679. doi:<a href="https://doi.org/10.1093/bioinformatics/bts503">10.1093/bioinformatics/bts503</a></div>
-</div>
-<div id="ref-Wang2012RSeQC" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[22] </div><div class="csl-right-inline">Wang L., Wang S., Li W. <span class="nocase">RSeQC: quality control of RNA-seq experiments</span>.
-Bioinformatics; 2012; 28(16):2184–2185. doi:<a href="https://doi.org/10.1093/bioinformatics/bts356">10.1093/bioinformatics/bts356</a></div>
-</div>
-<div id="ref-Sayols2016DupRadar" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[23] </div><div class="csl-right-inline">Sayols S., Scherzinger D., Klein H. <span class="nocase">dupRadar: a Bioconductor package for the assessment of
-PCR artifacts in RNA-Seq data</span>. BMC Bioinformatics; 2016;
-17(1):428. doi:<a href="https://doi.org/10.1186/s12859-016-1276-2">10.1186/s12859-016-1276-2</a></div>
-</div>
-<div id="ref-Daley2013Preseq" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[24] </div><div class="csl-right-inline">Daley T., Smith A. D. <span class="nocase">Predicting the molecular complexity of sequencing
-libraries</span>. Nature Methods; 2013; 10(4):325–327. doi:<a href="https://doi.org/10.1038/nmeth.2375">10.1038/nmeth.2375</a></div>
-</div>
 </div>
 
 
@@ -1502,17 +1518,49 @@ libraries</span>. Nature Methods; 2013; 10(4):325–327. doi:<a href="https://do
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="HOLOFISHCOLOUR transcriptomics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">HOLOFISHCOLOUR transcriptomics</span></span>
+      <a href="../chapters/01_intro.html" class="pagination-link" aria-label="Introducción">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/02_exp_design.html" class="pagination-link" aria-label="Diseño experimental">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/02_methods_nfcore.html" class="pagination-link" aria-label="Preprocesamiento bioinformático con nf-core/rnaseq">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

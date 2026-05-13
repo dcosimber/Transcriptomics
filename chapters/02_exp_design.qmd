@@ -1,0 +1,125 @@
+## Diseño experimental
+
+El diseño parte de individuos de rodaballo con fenotipo **normal** y **malpigmentado**, seleccionados en los tanques **E6** y **E8**, donde las diferencias de pigmentación eran evidentes. En el tanque E6 se incluyeron descendientes de dos parejas parentales; en el tanque E8 se trabajó con una familia de medios hermanos, con una madre compartida y dos padres distintos. Esta estructura permite interpretar los resultados teniendo en cuenta tanto el fenotipo de pigmentación como el posible componente familiar.
+
+## Toma de muestras
+
+Se tomaron fragmentos de piel de aproximadamente 20 mg con material de disección estéril (@fig-sampling). Los fragmentos se rasparon cuidadosamente con la cuchilla del bisturí para eliminar la parte de músculo y evitar posibles interferencias de este tejido en el posterior análisis de RNA-seq.
+
+Se tomaron muestras de peces con fenotipo pigmentario normal (control) y peces pseudoalbinos o malpigmentados. En los rodaballos control se recogieron dos tipos de muestras de piel: pigmentada, de color oscuro, en el lado ocular; y no pigmentada, de color claro, en el lado ciego. En los rodaballos pseudoalbinos se recogieron cuatro tipos de muestras:
+
+-   Lado ocular
+    -   Pigmentada, correspondiente a pigmentación normal.
+    -   No pigmentada, correspondiente a pigmentación anormal.
+-   Lado ciego
+    -   Pigmentada, correspondiente a pigmentación anormal.
+    -   No pigmentada, correspondiente a pigmentación anormal.
+
+![Toma de muestras de piel para el análisis transcriptómico. A-B: zonas de muestreo en rodaballos pseudoalbinos y control. Las zonas delimitadas con punteado amarillo corresponden a zonas no pigmentadas, y las delimitadas en rojo corresponden a zonas pigmentadas. C: corte y recogida de muestra de piel.](images/paste-1.png){#fig-sampling}
+
+La unidad biológica principal de esta fase es la **piel**, muestreada en regiones pigmentadas y no pigmentadas. La @tbl-sample-groups resume la lógica experimental de las muestras procesadas en el flujo nf-core/rnaseq documentado en este libro.
+
+::: {#tbl-sample-groups}
+| Grupo | Fenotipo del individuo | Región muestreada | Interpretación esperada |
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| Piel ocular pigmentada normal | Normal | Cara ocular, piel oscura | Referencia de pigmentación esperada en rodaballo. |
+| Piel ciega clara normal | Normal | Cara ciega, piel clara | Referencia de ausencia fisiológica de pigmentación. |
+| Piel oscura en malpigmentados | Malpigmentado | Cara ocular o ciega, piel pigmentada | Permite estudiar pigmentación mantenida o ectópica. |
+| Piel clara en malpigmentados | Malpigmentado | Cara ocular o ciega, piel no pigmentada | Permite estudiar pérdida local o ausencia anómala de pigmentación. |
+| Muestras complementarias | Normal, ambicolor o intestinal | Piel adicional o intestino | Material de apoyo para control, exploración o análisis integrativos posteriores. |
+
+: Estructura conceptual de los grupos de muestras incluidos en el análisis.
+:::
+
+## Muestras documentadas en este libro
+
+La @tbl-samples-intro recoge las muestras incluidas en la documentación bioinformática actual. La nomenclatura distingue muestras de piel (`P`) y muestras intestinales (`IT`). En capítulos posteriores, el control de calidad y el alineamiento se revisan a partir de los resultados generados por **nf-core/rnaseq** y **MultiQC** para este conjunto de bibliotecas.
+
+::: {#tbl-samples-intro}
+| Muestra | Tejido    | Tanque | Individuo | Fenotipo      | Cara   | Pigmentación |
+|:--------|:----------|:-------|:----------|:--------------|:-------|:-------------|
+| P31     | Piel      | E6     | 46        | Normal        | Ocular | Oscura       |
+| P32     | Piel      | E6     | 46        | Normal        | Ciega  | Clara        |
+| P33     | Piel      | E8     | 52        | Normal        | Ocular | Oscura       |
+| P34     | Piel      | E8     | 52        | Normal        | Ciega  | Clara        |
+| P35     | Piel      | E8     | 70        | Normal        | Ocular | Oscura       |
+| P36     | Piel      | E8     | 70        | Normal        | Ciega  | Clara        |
+| P41     | Piel      | E8     | 142       | Malpigmentado | Ocular | Oscura       |
+| P42     | Piel      | E8     | 142       | Malpigmentado | Ocular | Clara        |
+| P43     | Piel      | E8     | 142       | Malpigmentado | Ciega  | Oscura       |
+| P44     | Piel      | E8     | 131       | Malpigmentado | Ciega  | Clara        |
+| P45     | Piel      | E6     | 130       | Malpigmentado | Ocular | Oscura       |
+| P46     | Piel      | E6     | 130       | Malpigmentado | Ocular | Clara        |
+| P47     | Piel      | E6     | 130       | Malpigmentado | Ciega  | Oscura       |
+| P48     | Piel      | E6     | 130       | Malpigmentado | Ciega  | Clara        |
+| P49     | Piel      | E6     | 26        | Malpigmentado | Ocular | Oscura       |
+| P50     | Piel      | E6     | 26        | Malpigmentado | Ocular | Clara        |
+| P51     | Piel      | E6     | 26        | Malpigmentado | Ciega  | Oscura       |
+| P52     | Piel      | E6     | 26        | Malpigmentado | Ciega  | Clara        |
+| P1G     | Piel      | ND     | 56        | Normal        | ND     | ND           |
+| P2G     | Piel      | ND     | 34        | Normal        | ND     | ND           |
+| PNKD    | Piel      | ND     | ND        | Ambicolor     | ND     | ND           |
+| PNKV    | Piel      | ND     | ND        | Ambicolor     | ND     | ND           |
+| IT12    | Intestino | ND     | ND        | ND            | ND     | ND           |
+| IT16    | Intestino | ND     | ND        | ND            | ND     | ND           |
+| IT1G    | Intestino | ND     | ND        | ND            | ND     | ND           |
+| ITPNK   | Intestino | ND     | ND        | ND            | ND     | ND           |
+
+: Muestras incluidas en la fase documentada del análisis RNA-seq.
+:::
+
+## Extracción de ARN y control de calidad
+
+El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol^TM^ y columnas Phasemaker^TM^ Tubes (Thermo Fisher), seguido de purificación en columna. La integridad del ARN se evaluó mediante RIN y la cantidad disponible se registró antes de la preparación de bibliotecas.
+
+Las imágenes de control de calidad se almacenaron con el identificador de ácido nucleico asignado por el proveedor. Por ese motivo, la @tbl-rna-qc relaciona cada nombre de muestra usado en el análisis con su `Nucleic Acid ID` y enlaza directamente la imagen de QC correspondiente. La muestra `IT12` no superó el criterio de calidad por RIN bajo, mientras que `ITPNK` fue aceptada con una observación de ligera contaminación genómica.
+
+::: {#tbl-rna-qc}
+| Muestra | Nucleic Acid ID | Concentración (ng/ul) | Volumen (ul) | Cantidad total (ug) | RIN | QC | Observación | Imagen QC |
+|:--------|:----------------|----------------------:|-------------:|--------------------:|----:|:---|:------------|:----------|
+| P31   | EKRN240028385-1A | 1851.34 | 16 | 29.62141 | 7.7 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028385-1A%200ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG) |
+| P32   | EKRN240028386-1A | 2022.42 | 16 | 32.35878 | 8.3 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028386-1A%202741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG) |
+| P33   | EKRN240028387-1A | 483.84  | 13 | 6.28990  | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028387-1A%20D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG) |
+| P34   | EKRN240028388-1A | 826.81  | 17 | 14.05583 | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028388-1A%20D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG) |
+| P35   | EKRN240028389-1A | 430.00  | 16 | 6.87994  | 8.2 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028389-1A%20A24C77CE-2846-448D-BA32-BE5B352A9628.PNG) |
+| P36   | EKRN240028390-1A | 447.89  | 16 | 7.16622  | 7.2 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028390-1A%2009F7647A-7D63-4EC1-8448-546D44B0F700.PNG) |
+| P41   | EKRN240028391-1A | 1270.12 | 16 | 20.32186 | 9.3 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028391-1A%204DAD28B7-C028-44C2-B5E2-90586469B12E.PNG) |
+| P42   | EKRN240028392-1A | 888.98  | 19 | 16.89067 | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028392-1A%20D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG) |
+| P43   | EKRN240028393-1A | 1343.73 | 19 | 25.53087 | 8.0 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028393-1A%205BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG) |
+| P44   | EKRN240028394-1A | 1961.08 | 18 | 35.29941 | 7.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028394-1A%20D7433F06-BC78-45B6-9198-416D03AC6785.PNG) |
+| P45   | EKRN240028395-1A | 709.86  | 18 | 12.77749 | 8.1 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028395-1A%2075ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG) |
+| P46   | EKRN240028396-1A | 768.56  | 18 | 13.83416 | 8.9 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028396-1A%20621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG) |
+| P47   | EKRN240028397-1A | 342.27  | 19 | 6.50313  | 8.5 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028397-1A%20EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG) |
+| P48   | EKRN240028398-1A | 404.26  | 17 | 6.87242  | 7.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028398-1A%20F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG) |
+| P49   | EKRN240028399-1A | 954.50  | 16 | 15.27201 | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028399-1A%2057F88317-BDA3-4595-92B7-66008084A4B7.PNG) |
+| P50   | EKRN240028400-1A | 295.43  | 16 | 4.72680  | 9.6 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028400-1A%201A791172-7746-440C-8A51-41D22C219EDB.PNG) |
+| P51   | EKRN240028401-1A | 2511.00 | 13 | 32.64302 | 9.5 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028401-1A%20EBD7638C-4382-40CC-984D-4D351B61B948.PNG) |
+| P52   | EKRN240028402-1A | 578.87  | 15 | 8.68312  | 9.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028402-1A%2039B46501-27EE-470D-B8AA-B65E87CFBC13.PNG) |
+| P1G   | EKRN240028403-1A | 150.06  | 16 | 2.40097  | 8.9 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028403-1A%20D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG) |
+| P2G   | EKRN240028404-1A | 192.33  | 16 | 3.07729  | 9.0 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028404-1A%201EE8F273-552A-4118-8A01-7C359D493290.PNG) |
+| PNKD  | EKRN240028405-1A | 417.18  | 18 | 7.50923  | 8.7 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028405-1A%2074312C80-27BF-4516-A106-54CA8D077D38.PNG) |
+| PNKV  | EKRN240028406-1A | 221.19  | 17 | 3.76027  | 8.4 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028406-1A%20133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG) |
+| IT12  | EKRN240028407-1A | 2422.80 | 17 | 41.18753 | 3.8 | Fail | Unqualified RIN | [QC](../figures/02_exp_design/EKRN240028407-1A%203E4AC179-9D72-407B-8450-2FEADFA581EC.PNG) |
+| IT16  | EKRN240028408-1A | 2988.15 | 18 | 53.78664 | 6.0 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028408-1A%20206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG) |
+| IT1G  | EKRN240028409-1A | 2842.68 | 16 | 45.48292 | 7.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028409-1A%203EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG) |
+| ITPNK | EKRN240028410-1A | 4493.36 | 18 | 80.88050 | 7.1 | Pass | Slight genomic contamination | [QC](../figures/02_exp_design/EKRN240028410-1A%20AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG) |
+
+: Equivalencia entre nombres de muestra, identificadores de ácido nucleico, métricas de calidad de ARN e imágenes de control de calidad.
+:::
+
+## Secuenciación y marco técnico
+
+Las bibliotecas RNA-seq se generaron a partir de mRNA enriquecido por selección de poli(A), con protocolo específico de hebra y secuenciación paired-end de 150 pb. La @tbl-rnaseq-specs sintetiza las especificaciones técnicas de la fase de secuenciación. Esta información se desarrolla con más detalle en los capítulos metodológicos, donde se documentan el preprocesamiento, el control de calidad, el alineamiento contra el genoma de referencia y la cuantificación de expresión.
+
+::: {#tbl-rnaseq-specs}
+| Parámetro | Descripción |
+|:-----------------------------------|:-----------------------------------|
+| Plataforma | Illumina NovaSeq X Plus |
+| Configuración de lectura | Paired-end, 2 x 150 pb |
+| Preparación de librerías | mRNA específico de hebra, enriquecido por poli(A) |
+| Criterio de calidad contratado | Al menos 85% de bases con Q30 o superior |
+| Salida mínima esperada | Al menos 6 Gb por muestra |
+| Servicio | Novogene, WOBI Plant and Animal Whole Genome Sequencing |
+
+: Especificaciones generales de las bibliotecas RNA-seq.
+:::

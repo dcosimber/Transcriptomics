@@ -32,6 +32,7 @@ book:
   chapters:
     - index.qmd
     - chapters/01_intro.qmd
+    - chapters/02_exp_design.qmd
     - chapters/02_methods_nfcore.qmd
     - chapters/03_results.qmd
     - chapters/03_qc_multiqc.qmd
