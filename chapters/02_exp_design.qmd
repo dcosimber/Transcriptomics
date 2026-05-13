@@ -162,6 +162,7 @@ Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las
 
 La evaluación de calidad final del ARN fue realizada por Novogene mediante **Agilent 5400 Bioanalyzer**, como paso previo a la preparación de bibliotecas RNA-seq. Este control permitió evaluar de forma conjunta la concentración, la integridad y la pureza del ARN. Los resultados completos se resumen en la @tbl-rna-qc, mientras que los electroferogramas individuales se muestran en la @fig-rna-electropherograms mediante un panel de selección por muestra.
 
+::: {.callout-note title="Interpretación técnica del RIN"}
 El **RNA Integrity Number (RIN)** es un parámetro numérico que oscila entre **1** y **10** y que se emplea para evaluar la calidad del ARN total extraído de una muestra. Se calcula a partir de un análisis electroforético automatizado que separa los fragmentos de ARN según su tamaño molecular y genera un **electroferograma**, es decir, una representación de la intensidad de señal en función del tamaño de los fragmentos.
 
 El algoritmo de RIN analiza varias propiedades del perfil electroforético:
@@ -172,7 +173,6 @@ El algoritmo de RIN analiza varias propiedades del perfil electroforético:
 
 ![Electroferogramas típicos que ilustran la relación entre integridad del ARN y perfil electroforético. El ARN intacto (RIN = 10) muestra picos ribosomales 18S y 28S definidos; el ARN parcialmente degradado (RIN = 5) presenta picos menos pronunciados y mayor dispersión; el ARN fuertemente degradado (RIN = 3) muestra ausencia de picos definidos y acumulación de fragmentos pequeños.](../figures/02_exp_design/rin_integrity_examples.png){#fig-rin-profiles width="80%"}
 
-::: {.callout-note title="Interpretación técnica del RIN"}
 En una muestra de alta calidad, el electroferograma presenta picos de **18S** y **28S** altos y definidos, bajo nivel de fondo y poca señal asociada a fragmentos cortos. Cuando la muestra está degradada, los picos ribosomales se atenúan o desaparecen y aumenta la señal correspondiente a fragmentos de menor tamaño molecular, como se resume en la @fig-rin-profiles.
 :::
 
