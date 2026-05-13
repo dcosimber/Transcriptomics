@@ -1,0 +1,22 @@
+Sample	python	bioconductor-dupradar	perl	gunzip	rsem	preseq	qualimap	rseqc	samtools	subread	nf-core/rnaseq	Nextflow
+CUSTOM_GTFFILTER	3.9.5											
+CUSTOM_MULTIQCCUSTOMBIOTYPE	3.12.12											
+DupRadar		1.38.0										
+EAUTILS_GTF2BED			5.26.2									
+GUNZIP_FASTA				1.13								
+GUNZIP_GTF				1.13								
+MAKE_TRANSCRIPTS_FASTA					1.3.1							
+PRESEQ_LCEXTRAP						3.2.0						
+QUALIMAP_RNASEQ							2.3					
+RSEQC_BAMSTAT								5.0.4				
+RSEQC_INFEREXPERIMENT								5.0.4				
+RSEQC_INNERDISTANCE								5.0.4				
+RSEQC_JUNCTIONANNOTATION								5.0.4				
+RSEQC_JUNCTIONSATURATION								5.0.4				
+RSEQC_READDISTRIBUTION								5.0.4				
+RSEQC_READDUPLICATION								5.0.4				
+SAMTOOLS_FAIDX									1.23.1			
+SAMTOOLS_INDEX									1.23.1			
+SAMTOOLS_SORT_QUALIMAP									1.23.1			
+SUBREAD_FEATURECOUNTS										2.0.6		
+Workflow											v3.25.0-g891468c	25.10.3

@@ -2,13 +2,14 @@
 
 El informe **[MultiQC](https://seqera.io/multiqc/)** se utiliza aquí como una fuente estructurada de resultados, no como una captura aislada [@Ewels2016MultiQC]. La idea es que el lector pueda seguir el control de calidad **herramienta por herramienta**, viendo las mismas figuras exportadas por MultiQC y consultando las tablas originales en formato copiable.
 
-Este capítulo documenta los módulos principales generados por **[`nf-core/rnaseq`](https://nf-co.re/rnaseq)** en la rama `star_salmon`, ejecutada sobre **[Nextflow](https://www.nextflow.io/)** [@Ewels2020Nfcore; @DiTommaso2017Nextflow]: **fastp**, **STAR**, **Samtools**, **Picard**, **strand check** y **versiones de software**. Además, registra salidas post-alineamiento que están en el árbol completo del run pero no quedaron integradas como paneles del HTML de MultiQC copiado a la web: **Qualimap**, **RSeQC** y **dupRadar**. La interpretación combina dos niveles: una lectura *técnica*, centrada en si las bibliotecas son válidas para el análisis downstream, y una lectura *biológica*, centrada en si los resultados permiten confiar en la señal transcriptómica posterior.
+Este capítulo documenta los módulos principales generados por **[`nf-core/rnaseq`](https://nf-co.re/rnaseq)** en la rama `star_salmon`, ejecutada sobre **[Nextflow](https://www.nextflow.io/)** [@Ewels2020Nfcore; @DiTommaso2017Nextflow]: **fastp**, **STAR**, **Samtools**, **Picard**, **strand check** y **versiones de software**. Además, integra el análisis post-alineamiento recuperado mediante `--resume` sobre los BAM ya generados: **Qualimap**, **RSeQC**, **dupRadar**, **Preseq** y **featureCounts**. La interpretación combina dos niveles: una lectura *técnica*, centrada en si las bibliotecas son válidas para el análisis downstream, y una lectura *biológica*, centrada en si los resultados permiten confiar en la señal transcriptómica posterior.
 
 ::: {.callout-tip title="Informe original"}
 El informe MultiQC completo se conserva como anexo navegable. Las secciones siguientes integran sus figuras y tablas principales dentro del libro, pero el HTML original sigue disponible para inspección interactiva.
 
 <div class="multiqc-link-row">
   <a class="btn btn-primary" href="../multiqc/star_salmon/multiqc_report.html" target="_blank" rel="noopener">Abrir informe MultiQC completo</a>
+  <a class="btn btn-primary" href="../multiqc/bam_qc/multiqc_report.html" target="_blank" rel="noopener">Abrir MultiQC post-alineamiento</a>
   <a class="btn btn-outline-secondary" href="../multiqc/star_salmon/multiqc_report_data/multiqc_general_stats.txt" target="_blank" rel="noopener">Descargar tabla General Stats</a>
 </div>
 :::
@@ -59,10 +60,11 @@ Orientación media inferida como *reverse* por [Salmon](https://combine-lab.gith
 | `STAR` unique alignment | Media **90.09%**; mínimo **86.56%** (`P44`) | Vigilar `P44` | Revisar en PCA, no excluir por QC primario |
 | `Picard` duplicates | Media **54.31%**; máximo **78.80%** (`P49`) | Vigilar complejidad | Interpretar junto con abundancia de transcritos y profundidad |
 | `Strand check` | **24/24** muestras inferidas como `reverse` | Aceptar | Diseño de biblioteca coherente |
-| `Qualimap` RNA-seq QC | Informes para 8 muestras; sesgo 5'-3' entre **1.18-1.36** | Aceptar como revisión parcial | No se observa degradación 5'/3' marcada en el subconjunto |
-| `RSeQC` infer experiment | Patrón compatible con biblioteca `reverse`; `IT1G` con **36.06%** no determinado | Vigilar `IT1G` | Confirmar orientación junto con Salmon y metadatos de biblioteca |
-| `dupRadar` | Salidas para 17 muestras; `P49` con intercepto más alto | Vigilar duplicación dependiente de expresión | Separar genes muy expresados de posible artefacto PCR |
-| `Preseq` | No ejecutado: `skip_preseq: true` | No disponible | La complejidad se evalúa con métricas alternativas |
+| `Qualimap` RNA-seq QC | **24/24** muestras; sesgo 5'-3' medio **1.30**; rango **1.18-1.39** | Aceptar | No se observa degradación 5'/3' marcada |
+| `RSeQC` infer experiment | **24/24** muestras; fracción `pe_antisense` media **72.73%** | Aceptar con vigilancia de `PNKIT` | Orientación mayoritaria compatible con biblioteca reverse |
+| `dupRadar` | **24/24** muestras; intercepto medio **0.53**; máximo **1.57** (`P49`) | Vigilar `P49` | Separar duplicación técnica de genes altamente expresados |
+| `Preseq` | **24/24** muestras con curvas de complejidad | Aceptar como auditoría de complejidad | No indica fallo global de complejidad de bibliotecas |
+| `featureCounts` biotypes | **24/24** muestras; señal dominada por genes codificantes | Aceptar | La cuantificación cae mayoritariamente en biotipos esperados |
 
 : Matriz de decisión técnica derivada de las tablas y figuras exportadas por MultiQC.
 :::
@@ -195,104 +197,147 @@ La reproducibilidad del análisis depende de fijar no solo los parámetros, sino
 <div class="multiqc-table" data-src="../multiqc/star_salmon/multiqc_report_data/multiqc_software_versions.txt" data-caption="Versiones de software detectadas por MultiQC para los procesos del pipeline."></div>
 </details>
 
-## QC post-alineamiento fuera del MultiQC integrado
+## QC post-alineamiento recuperado con `--resume`
 
-El HTML de MultiQC incluido en la web resume los módulos principales, pero el directorio completo de `nf-core/rnaseq` contiene más controles post-alineamiento. Estos módulos no sustituyen a STAR, Samtools o Picard; los complementan con preguntas más específicas sobre **origen genómico de las lecturas**, **orientación de la biblioteca**, **estructura de empalmes**, **tamaño de inserto** y **duplicación dependiente de expresión**.
+El primer MultiQC integrado en este libro recogía el flujo principal `star_salmon`, pero no incluía de forma completa varios módulos post-alineamiento. Para completar esa parte se lanzó una segunda ejecución de **nf-core/rnaseq** con `--resume`, usando los **BAM marcados como duplicados** de la corrida original y activando los módulos de QC faltantes.
 
-::: {.callout-note title="Cómo leer esta sección"}
-Las tablas siguientes funcionan como inventario auditado. Algunas herramientas generaron informes solo para un subconjunto de muestras, por lo que sus resultados se interpretan como evidencia adicional, no como criterio global de exclusión.
+::: {.callout-note title="Nota sobre el nombre de carpeta `hisat2`"}
+Los BAM evaluados proceden del alineamiento original con **STAR**. La carpeta `hisat2` aparece en la ejecución de recuperación por una decisión de configuración necesaria para evitar que nf-core/rnaseq reentrara en la rama de cuantificación `star_salmon` durante el reprocesado de BAM. Por tanto, las métricas de Qualimap, RSeQC, dupRadar, Preseq y featureCounts deben interpretarse como **QC post-alineamiento de los BAM STAR originales**.
 :::
 
-::: {#tbl-post-alignment-modules}
-| Herramienta | Estado en este proyecto | Qué evalúa | Lectura práctica |
-|---|---|---|---|
-| [`Qualimap`](http://qualimap.conesalab.org/) | Salidas en `star_salmon/qualimap/` para 8 muestras | Origen exónico/intrónico/intergénico, cobertura a lo largo de genes y sesgo 5'-3' | Complementa la interpretación de alineamiento y anotación |
-| [`RSeQC`](http://rseqc.sourceforge.net/) | Salidas en `star_salmon/rseqc/` para 16-18 muestras según módulo | BAM, strandedness, distribución de lecturas, distancia interna, junctions y duplicación | Audita la coherencia de biblioteca y anotación |
-| [`dupRadar`](https://bioconductor.org/packages/dupRadar/) | Salidas en `star_salmon/dupradar/` para 17 muestras; no integrado en el HTML MultiQC final | Relación entre duplicación y nivel de expresión por gen | Ayuda a separar duplicación técnica de abundancia biológica alta |
-| [`Preseq`](http://smithlabresearch.org/software/preseq/) | No ejecutado: `skip_preseq: true` | Extrapolación de complejidad molecular y rendimiento esperado al resecuenciar | No disponible en esta corrida |
-| [`Trim Galore`](https://github.com/FelixKrueger/TrimGalore) | No ejecutado | Wrapper de Cutadapt/FastQC para trimming | En esta corrida el trimming lo hizo `fastp` |
+El job de recuperación terminó correctamente (**Slurm `COMPLETED`, exit code `0:0`**) y generó un MultiQC global con **24/24 muestras**. El informe completo queda publicado como anexo:
 
-: Estado de herramientas post-alineamiento o herramientas esperables en un flujo RNA-seq.
+<div class="multiqc-link-row">
+  <a class="btn btn-primary" href="../multiqc/bam_qc/multiqc_report.html" target="_blank" rel="noopener">Abrir MultiQC post-alineamiento</a>
+  <a class="btn btn-outline-secondary" href="../multiqc/bam_qc/multiqc_report_data/multiqc_general_stats.txt" target="_blank" rel="noopener">Descargar General Stats post-alineamiento</a>
+</div>
+
+::: {#tbl-bam-qc-modules}
+| Herramienta | Cobertura | Qué evalúa | Resultado principal |
+|---|---:|---|---|
+| [`Qualimap`](http://qualimap.conesalab.org/) | 24/24 | Origen genómico, cobertura sobre cuerpo génico y sesgo 5'-3' | Sesgo 5'-3' moderado, media **1.30**, rango **1.18-1.39** |
+| [`RSeQC`](http://rseqc.sourceforge.net/) | 24/24 | BAM, orientación, distribución de lecturas, distancia interna, junctions y duplicación | Orientación mayoritaria compatible con biblioteca reverse; `PNKIT` con fracción no determinada alta |
+| [`dupRadar`](https://bioconductor.org/packages/dupRadar/) | 24/24 | Duplicación dependiente del nivel de expresión | Intercepto medio **0.53**; máximo **1.57** en `P49` |
+| [`Preseq`](http://smithlabresearch.org/software/preseq/) | 24/24 | Complejidad molecular y rendimiento esperado al resecuenciar | Curvas disponibles para todas las muestras; sin fallo global evidente |
+| [`featureCounts`](https://subread.sourceforge.net/featureCounts.html) | 24/24 | Asignación de lecturas a biotipos anotados | La señal está dominada por genes codificantes, media **98.89%** |
+
+: Estado actualizado de los módulos post-alineamiento tras el `--resume`.
 :::
 
 ### [Qualimap](http://qualimap.conesalab.org/): origen genómico y sesgo de cobertura
 
-[`Qualimap`](http://qualimap.conesalab.org/) evalúa la calidad de alineamientos de secuenciación y, en modo RNA-seq, resume cómo se distribuyen las lecturas respecto a la anotación: regiones exónicas, intrónicas, intergénicas, lecturas en junctions y perfil de cobertura a lo largo del cuerpo génico [@GarciaAlcalde2012Qualimap]. En este proyecto hay informes para **8 muestras**: `IT1G`, `P32`, `P34`, `P42`, `P45`, `P49`, `P50` y `PNKV`.
+[`Qualimap`](http://qualimap.conesalab.org/) evalúa la calidad de alineamientos de secuenciación y, en modo RNA-seq, resume cómo se distribuyen las lecturas respecto a la anotación: regiones exónicas, intrónicas, intergénicas, lecturas en junctions y perfil de cobertura a lo largo del cuerpo génico [@GarciaAlcalde2012Qualimap].
 
-::: {#tbl-qualimap-summary}
-| Muestra | Exónico (%) | Intrónico (%) | Intergénico (%) | Sesgo 5'-3' | Lecturas en junctions |
-|---|---:|---:|---:|---:|---:|
-| IT1G | 48.83 | 30.39 | 20.78 | 1.20 | 24,122,005 |
-| P32 | 38.91 | 26.21 | 34.88 | 1.20 | 18,520,232 |
-| P34 | 39.76 | 23.13 | 37.11 | 1.26 | 15,780,894 |
-| P42 | 42.76 | 24.88 | 32.36 | 1.36 | 25,574,039 |
-| P45 | 39.70 | 24.23 | 36.07 | 1.35 | 18,428,063 |
-| P49 | 41.86 | 22.68 | 35.46 | 1.18 | 20,945,928 |
-| P50 | 43.82 | 23.45 | 32.73 | 1.26 | 29,146,234 |
-| PNKV | 45.11 | 30.88 | 24.01 | 1.31 | 21,563,345 |
+En esta recuperación, Qualimap se generó para **24/24 muestras**. El sesgo 5'-3' fue bajo-moderado, con media **1.30**, mínimo **1.18** (`P49`) y máximo **1.39** (`P44`). Esto no sugiere degradación extrema ni un sesgo sistemático fuerte a lo largo del cuerpo génico.
 
-: Resumen de los informes `rnaseq_qc_results.txt` generados por Qualimap.
+::: {#fig-qualimap-bamqc layout-ncol="2"}
+![Origen genómico de las lecturas estimado por Qualimap.](../multiqc/bam_qc/multiqc_report_plots/png/qualimap_genomic_origin-pct.png)
+
+![Perfil normalizado de cobertura sobre genes.](../multiqc/bam_qc/multiqc_report_plots/png/qualimap_gene_coverage_profile_Normalised.png)
+
+Resumen Qualimap del QC post-alineamiento. El origen genómico ayuda a evaluar la compatibilidad con la anotación, mientras que el perfil de cobertura permite detectar sesgos 5'-3' o degradación.
 :::
 
-La proporción exónica se sitúa entre **38.91%** y **48.83%**, con fracciones intergénicas más altas en `P34`, `P45` y `P49`. Esto no invalida automáticamente el run: en especies no modelo y anotaciones incompletas, parte de la señal puede caer fuera de regiones exónicas anotadas. El sesgo 5'-3' permanece en un rango moderado (**1.18-1.36**), sin una señal clara de degradación extrema de RNA en este subconjunto.
+La proporción relativa de lecturas exónicas, intrónicas e intergénicas debe leerse con prudencia. En transcriptómica de especies con anotación perfectible, una fracción intergénica o intrónica apreciable no implica automáticamente contaminación; puede reflejar anotaciones incompletas, transcritos no anotados, pre-mRNA o regiones reguladoras transcritas.
+
+<details class="multiqc-details">
+<summary>Tabla MultiQC BAM-QC: Qualimap RNA-seq genome results</summary>
+<div class="multiqc-table" data-src="../multiqc/bam_qc/multiqc_report_data/qualimap_rnaseq_genome_results.txt" data-caption="Resultados de Qualimap RNA-seq exportados por MultiQC para las 24 muestras."></div>
+</details>
 
 ### [RSeQC](http://rseqc.sourceforge.net/): coherencia de BAM, biblioteca y anotación
 
-[`RSeQC`](http://rseqc.sourceforge.net/) es un conjunto de módulos de control de calidad para RNA-seq alineado [@Wang2012RSeQC]. A diferencia de STAR o Samtools, que resumen métricas generales de mapeo, RSeQC entra en detalles propios del RNA-seq: distribución de lecturas sobre genes, compatibilidad con la orientación de biblioteca, saturación de junctions y patrones de duplicación.
+[`RSeQC`](http://rseqc.sourceforge.net/) es un conjunto de módulos de control de calidad para RNA-seq alineado [@Wang2012RSeQC]. A diferencia de STAR o Samtools, que resumen métricas generales de mapeo, RSeQC entra en detalles propios del RNA-seq: distribución de lecturas sobre genes, compatibilidad con la orientación de biblioteca, saturación de junctions, distancia interna entre pares y patrones de duplicación.
 
-::: {#tbl-rseqc-modules}
-| Módulo RSeQC | Salidas observadas | Qué aporta | Interpretación en este proyecto |
-|---|---:|---|---|
-| `bam_stat` | 18 informes | Conteos BAM: únicos, no primarios, duplicados, pares correctos | Auditoría post-STAR de la estructura del BAM |
-| `infer_experiment` | 16 informes | Orientación de biblioteca frente a anotación | Patrón mayoritario compatible con biblioteca `reverse` |
-| `inner_distance` | 16 informes PDF/TXT | Distancia interna estimada entre pares | Control de geometría paired-end |
-| `junction_annotation` | 15 conjuntos PDF/XLS/LOG | Junctions anotadas y potencialmente nuevas | Evalúa compatibilidad con anotación y empalmes |
-| `junction_saturation` | 18 informes PDF | Saturación de descubrimiento de junctions | Indica si la profundidad captura la complejidad de empalmes |
-| `read_distribution` | 18 informes | Lecturas en CDS, UTR, intrones y regiones flanqueantes | Control de distribución funcional de lecturas |
-| `read_duplication` | 16 conjuntos PDF/XLS | Duplicación por secuencia y posición | Complementa Picard y dupRadar |
+:::: panel-tabset
+## Orientación
 
-: Inventario de submódulos RSeQC encontrados en `star_salmon/rseqc/`.
-:::
+![Orientación de biblioteca inferida por RSeQC.](../multiqc/bam_qc/multiqc_report_plots/png/rseqc_infer_experiment_plot.png){#fig-rseqc-infer}
 
-El módulo `infer_experiment` apoya una orientación compatible con biblioteca **reverse**. En la mayoría de muestras, el patrón `"1+-,1-+,2++,2--"` domina con valores aproximados entre **69.86%** y **78.97%**; `IT1G` presenta una fracción no determinada más alta (**36.06%**), por lo que conviene revisarla junto con Salmon, PCA y metadatos. Esta señal no contradice el `strand check` de Salmon, pero sí añade un punto de vigilancia útil.
+El patrón dominante corresponde a `pe_antisense`, con media **72.73%**, compatible con bibliotecas de orientación reverse. La fracción no determinada fue baja en la mayoría de muestras, aunque `PNKIT` alcanzó **45.34%** y queda como punto de vigilancia técnico. Esta observación se interpreta junto con el `strand check` de Salmon, que fue coherente en las 24 muestras.
+
+## Distribución
+
+![Distribución porcentual de lecturas sobre elementos génicos según RSeQC.](../multiqc/bam_qc/multiqc_report_plots/png/rseqc_read_distribution_plot-pct.png){#fig-rseqc-read-dist}
+
+La distribución de lecturas se concentra mayoritariamente en regiones codificantes y UTR, con una contribución intrónica media moderada. Esta señal es compatible con bibliotecas RNA-seq de mRNA y no muestra un patrón global de contaminación o fallo de anotación.
+
+## Distancia interna
+
+![Distribución de distancia interna entre pares de lectura.](../multiqc/bam_qc/multiqc_report_plots/png/rseqc_inner_distance_plot_Counts.png){#fig-rseqc-inner-distance}
+
+La distancia interna evalúa la geometría paired-end después del alineamiento. Las distribuciones son útiles para detectar bibliotecas con inserto inesperado, colapso de fragmentos o comportamiento anómalo de pares.
+
+## Junctions
+
+![Saturación de junctions conocidas.](../multiqc/bam_qc/multiqc_report_plots/png/rseqc_junction_saturation_plot_Known_Junctions.png){#fig-rseqc-junction-saturation}
+
+La saturación de junctions permite valorar si la profundidad de secuenciación captura de forma estable los eventos de empalme detectables. No se observa una muestra aislada que rompa de manera evidente la tendencia del lote.
+
+## Duplicación
+
+![Duplicación de lecturas estimada por RSeQC.](../multiqc/bam_qc/multiqc_report_plots/png/rseqc_read_dups_plot.png){#fig-rseqc-read-dups}
+
+Este panel complementa Picard y dupRadar. En RNA-seq, la duplicación se interpreta siempre junto con expresión génica: transcritos muy abundantes pueden producir duplicación elevada sin que exista necesariamente fallo de biblioteca.
+::::
+
+<details class="multiqc-details">
+<summary>Tabla MultiQC BAM-QC: RSeQC infer experiment</summary>
+<div class="multiqc-table" data-src="../multiqc/bam_qc/multiqc_report_data/multiqc_rseqc_infer_experiment.txt" data-caption="Orientación de biblioteca inferida por RSeQC."></div>
+</details>
+
+<details class="multiqc-details">
+<summary>Tabla MultiQC BAM-QC: RSeQC read distribution</summary>
+<div class="multiqc-table" data-src="../multiqc/bam_qc/multiqc_report_data/multiqc_rseqc_read_distribution.txt" data-caption="Distribución de lecturas sobre regiones génicas según RSeQC."></div>
+</details>
 
 ### [dupRadar](https://bioconductor.org/packages/dupRadar/): duplicación dependiente de expresión
 
 [`dupRadar`](https://bioconductor.org/packages/dupRadar/) evalúa si la duplicación aumenta de forma esperable con el nivel de expresión o si existe una señal compatible con artefactos de PCR [@Sayols2016DupRadar]. Esto es especialmente útil en RNA-seq: los genes muy expresados tienden a generar más lecturas duplicadas incluso en bibliotecas técnicamente válidas.
 
-En el árbol de resultados hay salidas de dupRadar para **17 muestras**: matrices por gen, histogramas de expresión, gráficos de duplicación frente a expresión, boxplots e intercepto/pendiente del modelo. El informe MultiQC final registra que el módulo `dupradar-module` no se encontró, por lo que estas figuras no aparecen en el HTML integrado.
+![Relación entre duplicación y expresión estimada por dupRadar.](../multiqc/bam_qc/multiqc_report_plots/png/dupradar.png){#fig-dupradar-bamqc}
 
-::: {#tbl-dupradar-summary}
-| Muestra | Intercepto dupRadar | Pendiente dupRadar |
-|---|---:|---:|
-| IT1G | 0.10 | 1.31 |
-| P2G | 0.14 | 1.25 |
-| P32 | 0.24 | 1.26 |
-| P33 | 0.29 | 1.23 |
-| P34 | 0.54 | 1.24 |
-| P35 | 0.43 | 1.25 |
-| P36 | 0.48 | 1.24 |
-| P41 | 0.24 | 1.27 |
-| P42 | 0.76 | 1.25 |
-| P43 | 0.98 | 1.29 |
-| P45 | 0.73 | 1.24 |
-| P46 | 0.69 | 1.22 |
-| P47 | 1.06 | 1.25 |
-| P49 | 1.57 | 1.27 |
-| P50 | 0.49 | 1.21 |
-| P52 | 0.34 | 1.24 |
-| PNKIT | 0.08 | 1.36 |
+El intercepto dupRadar se calculó para **24/24 muestras**. La media fue **0.53**, con mínimo **0.08** (`PNKIT`) y máximo **1.57** (`P49`). `P49` confirma el patrón observado previamente con Picard: tiene una señal de duplicación mayor que el resto y debe seguirse en PCA y análisis exploratorio. Aun así, la presencia de duplicación dependiente de expresión no equivale por sí sola a un fallo técnico, especialmente si la muestra mantiene buen alineamiento y buena calidad de lectura.
 
-: Intercepto y pendiente reportados por dupRadar para la relación duplicación-expresión.
+<details class="multiqc-details">
+<summary>Tabla MultiQC BAM-QC: General Stats con intercepto dupRadar</summary>
+<div class="multiqc-table" data-src="../multiqc/bam_qc/multiqc_report_data/multiqc_general_stats.txt" data-caption="General Stats del MultiQC post-alineamiento, incluyendo intercepto dupRadar, métricas Qualimap y RSeQC."></div>
+</details>
+
+### [Preseq](http://smithlabresearch.org/software/preseq/): complejidad molecular
+
+[`Preseq`](http://smithlabresearch.org/software/preseq/) extrapola la complejidad molecular de una biblioteca y estima cuánta señal nueva se esperaría al aumentar la profundidad de secuenciación [@Daley2013Preseq]. A diferencia de Picard o RSeQC, que miden duplicación observada, Preseq intenta proyectar el rendimiento potencial de resecuenciar la misma biblioteca.
+
+![Curvas de complejidad molecular estimadas por Preseq.](../multiqc/bam_qc/multiqc_report_plots/png/preseq_complexity_plot_molecules.png){#fig-preseq-bamqc}
+
+Preseq se generó para **24/24 muestras**. Las curvas son coherentes con bibliotecas de RNA-seq bulk donde la ganancia de moléculas nuevas se desacelera al aumentar la profundidad. No se detecta una señal global que obligue a excluir muestras por complejidad, aunque las curvas deben interpretarse junto con duplicación, profundidad y distribución de expresión.
+
+::: {.callout-tip title="Tabla Preseq"}
+La tabla `preseq.txt` tiene muchas columnas porque exporta la curva completa de extrapolación. Por eso no se renderiza como tabla copiable dentro de la página, para no hacer pesada la navegación. Se conserva en el anexo MultiQC: [descargar `preseq.txt`](../multiqc/bam_qc/multiqc_report_data/preseq.txt).
 :::
 
-`P49` vuelve a destacar como muestra de seguimiento por su intercepto más alto, coherente con la duplicación elevada observada con Picard. La pendiente, sin embargo, se mantiene en un rango relativamente estrecho (**1.21-1.36**), lo que sugiere que una parte importante de la duplicación puede estar asociada a genes muy expresados y no necesariamente a un fallo global de biblioteca.
+### [featureCounts](https://subread.sourceforge.net/featureCounts.html): biotipos asignados
 
-### Herramientas no ejecutadas: Preseq y Trim Galore
+[`featureCounts`](https://subread.sourceforge.net/featureCounts.html), parte del paquete Subread, asigna lecturas alineadas a features genómicas anotadas de forma eficiente [@Liao2014FeatureCounts]. En este QC se utiliza para resumir la contribución relativa de distintos biotipos, como genes codificantes, lncRNA, rRNA, snRNA o pseudogenes.
 
-[`Preseq`](http://smithlabresearch.org/software/preseq/) permite extrapolar la complejidad molecular de una biblioteca y estimar cuánta novedad se ganaría al secuenciar más profundamente [@Daley2013Preseq]. En esta corrida no se ejecutó: los parámetros del pipeline indican **`skip_preseq: true`** y no hay ficheros `*.lc_extrap.txt`.
+::: {#fig-featurecounts-bamqc layout-ncol="2"}
+![Biotipos asignados por featureCounts, porcentajes.](../multiqc/bam_qc/multiqc_report_plots/png/featurecounts_biotype_plot-pct.png)
 
-[`Trim Galore`](https://github.com/FelixKrueger/TrimGalore) tampoco se ejecutó. El recorte de adaptadores y filtrado de lecturas se realizó con **fastp**, que ya está documentado arriba. Por tanto, la ausencia de secciones de Preseq o Trim Galore no es una pérdida de datos del informe, sino una consecuencia de la configuración usada.
+![Biotipos asignados por featureCounts, conteos.](../multiqc/bam_qc/multiqc_report_plots/png/featurecounts_biotype_plot-cnt.png)
+
+Distribución de biotipos estimada por featureCounts. La dominancia de genes codificantes es compatible con bibliotecas de mRNA enriquecidas por poli(A).
+:::
+
+La señal está fuertemente dominada por genes **protein_coding**, con una proporción media aproximada de **98.89%** entre los biotipos representados en la tabla exportada. Esto es coherente con bibliotecas de mRNA y no sugiere una contaminación masiva por biotipos no esperados.
+
+<details class="multiqc-details">
+<summary>Tabla MultiQC BAM-QC: featureCounts biotypes</summary>
+<div class="multiqc-table" data-src="../multiqc/bam_qc/multiqc_report_data/multiqc_featurecounts_biotype_plot.txt" data-caption="Conteos por biotipo exportados por featureCounts y resumidos por MultiQC."></div>
+</details>
+
+### Herramientas no ejecutadas: Trim Galore
+
+[`Trim Galore`](https://github.com/FelixKrueger/TrimGalore) no se ejecutó en este proyecto. El recorte de adaptadores y filtrado de lecturas fue realizado por **fastp**, que ya está documentado arriba. Por tanto, la ausencia de Trim Galore no representa una pérdida de resultados: responde a la configuración del pipeline.
 
 ## Conclusión del QC integrado
 
