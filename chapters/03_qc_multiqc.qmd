@@ -339,14 +339,83 @@ La señal está fuertemente dominada por genes **protein_coding**, con una propo
 
 [`Trim Galore`](https://github.com/FelixKrueger/TrimGalore) no se ejecutó en este proyecto. El recorte de adaptadores y filtrado de lecturas fue realizado por **fastp**, que ya está documentado arriba. Por tanto, la ausencia de Trim Galore no representa una pérdida de resultados: responde a la configuración del pipeline.
 
+## QC estadístico de las matrices de expresión en R
+
+El QC de MultiQC evalúa la calidad técnica de lecturas, alineamientos y BAMs. La siguiente capa de control se realizó en **R** sobre las matrices de expresión generadas por `Salmon`, usando conteos a nivel de gen, transformación estabilizadora de varianza de `DESeq2` y análisis no supervisados. Esta etapa responde a una pregunta distinta: si, una vez cuantificada la expresión, las muestras se agrupan de forma compatible con el diseño biológico y si alguna muestra muestra un comportamiento extremo que pueda sesgar el análisis diferencial.
+
+::: {.callout-tip title="Lectura práctica de esta sección"}
+Una muestra no debe excluirse por una sola métrica aislada. En este proyecto se cruzaron **calidad de lectura**, **mapeo**, **duplicación**, **profundidad de cuantificación**, **PCA**, **distancias entre muestras** y **coherencia con el diseño experimental**. Este enfoque evita confundir variación biológica real con ruido técnico.
+:::
+
+La tabla integrada de QC resume **24 bibliotecas RNA-seq**. De ellas, **20 muestras de piel** constituyen el conjunto principal de expresión diferencial. Cuatro muestras se mantienen en el QC exploratorio pero quedan fuera del análisis principal: `IT1G` y `PNKIT` por corresponder a intestino, y `PNKD`/`PNKV` por pertenecer al bloque exploratorio de ambicoloration/PNK.
+
+| Métrica | Resultado global | Mínimo | Máximo | Interpretación |
+|---|---:|---:|---:|---|
+| Supervivencia tras filtrado fastp (%) | 98.45 | 97.92 (`P49`) | 98.84 (`PNKD`) | Retención muy alta; no hay pérdidas severas por trimming. |
+| Alineamiento único STAR (%) | 90.09 | 86.56 (`P44`) | 91.71 (`P48`) | Mapeo sólido; `P44` se vigila por estar en el extremo inferior. |
+| Duplicación Picard (%) | 54.31 | 26.09 (`IT1G`) | 78.80 (`P49`) | Señal técnica más destacable; requiere interpretación junto con expresión y PCA. |
+| Conteos génicos Salmon | 10548121.37 | 8151700.02 (`P34`) | 17807075.96 (`P33`) | Profundidad suficiente y sin bibliotecas colapsadas. |
+| Genes detectados, conteo ≥ 10 | 13826.29 | 11678 (`P43`) | 15583 (`P33`) | Complejidad aceptable; `P43` queda en el extremo bajo. |
+
+: Resumen cuantitativo del QC estadístico integrado a partir de las matrices de expresión y métricas de nf-core/MultiQC. Los valores proceden de la tabla `sample_basic_qc_summary.tsv`.
+
+Las muestras con señales de vigilancia fueron principalmente pseudoalbinas, en especial `P43`, `P44`, `P47` y `P49`. Todas conservan buena supervivencia de lecturas y cuantificación suficiente, pero combinan **duplicación elevada** y, en algunos casos, menor número de genes detectados o menor mapeo único. Por tanto, se tratan como muestras a seguir en PCA y análisis diferencial, no como descartes automáticos.
+
+| Muestra | Grupo | Incluida en DE | STAR único (%) | Duplicación Picard (%) | Genes detectados ≥ 10 | Lectura técnica |
+|---|---|:---:|---:|---:|---:|---|
+| `P43` | `P_BD` | Sí | 88.91 | 73.77 | 11678 | Menor complejidad detectable; vigilar en análisis de distancia. |
+| `P44` | `P_BL` | Sí | 86.56 | 70.79 | 12744 | Mínimo de alineamiento único; revisar si domina algún contraste. |
+| `P47` | `P_BD` | Sí | 89.16 | 72.84 | 12397 | Duplicación alta y complejidad moderada-baja. |
+| `P49` | `P_OD` | Sí | 90.50 | 78.80 | 13116 | Máxima duplicación Picard; no muestra fallo global de mapeo. |
+
+: Muestras con señales de vigilancia técnica tras integrar métricas de alineamiento, duplicación y cuantificación. La decisión final se apoya en el comportamiento multivariante y en la coherencia con el diseño.
+
+::: {#fig-qc-r-summary layout-ncol="2"}
+![Resumen por muestra de supervivencia al filtrado, alineamiento único y duplicación Picard.](../figures/03_qc_r/sample_basic_qc_overview.png)
+
+![Profundidad y rendimiento de conteos por muestra.](../figures/03_qc_r/read_count_yield_by_sample.png)
+
+Resumen gráfico del QC estadístico integrado. La figura confirma que la calidad post-filtrado y el alineamiento son homogéneos, mientras que la duplicación presenta mayor dispersión, especialmente en algunas muestras pseudoalbinas.
+:::
+
+La cuantificación con `Salmon` no mostró bibliotecas fallidas. `P33` presenta la mayor profundidad y el mayor número de genes detectados, mientras que `P34` tiene el menor número total de conteos y `P43` el menor número de genes con conteo ≥ 10. Estos extremos son relevantes para interpretar dispersión y potencia estadística, pero no justifican exclusión por sí solos.
+
+![Tamaños de librería y genes detectados en la matriz Salmon a nivel génico.](../figures/03_qc_r/salmon_library_sizes.png){#fig-qc-r-salmon-libraries width="90%"}
+
+### PCA global del proyecto
+
+El PCA global incluye piel, intestino y muestras exploratorias de ambicoloration/PNK. La separación más fuerte corresponde al eje **tejido**, con las muestras intestinales alejadas claramente del bloque de piel en PC1. Esto es biológicamente esperable y confirma que las muestras de intestino no deben mezclarse con el análisis principal de piel. En la misma vista, las muestras de ambicoloration/PNK también quedan fuera del diseño inferencial principal, aunque son útiles como referencia exploratoria.
+
+![PCA no corregido con todas las muestras del proyecto. PC1 explica 71.9% de la varianza y separa fuertemente las muestras de intestino del conjunto de piel.](../figures/03_qc_r/pca_all_project_uncorrected.png){#fig-qc-r-pca-project width="95%"}
+
+### PCA del conjunto analítico de piel
+
+Al restringir el análisis a las **20 muestras de piel** incluidas en expresión diferencial, el PC1 explica **76.6%** de la variación y ordena las muestras según un gradiente compatible con **superficie, pigmentación y estado fenotípico**. No se observa una muestra aislada de forma extrema que obligue a descartar una biblioteca antes del modelado. Sí se aprecia que el diseño contiene una estructura biológica fuerte: las comparaciones deben interpretarse por contraste, no como una única separación “normal vs pseudoalbino”.
+
+![PCA no corregido de las muestras de piel usadas en el análisis principal. La separación dominante refleja estructura biológica del diseño, no un fallo técnico evidente.](../figures/03_qc_r/pca_all_skin_uncorrected.png){#fig-qc-r-pca-skin width="95%"}
+
+La PCA ajustada por fecha de muestreo se generó solo como diagnóstico visual. Tras retirar este componente, la ordenación cambia pero mantiene separación entre grupos, lo que sugiere que la fecha puede contribuir a la variabilidad global, pero no explica por completo la estructura de expresión. Por este motivo, la corrección por fecha se usa para **exploración**, mientras que los modelos de DESeq2 trabajan con conteos crudos y diseños estadísticos definidos por contraste.
+
+![PCA de piel tras ajuste visual por fecha de colección. La corrección reduce parte de la estructura temporal, pero persisten diferencias compatibles con superficie y pigmentación.](../figures/03_qc_r/pca_all_skin_date_adjusted.png){#fig-qc-r-pca-skin-date width="95%"}
+
+### Distancias entre muestras
+
+El mapa de calor de distancias resume la similitud global entre perfiles transcriptómicos estabilizados. Su utilidad principal es detectar muestras que no se agrupan con réplicas o condiciones próximas. En este conjunto, la señal dominante sigue siendo la estructura del diseño y no aparece una muestra con comportamiento incompatible con su grupo que deba excluirse de entrada.
+
+![Mapa de calor de distancias entre muestras de piel calculado sobre la matriz transformada por VST.](../figures/03_qc_r/sample_distance_heatmap_skin_core.png){#fig-qc-r-sample-distance width="95%"}
+
+::: {.callout-note title="Decisión QC tras integrar R y MultiQC"}
+Se mantienen las **20 muestras de piel** del diseño principal para expresión diferencial. Las muestras `P43`, `P44`, `P47` y `P49` se etiquetan como puntos de vigilancia técnica, principalmente por duplicación y complejidad relativa, pero no presentan evidencia suficiente para ser eliminadas. Las muestras `IT1G`, `PNKIT`, `PNKD` y `PNKV` se conservan en el registro de QC, pero quedan fuera del análisis diferencial principal por diseño experimental.
+:::
+
 ## Conclusión del QC integrado
 
-El informe integrado apoya continuar con las salidas `star_salmon` como base del análisis downstream. La señal técnica principal es consistente: **alta calidad post-filtrado**, **alineamiento sólido contra la referencia**, **orientación de biblioteca coherente** y ausencia de un fallo global de muestra.
+El informe integrado apoya continuar con las salidas `star_salmon` como base del análisis downstream. La señal técnica principal es consistente: **alta calidad post-filtrado**, **alineamiento sólido contra la referencia**, **orientación de biblioteca coherente**, cuantificación estable y ausencia de un fallo global de muestra.
 
-La lectura biológica es, por tanto, prudente pero positiva: si aparecen patrones fuertes en PCA o expresión diferencial, no hay evidencia en este QC primario de que deban atribuirse de entrada a un fallo general de secuenciación o alineamiento. Las muestras señaladas deben acompañar la interpretación, no bloquearla.
+La lectura biológica es, por tanto, prudente pero positiva: si aparecen patrones fuertes en PCA o expresión diferencial, no hay evidencia de que deban atribuirse de entrada a un fallo general de secuenciación, alineamiento o cuantificación. Las muestras señaladas deben acompañar la interpretación, no bloquearla.
 
 ::: {.callout-important title="Decisión"}
-Se mantienen todas las muestras para la exploración downstream. La exclusión, si ocurre más adelante, deberá justificarse con evidencia combinada de PCA, metadatos, distribución de conteos y coherencia con el diseño experimental.
+Se mantienen todas las bibliotecas para trazabilidad y exploración QC. El análisis diferencial principal se restringe a las **20 muestras de piel** definidas por el diseño experimental, excluyendo intestino y el bloque exploratorio PNK/ambicoloration.
 :::
 
 ## Referencias {.unnumbered}

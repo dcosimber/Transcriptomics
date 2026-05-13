@@ -1,0 +1,4 @@
+comparison	pearson	spearman
+normal_vs_pseudo_ocular_dark_light	0.22100167333559442	0.16234539826984912
+normal_vs_pseudo_blind_dark_light	-0.14095218557936334	-0.10184439378433775
+pseudo_ocular_vs_pseudo_blind_dark_light	0.23649931266166005	0.3035094081068405

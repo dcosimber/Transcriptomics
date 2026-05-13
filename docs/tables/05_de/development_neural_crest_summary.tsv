@@ -1,0 +1,34 @@
+contrast	category	n_terms_fdr_0_10	top_term	top_NES	top_padj
+N_OD_vs_N_BL	axon_neural	20	BP: axon guidance	-1.9172916471376673	4.1467270051839575e-5
+N_OD_vs_N_BL	development_patterning	59	BP: skeletal muscle thin filament assembly	2.3433218243626848	2.0400533616456968e-5
+N_OD_vs_N_BL	epithelial_mesenchymal	6	BP: positive regulation of epithelial to mesenchymal transition	-2.2122981319123496	9.083688156529788e-4
+N_OD_vs_N_BL	migration_motility	12	BP: axon guidance	-1.9172916471376673	4.1467270051839575e-5
+N_OD_vs_N_BL	neural_crest	2	BP: neural crest cell migration	-1.5250511551087675	0.03220826434446071
+N_OD_vs_N_BL	pigmentation_melanocyte	7	CC: melanosome	2.3881530318127204	4.036704153949248e-6
+N_OD_vs_N_BL	wnt_retinoid	4	BP: positive regulation of Wnt signaling pathway	-2.222286031577152	4.977478483360766e-4
+P_BD_vs_N_BL	axon_neural	6	BP: neuron differentiation	-1.725742557106571	0.00666874237169863
+P_BD_vs_N_BL	development_patterning	22	BP: skeletal muscle tissue development	2.91887732387961	7.172618318158144e-18
+P_BD_vs_N_BL	epithelial_mesenchymal	4	BP: epidermis development	-2.3138991582656803	1.495039636698832e-6
+P_BD_vs_N_BL	migration_motility	3	BP: positive regulation of epithelial cell migration	-1.8464980085592688	0.01201696136535119
+P_BD_vs_N_BL	wnt_retinoid	1	BP: cellular response to retinoic acid	-1.6381718101995064	0.091693509444863
+P_BD_vs_P_BL	development_patterning	20	BP: skeletal muscle thin filament assembly	2.64365407880144	1.1736347872690679e-7
+P_BD_vs_P_BL	epithelial_mesenchymal	3	BP: epidermis development	-2.1194460402326394	0.0015703484420757
+P_BD_vs_P_BL	pigmentation_melanocyte	4	CC: melanosome	-2.078773365173822	0.00318253857119084
+P_BD_vs_P_OD	development_patterning	5	BP: skeletal myofibril assembly	1.6148907015832707	0.01408276497611166
+P_OD_vs_P_OL	axon_neural	4	BP: neuron differentiation	-1.9160290174102552	0.00110771401469481
+P_OD_vs_P_OL	development_patterning	19	BP: skeletal muscle thin filament assembly	2.4024492520940957	2.1964852468391465e-5
+P_OD_vs_P_OL	epithelial_mesenchymal	3	BP: epidermis development	-1.987822605513112	0.00185202680236432
+P_OD_vs_P_OL	wnt_retinoid	1	MF: retinoic acid binding	-1.8485986873060432	0.04344580423389578
+P_OL_vs_N_OD	axon_neural	15	BP: axon guidance	1.923299548910352	7.706265008409101e-5
+P_OL_vs_N_OD	development_patterning	79	BP: multicellular organism development	2.067287495773094	3.787269425303897e-7
+P_OL_vs_N_OD	epithelial_mesenchymal	5	BP: positive regulation of epithelial to mesenchymal transition	2.5230079421098996	1.555613870987902e-6
+P_OL_vs_N_OD	migration_motility	10	BP: axon guidance	1.923299548910352	7.706265008409101e-5
+P_OL_vs_N_OD	neural_crest	2	BP: neural crest cell migration	1.833365085692063	0.00276758016752298
+P_OL_vs_N_OD	wnt_retinoid	10	BP: Wnt signaling pathway	2.1464529240750085	1.555613870987902e-6
+P_OL_vs_P_BL	axon_neural	2	BP: neuron differentiation	2.0186812834996095	4.56964960921185e-4
+P_OL_vs_P_BL	development_patterning	21	BP: skeletal muscle thin filament assembly	-2.671950353165836	7.834189476790553e-11
+P_OL_vs_P_BL	epithelial_mesenchymal	2	BP: epidermis development	2.1214854576524877	0.0022643460149842
+P_OL_vs_P_BL	migration_motility	1	BP: cell migration involved in gastrulation	1.7973882290578866	0.03478302204481456
+P_OL_vs_P_BL	neural_crest	1	BP: neural crest cell differentiation	1.83757024454195	0.08397928115464594
+P_OL_vs_P_BL	wnt_retinoid	2	BP: canonical Wnt signaling pathway	1.833545581325455	0.01311182213763528
+P_surface_x_pigmentation	development_patterning	1	BP: multicellular organism development	1.741392895762901	0.00626978334739435

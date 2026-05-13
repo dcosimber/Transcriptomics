@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>differential_expression – Holofishcolour project</title>
+<title>8&nbsp; Expresión diferencial – Holofishcolour project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -47,6 +67,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -251,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/05_differential_expression.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">05_differential_expression.html</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/05_differential_expression.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -328,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05_differential_expression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">05_differential_expression.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -353,18 +376,1128 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#diseño-analítico" id="toc-diseño-analítico" class="nav-link active" data-scroll-target="#diseño-analítico"><span class="header-section-number">8.1</span> Diseño analítico</a></li>
+  <li><a href="#resumen-global-de-degs" id="toc-resumen-global-de-degs" class="nav-link" data-scroll-target="#resumen-global-de-degs"><span class="header-section-number">8.2</span> Resumen global de DEGs</a></li>
+  <li><a href="#genes-destacados-por-contraste" id="toc-genes-destacados-por-contraste" class="nav-link" data-scroll-target="#genes-destacados-por-contraste"><span class="header-section-number">8.3</span> Genes destacados por contraste</a></li>
+  <li><a href="#figuras-por-contraste" id="toc-figuras-por-contraste" class="nav-link" data-scroll-target="#figuras-por-contraste"><span class="header-section-number">8.4</span> Figuras por contraste</a></li>
+  <li><a href="#solapamientos-y-coherencia-entre-ejes" id="toc-solapamientos-y-coherencia-entre-ejes" class="nav-link" data-scroll-target="#solapamientos-y-coherencia-entre-ejes"><span class="header-section-number">8.5</span> Solapamientos y coherencia entre ejes</a></li>
+  <li><a href="#enriquecimiento-funcional-e-interpretación-biológica" id="toc-enriquecimiento-funcional-e-interpretación-biológica" class="nav-link" data-scroll-target="#enriquecimiento-funcional-e-interpretación-biológica"><span class="header-section-number">8.6</span> Enriquecimiento funcional e interpretación biológica</a></li>
+  <li><a href="#implicaciones-para-resultados-de-paper" id="toc-implicaciones-para-resultados-de-paper" class="nav-link" data-scroll-target="#implicaciones-para-resultados-de-paper"><span class="header-section-number">8.7</span> Implicaciones para resultados de paper</a></li>
+  <li><a href="#archivos-derivados" id="toc-archivos-derivados" class="nav-link" data-scroll-target="#archivos-derivados"><span class="header-section-number">8.8</span> Archivos derivados</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<p>Este capítulo documenta el análisis de expresión diferencial realizado sobre las muestras de piel del proyecto <strong>HOLOFISHCOLOUR</strong>. El objetivo no es solo listar genes significativos, sino construir una lectura interpretable de los ejes transcriptómicos asociados a <strong>superficie corporal</strong>, <strong>pigmentación normal</strong>, <strong>pseudoalbinismo</strong> y <strong>pigmentación ectópica</strong>.</p>
+<p>El análisis parte de la cuantificación génica generada por <a href="https://combine-lab.github.io/salmon/"><code>Salmon</code></a> <span class="citation" data-cites="Patro2017Salmon">[<a href="01_intro.html#ref-Patro2017Salmon" role="doc-biblioref">1</a>]</span> a partir del flujo <code>star_salmon</code> de nf-core/rnaseq. Los modelos de expresión diferencial se ajustaron con <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html"><code>DESeq2</code></a> <span class="citation" data-cites="Love2014DESeq2">[<a href="01_intro.html#ref-Love2014DESeq2" role="doc-biblioref">2</a>]</span>, usando conteos enteros a nivel de gen, filtrado mínimo de expresión y diseños específicos para cada contraste. El enriquecimiento funcional posterior se realizó con anotaciones Gene Ontology y herramientas de análisis de términos biológicos, incluyendo <a href="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html"><code>clusterProfiler</code></a> <span class="citation" data-cites="Yu2012">[<a href="01_intro.html#ref-Yu2012" role="doc-biblioref">3</a>]</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Cómo leer los contrastes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Cómo leer los contrastes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En todas las tablas, un <code>log2FoldChange</code> positivo indica mayor expresión en el <strong>primer grupo</strong> del contraste. Por ejemplo, en <code>N_OD_vs_N_BL</code>, los genes con log2FC positivo están más expresados en piel normal ocular oscura (<code>N_OD</code>) que en piel normal blind clara (<code>N_BL</code>). Un log2FC negativo indica el patrón inverso.</p>
+</div>
+</div>
+<section id="diseño-analítico" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="diseño-analítico"><span class="header-section-number">8.1</span> Diseño analítico</h2>
+<p>El análisis diferencial principal se restringió a <strong>20 muestras de piel</strong>. Las muestras de intestino y el bloque exploratorio PNK/ambicoloration se conservaron en el QC global, pero no se incluyeron en los contrastes inferenciales principales. Este punto es importante: el análisis no busca mezclar todos los fenotipos disponibles, sino responder preguntas biológicas concretas dentro de un diseño con superficies y estados pigmentarios comparables.</p>
+<p>Los genes se mantuvieron para modelado cuando presentaban al menos <strong>10 conteos en 3 muestras</strong>. La significación se definió como <strong>FDR &lt; 0.05</strong> y, para las tablas filtradas de genes diferencialmente expresados (DEGs) usadas en interpretación, se añadió un umbral de <strong>|log2FC| ≥ 1</strong>. Este doble criterio evita sobrerrepresentar cambios estadísticamente significativos pero de magnitud muy pequeña.</p>
+<table class="caption-top table">
+<caption>Contrastes diferenciales implementados en DESeq2. La inclusión de <code>turbot_id</code> en los contrastes pareados controla el efecto individual cuando las dos superficies proceden del mismo pez.</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contraste</th>
+<th>Pregunta biológica</th>
+<th>Diseño</th>
+<th>Clase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>N_OD_vs_N_BL</code></td>
+<td>Eje fisiológico normal entre piel ocular oscura y blind clara.</td>
+<td><code>~ turbot_id + group_code</code></td>
+<td>Referencia fisiológica</td>
+</tr>
+<tr class="even">
+<td><code>P_OD_vs_P_OL</code></td>
+<td>Qué se pierde o cambia en zonas oculares claras pseudoalbinas.</td>
+<td><code>~ turbot_id + group_code</code></td>
+<td>Pseudoalbino dentro de superficie ocular</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_BL</code></td>
+<td>Qué se activa en zonas blind oscuras ectópicas.</td>
+<td><code>~ turbot_id + group_code</code></td>
+<td>Pseudoalbino dentro de superficie blind</td>
+</tr>
+<tr class="even">
+<td><code>P_OL_vs_P_BL</code></td>
+<td>Si las zonas claras pseudoalbinas son equivalentes entre superficies.</td>
+<td><code>~ turbot_id + group_code</code></td>
+<td>Contraste puente con color constante</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_OD</code></td>
+<td>Si las zonas oscuras pseudoalbinas son equivalentes entre superficies.</td>
+<td><code>~ turbot_id + group_code</code></td>
+<td>Contraste puente con color constante</td>
+</tr>
+<tr class="even">
+<td><code>P_surface_x_pigmentation</code></td>
+<td>Si el efecto dark/light depende de la superficie en pseudoalbinos.</td>
+<td><code>~ turbot_id + surface + pigmentation + surface:pigmentation</code></td>
+<td>Interacción superficie × pigmentación</td>
+</tr>
+<tr class="odd">
+<td><code>P_OL_vs_N_OD</code></td>
+<td>Cómo difiere una zona ocular clara anómala del estado ocular oscuro esperado.</td>
+<td><code>~ group_code</code></td>
+<td>Anómalo vs esperado</td>
+</tr>
+<tr class="even">
+<td><code>P_BD_vs_N_BL</code></td>
+<td>Cómo difiere una zona blind oscura anómala del estado blind claro esperado.</td>
+<td><code>~ group_code</code></td>
+<td>Anómalo vs esperado</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Por qué hay contrastes primarios, puente e integrativos">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Por qué hay contrastes primarios, puente e integrativos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los contrastes primarios identifican los ejes principales dentro de piel normal y pseudoalbina. Los contrastes puente mantienen constante el color para preguntar si la superficie sigue importando. El modelo de interacción prueba formalmente si el efecto de pigmentación cambia según la superficie, que es una pregunta más estricta y normalmente produce una lista más pequeña de genes.</p>
+</div>
+</div>
+</section>
+<section id="resumen-global-de-degs" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="resumen-global-de-degs"><span class="header-section-number">8.2</span> Resumen global de DEGs</h2>
+<p>Se completaron los <strong>8 contrastes</strong> previstos. El número de genes evaluados por contraste osciló entre <strong>13878</strong> y <strong>15101</strong>, dependiendo del subconjunto de muestras y del filtrado por expresión. El contraste con mayor número de genes diferencialmente expresados fue <code>P_BD_vs_N_BL</code> (<strong>288 DEGs</strong>), seguido por el eje fisiológico <code>N_OD_vs_N_BL</code> (<strong>218 DEGs</strong>) y el contraste pseudoalbino ocular <code>P_OD_vs_P_OL</code> (<strong>156 DEGs</strong>).</p>
+<div id="fig-de-summary-counts" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-summary-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/05_de/summary/deg_counts_by_contrast.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;8.1: Número de genes diferencialmente expresados por contraste, separados por dirección del efecto."><img src="../figures/05_de/summary/deg_counts_by_contrast.png" class="img-fluid figure-img" style="width:90.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-summary-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.1: Número de genes diferencialmente expresados por contraste, separados por dirección del efecto.
+</figcaption>
+</figure>
+</div>
+<table class="caption-top table">
+<caption>Resumen de genes diferencialmente expresados por contraste. Los genes <code>Up</code> tienen mayor expresión en el primer grupo del contraste; los genes <code>Down</code>, en el segundo.</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contraste</th>
+<th style="text-align: right;">n muestras</th>
+<th style="text-align: right;">Genes testados</th>
+<th style="text-align: right;">DEGs FDR &lt; 0.05</th>
+<th style="text-align: right;">Up</th>
+<th style="text-align: right;">Down</th>
+<th>Lectura rápida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>N_OD_vs_N_BL</code></td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">15084</td>
+<td style="text-align: right;">218</td>
+<td style="text-align: right;">136</td>
+<td style="text-align: right;">52</td>
+<td>Eje normal robusto, con señal melanogénica en ocular dark.</td>
+</tr>
+<tr class="even">
+<td><code>P_OD_vs_P_OL</code></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">14371</td>
+<td style="text-align: right;">156</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">58</td>
+<td>Diferencia clara dentro de la superficie ocular pseudoalbina.</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_BL</code></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">13878</td>
+<td style="text-align: right;">79</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">63</td>
+<td>Menos DEGs y dirección sesgada hacia genes más altos en <code>P_BL</code>.</td>
+</tr>
+<tr class="even">
+<td><code>P_OL_vs_P_BL</code></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">14468</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">55</td>
+<td>Las zonas claras no son transcriptómicamente equivalentes entre superficies.</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_OD</code></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">13908</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">0</td>
+<td>Diferencia de superficie dentro de regiones oscuras pseudoalbinas.</td>
+</tr>
+<tr class="even">
+<td><code>P_surface_x_pigmentation</code></td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">15101</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2</td>
+<td>Interacción específica, no un eje masivo.</td>
+</tr>
+<tr class="odd">
+<td><code>P_OL_vs_N_OD</code></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">15005</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">37</td>
+<td>La región ocular clara pierde parte del programa normal ocular oscuro.</td>
+</tr>
+<tr class="even">
+<td><code>P_BD_vs_N_BL</code></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14483</td>
+<td style="text-align: right;">288</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: right;">68</td>
+<td>Señal más intensa: pigmentación ectópica blind frente a estado esperado.</td>
+</tr>
+</tbody>
+</table>
+<p>La estructura global ya sugiere una conclusión importante: el pseudoalbinismo no se comporta como una simple inversión del eje normal de pigmentación. La región ocular clara pseudoalbina conserva parte del eje normal, pero de forma parcial; la región blind oscura muestra un patrón más divergente, dominado por señales estructurales, epidérmicas, musculares/metabólicas y de composición celular.</p>
+</section>
+<section id="genes-destacados-por-contraste" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="genes-destacados-por-contraste"><span class="header-section-number">8.3</span> Genes destacados por contraste</h2>
+<p>La siguiente tabla muestra los tres genes más significativos por contraste entre los DEGs filtrados con FDR &lt; 0.05 y |log2FC| ≥ 1. No debe interpretarse como una lista definitiva de candidatos causales, sino como un índice de qué señales dominan cada comparación.</p>
+<table class="caption-top table">
+<caption>Genes más significativos por contraste entre los DEGs filtrados. Las anotaciones sin símbolo deben conservar el identificador <code>ENSSMAG</code> como referencia estable.</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contraste</th>
+<th>Gen/identificador</th>
+<th style="text-align: right;">log2FC</th>
+<th style="text-align: right;">FDR</th>
+<th>Dirección</th>
+<th>Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>N_OD_vs_N_BL</code></td>
+<td><code>tyrp1b / ENSSMAG00000012712</code></td>
+<td style="text-align: right;">8.39</td>
+<td style="text-align: right;">1.93e-23</td>
+<td>Up</td>
+<td>Gen de pigmentación, muy elevado en ocular dark normal.</td>
+</tr>
+<tr class="even">
+<td><code>N_OD_vs_N_BL</code></td>
+<td><code>ENSSMAG00000017854</code></td>
+<td style="text-align: right;">8.33</td>
+<td style="text-align: right;">1.42e-11</td>
+<td>Up</td>
+<td>Gen sin símbolo funcional local; candidato a revisar por anotación.</td>
+</tr>
+<tr class="odd">
+<td><code>N_OD_vs_N_BL</code></td>
+<td><code>tmem130 / ENSSMAG00000009625</code></td>
+<td style="text-align: right;">4.55</td>
+<td style="text-align: right;">2.79e-11</td>
+<td>Up</td>
+<td>Señal asociada al eje normal ocular dark.</td>
+</tr>
+<tr class="even">
+<td><code>P_OD_vs_P_OL</code></td>
+<td><code>dgat2 / ENSSMAG00000001438</code></td>
+<td style="text-align: right;">-4.81</td>
+<td style="text-align: right;">6.65e-15</td>
+<td>Down</td>
+<td>Mayor en ocular light pseudoalbino; sugiere componente lipídico/metabólico.</td>
+</tr>
+<tr class="odd">
+<td><code>P_OD_vs_P_OL</code></td>
+<td><code>col10a1a / ENSSMAG00000018410</code></td>
+<td style="text-align: right;">5.62</td>
+<td style="text-align: right;">1.08e-13</td>
+<td>Up</td>
+<td>Colágeno; indica remodelado de matriz/tejido en ocular dark pseudoalbino.</td>
+</tr>
+<tr class="even">
+<td><code>P_OD_vs_P_OL</code></td>
+<td><code>col5a2b / ENSSMAG00000011709</code></td>
+<td style="text-align: right;">4.41</td>
+<td style="text-align: right;">1.50e-12</td>
+<td>Up</td>
+<td>Matriz extracelular, coherente con señal estructural.</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_BL</code></td>
+<td><code>mpx / ENSSMAG00000020424</code></td>
+<td style="text-align: right;">-3.55</td>
+<td style="text-align: right;">4.54e-15</td>
+<td>Down</td>
+<td>Mayor en blind light; posible componente inmune/mieloide.</td>
+</tr>
+<tr class="even">
+<td><code>P_BD_vs_P_BL</code></td>
+<td><code>ENSSMAG00000013103</code></td>
+<td style="text-align: right;">-3.08</td>
+<td style="text-align: right;">8.49e-11</td>
+<td>Down</td>
+<td>Sin anotación funcional local; revisar si aparece en solapamientos.</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_BL</code></td>
+<td><code>irg1l / ENSSMAG00000005426</code></td>
+<td style="text-align: right;">-4.46</td>
+<td style="text-align: right;">4.41e-07</td>
+<td>Down</td>
+<td>Señal inmune/metabólica; mayor en blind light.</td>
+</tr>
+<tr class="even">
+<td><code>P_OL_vs_P_BL</code></td>
+<td><code>col10a1a / ENSSMAG00000018410</code></td>
+<td style="text-align: right;">-7.26</td>
+<td style="text-align: right;">2.32e-28</td>
+<td>Down</td>
+<td>Diferencia fuerte entre superficies claras pseudoalbinas.</td>
+</tr>
+<tr class="odd">
+<td><code>P_OL_vs_P_BL</code></td>
+<td><code>col5a2b / ENSSMAG00000011709</code></td>
+<td style="text-align: right;">-5.55</td>
+<td style="text-align: right;">1.39e-18</td>
+<td>Down</td>
+<td>Mayor en blind light; matriz extracelular como eje de superficie.</td>
+</tr>
+<tr class="even">
+<td><code>P_OL_vs_P_BL</code></td>
+<td><code>col10a1b / ENSSMAG00000018381</code></td>
+<td style="text-align: right;">-5.35</td>
+<td style="text-align: right;">4.94e-13</td>
+<td>Down</td>
+<td>Refuerza el componente de colágeno/tejido.</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_OD</code></td>
+<td><code>mybpc2a / ENSSMAG00000008209</code></td>
+<td style="text-align: right;">3.36</td>
+<td style="text-align: right;">9.70e-05</td>
+<td>Up</td>
+<td>Componente contractil/muscular elevado en blind dark.</td>
+</tr>
+<tr class="even">
+<td><code>P_BD_vs_P_OD</code></td>
+<td><code>casq1a / ENSSMAG00000013960</code></td>
+<td style="text-align: right;">2.91</td>
+<td style="text-align: right;">8.29e-04</td>
+<td>Up</td>
+<td>Señal muscular/metabólica de superficie.</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_P_OD</code></td>
+<td><code>atp2a1l / ENSSMAG00000016974</code></td>
+<td style="text-align: right;">3.06</td>
+<td style="text-align: right;">8.29e-04</td>
+<td>Up</td>
+<td>Manejo de calcio/músculo; no apunta a melanogénesis terminal.</td>
+</tr>
+<tr class="even">
+<td><code>P_surface_x_pigmentation</code></td>
+<td><code>crabp1a / ENSSMAG00000005604</code></td>
+<td style="text-align: right;">6.41</td>
+<td style="text-align: right;">2.01e-07</td>
+<td>Interacción positiva</td>
+<td>Unión a ácido retinoico; candidato para interacción superficie × pigmentación.</td>
+</tr>
+<tr class="odd">
+<td><code>P_surface_x_pigmentation</code></td>
+<td><code>dgat2 / ENSSMAG00000001438</code></td>
+<td style="text-align: right;">6.39</td>
+<td style="text-align: right;">7.28e-06</td>
+<td>Interacción positiva</td>
+<td>Metabolismo lipídico con efecto dependiente de superficie.</td>
+</tr>
+<tr class="even">
+<td><code>P_surface_x_pigmentation</code></td>
+<td><code>ENSSMAG00000031399</code></td>
+<td style="text-align: right;">8.66</td>
+<td style="text-align: right;">1.90e-03</td>
+<td>Interacción positiva</td>
+<td>Sin anotación local; candidato a curación manual.</td>
+</tr>
+<tr class="odd">
+<td><code>P_OL_vs_N_OD</code></td>
+<td><code>ENSSMAG00000036716</code></td>
+<td style="text-align: right;">-3.12</td>
+<td style="text-align: right;">1.98e-06</td>
+<td>Down</td>
+<td>Mayor en ocular dark normal; pérdida en ocular light pseudoalbino.</td>
+</tr>
+<tr class="even">
+<td><code>P_OL_vs_N_OD</code></td>
+<td><code>ENSSMAG00000015984</code></td>
+<td style="text-align: right;">-3.99</td>
+<td style="text-align: right;">1.76e-05</td>
+<td>Down</td>
+<td>Gen sin anotación local; revisar con ortología futura.</td>
+</tr>
+<tr class="odd">
+<td><code>P_OL_vs_N_OD</code></td>
+<td><code>ENSSMAG00000029313</code></td>
+<td style="text-align: right;">-3.49</td>
+<td style="text-align: right;">2.96e-04</td>
+<td>Down</td>
+<td>Mayor en estado normal esperado.</td>
+</tr>
+<tr class="even">
+<td><code>P_BD_vs_N_BL</code></td>
+<td><code>ENSSMAG00000002702</code></td>
+<td style="text-align: right;">-4.35</td>
+<td style="text-align: right;">2.48e-17</td>
+<td>Down</td>
+<td>Mayor en blind light normal; marcador potencial del estado esperado.</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_N_BL</code></td>
+<td><code>ENSSMAG00000035843</code></td>
+<td style="text-align: right;">-8.47</td>
+<td style="text-align: right;">3.66e-07</td>
+<td>Down</td>
+<td>Sin anotación local; cambio intenso a revisar.</td>
+</tr>
+<tr class="even">
+<td><code>P_BD_vs_N_BL</code></td>
+<td><code>vcla / ENSSMAG00000005062</code></td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">9.39e-06</td>
+<td>Up</td>
+<td>Componente estructural/contractil elevado en blind dark anómalo.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled" title="Anotación incompleta no significa ausencia de biología">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Anotación incompleta no significa ausencia de biología
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Varios genes altamente significativos aparecen como <code>ENSSMAG...</code> sin símbolo funcional local. En un genoma no modelo como <em>Scophthalmus maximus</em>, esto es esperable. Estos genes no deben descartarse: conviene tratarlos como candidatos para curación manual mediante ortología, dominios proteicos, sintenia o anotación actualizada.</p>
+</div>
+</div>
+</section>
+<section id="figuras-por-contraste" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="figuras-por-contraste"><span class="header-section-number">8.4</span> Figuras por contraste</h2>
+<p>Las figuras siguientes combinan tres vistas complementarias por contraste. El <strong>volcano plot</strong> muestra magnitud y significación; el <strong>MA plot</strong> permite detectar si los efectos dependen de la abundancia media; y el <strong>heatmap</strong> resume si los genes más variables/señalados separan las muestras de forma coherente con el diseño.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="" aria-current="page">N_OD_vs_N_BL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">P_OD_vs_P_OL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">P_BD_vs_P_BL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">P_OL_vs_P_BL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">P_BD_vs_P_OD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">P_surface_x_pigmentation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">P_OL_vs_N_OD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">P_BD_vs_N_BL</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Este contraste define la referencia fisiológica de pigmentación normal. Los genes con mayor expresión en <code>N_OD</code> incluyen marcadores vinculados a melanogénesis y melanocitos, como <code>tyrp1b</code>, <code>TYRP1</code>, <code>tyr</code>, <code>mlpha</code> y <code>sox10</code>. Biológicamente, esto encaja con una piel ocular oscura activa en rutas de pigmentación.</p>
+<div id="fig-de-nod-nbl" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-nod-nbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/N_OD_vs_N_BL/volcano_N_OD_vs_N_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Volcano plot del contraste normal ocular dark frente a normal blind light."><img src="../figures/05_de/contrasts/N_OD_vs_N_BL/volcano_N_OD_vs_N_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del contraste normal ocular dark frente a normal blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/N_OD_vs_N_BL/ma_N_OD_vs_N_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="MA plot del contraste normal ocular dark frente a normal blind light."><img src="../figures/05_de/contrasts/N_OD_vs_N_BL/ma_N_OD_vs_N_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del contraste normal ocular dark frente a normal blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/N_OD_vs_N_BL/heatmap_N_OD_vs_N_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Heatmap de genes destacados para el contraste normal ocular dark frente a normal blind light."><img src="../figures/05_de/contrasts/N_OD_vs_N_BL/heatmap_N_OD_vs_N_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el contraste normal ocular dark frente a normal blind light.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-nod-nbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.2: Contraste <code>N_OD_vs_N_BL</code>. La señal positiva recoge genes más altos en piel ocular oscura normal; la negativa, genes más altos en piel blind clara normal.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Este contraste pregunta qué diferencia una zona ocular oscura pseudoalbina de una zona ocular clara pseudoalbina. La presencia de genes de matriz extracelular entre los cambios principales indica que el pseudoalbinismo ocular no se limita a una pérdida simple de melanogénesis, sino que puede acompañarse de remodelado tisular.</p>
+<div id="fig-de-pod-pol" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-pod-pol-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OD_vs_P_OL/volcano_P_OD_vs_P_OL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Volcano plot del contraste pseudoalbino ocular dark frente a ocular light."><img src="../figures/05_de/contrasts/P_OD_vs_P_OL/volcano_P_OD_vs_P_OL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del contraste pseudoalbino ocular dark frente a ocular light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OD_vs_P_OL/ma_P_OD_vs_P_OL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="MA plot del contraste pseudoalbino ocular dark frente a ocular light."><img src="../figures/05_de/contrasts/P_OD_vs_P_OL/ma_P_OD_vs_P_OL.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del contraste pseudoalbino ocular dark frente a ocular light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OD_vs_P_OL/heatmap_P_OD_vs_P_OL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Heatmap de genes destacados para el contraste pseudoalbino ocular dark frente a ocular light."><img src="../figures/05_de/contrasts/P_OD_vs_P_OL/heatmap_P_OD_vs_P_OL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el contraste pseudoalbino ocular dark frente a ocular light.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-pod-pol-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.3: Contraste <code>P_OD_vs_P_OL</code>. Los genes positivos están más expresados en regiones oculares oscuras pseudoalbinas; los negativos, en regiones oculares claras pseudoalbinas.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Este contraste evalúa la pigmentación ectópica en la superficie blind pseudoalbina. A diferencia del eje normal, la dirección dominante no reproduce un programa melanogénico limpio, lo que sugiere que la pigmentación ectópica blind puede estar asociada a cambios de microambiente, composición celular o estado tisular.</p>
+<div id="fig-de-pbd-pbl" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-pbd-pbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_P_BL/volcano_P_BD_vs_P_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Volcano plot del contraste pseudoalbino blind dark frente a blind light."><img src="../figures/05_de/contrasts/P_BD_vs_P_BL/volcano_P_BD_vs_P_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del contraste pseudoalbino blind dark frente a blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_P_BL/ma_P_BD_vs_P_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="MA plot del contraste pseudoalbino blind dark frente a blind light."><img src="../figures/05_de/contrasts/P_BD_vs_P_BL/ma_P_BD_vs_P_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del contraste pseudoalbino blind dark frente a blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_P_BL/heatmap_P_BD_vs_P_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a blind light."><img src="../figures/05_de/contrasts/P_BD_vs_P_BL/heatmap_P_BD_vs_P_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a blind light.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-pbd-pbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.4: Contraste <code>P_BD_vs_P_BL</code>. La mayoría de DEGs filtrados son negativos, por tanto más altos en <code>P_BL</code>.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p>Este contraste mantiene constante el color claro y compara superficies. La señal diferencial indica que las regiones pseudoalbinas claras no son equivalentes entre superficie ocular y blind, incluso cuando comparten un estado pigmentario macroscópico similar.</p>
+<div id="fig-de-pol-pbl" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-pol-pbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OL_vs_P_BL/volcano_P_OL_vs_P_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Volcano plot del contraste pseudoalbino ocular light frente a blind light."><img src="../figures/05_de/contrasts/P_OL_vs_P_BL/volcano_P_OL_vs_P_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del contraste pseudoalbino ocular light frente a blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OL_vs_P_BL/ma_P_OL_vs_P_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="MA plot del contraste pseudoalbino ocular light frente a blind light."><img src="../figures/05_de/contrasts/P_OL_vs_P_BL/ma_P_OL_vs_P_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del contraste pseudoalbino ocular light frente a blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OL_vs_P_BL/heatmap_P_OL_vs_P_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Heatmap de genes destacados para el contraste pseudoalbino ocular light frente a blind light."><img src="../figures/05_de/contrasts/P_OL_vs_P_BL/heatmap_P_OL_vs_P_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el contraste pseudoalbino ocular light frente a blind light.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-pol-pbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.5: Contraste <code>P_OL_vs_P_BL</code>. Los cambios reflejan identidad de superficie bajo color claro pseudoalbino.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<p>Este contraste mantiene constante el color oscuro dentro de pseudoalbinos. El hecho de que los 47 DEGs filtrados sean positivos sugiere una señal direccional consistente hacia <code>P_BD</code>, con genes asociados a componentes contractiles y metabolismo muscular. Esto refuerza que la piel blind oscura ectópica no es simplemente una copia transcriptómica de la piel ocular oscura.</p>
+<div id="fig-de-pbd-pod" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-pbd-pod-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_P_OD/volcano_P_BD_vs_P_OD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Volcano plot del contraste pseudoalbino blind dark frente a ocular dark."><img src="../figures/05_de/contrasts/P_BD_vs_P_OD/volcano_P_BD_vs_P_OD.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del contraste pseudoalbino blind dark frente a ocular dark.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_P_OD/ma_P_BD_vs_P_OD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="MA plot del contraste pseudoalbino blind dark frente a ocular dark."><img src="../figures/05_de/contrasts/P_BD_vs_P_OD/ma_P_BD_vs_P_OD.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del contraste pseudoalbino blind dark frente a ocular dark.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_P_OD/heatmap_P_BD_vs_P_OD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a ocular dark."><img src="../figures/05_de/contrasts/P_BD_vs_P_OD/heatmap_P_BD_vs_P_OD.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a ocular dark.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-pbd-pod-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.6: Contraste <code>P_BD_vs_P_OD</code>. Los genes positivos están elevados en blind dark pseudoalbino.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<p>El modelo de interacción identifica genes cuyo efecto dark/light cambia según la superficie. La lista es pequeña (<strong>8 DEGs</strong>), lo cual es esperable para una hipótesis más específica. Genes como <code>crabp1a</code> y <code>dgat2</code> apuntan a procesos de señalización por retinoides y metabolismo lipídico como candidatos para explorar la interacción superficie-pigmentación.</p>
+<div id="fig-de-interaction" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-interaction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_surface_x_pigmentation/volcano_P_surface_x_pigmentation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Volcano plot del modelo de interacción superficie por pigmentación."><img src="../figures/05_de/contrasts/P_surface_x_pigmentation/volcano_P_surface_x_pigmentation.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del modelo de interacción superficie por pigmentación.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_surface_x_pigmentation/ma_P_surface_x_pigmentation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="MA plot del modelo de interacción superficie por pigmentación."><img src="../figures/05_de/contrasts/P_surface_x_pigmentation/ma_P_surface_x_pigmentation.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del modelo de interacción superficie por pigmentación.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_surface_x_pigmentation/heatmap_P_surface_x_pigmentation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Heatmap de genes destacados para el modelo de interacción superficie por pigmentación."><img src="../figures/05_de/contrasts/P_surface_x_pigmentation/heatmap_P_surface_x_pigmentation.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el modelo de interacción superficie por pigmentación.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-interaction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.7: Contraste <code>P_surface_x_pigmentation</code>. Los cambios representan efectos no aditivos entre superficie y pigmentación.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<p>Este contraste compara una región ocular clara anómala con el estado ocular oscuro esperado. La señal de DEGs es relativamente pequeña (<strong>38 DEGs</strong>), pero está fuertemente sesgada hacia genes más altos en <code>N_OD</code>, compatible con una pérdida parcial del programa normal ocular oscuro en <code>P_OL</code>.</p>
+<div id="fig-de-pol-nod" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-pol-nod-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OL_vs_N_OD/volcano_P_OL_vs_N_OD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Volcano plot del contraste pseudoalbino ocular light frente a normal ocular dark."><img src="../figures/05_de/contrasts/P_OL_vs_N_OD/volcano_P_OL_vs_N_OD.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del contraste pseudoalbino ocular light frente a normal ocular dark.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OL_vs_N_OD/ma_P_OL_vs_N_OD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="MA plot del contraste pseudoalbino ocular light frente a normal ocular dark."><img src="../figures/05_de/contrasts/P_OL_vs_N_OD/ma_P_OL_vs_N_OD.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del contraste pseudoalbino ocular light frente a normal ocular dark.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_OL_vs_N_OD/heatmap_P_OL_vs_N_OD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Heatmap de genes destacados para el contraste pseudoalbino ocular light frente a normal ocular dark."><img src="../figures/05_de/contrasts/P_OL_vs_N_OD/heatmap_P_OL_vs_N_OD.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el contraste pseudoalbino ocular light frente a normal ocular dark.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-pol-nod-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.8: Contraste <code>P_OL_vs_N_OD</code>. Los genes negativos están más expresados en el estado normal ocular oscuro.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
+<p>Este es el contraste más intenso del análisis y compara la región blind oscura anómala con la región blind clara esperada. El gran número de DEGs positivos sugiere una activación transcriptómica amplia en <code>P_BD</code>, pero la naturaleza de los genes y términos funcionales indica que no se trata de un eje puramente melanogénico.</p>
+<div id="fig-de-pbd-nbl" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-pbd-nbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_N_BL/volcano_P_BD_vs_N_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Volcano plot del contraste pseudoalbino blind dark frente a normal blind light."><img src="../figures/05_de/contrasts/P_BD_vs_N_BL/volcano_P_BD_vs_N_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Volcano plot del contraste pseudoalbino blind dark frente a normal blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_N_BL/ma_P_BD_vs_N_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="MA plot del contraste pseudoalbino blind dark frente a normal blind light."><img src="../figures/05_de/contrasts/P_BD_vs_N_BL/ma_P_BD_vs_N_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>MA plot del contraste pseudoalbino blind dark frente a normal blind light.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/contrasts/P_BD_vs_N_BL/heatmap_P_BD_vs_N_BL.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a normal blind light."><img src="../figures/05_de/contrasts/P_BD_vs_N_BL/heatmap_P_BD_vs_N_BL.png" class="img-fluid figure-img"></a></p>
+<figcaption>Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a normal blind light.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-pbd-nbl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.9: Contraste <code>P_BD_vs_N_BL</code>. La comparación captura la divergencia entre pigmentación ectópica blind y el estado blind claro fisiológico.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="solapamientos-y-coherencia-entre-ejes" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="solapamientos-y-coherencia-entre-ejes"><span class="header-section-number">8.5</span> Solapamientos y coherencia entre ejes</h2>
+<p>La comparación entre contrastes muestra que el eje pseudoalbino ocular comparte solo parcialmente el programa normal dark/light, mientras que el eje blind pseudoalbino es mucho más divergente. Las correlaciones de efecto génico son bajas: <code>N_OD_vs_N_BL</code> frente a <code>P_OD_vs_P_OL</code> muestra una correlación de Pearson de <strong>0.221</strong>, mientras que <code>N_OD_vs_N_BL</code> frente a <code>P_BD_vs_P_BL</code> es negativa (<strong>-0.141</strong>). Esto apoya una interpretación de <strong>conservación parcial en ocular</strong> y <strong>reprogramación divergente en blind</strong>.</p>
+<table class="caption-top table">
+<caption>Correlaciones entre efectos génicos de contrastes relacionados. Se usan todos los genes comparables, no solo DEGs filtrados.</caption>
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Comparación</th>
+<th style="text-align: right;">Pearson</th>
+<th style="text-align: right;">Spearman</th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Normal vs pseudoalbino ocular dark/light</td>
+<td style="text-align: right;">0.221</td>
+<td style="text-align: right;">0.162</td>
+<td>Concordancia débil: parte del eje normal se conserva, pero no domina.</td>
+</tr>
+<tr class="even">
+<td>Normal vs pseudoalbino blind dark/light</td>
+<td style="text-align: right;">-0.141</td>
+<td style="text-align: right;">-0.102</td>
+<td>Divergencia: la pigmentación blind ectópica no reproduce el eje normal.</td>
+</tr>
+<tr class="odd">
+<td>Pseudoalbino ocular vs pseudoalbino blind dark/light</td>
+<td style="text-align: right;">0.236</td>
+<td style="text-align: right;">0.304</td>
+<td>Concordancia moderada-baja entre ejes pseudoalbinos.</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>Solapamientos direccionales de DEGs entre ejes de pigmentación normal y pseudoalbina.</caption>
+<colgroup>
+<col style="width: 30%">
+<col style="width: 40%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Solapamiento direccional</th>
+<th style="text-align: right;">Genes compartidos</th>
+<th>Lectura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Genes altos en dark normal y altos en dark pseudoalbino ocular</td>
+<td style="text-align: right;">8</td>
+<td>Conservación limitada del programa dark.</td>
+</tr>
+<tr class="even">
+<td>Genes altos en light normal y altos en light pseudoalbino ocular</td>
+<td style="text-align: right;">3</td>
+<td>Baja conservación del estado light.</td>
+</tr>
+<tr class="odd">
+<td>Genes altos en dark normal y altos en blind dark pseudoalbino</td>
+<td style="text-align: right;">1</td>
+<td>Pigmentación ectópica blind muy divergente.</td>
+</tr>
+<tr class="even">
+<td>Genes altos en light normal y altos en blind light pseudoalbino</td>
+<td style="text-align: right;">0</td>
+<td>Sin conservación detectable en este cruce.</td>
+</tr>
+</tbody>
+</table>
+<div id="fig-de-overlaps" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-overlaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/summary/venn_primary_pigmentation_axis.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Venn de genes diferencialmente expresados en el eje principal de pigmentación."><img src="../figures/05_de/summary/venn_primary_pigmentation_axis.png" class="img-fluid figure-img"></a></p>
+<figcaption>Venn de genes diferencialmente expresados en el eje principal de pigmentación.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/summary/upset_all_main_noninteraction.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="UpSet de solapamientos entre contrastes principales no interactivos."><img src="../figures/05_de/summary/upset_all_main_noninteraction.png" class="img-fluid figure-img"></a></p>
+<figcaption>UpSet de solapamientos entre contrastes principales no interactivos.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-overlaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.10: Resumen visual de solapamientos entre contrastes. La señal compartida existe, pero es limitada, especialmente cuando se compara el eje normal con la pigmentación ectópica blind.
+</figcaption>
+</figure>
+</div>
+<div id="fig-de-upset-pseudo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-upset-pseudo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/05_de/summary/upset_pseudoalbino_within_and_surface.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Figura&nbsp;8.11: Solapamientos entre contrastes pseudoalbinos dentro de superficie y modelo de interacción."><img src="../figures/05_de/summary/upset_pseudoalbino_within_and_surface.png" class="img-fluid figure-img" style="width:90.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-upset-pseudo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.11: Solapamientos entre contrastes pseudoalbinos dentro de superficie y modelo de interacción.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="enriquecimiento-funcional-e-interpretación-biológica" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="enriquecimiento-funcional-e-interpretación-biológica"><span class="header-section-number">8.6</span> Enriquecimiento funcional e interpretación biológica</h2>
+<p>El análisis funcional confirma que los cambios no se reducen a genes individuales. En el eje normal <code>N_OD_vs_N_BL</code>, los términos con NES positivo incluyen <strong>melanosome</strong>, <strong>melanocyte differentiation</strong>, <strong>melanosome organization</strong> y <strong>melanin biosynthetic process</strong>, coherentes con mayor actividad pigmentaria en piel ocular oscura. En cambio, términos con NES negativo apuntan a <strong>extracellular matrix</strong>, <strong>collagen-containing extracellular matrix</strong>, <strong>axon guidance</strong>, <strong>angiogenesis</strong> y rutas de desarrollo, más asociadas al lado blind claro.</p>
+<p>En los contrastes pseudoalbinos, la señal funcional se vuelve más compleja. <code>P_OD_vs_P_OL</code> conserva parte del eje de superficie/pigmentación, pero se acompaña de remodelado de matriz extracelular. <code>P_BD_vs_P_BL</code> y <code>P_BD_vs_N_BL</code> muestran una señal fuerte de desarrollo, estructura tisular, epidermis, músculo/contracción y metabolismo mitocondrial. Esta combinación sugiere que la pigmentación ectópica blind puede reflejar cambios de <strong>identidad tisular</strong>, <strong>estado celular</strong> o <strong>microambiente</strong>, además de pigmentación.</p>
+<div id="fig-de-go-summary" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-go-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Dotplot GSEA de términos GO resumidos por contraste."><img src="../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png" class="img-fluid figure-img"></a></p>
+<figcaption>Dotplot GSEA de términos GO resumidos por contraste.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Dotplot ORA de términos GO resumidos por contraste."><img src="../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png" class="img-fluid figure-img"></a></p>
+<figcaption>Dotplot ORA de términos GO resumidos por contraste.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-go-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.12: Resumen funcional de términos GO por contraste. GSEA captura cambios coordinados a lo largo de toda la lista ordenada; ORA resume términos sobrerrepresentados entre genes filtrados.
+</figcaption>
+</figure>
+</div>
+<table class="caption-top table">
+<caption>Términos funcionales seleccionados de categorías de desarrollo, cresta neural, Wnt/retinoides y pigmentación. El signo del NES indica enriquecimiento hacia genes con log2FC positivo o negativo según el contraste.</caption>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contraste</th>
+<th>Categoría</th>
+<th style="text-align: right;">n términos FDR &lt; 0.10</th>
+<th>Término principal</th>
+<th style="text-align: right;">NES</th>
+<th style="text-align: right;">FDR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>N_OD_vs_N_BL</code></td>
+<td>Pigmentación/melanocito</td>
+<td style="text-align: right;">7</td>
+<td><code>CC: melanosome</code></td>
+<td style="text-align: right;">2.39</td>
+<td style="text-align: right;">4.04e-06</td>
+</tr>
+<tr class="even">
+<td><code>N_OD_vs_N_BL</code></td>
+<td>Neural crest</td>
+<td style="text-align: right;">2</td>
+<td><code>BP: neural crest cell migration</code></td>
+<td style="text-align: right;">-1.53</td>
+<td style="text-align: right;">3.22e-02</td>
+</tr>
+<tr class="odd">
+<td><code>N_OD_vs_N_BL</code></td>
+<td>Wnt/retinoides</td>
+<td style="text-align: right;">4</td>
+<td><code>BP: positive regulation of Wnt signaling pathway</code></td>
+<td style="text-align: right;">-2.22</td>
+<td style="text-align: right;">4.98e-04</td>
+</tr>
+<tr class="even">
+<td><code>P_OD_vs_P_OL</code></td>
+<td>Desarrollo/patterning</td>
+<td style="text-align: right;">19</td>
+<td><code>BP: skeletal muscle thin filament assembly</code></td>
+<td style="text-align: right;">2.40</td>
+<td style="text-align: right;">2.20e-05</td>
+</tr>
+<tr class="odd">
+<td><code>P_OD_vs_P_OL</code></td>
+<td>Wnt/retinoides</td>
+<td style="text-align: right;">1</td>
+<td><code>MF: retinoic acid binding</code></td>
+<td style="text-align: right;">-1.85</td>
+<td style="text-align: right;">4.34e-02</td>
+</tr>
+<tr class="even">
+<td><code>P_BD_vs_P_BL</code></td>
+<td>Pigmentación/melanocito</td>
+<td style="text-align: right;">4</td>
+<td><code>CC: melanosome</code></td>
+<td style="text-align: right;">-2.08</td>
+<td style="text-align: right;">3.18e-03</td>
+</tr>
+<tr class="odd">
+<td><code>P_BD_vs_N_BL</code></td>
+<td>Desarrollo/patterning</td>
+<td style="text-align: right;">22</td>
+<td><code>BP: skeletal muscle tissue development</code></td>
+<td style="text-align: right;">2.92</td>
+<td style="text-align: right;">7.17e-18</td>
+</tr>
+<tr class="even">
+<td><code>P_OL_vs_N_OD</code></td>
+<td>Wnt/retinoides</td>
+<td style="text-align: right;">10</td>
+<td><code>BP: Wnt signaling pathway</code></td>
+<td style="text-align: right;">2.15</td>
+<td style="text-align: right;">1.56e-06</td>
+</tr>
+<tr class="odd">
+<td><code>P_OL_vs_N_OD</code></td>
+<td>Neural crest</td>
+<td style="text-align: right;">2</td>
+<td><code>BP: neural crest cell migration</code></td>
+<td style="text-align: right;">1.83</td>
+<td style="text-align: right;">2.77e-03</td>
+</tr>
+<tr class="even">
+<td><code>P_surface_x_pigmentation</code></td>
+<td>Desarrollo/patterning</td>
+<td style="text-align: right;">1</td>
+<td><code>BP: multicellular organism development</code></td>
+<td style="text-align: right;">1.74</td>
+<td style="text-align: right;">6.27e-03</td>
+</tr>
+</tbody>
+</table>
+<div id="fig-de-development-neural-crest" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-de-development-neural-crest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/05_de/enrichment/development_neural_crest_terms.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste."><img src="../figures/05_de/enrichment/development_neural_crest_terms.png" class="img-fluid figure-img" style="width:95.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-development-neural-crest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Hipótesis biológica de trabajo">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Hipótesis biológica de trabajo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los resultados apoyan una hipótesis en la que el pseudoalbinismo no se explica únicamente por apagado terminal de melanogénesis. La señal apunta a una combinación de <strong>programas pigmentarios</strong>, <strong>desarrollo/cresta neural</strong>, <strong>Wnt/retinoides</strong>, <strong>matriz extracelular</strong>, <strong>epidermis</strong> y <strong>composición tisular</strong>. En particular, la pigmentación ectópica blind parece más divergente del eje normal que la pérdida de pigmentación en la superficie ocular.</p>
+</div>
+</div>
+</section>
+<section id="implicaciones-para-resultados-de-paper" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="implicaciones-para-resultados-de-paper"><span class="header-section-number">8.7</span> Implicaciones para resultados de paper</h2>
+<p>Los resultados pueden organizarse en tres mensajes principales para una sección de resultados:</p>
+<ol type="1">
+<li>El eje normal <code>N_OD_vs_N_BL</code> recupera un programa pigmentario esperado, con genes como <code>tyrp1b</code>, <code>TYRP1</code>, <code>tyr</code>, <code>mlpha</code> y <code>sox10</code>, y enriquecimiento de términos de melanosoma y melanogénesis.</li>
+<li>El pseudoalbinismo ocular conserva solo parcialmente ese eje. <code>P_OD_vs_P_OL</code> produce una señal clara, pero con fuerte contribución de matriz extracelular y desarrollo, lo que sugiere remodelado del tejido además de pigmentación.</li>
+<li>La pigmentación ectópica blind es el fenómeno más divergente. <code>P_BD_vs_N_BL</code> es el contraste con más DEGs y <code>P_BD_vs_P_BL</code> no reproduce de forma simple el eje melanogénico normal, apuntando a cambios de identidad tisular o microambiente.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Muestras a vigilar al interpretar DE">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Muestras a vigilar al interpretar DE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Las muestras <code>P43</code>, <code>P44</code>, <code>P47</code> y <code>P49</code> mostraron señales técnicas moderadas en QC, principalmente duplicación elevada y/o menor complejidad. No fueron excluidas porque no mostraron fallo global, pero conviene comprobar que ninguna conclusión dependa exclusivamente de una de ellas, especialmente en contrastes pseudoalbinos con n reducido.</p>
+</div>
+</div>
+</section>
+<section id="archivos-derivados" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="archivos-derivados"><span class="header-section-number">8.8</span> Archivos derivados</h2>
+<p>Los archivos TSV principales se incluyen como recursos del libro para trazabilidad y copia:</p>
+<ul>
+<li><a href="../tables/05_de/deg_contrast_status.tsv">Resumen de contrastes DESeq2</a></li>
+<li><a href="../tables/05_de/deg_direction_summary.tsv">Resumen direccional de DEGs</a></li>
+<li><a href="../tables/05_de/deg_top50_by_contrast_annotated.tsv">Top 50 genes anotados por contraste</a></li>
+<li><a href="../tables/05_de/deg_significant_all_contrasts_annotated.tsv">Todos los DEGs significativos anotados</a></li>
+<li><a href="../tables/05_de/gene_effect_correlations.tsv">Correlaciones de efecto génico</a></li>
+<li><a href="../tables/05_de/deg_directional_overlaps.tsv">Solapamientos direccionales</a></li>
+<li><a href="../tables/05_de/development_neural_crest_summary.tsv">Resumen de categorías desarrollo/cresta neural</a></li>
+<li><a href="../tables/05_de/go_enrichment_combined_summary.tsv">Resumen combinado de enriquecimiento GO</a></li>
+</ul>
+</section>
+<section id="referencias" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="referencias">Referencias</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Patro2017Salmon" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Patro R., Duggal G., Love M. I., Irizarry R. A., Kingsford C. <span>Salmon provides fast and bias-aware quantification of transcript expression</span>. Nature Methods; 2017; 14(4):417-419. doi:<a href="https://doi.org/10.1038/nmeth.4197">10.1038/nmeth.4197</a> <a href="https://doi.org/10.1038/nmeth.4197">https://doi.org/10.1038/nmeth.4197</a></div>
+</div>
+<div id="ref-Love2014DESeq2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Love M. I., Huber W., Anders S. <span>Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2</span>. Genome Biology; 2014; 15(12):550. doi:<a href="https://doi.org/10.1186/s13059-014-0550-8">10.1186/s13059-014-0550-8</a> <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a></div>
+</div>
+<div id="ref-Yu2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Yu G., Wang L. G., Han Y., He Q. Y. <span>ClusterProfiler: An R package for comparing biological themes among gene clusters</span>. OMICS A Journal of Integrative Biology; 2012; 16(5):284-287. doi:<a href="https://doi.org/10.1089/OMI.2011.0118">10.1089/OMI.2011.0118</a> <a href="https://scholar.google.com/scholar_url?url=https://journals.sagepub.com/doi/pdf/10.1089/omi.2011.0118&amp;hl=es&amp;sa=T&amp;oi=ucasa&amp;ct=ufr&amp;ei=EKklaa7fM9ToieoP5Py5yQs&amp;scisig=ABGrvjJFFYw7AZsFKPSB1zuPuJZM">https://scholar.google.com/scholar_url?url=https://journals.sagepub.com/doi/pdf/10.1089/omi.2011.0118&amp;hl=es&amp;sa=T&amp;oi=ucasa&amp;ct=ufr&amp;ei=EKklaa7fM9ToieoP5Py5yQs&amp;scisig=ABGrvjJFFYw7AZsFKPSB1zuPuJZM</a></div>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -793,6 +1926,38 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

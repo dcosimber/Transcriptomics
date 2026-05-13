@@ -1,0 +1,21 @@
+sample	total_counts	detected_genes_count_ge_10	median_tpm	tank	turbot_id	collection_date	tissue	phenotype	malpigmentation_type	surface	pigmentation	condition	group_code	group_label	territory_status
+P31	9019791	13362	0	E6	46	2024-03-27	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected
+P32	9180780	14262	0.065192	E6	46	2024-03-27	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected
+P33	17807075	15586	0.103678	E8	52	2024-02-24	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected
+P34	8151698	13768	0	E8	52	2024-02-24	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected
+P35	9480323	13575	0.018804	E8	70	2024-04-28	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected
+P36	9967196	13378	0	E8	70	2024-04-28	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected
+P41	12065430	13764	0.032275	E8	142	2024-04-04	Skin	Malpigmented	Pseudoalbinism	Ocular	Dark	Skin_Malpigmented_Pseudoalbinism_Ocular_Dark	P_OD	Pseudoalbino ocular dark	locally_expected_within_pseudoalbino
+P42	12070583	14372	0.036431	E8	142	2024-04-04	Skin	Malpigmented	Pseudoalbinism	Ocular	Light	Skin_Malpigmented_Pseudoalbinism_Ocular_Light	P_OL	Pseudoalbino ocular light	abnormal_ocular_hypopigmented
+P43	8587347	11683	0	E8	142	2024-04-04	Skin	Malpigmented	Pseudoalbinism	Blind	Dark	Skin_Malpigmented_Pseudoalbinism_Blind_Dark	P_BD	Pseudoalbino blind dark	abnormal_blind_ectopic_dark
+P44	10821699	12749	0	E8	142	2024-04-04	Skin	Malpigmented	Pseudoalbinism	Blind	Light	Skin_Malpigmented_Pseudoalbinism_Blind_Light	P_BL	Pseudoalbino blind light	locally_expected_within_pseudoalbino
+P45	9470733	13808	0	E6	24	2024-04-05	Skin	Malpigmented	Pseudoalbinism	Ocular	Dark	Skin_Malpigmented_Pseudoalbinism_Ocular_Dark	P_OD	Pseudoalbino ocular dark	locally_expected_within_pseudoalbino
+P46	8855775	13879	0	E6	24	2024-04-05	Skin	Malpigmented	Pseudoalbinism	Ocular	Light	Skin_Malpigmented_Pseudoalbinism_Ocular_Light	P_OL	Pseudoalbino ocular light	abnormal_ocular_hypopigmented
+P47	8931410	12397	0	E6	24	2024-04-05	Skin	Malpigmented	Pseudoalbinism	Blind	Dark	Skin_Malpigmented_Pseudoalbinism_Blind_Dark	P_BD	Pseudoalbino blind dark	abnormal_blind_ectopic_dark
+P48	10685865	13641	0	E6	24	2024-04-05	Skin	Malpigmented	Pseudoalbinism	Blind	Light	Skin_Malpigmented_Pseudoalbinism_Blind_Light	P_BL	Pseudoalbino blind light	locally_expected_within_pseudoalbino
+P49	9592108	13118	0	E6	12	2024-04-16	Skin	Malpigmented	Pseudoalbinism	Ocular	Dark	Skin_Malpigmented_Pseudoalbinism_Ocular_Dark	P_OD	Pseudoalbino ocular dark	locally_expected_within_pseudoalbino
+P50	12958983	14447	0.039635	E6	12	2024-04-16	Skin	Malpigmented	Pseudoalbinism	Ocular	Light	Skin_Malpigmented_Pseudoalbinism_Ocular_Light	P_OL	Pseudoalbino ocular light	abnormal_ocular_hypopigmented
+P51	10301509	14613	0.092045	E6	12	2024-04-16	Skin	Malpigmented	Pseudoalbinism	Blind	Light	Skin_Malpigmented_Pseudoalbinism_Blind_Light	P_BL	Pseudoalbino blind light	locally_expected_within_pseudoalbino
+P52	11350426	14727	0.088491	E6	12	2024-04-16	Skin	Malpigmented	Pseudoalbinism	Blind	Dark	Skin_Malpigmented_Pseudoalbinism_Blind_Dark	P_BD	Pseudoalbino blind dark	abnormal_blind_ectopic_dark
+P1G	11507781	14595	0.053349	X	G	2024-04-09	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected
+P2G	9488685	14326	0.059271	X	G	2024-04-09	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected

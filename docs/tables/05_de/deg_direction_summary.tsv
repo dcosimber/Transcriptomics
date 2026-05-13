@@ -1,0 +1,9 @@
+contrast	priority	down	not_significant	up	interaction_negative	interaction_positive
+N_OD_vs_N_BL	primary	52	14896	136	0	0
+P_BD_vs_N_BL	secondary	68	14195	220	0	0
+P_BD_vs_P_BL	primary	63	13799	16	0	0
+P_BD_vs_P_OD	bridge	0	13861	47	0	0
+P_OD_vs_P_OL	primary	58	14215	98	0	0
+P_OL_vs_N_OD	secondary	37	14967	1	0	0
+P_OL_vs_P_BL	bridge	55	14398	15	0	0
+P_surface_x_pigmentation	integrative	0	15093	0	2	6

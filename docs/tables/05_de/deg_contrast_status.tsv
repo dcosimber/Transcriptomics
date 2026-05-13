@@ -1,0 +1,9 @@
+contrast	label	short_label	priority	contrast_class	n_samples	status	reason	n_genes_tested	n_fdr_0_05	n_fdr_0_05_lfc_1_up	n_fdr_0_05_lfc_1_down
+N_OD_vs_N_BL	Normal ocular dark vs normal blind light	N_OD vs N_BL	primary	physiological_reference	8	completed	NA	15084	218	136	52
+P_OD_vs_P_OL	Pseudoalbino ocular dark vs pseudoalbino ocular light	P_OD vs P_OL	primary	pseudoalbino_within_surface	6	completed	NA	14371	156	98	58
+P_BD_vs_P_BL	Pseudoalbino blind dark vs pseudoalbino blind light	P_BD vs P_BL	primary	pseudoalbino_within_surface	6	completed	NA	13878	79	16	63
+P_OL_vs_P_BL	Pseudoalbino ocular light vs pseudoalbino blind light	P_OL vs P_BL	bridge	color_matched_surface_test	6	completed	NA	14468	70	15	55
+P_BD_vs_P_OD	Pseudoalbino blind dark vs pseudoalbino ocular dark	P_BD vs P_OD	bridge	color_matched_surface_test	6	completed	NA	13908	47	47	0
+P_surface_x_pigmentation	Pseudoalbino surface-by-pigmentation interaction	P surface x pigmentation	integrative	interaction_model	12	completed	NA	15101	8	6	2
+P_OL_vs_N_OD	Pseudoalbino ocular light vs normal ocular dark	P_OL vs N_OD	secondary	abnormal_vs_expected	7	completed	NA	15005	38	1	37
+P_BD_vs_N_BL	Pseudoalbino blind dark vs normal blind light	P_BD vs N_BL	secondary	abnormal_vs_expected	7	completed	NA	14483	288	220	68

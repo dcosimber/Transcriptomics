@@ -351,7 +351,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05_differential_expression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">05_differential_expression.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -401,7 +401,13 @@ div.csl-indent {
   <li><a href="#featurecounts-biotipos-asignados" id="toc-featurecounts-biotipos-asignados" class="nav-link" data-scroll-target="#featurecounts-biotipos-asignados"><span class="header-section-number">6.9.5</span> featureCounts: biotipos asignados</a></li>
   <li><a href="#herramientas-no-ejecutadas-trim-galore" id="toc-herramientas-no-ejecutadas-trim-galore" class="nav-link" data-scroll-target="#herramientas-no-ejecutadas-trim-galore"><span class="header-section-number">6.9.6</span> Herramientas no ejecutadas: Trim Galore</a></li>
   </ul></li>
-  <li><a href="#conclusión-del-qc-integrado" id="toc-conclusión-del-qc-integrado" class="nav-link" data-scroll-target="#conclusión-del-qc-integrado"><span class="header-section-number">6.10</span> Conclusión del QC integrado</a></li>
+  <li><a href="#qc-estadístico-de-las-matrices-de-expresión-en-r" id="toc-qc-estadístico-de-las-matrices-de-expresión-en-r" class="nav-link" data-scroll-target="#qc-estadístico-de-las-matrices-de-expresión-en-r"><span class="header-section-number">6.10</span> QC estadístico de las matrices de expresión en R</a>
+  <ul class="collapse">
+  <li><a href="#pca-global-del-proyecto" id="toc-pca-global-del-proyecto" class="nav-link" data-scroll-target="#pca-global-del-proyecto"><span class="header-section-number">6.10.1</span> PCA global del proyecto</a></li>
+  <li><a href="#pca-del-conjunto-analítico-de-piel" id="toc-pca-del-conjunto-analítico-de-piel" class="nav-link" data-scroll-target="#pca-del-conjunto-analítico-de-piel"><span class="header-section-number">6.10.2</span> PCA del conjunto analítico de piel</a></li>
+  <li><a href="#distancias-entre-muestras" id="toc-distancias-entre-muestras" class="nav-link" data-scroll-target="#distancias-entre-muestras"><span class="header-section-number">6.10.3</span> Distancias entre muestras</a></li>
+  </ul></li>
+  <li><a href="#conclusión-del-qc-integrado" id="toc-conclusión-del-qc-integrado" class="nav-link" data-scroll-target="#conclusión-del-qc-integrado"><span class="header-section-number">6.11</span> Conclusión del QC integrado</a></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
@@ -1138,10 +1144,250 @@ Tabla MultiQC BAM-QC: featureCounts biotypes
 <p><a href="https://github.com/FelixKrueger/TrimGalore"><code>Trim Galore</code></a> no se ejecutó en este proyecto. El recorte de adaptadores y filtrado de lecturas fue realizado por <strong>fastp</strong>, que ya está documentado arriba. Por tanto, la ausencia de Trim Galore no representa una pérdida de resultados: responde a la configuración del pipeline.</p>
 </section>
 </section>
-<section id="conclusión-del-qc-integrado" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="conclusión-del-qc-integrado"><span class="header-section-number">6.10</span> Conclusión del QC integrado</h2>
-<p>El informe integrado apoya continuar con las salidas <code>star_salmon</code> como base del análisis downstream. La señal técnica principal es consistente: <strong>alta calidad post-filtrado</strong>, <strong>alineamiento sólido contra la referencia</strong>, <strong>orientación de biblioteca coherente</strong> y ausencia de un fallo global de muestra.</p>
-<p>La lectura biológica es, por tanto, prudente pero positiva: si aparecen patrones fuertes en PCA o expresión diferencial, no hay evidencia en este QC primario de que deban atribuirse de entrada a un fallo general de secuenciación o alineamiento. Las muestras señaladas deben acompañar la interpretación, no bloquearla.</p>
+<section id="qc-estadístico-de-las-matrices-de-expresión-en-r" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="qc-estadístico-de-las-matrices-de-expresión-en-r"><span class="header-section-number">6.10</span> QC estadístico de las matrices de expresión en R</h2>
+<p>El QC de MultiQC evalúa la calidad técnica de lecturas, alineamientos y BAMs. La siguiente capa de control se realizó en <strong>R</strong> sobre las matrices de expresión generadas por <code>Salmon</code>, usando conteos a nivel de gen, transformación estabilizadora de varianza de <code>DESeq2</code> y análisis no supervisados. Esta etapa responde a una pregunta distinta: si, una vez cuantificada la expresión, las muestras se agrupan de forma compatible con el diseño biológico y si alguna muestra muestra un comportamiento extremo que pueda sesgar el análisis diferencial.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lectura práctica de esta sección">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lectura práctica de esta sección
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una muestra no debe excluirse por una sola métrica aislada. En este proyecto se cruzaron <strong>calidad de lectura</strong>, <strong>mapeo</strong>, <strong>duplicación</strong>, <strong>profundidad de cuantificación</strong>, <strong>PCA</strong>, <strong>distancias entre muestras</strong> y <strong>coherencia con el diseño experimental</strong>. Este enfoque evita confundir variación biológica real con ruido técnico.</p>
+</div>
+</div>
+<p>La tabla integrada de QC resume <strong>24 bibliotecas RNA-seq</strong>. De ellas, <strong>20 muestras de piel</strong> constituyen el conjunto principal de expresión diferencial. Cuatro muestras se mantienen en el QC exploratorio pero quedan fuera del análisis principal: <code>IT1G</code> y <code>PNKIT</code> por corresponder a intestino, y <code>PNKD</code>/<code>PNKV</code> por pertenecer al bloque exploratorio de ambicoloration/PNK.</p>
+<table class="caption-top table">
+<caption>Resumen cuantitativo del QC estadístico integrado a partir de las matrices de expresión y métricas de nf-core/MultiQC. Los valores proceden de la tabla <code>sample_basic_qc_summary.tsv</code>.</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Métrica</th>
+<th style="text-align: right;">Resultado global</th>
+<th style="text-align: right;">Mínimo</th>
+<th style="text-align: right;">Máximo</th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Supervivencia tras filtrado fastp (%)</td>
+<td style="text-align: right;">98.45</td>
+<td style="text-align: right;">97.92 (<code>P49</code>)</td>
+<td style="text-align: right;">98.84 (<code>PNKD</code>)</td>
+<td>Retención muy alta; no hay pérdidas severas por trimming.</td>
+</tr>
+<tr class="even">
+<td>Alineamiento único STAR (%)</td>
+<td style="text-align: right;">90.09</td>
+<td style="text-align: right;">86.56 (<code>P44</code>)</td>
+<td style="text-align: right;">91.71 (<code>P48</code>)</td>
+<td>Mapeo sólido; <code>P44</code> se vigila por estar en el extremo inferior.</td>
+</tr>
+<tr class="odd">
+<td>Duplicación Picard (%)</td>
+<td style="text-align: right;">54.31</td>
+<td style="text-align: right;">26.09 (<code>IT1G</code>)</td>
+<td style="text-align: right;">78.80 (<code>P49</code>)</td>
+<td>Señal técnica más destacable; requiere interpretación junto con expresión y PCA.</td>
+</tr>
+<tr class="even">
+<td>Conteos génicos Salmon</td>
+<td style="text-align: right;">10548121.37</td>
+<td style="text-align: right;">8151700.02 (<code>P34</code>)</td>
+<td style="text-align: right;">17807075.96 (<code>P33</code>)</td>
+<td>Profundidad suficiente y sin bibliotecas colapsadas.</td>
+</tr>
+<tr class="odd">
+<td>Genes detectados, conteo ≥ 10</td>
+<td style="text-align: right;">13826.29</td>
+<td style="text-align: right;">11678 (<code>P43</code>)</td>
+<td style="text-align: right;">15583 (<code>P33</code>)</td>
+<td>Complejidad aceptable; <code>P43</code> queda en el extremo bajo.</td>
+</tr>
+</tbody>
+</table>
+<p>Las muestras con señales de vigilancia fueron principalmente pseudoalbinas, en especial <code>P43</code>, <code>P44</code>, <code>P47</code> y <code>P49</code>. Todas conservan buena supervivencia de lecturas y cuantificación suficiente, pero combinan <strong>duplicación elevada</strong> y, en algunos casos, menor número de genes detectados o menor mapeo único. Por tanto, se tratan como muestras a seguir en PCA y análisis diferencial, no como descartes automáticos.</p>
+<table class="caption-top table">
+<caption>Muestras con señales de vigilancia técnica tras integrar métricas de alineamiento, duplicación y cuantificación. La decisión final se apoya en el comportamiento multivariante y en la coherencia con el diseño.</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 19%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Muestra</th>
+<th>Grupo</th>
+<th style="text-align: center;">Incluida en DE</th>
+<th style="text-align: right;">STAR único (%)</th>
+<th style="text-align: right;">Duplicación Picard (%)</th>
+<th style="text-align: right;">Genes detectados ≥ 10</th>
+<th>Lectura técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>P43</code></td>
+<td><code>P_BD</code></td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: right;">88.91</td>
+<td style="text-align: right;">73.77</td>
+<td style="text-align: right;">11678</td>
+<td>Menor complejidad detectable; vigilar en análisis de distancia.</td>
+</tr>
+<tr class="even">
+<td><code>P44</code></td>
+<td><code>P_BL</code></td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: right;">86.56</td>
+<td style="text-align: right;">70.79</td>
+<td style="text-align: right;">12744</td>
+<td>Mínimo de alineamiento único; revisar si domina algún contraste.</td>
+</tr>
+<tr class="odd">
+<td><code>P47</code></td>
+<td><code>P_BD</code></td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: right;">89.16</td>
+<td style="text-align: right;">72.84</td>
+<td style="text-align: right;">12397</td>
+<td>Duplicación alta y complejidad moderada-baja.</td>
+</tr>
+<tr class="even">
+<td><code>P49</code></td>
+<td><code>P_OD</code></td>
+<td style="text-align: center;">Sí</td>
+<td style="text-align: right;">90.50</td>
+<td style="text-align: right;">78.80</td>
+<td style="text-align: right;">13116</td>
+<td>Máxima duplicación Picard; no muestra fallo global de mapeo.</td>
+</tr>
+</tbody>
+</table>
+<div id="fig-qc-r-summary" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qc-r-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/03_qc_r/sample_basic_qc_overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Resumen por muestra de supervivencia al filtrado, alineamiento único y duplicación Picard."><img src="../figures/03_qc_r/sample_basic_qc_overview.png" class="img-fluid figure-img"></a></p>
+<figcaption>Resumen por muestra de supervivencia al filtrado, alineamiento único y duplicación Picard.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/03_qc_r/read_count_yield_by_sample.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Profundidad y rendimiento de conteos por muestra."><img src="../figures/03_qc_r/read_count_yield_by_sample.png" class="img-fluid figure-img"></a></p>
+<figcaption>Profundidad y rendimiento de conteos por muestra.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qc-r-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.18: Resumen gráfico del QC estadístico integrado. La figura confirma que la calidad post-filtrado y el alineamiento son homogéneos, mientras que la duplicación presenta mayor dispersión, especialmente en algunas muestras pseudoalbinas.
+</figcaption>
+</figure>
+</div>
+<p>La cuantificación con <code>Salmon</code> no mostró bibliotecas fallidas. <code>P33</code> presenta la mayor profundidad y el mayor número de genes detectados, mientras que <code>P34</code> tiene el menor número total de conteos y <code>P43</code> el menor número de genes con conteo ≥ 10. Estos extremos son relevantes para interpretar dispersión y potencia estadística, pero no justifican exclusión por sí solos.</p>
+<div id="fig-qc-r-salmon-libraries" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qc-r-salmon-libraries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/03_qc_r/salmon_library_sizes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figura&nbsp;6.19: Tamaños de librería y genes detectados en la matriz Salmon a nivel génico."><img src="../figures/03_qc_r/salmon_library_sizes.png" class="img-fluid figure-img" style="width:90.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qc-r-salmon-libraries-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.19: Tamaños de librería y genes detectados en la matriz Salmon a nivel génico.
+</figcaption>
+</figure>
+</div>
+<section id="pca-global-del-proyecto" class="level3" data-number="6.10.1">
+<h3 data-number="6.10.1" class="anchored" data-anchor-id="pca-global-del-proyecto"><span class="header-section-number">6.10.1</span> PCA global del proyecto</h3>
+<p>El PCA global incluye piel, intestino y muestras exploratorias de ambicoloration/PNK. La separación más fuerte corresponde al eje <strong>tejido</strong>, con las muestras intestinales alejadas claramente del bloque de piel en PC1. Esto es biológicamente esperable y confirma que las muestras de intestino no deben mezclarse con el análisis principal de piel. En la misma vista, las muestras de ambicoloration/PNK también quedan fuera del diseño inferencial principal, aunque son útiles como referencia exploratoria.</p>
+<div id="fig-qc-r-pca-project" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qc-r-pca-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/03_qc_r/pca_all_project_uncorrected.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figura&nbsp;6.20: PCA no corregido con todas las muestras del proyecto. PC1 explica 71.9% de la varianza y separa fuertemente las muestras de intestino del conjunto de piel."><img src="../figures/03_qc_r/pca_all_project_uncorrected.png" class="img-fluid figure-img" style="width:95.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qc-r-pca-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.20: PCA no corregido con todas las muestras del proyecto. PC1 explica 71.9% de la varianza y separa fuertemente las muestras de intestino del conjunto de piel.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="pca-del-conjunto-analítico-de-piel" class="level3" data-number="6.10.2">
+<h3 data-number="6.10.2" class="anchored" data-anchor-id="pca-del-conjunto-analítico-de-piel"><span class="header-section-number">6.10.2</span> PCA del conjunto analítico de piel</h3>
+<p>Al restringir el análisis a las <strong>20 muestras de piel</strong> incluidas en expresión diferencial, el PC1 explica <strong>76.6%</strong> de la variación y ordena las muestras según un gradiente compatible con <strong>superficie, pigmentación y estado fenotípico</strong>. No se observa una muestra aislada de forma extrema que obligue a descartar una biblioteca antes del modelado. Sí se aprecia que el diseño contiene una estructura biológica fuerte: las comparaciones deben interpretarse por contraste, no como una única separación “normal vs pseudoalbino”.</p>
+<div id="fig-qc-r-pca-skin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qc-r-pca-skin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/03_qc_r/pca_all_skin_uncorrected.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figura&nbsp;6.21: PCA no corregido de las muestras de piel usadas en el análisis principal. La separación dominante refleja estructura biológica del diseño, no un fallo técnico evidente."><img src="../figures/03_qc_r/pca_all_skin_uncorrected.png" class="img-fluid figure-img" style="width:95.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qc-r-pca-skin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.21: PCA no corregido de las muestras de piel usadas en el análisis principal. La separación dominante refleja estructura biológica del diseño, no un fallo técnico evidente.
+</figcaption>
+</figure>
+</div>
+<p>La PCA ajustada por fecha de muestreo se generó solo como diagnóstico visual. Tras retirar este componente, la ordenación cambia pero mantiene separación entre grupos, lo que sugiere que la fecha puede contribuir a la variabilidad global, pero no explica por completo la estructura de expresión. Por este motivo, la corrección por fecha se usa para <strong>exploración</strong>, mientras que los modelos de DESeq2 trabajan con conteos crudos y diseños estadísticos definidos por contraste.</p>
+<div id="fig-qc-r-pca-skin-date" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qc-r-pca-skin-date-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/03_qc_r/pca_all_skin_date_adjusted.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figura&nbsp;6.22: PCA de piel tras ajuste visual por fecha de colección. La corrección reduce parte de la estructura temporal, pero persisten diferencias compatibles con superficie y pigmentación."><img src="../figures/03_qc_r/pca_all_skin_date_adjusted.png" class="img-fluid figure-img" style="width:95.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qc-r-pca-skin-date-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.22: PCA de piel tras ajuste visual por fecha de colección. La corrección reduce parte de la estructura temporal, pero persisten diferencias compatibles con superficie y pigmentación.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="distancias-entre-muestras" class="level3" data-number="6.10.3">
+<h3 data-number="6.10.3" class="anchored" data-anchor-id="distancias-entre-muestras"><span class="header-section-number">6.10.3</span> Distancias entre muestras</h3>
+<p>El mapa de calor de distancias resume la similitud global entre perfiles transcriptómicos estabilizados. Su utilidad principal es detectar muestras que no se agrupan con réplicas o condiciones próximas. En este conjunto, la señal dominante sigue siendo la estructura del diseño y no aparece una muestra con comportamiento incompatible con su grupo que deba excluirse de entrada.</p>
+<div id="fig-qc-r-sample-distance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qc-r-sample-distance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/03_qc_r/sample_distance_heatmap_skin_core.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Figura&nbsp;6.23: Mapa de calor de distancias entre muestras de piel calculado sobre la matriz transformada por VST."><img src="../figures/03_qc_r/sample_distance_heatmap_skin_core.png" class="img-fluid figure-img" style="width:95.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qc-r-sample-distance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6.23: Mapa de calor de distancias entre muestras de piel calculado sobre la matriz transformada por VST.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Decisión QC tras integrar R y MultiQC">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Decisión QC tras integrar R y MultiQC
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se mantienen las <strong>20 muestras de piel</strong> del diseño principal para expresión diferencial. Las muestras <code>P43</code>, <code>P44</code>, <code>P47</code> y <code>P49</code> se etiquetan como puntos de vigilancia técnica, principalmente por duplicación y complejidad relativa, pero no presentan evidencia suficiente para ser eliminadas. Las muestras <code>IT1G</code>, <code>PNKIT</code>, <code>PNKD</code> y <code>PNKV</code> se conservan en el registro de QC, pero quedan fuera del análisis diferencial principal por diseño experimental.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusión-del-qc-integrado" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="conclusión-del-qc-integrado"><span class="header-section-number">6.11</span> Conclusión del QC integrado</h2>
+<p>El informe integrado apoya continuar con las salidas <code>star_salmon</code> como base del análisis downstream. La señal técnica principal es consistente: <strong>alta calidad post-filtrado</strong>, <strong>alineamiento sólido contra la referencia</strong>, <strong>orientación de biblioteca coherente</strong>, cuantificación estable y ausencia de un fallo global de muestra.</p>
+<p>La lectura biológica es, por tanto, prudente pero positiva: si aparecen patrones fuertes en PCA o expresión diferencial, no hay evidencia de que deban atribuirse de entrada a un fallo general de secuenciación, alineamiento o cuantificación. Las muestras señaladas deben acompañar la interpretación, no bloquearla.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Decisión">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1152,7 +1398,7 @@ Tabla MultiQC BAM-QC: featureCounts biotypes
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Se mantienen todas las muestras para la exploración downstream. La exclusión, si ocurre más adelante, deberá justificarse con evidencia combinada de PCA, metadatos, distribución de conteos y coherencia con el diseño experimental.</p>
+<p>Se mantienen todas las bibliotecas para trazabilidad y exploración QC. El análisis diferencial principal se restringe a las <strong>20 muestras de piel</strong> definidas por el diseño experimental, excluyendo intestino y el bloque exploratorio PNK/ambicoloration.</p>
 </div>
 </div>
 </section>

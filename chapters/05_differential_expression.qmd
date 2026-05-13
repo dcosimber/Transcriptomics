@@ -1,0 +1,306 @@
+# Expresión diferencial
+
+Este capítulo documenta el análisis de expresión diferencial realizado sobre las muestras de piel del proyecto **HOLOFISHCOLOUR**. El objetivo no es solo listar genes significativos, sino construir una lectura interpretable de los ejes transcriptómicos asociados a **superficie corporal**, **pigmentación normal**, **pseudoalbinismo** y **pigmentación ectópica**.
+
+El análisis parte de la cuantificación génica generada por [`Salmon`](https://combine-lab.github.io/salmon/) [@Patro2017Salmon] a partir del flujo `star_salmon` de nf-core/rnaseq. Los modelos de expresión diferencial se ajustaron con [`DESeq2`](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) [@Love2014DESeq2], usando conteos enteros a nivel de gen, filtrado mínimo de expresión y diseños específicos para cada contraste. El enriquecimiento funcional posterior se realizó con anotaciones Gene Ontology y herramientas de análisis de términos biológicos, incluyendo [`clusterProfiler`](https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html) [@Yu2012].
+
+::: {.callout-note title="Cómo leer los contrastes"}
+En todas las tablas, un `log2FoldChange` positivo indica mayor expresión en el **primer grupo** del contraste. Por ejemplo, en `N_OD_vs_N_BL`, los genes con log2FC positivo están más expresados en piel normal ocular oscura (`N_OD`) que en piel normal blind clara (`N_BL`). Un log2FC negativo indica el patrón inverso.
+:::
+
+## Diseño analítico
+
+El análisis diferencial principal se restringió a **20 muestras de piel**. Las muestras de intestino y el bloque exploratorio PNK/ambicoloration se conservaron en el QC global, pero no se incluyeron en los contrastes inferenciales principales. Este punto es importante: el análisis no busca mezclar todos los fenotipos disponibles, sino responder preguntas biológicas concretas dentro de un diseño con superficies y estados pigmentarios comparables.
+
+Los genes se mantuvieron para modelado cuando presentaban al menos **10 conteos en 3 muestras**. La significación se definió como **FDR < 0.05** y, para las tablas filtradas de genes diferencialmente expresados (DEGs) usadas en interpretación, se añadió un umbral de **|log2FC| ≥ 1**. Este doble criterio evita sobrerrepresentar cambios estadísticamente significativos pero de magnitud muy pequeña.
+
+| Contraste | Pregunta biológica | Diseño | Clase |
+|---|---|---|---|
+| `N_OD_vs_N_BL` | Eje fisiológico normal entre piel ocular oscura y blind clara. | `~ turbot_id + group_code` | Referencia fisiológica |
+| `P_OD_vs_P_OL` | Qué se pierde o cambia en zonas oculares claras pseudoalbinas. | `~ turbot_id + group_code` | Pseudoalbino dentro de superficie ocular |
+| `P_BD_vs_P_BL` | Qué se activa en zonas blind oscuras ectópicas. | `~ turbot_id + group_code` | Pseudoalbino dentro de superficie blind |
+| `P_OL_vs_P_BL` | Si las zonas claras pseudoalbinas son equivalentes entre superficies. | `~ turbot_id + group_code` | Contraste puente con color constante |
+| `P_BD_vs_P_OD` | Si las zonas oscuras pseudoalbinas son equivalentes entre superficies. | `~ turbot_id + group_code` | Contraste puente con color constante |
+| `P_surface_x_pigmentation` | Si el efecto dark/light depende de la superficie en pseudoalbinos. | `~ turbot_id + surface + pigmentation + surface:pigmentation` | Interacción superficie × pigmentación |
+| `P_OL_vs_N_OD` | Cómo difiere una zona ocular clara anómala del estado ocular oscuro esperado. | `~ group_code` | Anómalo vs esperado |
+| `P_BD_vs_N_BL` | Cómo difiere una zona blind oscura anómala del estado blind claro esperado. | `~ group_code` | Anómalo vs esperado |
+
+: Contrastes diferenciales implementados en DESeq2. La inclusión de `turbot_id` en los contrastes pareados controla el efecto individual cuando las dos superficies proceden del mismo pez.
+
+::: {.callout-tip title="Por qué hay contrastes primarios, puente e integrativos"}
+Los contrastes primarios identifican los ejes principales dentro de piel normal y pseudoalbina. Los contrastes puente mantienen constante el color para preguntar si la superficie sigue importando. El modelo de interacción prueba formalmente si el efecto de pigmentación cambia según la superficie, que es una pregunta más estricta y normalmente produce una lista más pequeña de genes.
+:::
+
+## Resumen global de DEGs
+
+Se completaron los **8 contrastes** previstos. El número de genes evaluados por contraste osciló entre **13878** y **15101**, dependiendo del subconjunto de muestras y del filtrado por expresión. El contraste con mayor número de genes diferencialmente expresados fue `P_BD_vs_N_BL` (**288 DEGs**), seguido por el eje fisiológico `N_OD_vs_N_BL` (**218 DEGs**) y el contraste pseudoalbino ocular `P_OD_vs_P_OL` (**156 DEGs**).
+
+![Número de genes diferencialmente expresados por contraste, separados por dirección del efecto.](../figures/05_de/summary/deg_counts_by_contrast.png){#fig-de-summary-counts width="90%"}
+
+| Contraste | n muestras | Genes testados | DEGs FDR < 0.05 | Up | Down | Lectura rápida |
+|---|---:|---:|---:|---:|---:|---|
+| `N_OD_vs_N_BL` | 8 | 15084 | 218 | 136 | 52 | Eje normal robusto, con señal melanogénica en ocular dark. |
+| `P_OD_vs_P_OL` | 6 | 14371 | 156 | 98 | 58 | Diferencia clara dentro de la superficie ocular pseudoalbina. |
+| `P_BD_vs_P_BL` | 6 | 13878 | 79 | 16 | 63 | Menos DEGs y dirección sesgada hacia genes más altos en `P_BL`. |
+| `P_OL_vs_P_BL` | 6 | 14468 | 70 | 15 | 55 | Las zonas claras no son transcriptómicamente equivalentes entre superficies. |
+| `P_BD_vs_P_OD` | 6 | 13908 | 47 | 47 | 0 | Diferencia de superficie dentro de regiones oscuras pseudoalbinas. |
+| `P_surface_x_pigmentation` | 12 | 15101 | 8 | 6 | 2 | Interacción específica, no un eje masivo. |
+| `P_OL_vs_N_OD` | 7 | 15005 | 38 | 1 | 37 | La región ocular clara pierde parte del programa normal ocular oscuro. |
+| `P_BD_vs_N_BL` | 7 | 14483 | 288 | 220 | 68 | Señal más intensa: pigmentación ectópica blind frente a estado esperado. |
+
+: Resumen de genes diferencialmente expresados por contraste. Los genes `Up` tienen mayor expresión en el primer grupo del contraste; los genes `Down`, en el segundo.
+
+La estructura global ya sugiere una conclusión importante: el pseudoalbinismo no se comporta como una simple inversión del eje normal de pigmentación. La región ocular clara pseudoalbina conserva parte del eje normal, pero de forma parcial; la región blind oscura muestra un patrón más divergente, dominado por señales estructurales, epidérmicas, musculares/metabólicas y de composición celular.
+
+## Genes destacados por contraste
+
+La siguiente tabla muestra los tres genes más significativos por contraste entre los DEGs filtrados con FDR < 0.05 y |log2FC| ≥ 1. No debe interpretarse como una lista definitiva de candidatos causales, sino como un índice de qué señales dominan cada comparación.
+
+| Contraste | Gen/identificador | log2FC | FDR | Dirección | Comentario |
+|---|---|---:|---:|---|---|
+| `N_OD_vs_N_BL` | `tyrp1b / ENSSMAG00000012712` | 8.39 | 1.93e-23 | Up | Gen de pigmentación, muy elevado en ocular dark normal. |
+| `N_OD_vs_N_BL` | `ENSSMAG00000017854` | 8.33 | 1.42e-11 | Up | Gen sin símbolo funcional local; candidato a revisar por anotación. |
+| `N_OD_vs_N_BL` | `tmem130 / ENSSMAG00000009625` | 4.55 | 2.79e-11 | Up | Señal asociada al eje normal ocular dark. |
+| `P_OD_vs_P_OL` | `dgat2 / ENSSMAG00000001438` | -4.81 | 6.65e-15 | Down | Mayor en ocular light pseudoalbino; sugiere componente lipídico/metabólico. |
+| `P_OD_vs_P_OL` | `col10a1a / ENSSMAG00000018410` | 5.62 | 1.08e-13 | Up | Colágeno; indica remodelado de matriz/tejido en ocular dark pseudoalbino. |
+| `P_OD_vs_P_OL` | `col5a2b / ENSSMAG00000011709` | 4.41 | 1.50e-12 | Up | Matriz extracelular, coherente con señal estructural. |
+| `P_BD_vs_P_BL` | `mpx / ENSSMAG00000020424` | -3.55 | 4.54e-15 | Down | Mayor en blind light; posible componente inmune/mieloide. |
+| `P_BD_vs_P_BL` | `ENSSMAG00000013103` | -3.08 | 8.49e-11 | Down | Sin anotación funcional local; revisar si aparece en solapamientos. |
+| `P_BD_vs_P_BL` | `irg1l / ENSSMAG00000005426` | -4.46 | 4.41e-07 | Down | Señal inmune/metabólica; mayor en blind light. |
+| `P_OL_vs_P_BL` | `col10a1a / ENSSMAG00000018410` | -7.26 | 2.32e-28 | Down | Diferencia fuerte entre superficies claras pseudoalbinas. |
+| `P_OL_vs_P_BL` | `col5a2b / ENSSMAG00000011709` | -5.55 | 1.39e-18 | Down | Mayor en blind light; matriz extracelular como eje de superficie. |
+| `P_OL_vs_P_BL` | `col10a1b / ENSSMAG00000018381` | -5.35 | 4.94e-13 | Down | Refuerza el componente de colágeno/tejido. |
+| `P_BD_vs_P_OD` | `mybpc2a / ENSSMAG00000008209` | 3.36 | 9.70e-05 | Up | Componente contractil/muscular elevado en blind dark. |
+| `P_BD_vs_P_OD` | `casq1a / ENSSMAG00000013960` | 2.91 | 8.29e-04 | Up | Señal muscular/metabólica de superficie. |
+| `P_BD_vs_P_OD` | `atp2a1l / ENSSMAG00000016974` | 3.06 | 8.29e-04 | Up | Manejo de calcio/músculo; no apunta a melanogénesis terminal. |
+| `P_surface_x_pigmentation` | `crabp1a / ENSSMAG00000005604` | 6.41 | 2.01e-07 | Interacción positiva | Unión a ácido retinoico; candidato para interacción superficie × pigmentación. |
+| `P_surface_x_pigmentation` | `dgat2 / ENSSMAG00000001438` | 6.39 | 7.28e-06 | Interacción positiva | Metabolismo lipídico con efecto dependiente de superficie. |
+| `P_surface_x_pigmentation` | `ENSSMAG00000031399` | 8.66 | 1.90e-03 | Interacción positiva | Sin anotación local; candidato a curación manual. |
+| `P_OL_vs_N_OD` | `ENSSMAG00000036716` | -3.12 | 1.98e-06 | Down | Mayor en ocular dark normal; pérdida en ocular light pseudoalbino. |
+| `P_OL_vs_N_OD` | `ENSSMAG00000015984` | -3.99 | 1.76e-05 | Down | Gen sin anotación local; revisar con ortología futura. |
+| `P_OL_vs_N_OD` | `ENSSMAG00000029313` | -3.49 | 2.96e-04 | Down | Mayor en estado normal esperado. |
+| `P_BD_vs_N_BL` | `ENSSMAG00000002702` | -4.35 | 2.48e-17 | Down | Mayor en blind light normal; marcador potencial del estado esperado. |
+| `P_BD_vs_N_BL` | `ENSSMAG00000035843` | -8.47 | 3.66e-07 | Down | Sin anotación local; cambio intenso a revisar. |
+| `P_BD_vs_N_BL` | `vcla / ENSSMAG00000005062` | 4.08 | 9.39e-06 | Up | Componente estructural/contractil elevado en blind dark anómalo. |
+
+: Genes más significativos por contraste entre los DEGs filtrados. Las anotaciones sin símbolo deben conservar el identificador `ENSSMAG` como referencia estable.
+
+::: {.callout-warning title="Anotación incompleta no significa ausencia de biología"}
+Varios genes altamente significativos aparecen como `ENSSMAG...` sin símbolo funcional local. En un genoma no modelo como *Scophthalmus maximus*, esto es esperable. Estos genes no deben descartarse: conviene tratarlos como candidatos para curación manual mediante ortología, dominios proteicos, sintenia o anotación actualizada.
+:::
+
+## Figuras por contraste
+
+Las figuras siguientes combinan tres vistas complementarias por contraste. El **volcano plot** muestra magnitud y significación; el **MA plot** permite detectar si los efectos dependen de la abundancia media; y el **heatmap** resume si los genes más variables/señalados separan las muestras de forma coherente con el diseño.
+
+::: panel-tabset
+
+## N_OD_vs_N_BL
+
+Este contraste define la referencia fisiológica de pigmentación normal. Los genes con mayor expresión en `N_OD` incluyen marcadores vinculados a melanogénesis y melanocitos, como `tyrp1b`, `TYRP1`, `tyr`, `mlpha` y `sox10`. Biológicamente, esto encaja con una piel ocular oscura activa en rutas de pigmentación.
+
+::: {#fig-de-nod-nbl layout-ncol="3"}
+![Volcano plot del contraste normal ocular dark frente a normal blind light.](../figures/05_de/contrasts/N_OD_vs_N_BL/volcano_N_OD_vs_N_BL.png)
+
+![MA plot del contraste normal ocular dark frente a normal blind light.](../figures/05_de/contrasts/N_OD_vs_N_BL/ma_N_OD_vs_N_BL.png)
+
+![Heatmap de genes destacados para el contraste normal ocular dark frente a normal blind light.](../figures/05_de/contrasts/N_OD_vs_N_BL/heatmap_N_OD_vs_N_BL.png)
+
+Contraste `N_OD_vs_N_BL`. La señal positiva recoge genes más altos en piel ocular oscura normal; la negativa, genes más altos en piel blind clara normal.
+:::
+
+## P_OD_vs_P_OL
+
+Este contraste pregunta qué diferencia una zona ocular oscura pseudoalbina de una zona ocular clara pseudoalbina. La presencia de genes de matriz extracelular entre los cambios principales indica que el pseudoalbinismo ocular no se limita a una pérdida simple de melanogénesis, sino que puede acompañarse de remodelado tisular.
+
+::: {#fig-de-pod-pol layout-ncol="3"}
+![Volcano plot del contraste pseudoalbino ocular dark frente a ocular light.](../figures/05_de/contrasts/P_OD_vs_P_OL/volcano_P_OD_vs_P_OL.png)
+
+![MA plot del contraste pseudoalbino ocular dark frente a ocular light.](../figures/05_de/contrasts/P_OD_vs_P_OL/ma_P_OD_vs_P_OL.png)
+
+![Heatmap de genes destacados para el contraste pseudoalbino ocular dark frente a ocular light.](../figures/05_de/contrasts/P_OD_vs_P_OL/heatmap_P_OD_vs_P_OL.png)
+
+Contraste `P_OD_vs_P_OL`. Los genes positivos están más expresados en regiones oculares oscuras pseudoalbinas; los negativos, en regiones oculares claras pseudoalbinas.
+:::
+
+## P_BD_vs_P_BL
+
+Este contraste evalúa la pigmentación ectópica en la superficie blind pseudoalbina. A diferencia del eje normal, la dirección dominante no reproduce un programa melanogénico limpio, lo que sugiere que la pigmentación ectópica blind puede estar asociada a cambios de microambiente, composición celular o estado tisular.
+
+::: {#fig-de-pbd-pbl layout-ncol="3"}
+![Volcano plot del contraste pseudoalbino blind dark frente a blind light.](../figures/05_de/contrasts/P_BD_vs_P_BL/volcano_P_BD_vs_P_BL.png)
+
+![MA plot del contraste pseudoalbino blind dark frente a blind light.](../figures/05_de/contrasts/P_BD_vs_P_BL/ma_P_BD_vs_P_BL.png)
+
+![Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a blind light.](../figures/05_de/contrasts/P_BD_vs_P_BL/heatmap_P_BD_vs_P_BL.png)
+
+Contraste `P_BD_vs_P_BL`. La mayoría de DEGs filtrados son negativos, por tanto más altos en `P_BL`.
+:::
+
+## P_OL_vs_P_BL
+
+Este contraste mantiene constante el color claro y compara superficies. La señal diferencial indica que las regiones pseudoalbinas claras no son equivalentes entre superficie ocular y blind, incluso cuando comparten un estado pigmentario macroscópico similar.
+
+::: {#fig-de-pol-pbl layout-ncol="3"}
+![Volcano plot del contraste pseudoalbino ocular light frente a blind light.](../figures/05_de/contrasts/P_OL_vs_P_BL/volcano_P_OL_vs_P_BL.png)
+
+![MA plot del contraste pseudoalbino ocular light frente a blind light.](../figures/05_de/contrasts/P_OL_vs_P_BL/ma_P_OL_vs_P_BL.png)
+
+![Heatmap de genes destacados para el contraste pseudoalbino ocular light frente a blind light.](../figures/05_de/contrasts/P_OL_vs_P_BL/heatmap_P_OL_vs_P_BL.png)
+
+Contraste `P_OL_vs_P_BL`. Los cambios reflejan identidad de superficie bajo color claro pseudoalbino.
+:::
+
+## P_BD_vs_P_OD
+
+Este contraste mantiene constante el color oscuro dentro de pseudoalbinos. El hecho de que los 47 DEGs filtrados sean positivos sugiere una señal direccional consistente hacia `P_BD`, con genes asociados a componentes contractiles y metabolismo muscular. Esto refuerza que la piel blind oscura ectópica no es simplemente una copia transcriptómica de la piel ocular oscura.
+
+::: {#fig-de-pbd-pod layout-ncol="3"}
+![Volcano plot del contraste pseudoalbino blind dark frente a ocular dark.](../figures/05_de/contrasts/P_BD_vs_P_OD/volcano_P_BD_vs_P_OD.png)
+
+![MA plot del contraste pseudoalbino blind dark frente a ocular dark.](../figures/05_de/contrasts/P_BD_vs_P_OD/ma_P_BD_vs_P_OD.png)
+
+![Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a ocular dark.](../figures/05_de/contrasts/P_BD_vs_P_OD/heatmap_P_BD_vs_P_OD.png)
+
+Contraste `P_BD_vs_P_OD`. Los genes positivos están elevados en blind dark pseudoalbino.
+:::
+
+## P_surface_x_pigmentation
+
+El modelo de interacción identifica genes cuyo efecto dark/light cambia según la superficie. La lista es pequeña (**8 DEGs**), lo cual es esperable para una hipótesis más específica. Genes como `crabp1a` y `dgat2` apuntan a procesos de señalización por retinoides y metabolismo lipídico como candidatos para explorar la interacción superficie-pigmentación.
+
+::: {#fig-de-interaction layout-ncol="3"}
+![Volcano plot del modelo de interacción superficie por pigmentación.](../figures/05_de/contrasts/P_surface_x_pigmentation/volcano_P_surface_x_pigmentation.png)
+
+![MA plot del modelo de interacción superficie por pigmentación.](../figures/05_de/contrasts/P_surface_x_pigmentation/ma_P_surface_x_pigmentation.png)
+
+![Heatmap de genes destacados para el modelo de interacción superficie por pigmentación.](../figures/05_de/contrasts/P_surface_x_pigmentation/heatmap_P_surface_x_pigmentation.png)
+
+Contraste `P_surface_x_pigmentation`. Los cambios representan efectos no aditivos entre superficie y pigmentación.
+:::
+
+## P_OL_vs_N_OD
+
+Este contraste compara una región ocular clara anómala con el estado ocular oscuro esperado. La señal de DEGs es relativamente pequeña (**38 DEGs**), pero está fuertemente sesgada hacia genes más altos en `N_OD`, compatible con una pérdida parcial del programa normal ocular oscuro en `P_OL`.
+
+::: {#fig-de-pol-nod layout-ncol="3"}
+![Volcano plot del contraste pseudoalbino ocular light frente a normal ocular dark.](../figures/05_de/contrasts/P_OL_vs_N_OD/volcano_P_OL_vs_N_OD.png)
+
+![MA plot del contraste pseudoalbino ocular light frente a normal ocular dark.](../figures/05_de/contrasts/P_OL_vs_N_OD/ma_P_OL_vs_N_OD.png)
+
+![Heatmap de genes destacados para el contraste pseudoalbino ocular light frente a normal ocular dark.](../figures/05_de/contrasts/P_OL_vs_N_OD/heatmap_P_OL_vs_N_OD.png)
+
+Contraste `P_OL_vs_N_OD`. Los genes negativos están más expresados en el estado normal ocular oscuro.
+:::
+
+## P_BD_vs_N_BL
+
+Este es el contraste más intenso del análisis y compara la región blind oscura anómala con la región blind clara esperada. El gran número de DEGs positivos sugiere una activación transcriptómica amplia en `P_BD`, pero la naturaleza de los genes y términos funcionales indica que no se trata de un eje puramente melanogénico.
+
+::: {#fig-de-pbd-nbl layout-ncol="3"}
+![Volcano plot del contraste pseudoalbino blind dark frente a normal blind light.](../figures/05_de/contrasts/P_BD_vs_N_BL/volcano_P_BD_vs_N_BL.png)
+
+![MA plot del contraste pseudoalbino blind dark frente a normal blind light.](../figures/05_de/contrasts/P_BD_vs_N_BL/ma_P_BD_vs_N_BL.png)
+
+![Heatmap de genes destacados para el contraste pseudoalbino blind dark frente a normal blind light.](../figures/05_de/contrasts/P_BD_vs_N_BL/heatmap_P_BD_vs_N_BL.png)
+
+Contraste `P_BD_vs_N_BL`. La comparación captura la divergencia entre pigmentación ectópica blind y el estado blind claro fisiológico.
+:::
+
+:::
+
+## Solapamientos y coherencia entre ejes
+
+La comparación entre contrastes muestra que el eje pseudoalbino ocular comparte solo parcialmente el programa normal dark/light, mientras que el eje blind pseudoalbino es mucho más divergente. Las correlaciones de efecto génico son bajas: `N_OD_vs_N_BL` frente a `P_OD_vs_P_OL` muestra una correlación de Pearson de **0.221**, mientras que `N_OD_vs_N_BL` frente a `P_BD_vs_P_BL` es negativa (**-0.141**). Esto apoya una interpretación de **conservación parcial en ocular** y **reprogramación divergente en blind**.
+
+| Comparación | Pearson | Spearman | Interpretación |
+|---|---:|---:|---|
+| Normal vs pseudoalbino ocular dark/light | 0.221 | 0.162 | Concordancia débil: parte del eje normal se conserva, pero no domina. |
+| Normal vs pseudoalbino blind dark/light | -0.141 | -0.102 | Divergencia: la pigmentación blind ectópica no reproduce el eje normal. |
+| Pseudoalbino ocular vs pseudoalbino blind dark/light | 0.236 | 0.304 | Concordancia moderada-baja entre ejes pseudoalbinos. |
+
+: Correlaciones entre efectos génicos de contrastes relacionados. Se usan todos los genes comparables, no solo DEGs filtrados.
+
+| Solapamiento direccional | Genes compartidos | Lectura |
+|---|---:|---|
+| Genes altos en dark normal y altos en dark pseudoalbino ocular | 8 | Conservación limitada del programa dark. |
+| Genes altos en light normal y altos en light pseudoalbino ocular | 3 | Baja conservación del estado light. |
+| Genes altos en dark normal y altos en blind dark pseudoalbino | 1 | Pigmentación ectópica blind muy divergente. |
+| Genes altos en light normal y altos en blind light pseudoalbino | 0 | Sin conservación detectable en este cruce. |
+
+: Solapamientos direccionales de DEGs entre ejes de pigmentación normal y pseudoalbina.
+
+::: {#fig-de-overlaps layout-ncol="2"}
+![Venn de genes diferencialmente expresados en el eje principal de pigmentación.](../figures/05_de/summary/venn_primary_pigmentation_axis.png)
+
+![UpSet de solapamientos entre contrastes principales no interactivos.](../figures/05_de/summary/upset_all_main_noninteraction.png)
+
+Resumen visual de solapamientos entre contrastes. La señal compartida existe, pero es limitada, especialmente cuando se compara el eje normal con la pigmentación ectópica blind.
+:::
+
+![Solapamientos entre contrastes pseudoalbinos dentro de superficie y modelo de interacción.](../figures/05_de/summary/upset_pseudoalbino_within_and_surface.png){#fig-de-upset-pseudo width="90%"}
+
+## Enriquecimiento funcional e interpretación biológica
+
+El análisis funcional confirma que los cambios no se reducen a genes individuales. En el eje normal `N_OD_vs_N_BL`, los términos con NES positivo incluyen **melanosome**, **melanocyte differentiation**, **melanosome organization** y **melanin biosynthetic process**, coherentes con mayor actividad pigmentaria en piel ocular oscura. En cambio, términos con NES negativo apuntan a **extracellular matrix**, **collagen-containing extracellular matrix**, **axon guidance**, **angiogenesis** y rutas de desarrollo, más asociadas al lado blind claro.
+
+En los contrastes pseudoalbinos, la señal funcional se vuelve más compleja. `P_OD_vs_P_OL` conserva parte del eje de superficie/pigmentación, pero se acompaña de remodelado de matriz extracelular. `P_BD_vs_P_BL` y `P_BD_vs_N_BL` muestran una señal fuerte de desarrollo, estructura tisular, epidermis, músculo/contracción y metabolismo mitocondrial. Esta combinación sugiere que la pigmentación ectópica blind puede reflejar cambios de **identidad tisular**, **estado celular** o **microambiente**, además de pigmentación.
+
+::: {#fig-de-go-summary layout-ncol="2"}
+![Dotplot GSEA de términos GO resumidos por contraste.](../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png)
+
+![Dotplot ORA de términos GO resumidos por contraste.](../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png)
+
+Resumen funcional de términos GO por contraste. GSEA captura cambios coordinados a lo largo de toda la lista ordenada; ORA resume términos sobrerrepresentados entre genes filtrados.
+:::
+
+| Contraste | Categoría | n términos FDR < 0.10 | Término principal | NES | FDR |
+|---|---|---:|---|---:|---:|
+| `N_OD_vs_N_BL` | Pigmentación/melanocito | 7 | `CC: melanosome` | 2.39 | 4.04e-06 |
+| `N_OD_vs_N_BL` | Neural crest | 2 | `BP: neural crest cell migration` | -1.53 | 3.22e-02 |
+| `N_OD_vs_N_BL` | Wnt/retinoides | 4 | `BP: positive regulation of Wnt signaling pathway` | -2.22 | 4.98e-04 |
+| `P_OD_vs_P_OL` | Desarrollo/patterning | 19 | `BP: skeletal muscle thin filament assembly` | 2.40 | 2.20e-05 |
+| `P_OD_vs_P_OL` | Wnt/retinoides | 1 | `MF: retinoic acid binding` | -1.85 | 4.34e-02 |
+| `P_BD_vs_P_BL` | Pigmentación/melanocito | 4 | `CC: melanosome` | -2.08 | 3.18e-03 |
+| `P_BD_vs_N_BL` | Desarrollo/patterning | 22 | `BP: skeletal muscle tissue development` | 2.92 | 7.17e-18 |
+| `P_OL_vs_N_OD` | Wnt/retinoides | 10 | `BP: Wnt signaling pathway` | 2.15 | 1.56e-06 |
+| `P_OL_vs_N_OD` | Neural crest | 2 | `BP: neural crest cell migration` | 1.83 | 2.77e-03 |
+| `P_surface_x_pigmentation` | Desarrollo/patterning | 1 | `BP: multicellular organism development` | 1.74 | 6.27e-03 |
+
+: Términos funcionales seleccionados de categorías de desarrollo, cresta neural, Wnt/retinoides y pigmentación. El signo del NES indica enriquecimiento hacia genes con log2FC positivo o negativo según el contraste.
+
+![Resumen de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste.](../figures/05_de/enrichment/development_neural_crest_terms.png){#fig-de-development-neural-crest width="95%"}
+
+::: {.callout-important title="Hipótesis biológica de trabajo"}
+Los resultados apoyan una hipótesis en la que el pseudoalbinismo no se explica únicamente por apagado terminal de melanogénesis. La señal apunta a una combinación de **programas pigmentarios**, **desarrollo/cresta neural**, **Wnt/retinoides**, **matriz extracelular**, **epidermis** y **composición tisular**. En particular, la pigmentación ectópica blind parece más divergente del eje normal que la pérdida de pigmentación en la superficie ocular.
+:::
+
+## Implicaciones para resultados de paper
+
+Los resultados pueden organizarse en tres mensajes principales para una sección de resultados:
+
+1. El eje normal `N_OD_vs_N_BL` recupera un programa pigmentario esperado, con genes como `tyrp1b`, `TYRP1`, `tyr`, `mlpha` y `sox10`, y enriquecimiento de términos de melanosoma y melanogénesis.
+2. El pseudoalbinismo ocular conserva solo parcialmente ese eje. `P_OD_vs_P_OL` produce una señal clara, pero con fuerte contribución de matriz extracelular y desarrollo, lo que sugiere remodelado del tejido además de pigmentación.
+3. La pigmentación ectópica blind es el fenómeno más divergente. `P_BD_vs_N_BL` es el contraste con más DEGs y `P_BD_vs_P_BL` no reproduce de forma simple el eje melanogénico normal, apuntando a cambios de identidad tisular o microambiente.
+
+::: {.callout-note title="Muestras a vigilar al interpretar DE"}
+Las muestras `P43`, `P44`, `P47` y `P49` mostraron señales técnicas moderadas en QC, principalmente duplicación elevada y/o menor complejidad. No fueron excluidas porque no mostraron fallo global, pero conviene comprobar que ninguna conclusión dependa exclusivamente de una de ellas, especialmente en contrastes pseudoalbinos con n reducido.
+:::
+
+## Archivos derivados
+
+Los archivos TSV principales se incluyen como recursos del libro para trazabilidad y copia:
+
+- [Resumen de contrastes DESeq2](../tables/05_de/deg_contrast_status.tsv)
+- [Resumen direccional de DEGs](../tables/05_de/deg_direction_summary.tsv)
+- [Top 50 genes anotados por contraste](../tables/05_de/deg_top50_by_contrast_annotated.tsv)
+- [Todos los DEGs significativos anotados](../tables/05_de/deg_significant_all_contrasts_annotated.tsv)
+- [Correlaciones de efecto génico](../tables/05_de/gene_effect_correlations.tsv)
+- [Solapamientos direccionales](../tables/05_de/deg_directional_overlaps.tsv)
+- [Resumen de categorías desarrollo/cresta neural](../tables/05_de/development_neural_crest_summary.tsv)
+- [Resumen combinado de enriquecimiento GO](../tables/05_de/go_enrichment_combined_summary.tsv)
+
+## Referencias {.unnumbered}
+
+::: {#refs}
+:::
