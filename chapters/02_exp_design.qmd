@@ -72,6 +72,10 @@ La @tbl-samples-intro recoge las muestras incluidas en la documentación bioinfo
 
 El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol^TM^ y columnas Phasemaker^TM^ Tubes (Thermo Fisher), seguido de purificación en columna. La concentración, la cantidad total disponible y la integridad del ARN se evaluaron antes de la preparación de bibliotecas RNA-seq.
 
+::: {.callout-tip title="Protocolo experimental completo"}
+El protocolo detallado de extracción, homogeneización, separación de fases, digestión con DNasa y purificación en columna se incluye como anexo: [Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy](../appendices/rna_extraction_protocol.md).
+:::
+
 ### Control preliminar de extracción: NanoDrop y gel de agarosa
 
 Antes del envío de muestras para preparación de bibliotecas, se realizó un control preliminar de las extracciones mediante **NanoDrop** y visualización de integridad en **gel de agarosa al 1.5%**. Este paso permitió revisar la concentración de ARN total, la pureza estimada por las ratios **A260/A280** y **A260/A230**, y la presencia de bandas compatibles con ARN ribosomal íntegro.

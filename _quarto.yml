@@ -38,6 +38,8 @@ book:
     - chapters/03_qc_multiqc.qmd
     - chapters/04_alignment_quant.qmd
     - chapters/05_differential_expression.qmd
+  appendices:
+    - appendices/rna_extraction_protocol.md
 
 bibliography: references.bib
 csl: vancouver-brackets.csl
