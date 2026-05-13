@@ -15,7 +15,7 @@ Se tomaron muestras de peces con fenotipo pigmentario normal (control) y peces p
     -   Pigmentada, correspondiente a pigmentación anormal.
     -   No pigmentada, correspondiente a pigmentación anormal.
 
-![Toma de muestras de piel para el análisis transcriptómico. A-B: zonas de muestreo en rodaballos pseudoalbinos y control. Las zonas delimitadas con punteado amarillo corresponden a zonas no pigmentadas, y las delimitadas en rojo corresponden a zonas pigmentadas. C: corte y recogida de muestra de piel.](images/paste-1.png){#fig-sampling}
+![Toma de muestras de piel para el análisis transcriptómico. A-B: zonas de muestreo en rodaballos pseudoalbinos y control. Las zonas delimitadas con punteado amarillo corresponden a zonas no pigmentadas, y las delimitadas en rojo corresponden a zonas pigmentadas. C: corte y recogida de muestra de piel.](../figures/02_exp_design/sampling_sites.png){#fig-sampling}
 
 La unidad biológica principal de esta fase es la **piel**, muestreada en regiones pigmentadas y no pigmentadas. La @tbl-sample-groups resume la lógica experimental de las muestras procesadas en el flujo nf-core/rnaseq documentado en este libro.
 
@@ -84,39 +84,39 @@ La @tbl-rna-extraction-nanodrop corresponde al control de extracción inicial y 
 ::: {#tbl-rna-extraction-nanodrop}
 | Nº tubo | Conc. NanoDrop (ng/µl) | A260/A280 | A260/A230 | Integridad en gel de agarosa 1.5%, 100 mV, 30 min |
 |:--------|-----------------------:|----------:|----------:|:---------------------------------------------------|
-| P31 | 1142.7 | 2.14 | 2.10 | ![](../figures/02_exp_design/rna_extraction_gels/image1.png){width="150"} |
+| P31 | 1142.7 | 2.14 | 2.10 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png){width="150"} |
 | P32 | 813.4 | 2.14 | 2.18 |  |
 | IT11 | 534.3 | 2.13 | 2.00 |  |
-| P33 | 338.9 | 2.12 | 2.24 | ![](../figures/02_exp_design/rna_extraction_gels/image2.png){width="150"} |
+| P33 | 338.9 | 2.12 | 2.24 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png){width="150"} |
 | P34 | 440.5 | 2.10 | 2.27 |  |
 | IT12 | 974.0 | 2.13 | 2.36 |  |
-| P35 | 299.3 | 2.12 | 1.08 | ![](../figures/02_exp_design/rna_extraction_gels/image3.png){width="150"} |
+| P35 | 299.3 | 2.12 | 1.08 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png){width="150"} |
 | P36 | 308.8 | 2.13 | 2.18 |  |
 | IT13 | 367.6 | 2.13 | 1.99 |  |
-| P37 | 191.5 | 2.10 | 2.20 | ![](../figures/02_exp_design/rna_extraction_gels/image4.png){width="150"} |
+| P37 | 191.5 | 2.10 | 2.20 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png){width="150"} |
 | P38 | 209.5 | 2.14 | 2.05 |  |
 | P39 | 827.3 | 2.15 | 2.31 |  |
 | P40 | 359.5 | 2.14 | 2.17 |  |
 | IT14 | 822.9 | 2.14 | 2.31 |  |
-| P41 | 583.6 | 2.10 | 2.29 | ![](../figures/02_exp_design/rna_extraction_gels/image5.png){width="150"} |
+| P41 | 583.6 | 2.10 | 2.29 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png){width="150"} |
 | P42 | 506.5 | 2.10 | 2.15 |  |
 | P43 | 588.0 | 2.10 | 2.33 |  |
 | P44 | 1028.3 | 2.13 | 2.14 |  |
 | IT15 | 727.2 | 2.10 | 2.29 |  |
-| P45 | 529.7 | 2.05 | 2.33 | ![](../figures/02_exp_design/rna_extraction_gels/image6.png){width="150"} |
+| P45 | 529.7 | 2.05 | 2.33 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png){width="150"} |
 | P46 | 383.0 | 2.09 | 2.11 |  |
 | P47 | 218.3 | 2.07 | 2.14 |  |
 | P48 | 291.2 | 2.09 | 1.77 |  |
 | IT16 | 963.5 | 2.07 | 2.31 |  |
-| P49 | 444.2 | 2.09 | 2.21 | ![](../figures/02_exp_design/rna_extraction_gels/image7.png){width="150"} |
+| P49 | 444.2 | 2.09 | 2.21 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png){width="150"} |
 | P50 | 236.5 | 2.11 | 2.13 |  |
 | P51 | 927.5 | 2.11 | 2.26 |  |
 | P52 | 385.8 | 2.14 | 1.08 |  |
 | IT17 | 1327.1 | 2.10 | 2.24 |  |
-| P1G | 117.6 | 2.13 | 1.73 | ![](../figures/02_exp_design/rna_extraction_gels/image8.png){width="150"} |
+| P1G | 117.6 | 2.13 | 1.73 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png){width="150"} |
 | P2G | 121.6 | 2.12 | 2.07 |  |
 | IT1G | 1117.5 | 2.11 | 2.31 |  |
-| PNKD | 168.7 | 2.13 | 1.52 | ![](../figures/02_exp_design/rna_extraction_gels/image9.png){width="150"} |
+| PNKD | 168.7 | 2.13 | 1.52 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png){width="150"} |
 | PNKV | 173.9 | 2.13 | 1.56 |  |
 | PNKIT | 2583.5 | 2.15 | 2.28 |  |
 
@@ -182,107 +182,107 @@ Dado que el presupuesto de secuenciación cubría **24 bibliotecas RNA-seq** y s
 ::: panel-tabset
 ### P31
 
-![](../figures/02_exp_design/EKRN240028385-1A%200ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG)
+![](../figures/02_exp_design/bioanalyzer/P31.png)
 
 ### P32
 
-![](../figures/02_exp_design/EKRN240028386-1A%202741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG)
+![](../figures/02_exp_design/bioanalyzer/P32.png)
 
 ### P33
 
-![](../figures/02_exp_design/EKRN240028387-1A%20D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG)
+![](../figures/02_exp_design/bioanalyzer/P33.png)
 
 ### P34
 
-![](../figures/02_exp_design/EKRN240028388-1A%20D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG)
+![](../figures/02_exp_design/bioanalyzer/P34.png)
 
 ### P35
 
-![](../figures/02_exp_design/EKRN240028389-1A%20A24C77CE-2846-448D-BA32-BE5B352A9628.PNG)
+![](../figures/02_exp_design/bioanalyzer/P35.png)
 
 ### P36
 
-![](../figures/02_exp_design/EKRN240028390-1A%2009F7647A-7D63-4EC1-8448-546D44B0F700.PNG)
+![](../figures/02_exp_design/bioanalyzer/P36.png)
 
 ### P41
 
-![](../figures/02_exp_design/EKRN240028391-1A%204DAD28B7-C028-44C2-B5E2-90586469B12E.PNG)
+![](../figures/02_exp_design/bioanalyzer/P41.png)
 
 ### P42
 
-![](../figures/02_exp_design/EKRN240028392-1A%20D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG)
+![](../figures/02_exp_design/bioanalyzer/P42.png)
 
 ### P43
 
-![](../figures/02_exp_design/EKRN240028393-1A%205BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG)
+![](../figures/02_exp_design/bioanalyzer/P43.png)
 
 ### P44
 
-![](../figures/02_exp_design/EKRN240028394-1A%20D7433F06-BC78-45B6-9198-416D03AC6785.PNG)
+![](../figures/02_exp_design/bioanalyzer/P44.png)
 
 ### P45
 
-![](../figures/02_exp_design/EKRN240028395-1A%2075ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG)
+![](../figures/02_exp_design/bioanalyzer/P45.png)
 
 ### P46
 
-![](../figures/02_exp_design/EKRN240028396-1A%20621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG)
+![](../figures/02_exp_design/bioanalyzer/P46.png)
 
 ### P47
 
-![](../figures/02_exp_design/EKRN240028397-1A%20EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG)
+![](../figures/02_exp_design/bioanalyzer/P47.png)
 
 ### P48
 
-![](../figures/02_exp_design/EKRN240028398-1A%20F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG)
+![](../figures/02_exp_design/bioanalyzer/P48.png)
 
 ### P49
 
-![](../figures/02_exp_design/EKRN240028399-1A%2057F88317-BDA3-4595-92B7-66008084A4B7.PNG)
+![](../figures/02_exp_design/bioanalyzer/P49.png)
 
 ### P50
 
-![](../figures/02_exp_design/EKRN240028400-1A%201A791172-7746-440C-8A51-41D22C219EDB.PNG)
+![](../figures/02_exp_design/bioanalyzer/P50.png)
 
 ### P51
 
-![](../figures/02_exp_design/EKRN240028401-1A%20EBD7638C-4382-40CC-984D-4D351B61B948.PNG)
+![](../figures/02_exp_design/bioanalyzer/P51.png)
 
 ### P52
 
-![](../figures/02_exp_design/EKRN240028402-1A%2039B46501-27EE-470D-B8AA-B65E87CFBC13.PNG)
+![](../figures/02_exp_design/bioanalyzer/P52.png)
 
 ### P1G
 
-![](../figures/02_exp_design/EKRN240028403-1A%20D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG)
+![](../figures/02_exp_design/bioanalyzer/P1G.png)
 
 ### P2G
 
-![](../figures/02_exp_design/EKRN240028404-1A%201EE8F273-552A-4118-8A01-7C359D493290.PNG)
+![](../figures/02_exp_design/bioanalyzer/P2G.png)
 
 ### PNKD
 
-![](../figures/02_exp_design/EKRN240028405-1A%2074312C80-27BF-4516-A106-54CA8D077D38.PNG)
+![](../figures/02_exp_design/bioanalyzer/PNKD.png)
 
 ### PNKV
 
-![](../figures/02_exp_design/EKRN240028406-1A%20133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG)
+![](../figures/02_exp_design/bioanalyzer/PNKV.png)
 
 ### IT12
 
-![](../figures/02_exp_design/EKRN240028407-1A%203E4AC179-9D72-407B-8450-2FEADFA581EC.PNG)
+![](../figures/02_exp_design/bioanalyzer/IT12.png)
 
 ### IT16
 
-![](../figures/02_exp_design/EKRN240028408-1A%20206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG)
+![](../figures/02_exp_design/bioanalyzer/IT16.png)
 
 ### IT1G
 
-![](../figures/02_exp_design/EKRN240028409-1A%203EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG)
+![](../figures/02_exp_design/bioanalyzer/IT1G.png)
 
 ### ITPNK
 
-![](../figures/02_exp_design/EKRN240028410-1A%20AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG)
+![](../figures/02_exp_design/bioanalyzer/ITPNK.png)
 :::
 
 Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN.
