@@ -72,7 +72,61 @@ La @tbl-samples-intro recoge las muestras incluidas en la documentación bioinfo
 
 El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol^TM^ y columnas Phasemaker^TM^ Tubes (Thermo Fisher), seguido de purificación en columna. La concentración, la cantidad total disponible y la integridad del ARN se evaluaron antes de la preparación de bibliotecas RNA-seq.
 
+### Control preliminar de extracción: NanoDrop y gel de agarosa
+
+Antes del envío de muestras para preparación de bibliotecas, se realizó un control preliminar de las extracciones mediante **NanoDrop** y visualización de integridad en **gel de agarosa al 1.5%**. Este paso permitió revisar la concentración de ARN total, la pureza estimada por las ratios **A260/A280** y **A260/A230**, y la presencia de bandas compatibles con ARN ribosomal íntegro.
+
+::: {.callout-note title="Relación con el QC de Novogene"}
+La @tbl-rna-extraction-nanodrop corresponde al control de extracción inicial y contiene muestras candidatas, incluidas algunas que no llegaron a formar parte del conjunto final de bibliotecas RNA-seq. La selección final para secuenciación se basó en el control posterior de Novogene/Bioanalyzer, resumido en la @tbl-rna-qc.
+:::
+
+::: {.rna-gel-table}
+::: {#tbl-rna-extraction-nanodrop}
+| Nº tubo | Conc. NanoDrop (ng/µl) | A260/A280 | A260/A230 | Integridad en gel de agarosa 1.5%, 100 mV, 30 min |
+|:--------|-----------------------:|----------:|----------:|:---------------------------------------------------|
+| P31 | 1142.7 | 2.14 | 2.10 | ![](../figures/02_exp_design/rna_extraction_gels/image1.png){width="150"} |
+| P32 | 813.4 | 2.14 | 2.18 |  |
+| IT11 | 534.3 | 2.13 | 2.00 |  |
+| P33 | 338.9 | 2.12 | 2.24 | ![](../figures/02_exp_design/rna_extraction_gels/image2.png){width="150"} |
+| P34 | 440.5 | 2.10 | 2.27 |  |
+| IT12 | 974.0 | 2.13 | 2.36 |  |
+| P35 | 299.3 | 2.12 | 1.08 | ![](../figures/02_exp_design/rna_extraction_gels/image3.png){width="150"} |
+| P36 | 308.8 | 2.13 | 2.18 |  |
+| IT13 | 367.6 | 2.13 | 1.99 |  |
+| P37 | 191.5 | 2.10 | 2.20 | ![](../figures/02_exp_design/rna_extraction_gels/image4.png){width="150"} |
+| P38 | 209.5 | 2.14 | 2.05 |  |
+| P39 | 827.3 | 2.15 | 2.31 |  |
+| P40 | 359.5 | 2.14 | 2.17 |  |
+| IT14 | 822.9 | 2.14 | 2.31 |  |
+| P41 | 583.6 | 2.10 | 2.29 | ![](../figures/02_exp_design/rna_extraction_gels/image5.png){width="150"} |
+| P42 | 506.5 | 2.10 | 2.15 |  |
+| P43 | 588.0 | 2.10 | 2.33 |  |
+| P44 | 1028.3 | 2.13 | 2.14 |  |
+| IT15 | 727.2 | 2.10 | 2.29 |  |
+| P45 | 529.7 | 2.05 | 2.33 | ![](../figures/02_exp_design/rna_extraction_gels/image6.png){width="150"} |
+| P46 | 383.0 | 2.09 | 2.11 |  |
+| P47 | 218.3 | 2.07 | 2.14 |  |
+| P48 | 291.2 | 2.09 | 1.77 |  |
+| IT16 | 963.5 | 2.07 | 2.31 |  |
+| P49 | 444.2 | 2.09 | 2.21 | ![](../figures/02_exp_design/rna_extraction_gels/image7.png){width="150"} |
+| P50 | 236.5 | 2.11 | 2.13 |  |
+| P51 | 927.5 | 2.11 | 2.26 |  |
+| P52 | 385.8 | 2.14 | 1.08 |  |
+| IT17 | 1327.1 | 2.10 | 2.24 |  |
+| P1G | 117.6 | 2.13 | 1.73 | ![](../figures/02_exp_design/rna_extraction_gels/image8.png){width="150"} |
+| P2G | 121.6 | 2.12 | 2.07 |  |
+| IT1G | 1117.5 | 2.11 | 2.31 |  |
+| PNKD | 168.7 | 2.13 | 1.52 | ![](../figures/02_exp_design/rna_extraction_gels/image9.png){width="150"} |
+| PNKV | 173.9 | 2.13 | 1.56 |  |
+| PNKIT | 2583.5 | 2.15 | 2.28 |  |
+
+: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original `Resumen_extracciones.docx` y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente.
+:::
+:::
+
 La evaluación de calidad fue realizada por Novogene mediante **Agilent 5400 Bioanalyzer**. Los resultados completos se resumen en la @tbl-rna-qc, mientras que los electroferogramas individuales se muestran en la @fig-rna-electropherograms mediante un panel de selección por muestra.
+
+### Control de calidad para preparación de bibliotecas: Bioanalyzer y RIN
 
 ::: callout-note
 ## RNA Integrity Number (RIN): contexto técnico

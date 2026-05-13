@@ -300,6 +300,27 @@ tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.045);
 }
 
+.rna-gel-table {
+  overflow-x: auto;
+  margin: 1rem 0 1.35rem;
+}
+
+.rna-gel-table table {
+  min-width: 780px;
+  font-size: 0.78rem;
+}
+
+.rna-gel-table th,
+.rna-gel-table td {
+  padding: 0.42em 0.55em;
+}
+
+.rna-gel-table td img {
+  display: block;
+  max-width: 150px;
+  min-width: 120px;
+}
+
 
 /* -----------------------------------------------------
    9. Figures & images
