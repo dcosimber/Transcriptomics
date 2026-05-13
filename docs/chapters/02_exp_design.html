@@ -754,281 +754,554 @@ Tabla&nbsp;3.2: Muestras incluidas en la fase documentada del análisis RNA-seq.
 <p>La <a href="#tbl-rna-extraction-nanodrop" class="quarto-xref">Tabla&nbsp;<span>3.3</span></a> corresponde al control de extracción inicial y contiene muestras candidatas, incluidas algunas que no llegaron a formar parte del conjunto final de bibliotecas RNA-seq. La selección final para secuenciación se basó en el control posterior de Novogene/Bioanalyzer, resumido en la <a href="#tbl-rna-qc" class="quarto-xref">Tabla&nbsp;<span>3.4</span></a>.</p>
 </div>
 </div>
-<div class="rna-gel-table">
-<div id="tbl-rna-extraction-nanodrop" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-rna-extraction-nanodrop" class="rna-gel-table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rna-extraction-nanodrop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original <code>Resumen_extracciones.docx</code> y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente.
+Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original <code>Resumen_extracciones.docx</code>; cada imagen abarca el bloque de muestras cargadas conjuntamente en el mismo gel.
 </figcaption>
 <div aria-describedby="tbl-rna-extraction-nanodrop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 8%">
-<col style="width: 22%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 48%">
-</colgroup>
+<table>
 <thead>
-<tr class="header">
-<th style="text-align: left;">Nº tubo</th>
-<th style="text-align: right;">Conc. NanoDrop (ng/µl)</th>
-<th style="text-align: right;">A260/A280</th>
-<th style="text-align: right;">A260/A230</th>
-<th style="text-align: left;">Integridad en gel de agarosa 1.5%, 100 mV, 30 min</th>
+<tr>
+<th>
+Nº tubo
+</th>
+<th>
+Conc. NanoDrop (ng/µl)
+</th>
+<th>
+A260/A280
+</th>
+<th>
+A260/A230
+</th>
+<th>
+Integridad en gel de agarosa 1.5%, 100 mV, 30 min
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">P31</td>
-<td style="text-align: right;">1142.7</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P31
+</td>
+<td>
+1142.7
+</td>
+<td>
+2.14
+</td>
+<td>
+2.10
+</td>
+<td rowspan="3" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P31, P32 e IT11"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" alt="Gel de agarosa para P31, P32 e IT11" class="figure-img"></a>
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P32</td>
-<td style="text-align: right;">813.4</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: right;">2.18</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P32
+</td>
+<td>
+813.4
+</td>
+<td>
+2.14
+</td>
+<td>
+2.18
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">IT11</td>
-<td style="text-align: right;">534.3</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">2.00</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT11
+</td>
+<td>
+534.3
+</td>
+<td>
+2.13
+</td>
+<td>
+2.00
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P33</td>
-<td style="text-align: right;">338.9</td>
-<td style="text-align: right;">2.12</td>
-<td style="text-align: right;">2.24</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P33
+</td>
+<td>
+338.9
+</td>
+<td>
+2.12
+</td>
+<td>
+2.24
+</td>
+<td rowspan="3" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P33, P34 e IT12"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" alt="Gel de agarosa para P33, P34 e IT12" class="figure-img"></a>
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P34</td>
-<td style="text-align: right;">440.5</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: right;">2.27</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P34
+</td>
+<td>
+440.5
+</td>
+<td>
+2.10
+</td>
+<td>
+2.27
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">IT12</td>
-<td style="text-align: right;">974.0</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">2.36</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT12
+</td>
+<td>
+974.0
+</td>
+<td>
+2.13
+</td>
+<td>
+2.36
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P35</td>
-<td style="text-align: right;">299.3</td>
-<td style="text-align: right;">2.12</td>
-<td style="text-align: right;">1.08</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P35
+</td>
+<td>
+299.3
+</td>
+<td>
+2.12
+</td>
+<td>
+1.08
+</td>
+<td rowspan="3" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P35, P36 e IT13"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" alt="Gel de agarosa para P35, P36 e IT13" class="figure-img"></a>
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P36</td>
-<td style="text-align: right;">308.8</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">2.18</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P36
+</td>
+<td>
+308.8
+</td>
+<td>
+2.13
+</td>
+<td>
+2.18
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">IT13</td>
-<td style="text-align: right;">367.6</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">1.99</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT13
+</td>
+<td>
+367.6
+</td>
+<td>
+2.13
+</td>
+<td>
+1.99
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P37</td>
-<td style="text-align: right;">191.5</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: right;">2.20</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P37
+</td>
+<td>
+191.5
+</td>
+<td>
+2.10
+</td>
+<td>
+2.20
+</td>
+<td rowspan="5" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P37, P38, P39, P40 e IT14"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" alt="Gel de agarosa para P37, P38, P39, P40 e IT14" class="figure-img"></a>
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P38</td>
-<td style="text-align: right;">209.5</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: right;">2.05</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P38
+</td>
+<td>
+209.5
+</td>
+<td>
+2.14
+</td>
+<td>
+2.05
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P39</td>
-<td style="text-align: right;">827.3</td>
-<td style="text-align: right;">2.15</td>
-<td style="text-align: right;">2.31</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P39
+</td>
+<td>
+827.3
+</td>
+<td>
+2.15
+</td>
+<td>
+2.31
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P40</td>
-<td style="text-align: right;">359.5</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: right;">2.17</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P40
+</td>
+<td>
+359.5
+</td>
+<td>
+2.14
+</td>
+<td>
+2.17
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">IT14</td>
-<td style="text-align: right;">822.9</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: right;">2.31</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT14
+</td>
+<td>
+822.9
+</td>
+<td>
+2.14
+</td>
+<td>
+2.31
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P41</td>
-<td style="text-align: right;">583.6</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: right;">2.29</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P41
+</td>
+<td>
+583.6
+</td>
+<td>
+2.10
+</td>
+<td>
+2.29
+</td>
+<td rowspan="5" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P41, P42, P43, P44 e IT15"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" alt="Gel de agarosa para P41, P42, P43, P44 e IT15" class="figure-img"></a>
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P42</td>
-<td style="text-align: right;">506.5</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: right;">2.15</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P42
+</td>
+<td>
+506.5
+</td>
+<td>
+2.10
+</td>
+<td>
+2.15
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P43</td>
-<td style="text-align: right;">588.0</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: right;">2.33</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P43
+</td>
+<td>
+588.0
+</td>
+<td>
+2.10
+</td>
+<td>
+2.33
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P44</td>
-<td style="text-align: right;">1028.3</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P44
+</td>
+<td>
+1028.3
+</td>
+<td>
+2.13
+</td>
+<td>
+2.14
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">IT15</td>
-<td style="text-align: right;">727.2</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: right;">2.29</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT15
+</td>
+<td>
+727.2
+</td>
+<td>
+2.10
+</td>
+<td>
+2.29
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P45</td>
-<td style="text-align: right;">529.7</td>
-<td style="text-align: right;">2.05</td>
-<td style="text-align: right;">2.33</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P45
+</td>
+<td>
+529.7
+</td>
+<td>
+2.05
+</td>
+<td>
+2.33
+</td>
+<td rowspan="5" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P45, P46, P47, P48 e IT16"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" alt="Gel de agarosa para P45, P46, P47, P48 e IT16" class="figure-img"></a>
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P46</td>
-<td style="text-align: right;">383.0</td>
-<td style="text-align: right;">2.09</td>
-<td style="text-align: right;">2.11</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P46
+</td>
+<td>
+383.0
+</td>
+<td>
+2.09
+</td>
+<td>
+2.11
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P47</td>
-<td style="text-align: right;">218.3</td>
-<td style="text-align: right;">2.07</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P47
+</td>
+<td>
+218.3
+</td>
+<td>
+2.07
+</td>
+<td>
+2.14
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P48</td>
-<td style="text-align: right;">291.2</td>
-<td style="text-align: right;">2.09</td>
-<td style="text-align: right;">1.77</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P48
+</td>
+<td>
+291.2
+</td>
+<td>
+2.09
+</td>
+<td>
+1.77
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">IT16</td>
-<td style="text-align: right;">963.5</td>
-<td style="text-align: right;">2.07</td>
-<td style="text-align: right;">2.31</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT16
+</td>
+<td>
+963.5
+</td>
+<td>
+2.07
+</td>
+<td>
+2.31
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P49</td>
-<td style="text-align: right;">444.2</td>
-<td style="text-align: right;">2.09</td>
-<td style="text-align: right;">2.21</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P49
+</td>
+<td>
+444.2
+</td>
+<td>
+2.09
+</td>
+<td>
+2.21
+</td>
+<td rowspan="5" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P49, P50, P51, P52 e IT17"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" alt="Gel de agarosa para P49, P50, P51, P52 e IT17" class="figure-img"></a>
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P50</td>
-<td style="text-align: right;">236.5</td>
-<td style="text-align: right;">2.11</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P50
+</td>
+<td>
+236.5
+</td>
+<td>
+2.11
+</td>
+<td>
+2.13
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P51</td>
-<td style="text-align: right;">927.5</td>
-<td style="text-align: right;">2.11</td>
-<td style="text-align: right;">2.26</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P51
+</td>
+<td>
+927.5
+</td>
+<td>
+2.11
+</td>
+<td>
+2.26
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P52</td>
-<td style="text-align: right;">385.8</td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: right;">1.08</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P52
+</td>
+<td>
+385.8
+</td>
+<td>
+2.14
+</td>
+<td>
+1.08
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">IT17</td>
-<td style="text-align: right;">1327.1</td>
-<td style="text-align: right;">2.10</td>
-<td style="text-align: right;">2.24</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT17
+</td>
+<td>
+1327.1
+</td>
+<td>
+2.10
+</td>
+<td>
+2.24
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">P1G</td>
-<td style="text-align: right;">117.6</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">1.73</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+P1G
+</td>
+<td>
+117.6
+</td>
+<td>
+2.13
+</td>
+<td>
+1.73
+</td>
+<td rowspan="3" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P1G, P2G e IT1G"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" alt="Gel de agarosa para P1G, P2G e IT1G" class="figure-img"></a>
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">P2G</td>
-<td style="text-align: right;">121.6</td>
-<td style="text-align: right;">2.12</td>
-<td style="text-align: right;">2.07</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+P2G
+</td>
+<td>
+121.6
+</td>
+<td>
+2.12
+</td>
+<td>
+2.07
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">IT1G</td>
-<td style="text-align: right;">1117.5</td>
-<td style="text-align: right;">2.11</td>
-<td style="text-align: right;">2.31</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+IT1G
+</td>
+<td>
+1117.5
+</td>
+<td>
+2.11
+</td>
+<td>
+2.31
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">PNKD</td>
-<td style="text-align: right;">168.7</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">1.52</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Tabla&nbsp;3.3: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original Resumen_extracciones.docx y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente."><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" class="img-fluid figure-img" width="150"></a></td>
+<tr>
+<td>
+PNKD
+</td>
+<td>
+168.7
+</td>
+<td>
+2.13
+</td>
+<td>
+1.52
+</td>
+<td rowspan="3" class="gel-image-cell">
+<a href="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: PNKD, PNKV y PNKIT"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" alt="Gel de agarosa para PNKD, PNKV y PNKIT" class="figure-img"></a>
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">PNKV</td>
-<td style="text-align: right;">173.9</td>
-<td style="text-align: right;">2.13</td>
-<td style="text-align: right;">1.56</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+PNKV
+</td>
+<td>
+173.9
+</td>
+<td>
+2.13
+</td>
+<td>
+1.56
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">PNKIT</td>
-<td style="text-align: right;">2583.5</td>
-<td style="text-align: right;">2.15</td>
-<td style="text-align: right;">2.28</td>
-<td style="text-align: left;"></td>
+<tr>
+<td>
+PNKIT
+</td>
+<td>
+2583.5
+</td>
+<td>
+2.15
+</td>
+<td>
+2.28
+</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
-</div>
 </div>
 <p>La evaluación de calidad fue realizada por Novogene mediante <strong>Agilent 5400 Bioanalyzer</strong>. Los resultados completos se resumen en la <a href="#tbl-rna-qc" class="quarto-xref">Tabla&nbsp;<span>3.4</span></a>, mientras que los electroferogramas individuales se muestran en la <a href="#fig-rna-electropherograms" class="quarto-xref">Figura&nbsp;<span>3.2</span></a> mediante un panel de selección por muestra.</p>
 </section>
@@ -1386,82 +1659,82 @@ Tabla&nbsp;3.4: Resumen de concentración, cantidad total, integridad de ARN y r
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">P31</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">P32</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">P33</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">P34</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">P35</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">P36</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">P41</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">P42</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-9-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-9" role="tab" aria-controls="tabset-1-9" aria-selected="false" href="">P43</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-10-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-10" role="tab" aria-controls="tabset-1-10" aria-selected="false" href="">P44</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-11-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-11" role="tab" aria-controls="tabset-1-11" aria-selected="false" href="">P45</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-12-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-12" role="tab" aria-controls="tabset-1-12" aria-selected="false" href="">P46</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-13-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-13" role="tab" aria-controls="tabset-1-13" aria-selected="false" href="">P47</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-14-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-14" role="tab" aria-controls="tabset-1-14" aria-selected="false" href="">P48</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-15-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-15" role="tab" aria-controls="tabset-1-15" aria-selected="false" href="">P49</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-16-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-16" role="tab" aria-controls="tabset-1-16" aria-selected="false" href="">P50</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-17-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-17" role="tab" aria-controls="tabset-1-17" aria-selected="false" href="">P51</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-18-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-18" role="tab" aria-controls="tabset-1-18" aria-selected="false" href="">P52</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-19-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-19" role="tab" aria-controls="tabset-1-19" aria-selected="false" href="">P1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-20-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-20" role="tab" aria-controls="tabset-1-20" aria-selected="false" href="">P2G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-21-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-21" role="tab" aria-controls="tabset-1-21" aria-selected="false" href="">PNKD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-22-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-22" role="tab" aria-controls="tabset-1-22" aria-selected="false" href="">PNKV</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-23-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-23" role="tab" aria-controls="tabset-1-23" aria-selected="false" href="">IT12</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-24-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-24" role="tab" aria-controls="tabset-1-24" aria-selected="false" href="">IT16</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-25-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-25" role="tab" aria-controls="tabset-1-25" aria-selected="false" href="">IT1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-26-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-26" role="tab" aria-controls="tabset-1-26" aria-selected="false" href="">ITPNK</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P31.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P31.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P31.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P31.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P32.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P32.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P32.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P32.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P33.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P33.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P33.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P33.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P34.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P34.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P34.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P34.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P35.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P35.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P35.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P35.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P36.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P36.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P36.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P36.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P41.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P41.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P41.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P41.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P42.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P42.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P42.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P42.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-9" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-9-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P43.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P43.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P43.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P43.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-10" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-10-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P44.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P44.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P44.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P44.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-11" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-11-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P45.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P45.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P45.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P45.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-12" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-12-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P46.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P46.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P46.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P46.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-13" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-13-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P47.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P47.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P47.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P47.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-14" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-14-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P48.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P48.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P48.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P48.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-15" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-15-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P49.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P49.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P49.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P49.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-16" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-16-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P50.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P50.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P50.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P50.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-17" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-17-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P51.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P51.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P51.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P51.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-18" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-18-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P52.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P52.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P52.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P52.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-19" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-19-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P1G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P1G.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P1G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P1G.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-20" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-20-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/P2G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P2G.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P2G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/P2G.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-21" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-21-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/PNKD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/PNKD.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/PNKD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/PNKD.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-22" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-22-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/PNKV.png" class="lightbox" data-gallery="quarto-lightbox-gallery-32" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/PNKV.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/PNKV.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/PNKV.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-23" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-23-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/IT12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/IT12.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/IT12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/IT12.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-24" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-24-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/IT16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/IT16.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/IT16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/IT16.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-25" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-25-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/IT1G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/IT1G.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/IT1G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/IT1G.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-26" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-26-tab">
-<p><a href="../figures/02_exp_design/bioanalyzer/ITPNK.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/ITPNK.png" class="img-fluid figure-img"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/ITPNK.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/bioanalyzer/ITPNK.png" class="img-fluid figure-img"></a></p>
 </div>
 </div>
 </div>

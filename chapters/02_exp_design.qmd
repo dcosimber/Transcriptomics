@@ -80,48 +80,84 @@ Antes del envío de muestras para preparación de bibliotecas, se realizó un co
 La @tbl-rna-extraction-nanodrop corresponde al control de extracción inicial y contiene muestras candidatas, incluidas algunas que no llegaron a formar parte del conjunto final de bibliotecas RNA-seq. La selección final para secuenciación se basó en el control posterior de Novogene/Bioanalyzer, resumido en la @tbl-rna-qc.
 :::
 
-::: {.rna-gel-table}
-::: {#tbl-rna-extraction-nanodrop}
-| Nº tubo | Conc. NanoDrop (ng/µl) | A260/A280 | A260/A230 | Integridad en gel de agarosa 1.5%, 100 mV, 30 min |
-|:--------|-----------------------:|----------:|----------:|:---------------------------------------------------|
-| P31 | 1142.7 | 2.14 | 2.10 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png){width="150"} |
-| P32 | 813.4 | 2.14 | 2.18 |  |
-| IT11 | 534.3 | 2.13 | 2.00 |  |
-| P33 | 338.9 | 2.12 | 2.24 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png){width="150"} |
-| P34 | 440.5 | 2.10 | 2.27 |  |
-| IT12 | 974.0 | 2.13 | 2.36 |  |
-| P35 | 299.3 | 2.12 | 1.08 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png){width="150"} |
-| P36 | 308.8 | 2.13 | 2.18 |  |
-| IT13 | 367.6 | 2.13 | 1.99 |  |
-| P37 | 191.5 | 2.10 | 2.20 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png){width="150"} |
-| P38 | 209.5 | 2.14 | 2.05 |  |
-| P39 | 827.3 | 2.15 | 2.31 |  |
-| P40 | 359.5 | 2.14 | 2.17 |  |
-| IT14 | 822.9 | 2.14 | 2.31 |  |
-| P41 | 583.6 | 2.10 | 2.29 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png){width="150"} |
-| P42 | 506.5 | 2.10 | 2.15 |  |
-| P43 | 588.0 | 2.10 | 2.33 |  |
-| P44 | 1028.3 | 2.13 | 2.14 |  |
-| IT15 | 727.2 | 2.10 | 2.29 |  |
-| P45 | 529.7 | 2.05 | 2.33 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png){width="150"} |
-| P46 | 383.0 | 2.09 | 2.11 |  |
-| P47 | 218.3 | 2.07 | 2.14 |  |
-| P48 | 291.2 | 2.09 | 1.77 |  |
-| IT16 | 963.5 | 2.07 | 2.31 |  |
-| P49 | 444.2 | 2.09 | 2.21 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png){width="150"} |
-| P50 | 236.5 | 2.11 | 2.13 |  |
-| P51 | 927.5 | 2.11 | 2.26 |  |
-| P52 | 385.8 | 2.14 | 1.08 |  |
-| IT17 | 1327.1 | 2.10 | 2.24 |  |
-| P1G | 117.6 | 2.13 | 1.73 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png){width="150"} |
-| P2G | 121.6 | 2.12 | 2.07 |  |
-| IT1G | 1117.5 | 2.11 | 2.31 |  |
-| PNKD | 168.7 | 2.13 | 1.52 | ![](../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png){width="150"} |
-| PNKV | 173.9 | 2.13 | 1.56 |  |
-| PNKIT | 2583.5 | 2.15 | 2.28 |  |
+::: {#tbl-rna-extraction-nanodrop .rna-gel-table}
+<table>
+<thead>
+<tr>
+<th>Nº tubo</th>
+<th>Conc. NanoDrop (ng/µl)</th>
+<th>A260/A280</th>
+<th>A260/A230</th>
+<th>Integridad en gel de agarosa 1.5%, 100 mV, 30 min</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P31</td><td>1142.7</td><td>2.14</td><td>2.10</td>
+<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P31, P32 e IT11"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" alt="Gel de agarosa para P31, P32 e IT11"></a></td>
+</tr>
+<tr><td>P32</td><td>813.4</td><td>2.14</td><td>2.18</td></tr>
+<tr><td>IT11</td><td>534.3</td><td>2.13</td><td>2.00</td></tr>
+<tr>
+<td>P33</td><td>338.9</td><td>2.12</td><td>2.24</td>
+<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P33, P34 e IT12"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" alt="Gel de agarosa para P33, P34 e IT12"></a></td>
+</tr>
+<tr><td>P34</td><td>440.5</td><td>2.10</td><td>2.27</td></tr>
+<tr><td>IT12</td><td>974.0</td><td>2.13</td><td>2.36</td></tr>
+<tr>
+<td>P35</td><td>299.3</td><td>2.12</td><td>1.08</td>
+<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P35, P36 e IT13"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" alt="Gel de agarosa para P35, P36 e IT13"></a></td>
+</tr>
+<tr><td>P36</td><td>308.8</td><td>2.13</td><td>2.18</td></tr>
+<tr><td>IT13</td><td>367.6</td><td>2.13</td><td>1.99</td></tr>
+<tr>
+<td>P37</td><td>191.5</td><td>2.10</td><td>2.20</td>
+<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P37, P38, P39, P40 e IT14"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" alt="Gel de agarosa para P37, P38, P39, P40 e IT14"></a></td>
+</tr>
+<tr><td>P38</td><td>209.5</td><td>2.14</td><td>2.05</td></tr>
+<tr><td>P39</td><td>827.3</td><td>2.15</td><td>2.31</td></tr>
+<tr><td>P40</td><td>359.5</td><td>2.14</td><td>2.17</td></tr>
+<tr><td>IT14</td><td>822.9</td><td>2.14</td><td>2.31</td></tr>
+<tr>
+<td>P41</td><td>583.6</td><td>2.10</td><td>2.29</td>
+<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P41, P42, P43, P44 e IT15"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" alt="Gel de agarosa para P41, P42, P43, P44 e IT15"></a></td>
+</tr>
+<tr><td>P42</td><td>506.5</td><td>2.10</td><td>2.15</td></tr>
+<tr><td>P43</td><td>588.0</td><td>2.10</td><td>2.33</td></tr>
+<tr><td>P44</td><td>1028.3</td><td>2.13</td><td>2.14</td></tr>
+<tr><td>IT15</td><td>727.2</td><td>2.10</td><td>2.29</td></tr>
+<tr>
+<td>P45</td><td>529.7</td><td>2.05</td><td>2.33</td>
+<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P45, P46, P47, P48 e IT16"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" alt="Gel de agarosa para P45, P46, P47, P48 e IT16"></a></td>
+</tr>
+<tr><td>P46</td><td>383.0</td><td>2.09</td><td>2.11</td></tr>
+<tr><td>P47</td><td>218.3</td><td>2.07</td><td>2.14</td></tr>
+<tr><td>P48</td><td>291.2</td><td>2.09</td><td>1.77</td></tr>
+<tr><td>IT16</td><td>963.5</td><td>2.07</td><td>2.31</td></tr>
+<tr>
+<td>P49</td><td>444.2</td><td>2.09</td><td>2.21</td>
+<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P49, P50, P51, P52 e IT17"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" alt="Gel de agarosa para P49, P50, P51, P52 e IT17"></a></td>
+</tr>
+<tr><td>P50</td><td>236.5</td><td>2.11</td><td>2.13</td></tr>
+<tr><td>P51</td><td>927.5</td><td>2.11</td><td>2.26</td></tr>
+<tr><td>P52</td><td>385.8</td><td>2.14</td><td>1.08</td></tr>
+<tr><td>IT17</td><td>1327.1</td><td>2.10</td><td>2.24</td></tr>
+<tr>
+<td>P1G</td><td>117.6</td><td>2.13</td><td>1.73</td>
+<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P1G, P2G e IT1G"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" alt="Gel de agarosa para P1G, P2G e IT1G"></a></td>
+</tr>
+<tr><td>P2G</td><td>121.6</td><td>2.12</td><td>2.07</td></tr>
+<tr><td>IT1G</td><td>1117.5</td><td>2.11</td><td>2.31</td></tr>
+<tr>
+<td>PNKD</td><td>168.7</td><td>2.13</td><td>1.52</td>
+<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: PNKD, PNKV y PNKIT"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_09_PNKD_PNKV_PNKIT.png" alt="Gel de agarosa para PNKD, PNKV y PNKIT"></a></td>
+</tr>
+<tr><td>PNKV</td><td>173.9</td><td>2.13</td><td>1.56</td></tr>
+<tr><td>PNKIT</td><td>2583.5</td><td>2.15</td><td>2.28</td></tr>
+</tbody>
+</table>
 
-: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original `Resumen_extracciones.docx` y se muestran en la primera fila de cada bloque de muestras evaluado conjuntamente.
-:::
+Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original `Resumen_extracciones.docx`; cada imagen abarca el bloque de muestras cargadas conjuntamente en el mismo gel.
 :::
 
 La evaluación de calidad fue realizada por Novogene mediante **Agilent 5400 Bioanalyzer**. Los resultados completos se resumen en la @tbl-rna-qc, mientras que los electroferogramas individuales se muestran en la @fig-rna-electropherograms mediante un panel de selección por muestra.
