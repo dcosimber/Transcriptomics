@@ -733,319 +733,447 @@ Tabla&nbsp;3.2: Muestras incluidas en la fase documentada del análisis RNA-seq.
 </section>
 <section id="extracción-de-arn-y-control-de-calidad" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="extracción-de-arn-y-control-de-calidad"><span class="header-section-number">3.3</span> Extracción de ARN y control de calidad</h2>
-<p>El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol<sup>TM</sup> y columnas Phasemaker<sup>TM</sup> Tubes (Thermo Fisher), seguido de purificación en columna. La integridad del ARN se evaluó mediante RIN y la cantidad disponible se registró antes de la preparación de bibliotecas.</p>
-<p>Las imágenes de control de calidad se almacenaron con el identificador de ácido nucleico asignado por el proveedor. Por ese motivo, la <a href="#tbl-rna-qc" class="quarto-xref">Tabla&nbsp;<span>3.3</span></a> relaciona cada nombre de muestra usado en el análisis con su <code>Nucleic Acid ID</code> y enlaza directamente la imagen de QC correspondiente. La muestra <code>IT12</code> no superó el criterio de calidad por RIN bajo, mientras que <code>ITPNK</code> fue aceptada con una observación de ligera contaminación genómica.</p>
+<p>El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol<sup>TM</sup> y columnas Phasemaker<sup>TM</sup> Tubes (Thermo Fisher), seguido de purificación en columna. La concentración, la cantidad total disponible y la integridad del ARN se evaluaron antes de la preparación de bibliotecas RNA-seq.</p>
+<p>La evaluación de calidad fue realizada por Novogene mediante <strong>Agilent 5400 Bioanalyzer</strong>. Los resultados completos se resumen en la <a href="#tbl-rna-qc" class="quarto-xref">Tabla&nbsp;<span>3.3</span></a>, mientras que los electroferogramas individuales se muestran en la <a href="#fig-rna-electropherograms" class="quarto-xref">Figura&nbsp;<span>3.2</span></a> mediante un panel de selección por muestra.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>RNA Integrity Number (RIN): contexto técnico
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El <strong>RNA Integrity Number (RIN)</strong> es una puntuación de <strong>1</strong> a <strong>10</strong> que resume el grado de integridad del ARN total. Valores cercanos a <strong>10</strong> indican ARN íntegro, con picos ribosomales bien definidos y bajo fondo de fragmentación; valores bajos indican degradación progresiva.</p>
+<p>En muestras eucariotas, el algoritmo tiene en cuenta la forma global del electroferograma, la presencia y resolución de los picos de ARN ribosomal <strong>18S</strong> y <strong>28S</strong>, la señal de fondo y la acumulación de fragmentos de bajo peso molecular. Para RNA-seq, valores de RIN superiores a 7 suelen considerarse adecuados para la construcción de bibliotecas, aunque la aceptabilidad final depende del tipo de muestra, la estrategia de librería y los criterios del proveedor.</p>
+</div>
+</div>
+<p>La mayoría de las muestras presentaron <strong>RIN entre 7.0 y 9.8</strong>, un rango compatible con la preparación de bibliotecas RNA-seq y con análisis posteriores de expresión diferencial. La muestra <strong>IT12</strong> mostró un <strong>RIN de 3.8</strong>, indicativo de degradación marcada, y fue clasificada como <em>Fail</em>. La muestra <strong>IT16</strong> presentó un valor intermedio (<strong>RIN = 6.0</strong>), compatible con degradación parcial. Además, <strong>ITPNK</strong> fue aceptada aunque el informe técnico indicó una ligera contaminación genómica.</p>
+<p>Dado que el presupuesto de secuenciación cubría <strong>24 bibliotecas RNA-seq</strong> y se habían enviado <strong>26 muestras</strong>, se excluyeron <strong>IT12</strong> e <strong>IT16</strong> de la fase de secuenciación. Las muestras restantes cumplieron los criterios de calidad necesarios para continuar con la preparación de bibliotecas.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="" aria-current="page">Resumen QC</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Electroferogramas Bioanalyzer</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div id="tbl-rna-qc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rna-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;3.3: Equivalencia entre nombres de muestra, identificadores de ácido nucleico, métricas de calidad de ARN e imágenes de control de calidad.
+Tabla&nbsp;3.3: Resumen de concentración, cantidad total, integridad de ARN y resultado QC de las muestras evaluadas antes de la preparación de bibliotecas RNA-seq.
 </figcaption>
 <div aria-describedby="tbl-rna-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 12%">
+<col style="width: 18%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 11%">
+</colgroup>
 <thead>
 <tr class="header">
+<th style="text-align: center;">No.</th>
 <th style="text-align: left;">Muestra</th>
 <th style="text-align: left;">Nucleic Acid ID</th>
-<th style="text-align: right;">Concentración (ng/ul)</th>
-<th style="text-align: right;">Volumen (ul)</th>
-<th style="text-align: right;">Cantidad total (ug)</th>
+<th style="text-align: right;">Concentración (ng/µl)</th>
+<th style="text-align: right;">Volumen (µl)</th>
+<th style="text-align: right;">Cantidad total (µg)</th>
 <th style="text-align: right;">RIN</th>
-<th style="text-align: left;">QC</th>
+<th style="text-align: center;">QC</th>
 <th style="text-align: left;">Observación</th>
-<th style="text-align: left;">Imagen QC</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: center;">1</td>
 <td style="text-align: left;">P31</td>
 <td style="text-align: left;">EKRN240028385-1A</td>
 <td style="text-align: right;">1851.34</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">29.62141</td>
+<td style="text-align: right;">29.62</td>
 <td style="text-align: right;">7.7</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028385-1A 0ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">2</td>
 <td style="text-align: left;">P32</td>
 <td style="text-align: left;">EKRN240028386-1A</td>
 <td style="text-align: right;">2022.42</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">32.35878</td>
+<td style="text-align: right;">32.36</td>
 <td style="text-align: right;">8.3</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028386-1A 2741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">3</td>
 <td style="text-align: left;">P33</td>
 <td style="text-align: left;">EKRN240028387-1A</td>
 <td style="text-align: right;">483.84</td>
 <td style="text-align: right;">13</td>
-<td style="text-align: right;">6.28990</td>
+<td style="text-align: right;">6.29</td>
 <td style="text-align: right;">8.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028387-1A D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">4</td>
 <td style="text-align: left;">P34</td>
 <td style="text-align: left;">EKRN240028388-1A</td>
 <td style="text-align: right;">826.81</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: right;">14.05583</td>
+<td style="text-align: right;">14.06</td>
 <td style="text-align: right;">8.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028388-1A D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">5</td>
 <td style="text-align: left;">P35</td>
 <td style="text-align: left;">EKRN240028389-1A</td>
 <td style="text-align: right;">430.00</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">6.87994</td>
+<td style="text-align: right;">6.88</td>
 <td style="text-align: right;">8.2</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028389-1A A24C77CE-2846-448D-BA32-BE5B352A9628.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">6</td>
 <td style="text-align: left;">P36</td>
 <td style="text-align: left;">EKRN240028390-1A</td>
 <td style="text-align: right;">447.89</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">7.16622</td>
+<td style="text-align: right;">7.17</td>
 <td style="text-align: right;">7.2</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028390-1A 09F7647A-7D63-4EC1-8448-546D44B0F700.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">7</td>
 <td style="text-align: left;">P41</td>
 <td style="text-align: left;">EKRN240028391-1A</td>
 <td style="text-align: right;">1270.12</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">20.32186</td>
+<td style="text-align: right;">20.32</td>
 <td style="text-align: right;">9.3</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028391-1A 4DAD28B7-C028-44C2-B5E2-90586469B12E.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">8</td>
 <td style="text-align: left;">P42</td>
 <td style="text-align: left;">EKRN240028392-1A</td>
 <td style="text-align: right;">888.98</td>
 <td style="text-align: right;">19</td>
-<td style="text-align: right;">16.89067</td>
+<td style="text-align: right;">16.89</td>
 <td style="text-align: right;">8.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028392-1A D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">9</td>
 <td style="text-align: left;">P43</td>
 <td style="text-align: left;">EKRN240028393-1A</td>
 <td style="text-align: right;">1343.73</td>
 <td style="text-align: right;">19</td>
-<td style="text-align: right;">25.53087</td>
+<td style="text-align: right;">25.53</td>
 <td style="text-align: right;">8.0</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028393-1A 5BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">10</td>
 <td style="text-align: left;">P44</td>
 <td style="text-align: left;">EKRN240028394-1A</td>
 <td style="text-align: right;">1961.08</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: right;">35.29941</td>
+<td style="text-align: right;">35.30</td>
 <td style="text-align: right;">7.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028394-1A D7433F06-BC78-45B6-9198-416D03AC6785.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">11</td>
 <td style="text-align: left;">P45</td>
 <td style="text-align: left;">EKRN240028395-1A</td>
 <td style="text-align: right;">709.86</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: right;">12.77749</td>
+<td style="text-align: right;">12.78</td>
 <td style="text-align: right;">8.1</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028395-1A 75ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">12</td>
 <td style="text-align: left;">P46</td>
 <td style="text-align: left;">EKRN240028396-1A</td>
 <td style="text-align: right;">768.56</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: right;">13.83416</td>
+<td style="text-align: right;">13.83</td>
 <td style="text-align: right;">8.9</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028396-1A 621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">13</td>
 <td style="text-align: left;">P47</td>
 <td style="text-align: left;">EKRN240028397-1A</td>
 <td style="text-align: right;">342.27</td>
 <td style="text-align: right;">19</td>
-<td style="text-align: right;">6.50313</td>
+<td style="text-align: right;">6.50</td>
 <td style="text-align: right;">8.5</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028397-1A EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">14</td>
 <td style="text-align: left;">P48</td>
 <td style="text-align: left;">EKRN240028398-1A</td>
 <td style="text-align: right;">404.26</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: right;">6.87242</td>
+<td style="text-align: right;">6.87</td>
 <td style="text-align: right;">7.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028398-1A F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">15</td>
 <td style="text-align: left;">P49</td>
 <td style="text-align: left;">EKRN240028399-1A</td>
 <td style="text-align: right;">954.50</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">15.27201</td>
+<td style="text-align: right;">15.27</td>
 <td style="text-align: right;">8.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028399-1A 57F88317-BDA3-4595-92B7-66008084A4B7.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">16</td>
 <td style="text-align: left;">P50</td>
 <td style="text-align: left;">EKRN240028400-1A</td>
 <td style="text-align: right;">295.43</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">4.72680</td>
+<td style="text-align: right;">4.73</td>
 <td style="text-align: right;">9.6</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028400-1A 1A791172-7746-440C-8A51-41D22C219EDB.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">17</td>
 <td style="text-align: left;">P51</td>
 <td style="text-align: left;">EKRN240028401-1A</td>
 <td style="text-align: right;">2511.00</td>
 <td style="text-align: right;">13</td>
-<td style="text-align: right;">32.64302</td>
+<td style="text-align: right;">32.64</td>
 <td style="text-align: right;">9.5</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028401-1A EBD7638C-4382-40CC-984D-4D351B61B948.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">18</td>
 <td style="text-align: left;">P52</td>
 <td style="text-align: left;">EKRN240028402-1A</td>
 <td style="text-align: right;">578.87</td>
 <td style="text-align: right;">15</td>
-<td style="text-align: right;">8.68312</td>
+<td style="text-align: right;">8.68</td>
 <td style="text-align: right;">9.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028402-1A 39B46501-27EE-470D-B8AA-B65E87CFBC13.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">19</td>
 <td style="text-align: left;">P1G</td>
 <td style="text-align: left;">EKRN240028403-1A</td>
 <td style="text-align: right;">150.06</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">2.40097</td>
+<td style="text-align: right;">2.40</td>
 <td style="text-align: right;">8.9</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028403-1A D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">20</td>
 <td style="text-align: left;">P2G</td>
 <td style="text-align: left;">EKRN240028404-1A</td>
 <td style="text-align: right;">192.33</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">3.07729</td>
+<td style="text-align: right;">3.08</td>
 <td style="text-align: right;">9.0</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028404-1A 1EE8F273-552A-4118-8A01-7C359D493290.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">21</td>
 <td style="text-align: left;">PNKD</td>
 <td style="text-align: left;">EKRN240028405-1A</td>
 <td style="text-align: right;">417.18</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: right;">7.50923</td>
+<td style="text-align: right;">7.51</td>
 <td style="text-align: right;">8.7</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028405-1A 74312C80-27BF-4516-A106-54CA8D077D38.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">22</td>
 <td style="text-align: left;">PNKV</td>
 <td style="text-align: left;">EKRN240028406-1A</td>
 <td style="text-align: right;">221.19</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: right;">3.76027</td>
+<td style="text-align: right;">3.76</td>
 <td style="text-align: right;">8.4</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028406-1A 133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">23</td>
 <td style="text-align: left;">IT12</td>
 <td style="text-align: left;">EKRN240028407-1A</td>
 <td style="text-align: right;">2422.80</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: right;">41.18753</td>
+<td style="text-align: right;">41.19</td>
 <td style="text-align: right;">3.8</td>
-<td style="text-align: left;">Fail</td>
-<td style="text-align: left;">Unqualified RIN</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028407-1A 3E4AC179-9D72-407B-8450-2FEADFA581EC.PNG">QC</a></td>
+<td style="text-align: center;">Fail</td>
+<td style="text-align: left;">RIN no cualificado</td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">24</td>
 <td style="text-align: left;">IT16</td>
 <td style="text-align: left;">EKRN240028408-1A</td>
 <td style="text-align: right;">2988.15</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: right;">53.78664</td>
+<td style="text-align: right;">53.79</td>
 <td style="text-align: right;">6.0</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028408-1A 206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG">QC</a></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">25</td>
 <td style="text-align: left;">IT1G</td>
 <td style="text-align: left;">EKRN240028409-1A</td>
 <td style="text-align: right;">2842.68</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">45.48292</td>
+<td style="text-align: right;">45.48</td>
 <td style="text-align: right;">7.8</td>
-<td style="text-align: left;">Pass</td>
+<td style="text-align: center;">Pass</td>
 <td style="text-align: left;">N/A</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028409-1A 3EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG">QC</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">26</td>
 <td style="text-align: left;">ITPNK</td>
 <td style="text-align: left;">EKRN240028410-1A</td>
 <td style="text-align: right;">4493.36</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: right;">80.88050</td>
+<td style="text-align: right;">80.88</td>
 <td style="text-align: right;">7.1</td>
-<td style="text-align: left;">Pass</td>
-<td style="text-align: left;">Slight genomic contamination</td>
-<td style="text-align: left;"><a href="../figures/02_exp_design/EKRN240028410-1A AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG">QC</a></td>
+<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">Ligera contaminación genómica</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="fig-rna-electropherograms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rna-electropherograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">P31</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">P32</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">P33</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">P34</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">P35</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">P36</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">P41</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">P42</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-9-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-9" role="tab" aria-controls="tabset-1-9" aria-selected="false" href="">P43</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-10-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-10" role="tab" aria-controls="tabset-1-10" aria-selected="false" href="">P44</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-11-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-11" role="tab" aria-controls="tabset-1-11" aria-selected="false" href="">P45</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-12-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-12" role="tab" aria-controls="tabset-1-12" aria-selected="false" href="">P46</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-13-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-13" role="tab" aria-controls="tabset-1-13" aria-selected="false" href="">P47</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-14-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-14" role="tab" aria-controls="tabset-1-14" aria-selected="false" href="">P48</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-15-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-15" role="tab" aria-controls="tabset-1-15" aria-selected="false" href="">P49</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-16-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-16" role="tab" aria-controls="tabset-1-16" aria-selected="false" href="">P50</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-17-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-17" role="tab" aria-controls="tabset-1-17" aria-selected="false" href="">P51</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-18-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-18" role="tab" aria-controls="tabset-1-18" aria-selected="false" href="">P52</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-19-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-19" role="tab" aria-controls="tabset-1-19" aria-selected="false" href="">P1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-20-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-20" role="tab" aria-controls="tabset-1-20" aria-selected="false" href="">P2G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-21-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-21" role="tab" aria-controls="tabset-1-21" aria-selected="false" href="">PNKD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-22-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-22" role="tab" aria-controls="tabset-1-22" aria-selected="false" href="">PNKV</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-23-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-23" role="tab" aria-controls="tabset-1-23" aria-selected="false" href="">IT12</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-24-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-24" role="tab" aria-controls="tabset-1-24" aria-selected="false" href="">IT16</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-25-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-25" role="tab" aria-controls="tabset-1-25" aria-selected="false" href="">IT1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-26-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-26" role="tab" aria-controls="tabset-1-26" aria-selected="false" href="">ITPNK</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="../figures/02_exp_design/EKRN240028385-1A 0ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028385-1A 0ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><a href="../figures/02_exp_design/EKRN240028386-1A 2741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028386-1A 2741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><a href="../figures/02_exp_design/EKRN240028387-1A D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028387-1A D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><a href="../figures/02_exp_design/EKRN240028388-1A D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028388-1A D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<p><a href="../figures/02_exp_design/EKRN240028389-1A A24C77CE-2846-448D-BA32-BE5B352A9628.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028389-1A A24C77CE-2846-448D-BA32-BE5B352A9628.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<p><a href="../figures/02_exp_design/EKRN240028390-1A 09F7647A-7D63-4EC1-8448-546D44B0F700.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028390-1A 09F7647A-7D63-4EC1-8448-546D44B0F700.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<p><a href="../figures/02_exp_design/EKRN240028391-1A 4DAD28B7-C028-44C2-B5E2-90586469B12E.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028391-1A 4DAD28B7-C028-44C2-B5E2-90586469B12E.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
+<p><a href="../figures/02_exp_design/EKRN240028392-1A D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028392-1A D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-9" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-9-tab">
+<p><a href="../figures/02_exp_design/EKRN240028393-1A 5BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028393-1A 5BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-10" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-10-tab">
+<p><a href="../figures/02_exp_design/EKRN240028394-1A D7433F06-BC78-45B6-9198-416D03AC6785.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028394-1A D7433F06-BC78-45B6-9198-416D03AC6785.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-11" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-11-tab">
+<p><a href="../figures/02_exp_design/EKRN240028395-1A 75ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028395-1A 75ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-12" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-12-tab">
+<p><a href="../figures/02_exp_design/EKRN240028396-1A 621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028396-1A 621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-13" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-13-tab">
+<p><a href="../figures/02_exp_design/EKRN240028397-1A EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028397-1A EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-14" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-14-tab">
+<p><a href="../figures/02_exp_design/EKRN240028398-1A F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028398-1A F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-15" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-15-tab">
+<p><a href="../figures/02_exp_design/EKRN240028399-1A 57F88317-BDA3-4595-92B7-66008084A4B7.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028399-1A 57F88317-BDA3-4595-92B7-66008084A4B7.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-16" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-16-tab">
+<p><a href="../figures/02_exp_design/EKRN240028400-1A 1A791172-7746-440C-8A51-41D22C219EDB.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028400-1A 1A791172-7746-440C-8A51-41D22C219EDB.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-17" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-17-tab">
+<p><a href="../figures/02_exp_design/EKRN240028401-1A EBD7638C-4382-40CC-984D-4D351B61B948.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028401-1A EBD7638C-4382-40CC-984D-4D351B61B948.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-18" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-18-tab">
+<p><a href="../figures/02_exp_design/EKRN240028402-1A 39B46501-27EE-470D-B8AA-B65E87CFBC13.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028402-1A 39B46501-27EE-470D-B8AA-B65E87CFBC13.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-19" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-19-tab">
+<p><a href="../figures/02_exp_design/EKRN240028403-1A D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028403-1A D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-20" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-20-tab">
+<p><a href="../figures/02_exp_design/EKRN240028404-1A 1EE8F273-552A-4118-8A01-7C359D493290.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028404-1A 1EE8F273-552A-4118-8A01-7C359D493290.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-21" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-21-tab">
+<p><a href="../figures/02_exp_design/EKRN240028405-1A 74312C80-27BF-4516-A106-54CA8D077D38.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028405-1A 74312C80-27BF-4516-A106-54CA8D077D38.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-22" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-22-tab">
+<p><a href="../figures/02_exp_design/EKRN240028406-1A 133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028406-1A 133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-23" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-23-tab">
+<p><a href="../figures/02_exp_design/EKRN240028407-1A 3E4AC179-9D72-407B-8450-2FEADFA581EC.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028407-1A 3E4AC179-9D72-407B-8450-2FEADFA581EC.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-24" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-24-tab">
+<p><a href="../figures/02_exp_design/EKRN240028408-1A 206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028408-1A 206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-25" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-25-tab">
+<p><a href="../figures/02_exp_design/EKRN240028409-1A 3EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028409-1A 3EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG" class="img-fluid figure-img"></a></p>
+</div>
+<div id="tabset-1-26" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-26-tab">
+<p><a href="../figures/02_exp_design/EKRN240028410-1A AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN."><img src="../figures/02_exp_design/EKRN240028410-1A AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG" class="img-fluid figure-img"></a></p>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rna-electropherograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3.2: Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="secuenciación-y-marco-técnico" class="level2" data-number="3.4">

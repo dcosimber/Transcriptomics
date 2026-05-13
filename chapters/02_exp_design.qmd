@@ -70,42 +70,170 @@ La @tbl-samples-intro recoge las muestras incluidas en la documentación bioinfo
 
 ## Extracción de ARN y control de calidad
 
-El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol^TM^ y columnas Phasemaker^TM^ Tubes (Thermo Fisher), seguido de purificación en columna. La integridad del ARN se evaluó mediante RIN y la cantidad disponible se registró antes de la preparación de bibliotecas.
+El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol^TM^ y columnas Phasemaker^TM^ Tubes (Thermo Fisher), seguido de purificación en columna. La concentración, la cantidad total disponible y la integridad del ARN se evaluaron antes de la preparación de bibliotecas RNA-seq.
 
-Las imágenes de control de calidad se almacenaron con el identificador de ácido nucleico asignado por el proveedor. Por ese motivo, la @tbl-rna-qc relaciona cada nombre de muestra usado en el análisis con su `Nucleic Acid ID` y enlaza directamente la imagen de QC correspondiente. La muestra `IT12` no superó el criterio de calidad por RIN bajo, mientras que `ITPNK` fue aceptada con una observación de ligera contaminación genómica.
+La evaluación de calidad fue realizada por Novogene mediante **Agilent 5400 Bioanalyzer**. Los resultados completos se resumen en la @tbl-rna-qc, mientras que los electroferogramas individuales se muestran en la @fig-rna-electropherograms mediante un panel de selección por muestra.
+
+::: callout-note
+## RNA Integrity Number (RIN): contexto técnico
+
+El **RNA Integrity Number (RIN)** es una puntuación de **1** a **10** que resume el grado de integridad del ARN total. Valores cercanos a **10** indican ARN íntegro, con picos ribosomales bien definidos y bajo fondo de fragmentación; valores bajos indican degradación progresiva.
+
+En muestras eucariotas, el algoritmo tiene en cuenta la forma global del electroferograma, la presencia y resolución de los picos de ARN ribosomal **18S** y **28S**, la señal de fondo y la acumulación de fragmentos de bajo peso molecular. Para RNA-seq, valores de RIN superiores a 7 suelen considerarse adecuados para la construcción de bibliotecas, aunque la aceptabilidad final depende del tipo de muestra, la estrategia de librería y los criterios del proveedor.
+:::
+
+La mayoría de las muestras presentaron **RIN entre 7.0 y 9.8**, un rango compatible con la preparación de bibliotecas RNA-seq y con análisis posteriores de expresión diferencial. La muestra **IT12** mostró un **RIN de 3.8**, indicativo de degradación marcada, y fue clasificada como *Fail*. La muestra **IT16** presentó un valor intermedio (**RIN = 6.0**), compatible con degradación parcial. Además, **ITPNK** fue aceptada aunque el informe técnico indicó una ligera contaminación genómica.
+
+Dado que el presupuesto de secuenciación cubría **24 bibliotecas RNA-seq** y se habían enviado **26 muestras**, se excluyeron **IT12** e **IT16** de la fase de secuenciación. Las muestras restantes cumplieron los criterios de calidad necesarios para continuar con la preparación de bibliotecas.
+
+:::::: panel-tabset
+## Resumen QC
 
 ::: {#tbl-rna-qc}
-| Muestra | Nucleic Acid ID | Concentración (ng/ul) | Volumen (ul) | Cantidad total (ug) | RIN | QC | Observación | Imagen QC |
-|:--------|:----------------|----------------------:|-------------:|--------------------:|----:|:---|:------------|:----------|
-| P31   | EKRN240028385-1A | 1851.34 | 16 | 29.62141 | 7.7 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028385-1A%200ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG) |
-| P32   | EKRN240028386-1A | 2022.42 | 16 | 32.35878 | 8.3 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028386-1A%202741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG) |
-| P33   | EKRN240028387-1A | 483.84  | 13 | 6.28990  | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028387-1A%20D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG) |
-| P34   | EKRN240028388-1A | 826.81  | 17 | 14.05583 | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028388-1A%20D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG) |
-| P35   | EKRN240028389-1A | 430.00  | 16 | 6.87994  | 8.2 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028389-1A%20A24C77CE-2846-448D-BA32-BE5B352A9628.PNG) |
-| P36   | EKRN240028390-1A | 447.89  | 16 | 7.16622  | 7.2 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028390-1A%2009F7647A-7D63-4EC1-8448-546D44B0F700.PNG) |
-| P41   | EKRN240028391-1A | 1270.12 | 16 | 20.32186 | 9.3 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028391-1A%204DAD28B7-C028-44C2-B5E2-90586469B12E.PNG) |
-| P42   | EKRN240028392-1A | 888.98  | 19 | 16.89067 | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028392-1A%20D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG) |
-| P43   | EKRN240028393-1A | 1343.73 | 19 | 25.53087 | 8.0 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028393-1A%205BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG) |
-| P44   | EKRN240028394-1A | 1961.08 | 18 | 35.29941 | 7.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028394-1A%20D7433F06-BC78-45B6-9198-416D03AC6785.PNG) |
-| P45   | EKRN240028395-1A | 709.86  | 18 | 12.77749 | 8.1 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028395-1A%2075ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG) |
-| P46   | EKRN240028396-1A | 768.56  | 18 | 13.83416 | 8.9 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028396-1A%20621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG) |
-| P47   | EKRN240028397-1A | 342.27  | 19 | 6.50313  | 8.5 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028397-1A%20EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG) |
-| P48   | EKRN240028398-1A | 404.26  | 17 | 6.87242  | 7.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028398-1A%20F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG) |
-| P49   | EKRN240028399-1A | 954.50  | 16 | 15.27201 | 8.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028399-1A%2057F88317-BDA3-4595-92B7-66008084A4B7.PNG) |
-| P50   | EKRN240028400-1A | 295.43  | 16 | 4.72680  | 9.6 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028400-1A%201A791172-7746-440C-8A51-41D22C219EDB.PNG) |
-| P51   | EKRN240028401-1A | 2511.00 | 13 | 32.64302 | 9.5 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028401-1A%20EBD7638C-4382-40CC-984D-4D351B61B948.PNG) |
-| P52   | EKRN240028402-1A | 578.87  | 15 | 8.68312  | 9.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028402-1A%2039B46501-27EE-470D-B8AA-B65E87CFBC13.PNG) |
-| P1G   | EKRN240028403-1A | 150.06  | 16 | 2.40097  | 8.9 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028403-1A%20D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG) |
-| P2G   | EKRN240028404-1A | 192.33  | 16 | 3.07729  | 9.0 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028404-1A%201EE8F273-552A-4118-8A01-7C359D493290.PNG) |
-| PNKD  | EKRN240028405-1A | 417.18  | 18 | 7.50923  | 8.7 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028405-1A%2074312C80-27BF-4516-A106-54CA8D077D38.PNG) |
-| PNKV  | EKRN240028406-1A | 221.19  | 17 | 3.76027  | 8.4 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028406-1A%20133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG) |
-| IT12  | EKRN240028407-1A | 2422.80 | 17 | 41.18753 | 3.8 | Fail | Unqualified RIN | [QC](../figures/02_exp_design/EKRN240028407-1A%203E4AC179-9D72-407B-8450-2FEADFA581EC.PNG) |
-| IT16  | EKRN240028408-1A | 2988.15 | 18 | 53.78664 | 6.0 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028408-1A%20206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG) |
-| IT1G  | EKRN240028409-1A | 2842.68 | 16 | 45.48292 | 7.8 | Pass | N/A | [QC](../figures/02_exp_design/EKRN240028409-1A%203EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG) |
-| ITPNK | EKRN240028410-1A | 4493.36 | 18 | 80.88050 | 7.1 | Pass | Slight genomic contamination | [QC](../figures/02_exp_design/EKRN240028410-1A%20AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG) |
+| No. | Muestra | Nucleic Acid ID | Concentración (ng/µl) | Volumen (µl) | Cantidad total (µg) | RIN | QC | Observación |
+|:---:|:--------|:----------------|----------------------:|-------------:|--------------------:|----:|:---:|:------------|
+| 1 | P31 | EKRN240028385-1A | 1851.34 | 16 | 29.62 | 7.7 | Pass | N/A |
+| 2 | P32 | EKRN240028386-1A | 2022.42 | 16 | 32.36 | 8.3 | Pass | N/A |
+| 3 | P33 | EKRN240028387-1A | 483.84 | 13 | 6.29 | 8.8 | Pass | N/A |
+| 4 | P34 | EKRN240028388-1A | 826.81 | 17 | 14.06 | 8.8 | Pass | N/A |
+| 5 | P35 | EKRN240028389-1A | 430.00 | 16 | 6.88 | 8.2 | Pass | N/A |
+| 6 | P36 | EKRN240028390-1A | 447.89 | 16 | 7.17 | 7.2 | Pass | N/A |
+| 7 | P41 | EKRN240028391-1A | 1270.12 | 16 | 20.32 | 9.3 | Pass | N/A |
+| 8 | P42 | EKRN240028392-1A | 888.98 | 19 | 16.89 | 8.8 | Pass | N/A |
+| 9 | P43 | EKRN240028393-1A | 1343.73 | 19 | 25.53 | 8.0 | Pass | N/A |
+| 10 | P44 | EKRN240028394-1A | 1961.08 | 18 | 35.30 | 7.8 | Pass | N/A |
+| 11 | P45 | EKRN240028395-1A | 709.86 | 18 | 12.78 | 8.1 | Pass | N/A |
+| 12 | P46 | EKRN240028396-1A | 768.56 | 18 | 13.83 | 8.9 | Pass | N/A |
+| 13 | P47 | EKRN240028397-1A | 342.27 | 19 | 6.50 | 8.5 | Pass | N/A |
+| 14 | P48 | EKRN240028398-1A | 404.26 | 17 | 6.87 | 7.8 | Pass | N/A |
+| 15 | P49 | EKRN240028399-1A | 954.50 | 16 | 15.27 | 8.8 | Pass | N/A |
+| 16 | P50 | EKRN240028400-1A | 295.43 | 16 | 4.73 | 9.6 | Pass | N/A |
+| 17 | P51 | EKRN240028401-1A | 2511.00 | 13 | 32.64 | 9.5 | Pass | N/A |
+| 18 | P52 | EKRN240028402-1A | 578.87 | 15 | 8.68 | 9.8 | Pass | N/A |
+| 19 | P1G | EKRN240028403-1A | 150.06 | 16 | 2.40 | 8.9 | Pass | N/A |
+| 20 | P2G | EKRN240028404-1A | 192.33 | 16 | 3.08 | 9.0 | Pass | N/A |
+| 21 | PNKD | EKRN240028405-1A | 417.18 | 18 | 7.51 | 8.7 | Pass | N/A |
+| 22 | PNKV | EKRN240028406-1A | 221.19 | 17 | 3.76 | 8.4 | Pass | N/A |
+| 23 | IT12 | EKRN240028407-1A | 2422.80 | 17 | 41.19 | 3.8 | Fail | RIN no cualificado |
+| 24 | IT16 | EKRN240028408-1A | 2988.15 | 18 | 53.79 | 6.0 | Pass | N/A |
+| 25 | IT1G | EKRN240028409-1A | 2842.68 | 16 | 45.48 | 7.8 | Pass | N/A |
+| 26 | ITPNK | EKRN240028410-1A | 4493.36 | 18 | 80.88 | 7.1 | Pass | Ligera contaminación genómica |
 
-: Equivalencia entre nombres de muestra, identificadores de ácido nucleico, métricas de calidad de ARN e imágenes de control de calidad.
+: Resumen de concentración, cantidad total, integridad de ARN y resultado QC de las muestras evaluadas antes de la preparación de bibliotecas RNA-seq.
 :::
+
+## Electroferogramas Bioanalyzer
+
+::: {#fig-rna-electropherograms}
+::: panel-tabset
+### P31
+
+![](../figures/02_exp_design/EKRN240028385-1A%200ACD1FDB-2D34-4F88-ABBB-7C0C15EA5AEF.PNG)
+
+### P32
+
+![](../figures/02_exp_design/EKRN240028386-1A%202741478C-FC08-4173-88A7-F0D5FFA4BD4F.PNG)
+
+### P33
+
+![](../figures/02_exp_design/EKRN240028387-1A%20D5EC5B09-5960-4ED3-AA53-9F2B10DF81F1.PNG)
+
+### P34
+
+![](../figures/02_exp_design/EKRN240028388-1A%20D2FD149C-02DE-4263-93A5-B66D1FF5314F.PNG)
+
+### P35
+
+![](../figures/02_exp_design/EKRN240028389-1A%20A24C77CE-2846-448D-BA32-BE5B352A9628.PNG)
+
+### P36
+
+![](../figures/02_exp_design/EKRN240028390-1A%2009F7647A-7D63-4EC1-8448-546D44B0F700.PNG)
+
+### P41
+
+![](../figures/02_exp_design/EKRN240028391-1A%204DAD28B7-C028-44C2-B5E2-90586469B12E.PNG)
+
+### P42
+
+![](../figures/02_exp_design/EKRN240028392-1A%20D80AFB57-941D-4B19-8F15-9BA4BEF84CFB.PNG)
+
+### P43
+
+![](../figures/02_exp_design/EKRN240028393-1A%205BFD8475-44EF-4C6C-8671-E9537B3F09F0.PNG)
+
+### P44
+
+![](../figures/02_exp_design/EKRN240028394-1A%20D7433F06-BC78-45B6-9198-416D03AC6785.PNG)
+
+### P45
+
+![](../figures/02_exp_design/EKRN240028395-1A%2075ABEAF1-FF66-4D82-ABBB-22ECE921120A.PNG)
+
+### P46
+
+![](../figures/02_exp_design/EKRN240028396-1A%20621137F4-5059-4947-AEB2-AC8F9DCE9C45.PNG)
+
+### P47
+
+![](../figures/02_exp_design/EKRN240028397-1A%20EDD0DFAC-9F9F-402A-BB65-78CCC8BFC45C.PNG)
+
+### P48
+
+![](../figures/02_exp_design/EKRN240028398-1A%20F1ADE798-5FC5-4402-9785-AEF743DCD41C.PNG)
+
+### P49
+
+![](../figures/02_exp_design/EKRN240028399-1A%2057F88317-BDA3-4595-92B7-66008084A4B7.PNG)
+
+### P50
+
+![](../figures/02_exp_design/EKRN240028400-1A%201A791172-7746-440C-8A51-41D22C219EDB.PNG)
+
+### P51
+
+![](../figures/02_exp_design/EKRN240028401-1A%20EBD7638C-4382-40CC-984D-4D351B61B948.PNG)
+
+### P52
+
+![](../figures/02_exp_design/EKRN240028402-1A%2039B46501-27EE-470D-B8AA-B65E87CFBC13.PNG)
+
+### P1G
+
+![](../figures/02_exp_design/EKRN240028403-1A%20D08A0484-B36D-4853-9CF5-D84AA0C62296.PNG)
+
+### P2G
+
+![](../figures/02_exp_design/EKRN240028404-1A%201EE8F273-552A-4118-8A01-7C359D493290.PNG)
+
+### PNKD
+
+![](../figures/02_exp_design/EKRN240028405-1A%2074312C80-27BF-4516-A106-54CA8D077D38.PNG)
+
+### PNKV
+
+![](../figures/02_exp_design/EKRN240028406-1A%20133306C0-6A82-4AA6-9F36-E12AEADA8E42.PNG)
+
+### IT12
+
+![](../figures/02_exp_design/EKRN240028407-1A%203E4AC179-9D72-407B-8450-2FEADFA581EC.PNG)
+
+### IT16
+
+![](../figures/02_exp_design/EKRN240028408-1A%20206D2D39-CCC3-4A01-BAC4-BEA24E6B9887.PNG)
+
+### IT1G
+
+![](../figures/02_exp_design/EKRN240028409-1A%203EEBDBFC-B4F9-4744-9BD1-F27917DB2D48.PNG)
+
+### ITPNK
+
+![](../figures/02_exp_design/EKRN240028410-1A%20AE24B4A1-6069-4BAB-955D-3E7F0C55F4A8.PNG)
+:::
+
+Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN.
+:::
+::::::
 
 ## Secuenciación y marco técnico
 
