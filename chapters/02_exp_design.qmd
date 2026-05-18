@@ -1,6 +1,42 @@
-## Diseño experimental
+# Materiales y métodos
 
-El diseño parte de individuos de rodaballo con fenotipo **normal** y **malpigmentado**, seleccionados en los tanques **E6** y **E8**, donde las diferencias de pigmentación eran evidentes. En el tanque E6 se incluyeron descendientes de dos parejas parentales; en el tanque E8 se trabajó con una familia de medios hermanos, con una madre compartida y dos padres distintos. Esta estructura permite interpretar los resultados teniendo en cuenta tanto el fenotipo de pigmentación como el posible componente familiar.
+## Animales de experimentación
+
+Se emplearon un total de 6 individuos juveniles de rodaballo (Scophthalmus maxiums; 5 meses de edad, 25 +- 6 g) pertenecientes a dos los tanques E6 y E8 del Pescanova Biomarine Center (O Grove, España). Los peces fueron criados en siete tanques cuadrados negros de 4 m2 cada uno, conectados a un sistema de circulación abierto abastecido con agua de mar filtrada (1 um) y tratada con luz UV, bajo condiciones controlada 18 +- 1 ºC, salinidad de 32 +- 2 ppt, fotoperiodo de 14 h de luz y 10 h de oscuridad, y una densidad de cultivo de 6 kg/m2.
+
+Estas familias se procedían de un stock de reproductores compuesto por ... del programa de selección genética para crecimiento de la empresa
+
+![](images/paste-2.png)
+
+Figura X .....
+
+El diseño parte de individuos de rodaballo con fenotipo **normal** y **malpigmentado**, seleccionados en los tanques **E6** (FAM 5 y FAM6) y **E8 (FAM8 y FAM9)**, donde las diferencias de pigmentación eran evidentes. FAM5 y FAM6 tienen padres y madres distintos. Fam 8 y FAM9 comparten madre. El tanque E6 se incluyeron descendientes de dos parejas parentales distintas; en el tanque E8 se trabajó con una familia de medios hermanos, con una madre compartida y dos padres distintos.
+
+E8-A-142 es E8-A-62
+
+Esta estructura permite interpretar los resultados teniendo en cuenta tanto el fenotipo de pigmentación como el posible componente familiar.
+
+|       |          |     |      |     |        |     |           |     |              |     |
+|-------|----------|-----|------|-----|--------|-----|-----------|-----|--------------|-----|
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | ID       |     | Tank |     | Family |     | Turbot_ID |     | Phenotype    |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | E6-N-46  |     | E6   |     | FAM 5  |     | 46        |     | Normal       |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | E8-N-52  |     | E8   |     | FAM 5  |     | 52        |     | Normal       |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | E8-N-70  |     | E8   |     | FAM 8  |     | 70        |     | Normal       |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | E8-A-142 |     | E8   |     |        |     | 142       |     | Pseudoalbino |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | E6-A-24  |     | E6   |     |        |     | 24        |     | Pseudoalbino |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | E6-A-12  |     | E6   |     |        |     | 12        |     | Pseudoalbino |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | X-N-G    |     | X    |     |        |     | G         |     | Normal       |     |
+|       |          |     |      |     |        |     |           |     |              |     |
+|       | X-Am-PNK |     | X    |     |        |     | PNK       |     | Ambicolor    |     |
+|       |          |     |      |     |        |     |           |     |              |     |
 
 ## Toma de muestras
 
@@ -21,7 +57,7 @@ La unidad biológica principal de esta fase es la **piel**, muestreada en region
 
 ::: {#tbl-sample-groups}
 | Grupo | Fenotipo del individuo | Región muestreada | Interpretación esperada |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---------------|:---------------|:---------------|:-----------------------|
 | Piel ocular pigmentada normal | Normal | Cara ocular, piel oscura | Referencia de pigmentación esperada en rodaballo. |
 | Piel ciega clara normal | Normal | Cara ciega, piel clara | Referencia de ausencia fisiológica de pigmentación. |
 | Piel oscura en malpigmentados | Malpigmentado | Cara ocular o ciega, piel pigmentada | Permite estudiar pigmentación mantenida o ectópica. |
@@ -68,7 +104,7 @@ La @tbl-samples-intro recoge las muestras incluidas en la documentación bioinfo
 : Muestras incluidas en la fase documentada del análisis RNA-seq.
 :::
 
-## Extracción de ARN y control de calidad
+## Extracción de ARN 
 
 El ARN total se aisló a partir de las muestras de piel y de las muestras intestinales complementarias siguiendo un protocolo basado en extracción con TRIzol^TM^ y columnas Phasemaker^TM^ Tubes (Thermo Fisher), seguido de purificación en columna. La concentración, la cantidad total disponible y la integridad del ARN se evaluaron antes de la preparación de bibliotecas RNA-seq.
 
@@ -76,84 +112,49 @@ El ARN total se aisló a partir de las muestras de piel y de las muestras intest
 El protocolo detallado de extracción, homogeneización, separación de fases, digestión con DNasa y purificación en columna se incluye como anexo: [Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy](../appendices/rna_extraction_protocol.md).
 :::
 
-### Control preliminar de extracción: NanoDrop y gel de agarosa
+### Control de calidad: cuantificación e integridad del ARN 
 
-Antes del envío de muestras para preparación de bibliotecas, se realizó un control preliminar de las extracciones mediante **NanoDrop** y visualización de integridad en **gel de agarosa al 1.5%**. Este paso permitió revisar la concentración de ARN total, la pureza estimada por las ratios **A260/A280** y **A260/A230**, y la presencia de bandas compatibles con ARN ribosomal íntegro.
+Antes del envío de muestras para preparación de bibliotecas, se realizó un control preliminar de las extracciones mediante cuantificaciñon con **NanoDrop** y visualización de integridad en **gel de agarosa al 1.5%**. Este paso permitió revisar la concentración de ARN total, la pureza estimada por las ratios **A260/A280** y **A260/A230**, y la presencia de bandas compatibles con ARN ribosomal íntegro.
 
 ::: {.callout-note title="Relación con el QC de Novogene"}
 La @tbl-rna-extraction-nanodrop corresponde al control de extracción inicial y contiene muestras candidatas, incluidas algunas que no llegaron a formar parte del conjunto final de bibliotecas RNA-seq. La selección final para secuenciación se basó en el control posterior de Novogene/Bioanalyzer, resumido en la @tbl-rna-qc.
 :::
 
 ::: {#tbl-rna-extraction-nanodrop .rna-gel-table}
-<table>
-<thead>
-<tr>
-<th>Muestra</th>
-<th>NanoDrop (ng/µl)</th>
-<th>A260/A280</th>
-<th>A260/A230</th>
-<th>Integridad en gel de agarosa 1.5%, 100 mV, 30 min</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>P31</td><td>1142.7</td><td>2.14</td><td>2.10</td>
-<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P31, P32 e IT11"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png" alt="Gel de agarosa para P31, P32 e IT11"></a></td>
-</tr>
-<tr><td>P32</td><td>813.4</td><td>2.14</td><td>2.18</td></tr>
-<tr><td>IT11</td><td>534.3</td><td>2.13</td><td>2.00</td></tr>
-<tr>
-<td>P33</td><td>338.9</td><td>2.12</td><td>2.24</td>
-<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P33, P34 e IT12"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png" alt="Gel de agarosa para P33, P34 e IT12"></a></td>
-</tr>
-<tr><td>P34</td><td>440.5</td><td>2.10</td><td>2.27</td></tr>
-<tr><td>IT12</td><td>974.0</td><td>2.13</td><td>2.36</td></tr>
-<tr>
-<td>P35</td><td>299.3</td><td>2.12</td><td>1.08</td>
-<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P35, P36 e IT13"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png" alt="Gel de agarosa para P35, P36 e IT13"></a></td>
-</tr>
-<tr><td>P36</td><td>308.8</td><td>2.13</td><td>2.18</td></tr>
-<tr><td>IT13</td><td>367.6</td><td>2.13</td><td>1.99</td></tr>
-<tr>
-<td>P37</td><td>191.5</td><td>2.10</td><td>2.20</td>
-<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P37, P38, P39, P40 e IT14"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png" alt="Gel de agarosa para P37, P38, P39, P40 e IT14"></a></td>
-</tr>
-<tr><td>P38</td><td>209.5</td><td>2.14</td><td>2.05</td></tr>
-<tr><td>P39</td><td>827.3</td><td>2.15</td><td>2.31</td></tr>
-<tr><td>P40</td><td>359.5</td><td>2.14</td><td>2.17</td></tr>
-<tr><td>IT14</td><td>822.9</td><td>2.14</td><td>2.31</td></tr>
-<tr>
-<td>P41</td><td>583.6</td><td>2.10</td><td>2.29</td>
-<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P41, P42, P43, P44 e IT15"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png" alt="Gel de agarosa para P41, P42, P43, P44 e IT15"></a></td>
-</tr>
-<tr><td>P42</td><td>506.5</td><td>2.10</td><td>2.15</td></tr>
-<tr><td>P43</td><td>588.0</td><td>2.10</td><td>2.33</td></tr>
-<tr><td>P44</td><td>1028.3</td><td>2.13</td><td>2.14</td></tr>
-<tr><td>IT15</td><td>727.2</td><td>2.10</td><td>2.29</td></tr>
-<tr>
-<td>P45</td><td>529.7</td><td>2.05</td><td>2.33</td>
-<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P45, P46, P47, P48 e IT16"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png" alt="Gel de agarosa para P45, P46, P47, P48 e IT16"></a></td>
-</tr>
-<tr><td>P46</td><td>383.0</td><td>2.09</td><td>2.11</td></tr>
-<tr><td>P47</td><td>218.3</td><td>2.07</td><td>2.14</td></tr>
-<tr><td>P48</td><td>291.2</td><td>2.09</td><td>1.77</td></tr>
-<tr><td>IT16</td><td>963.5</td><td>2.07</td><td>2.31</td></tr>
-<tr>
-<td>P49</td><td>444.2</td><td>2.09</td><td>2.21</td>
-<td rowspan="5" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P49, P50, P51, P52 e IT17"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png" alt="Gel de agarosa para P49, P50, P51, P52 e IT17"></a></td>
-</tr>
-<tr><td>P50</td><td>236.5</td><td>2.11</td><td>2.13</td></tr>
-<tr><td>P51</td><td>927.5</td><td>2.11</td><td>2.26</td></tr>
-<tr><td>P52</td><td>385.8</td><td>2.14</td><td>1.08</td></tr>
-<tr><td>IT17</td><td>1327.1</td><td>2.10</td><td>2.24</td></tr>
-<tr>
-<td>P1G</td><td>117.6</td><td>2.13</td><td>1.73</td>
-<td rowspan="3" class="gel-image-cell"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" class="lightbox" data-gallery="rna-extraction-gels" title="Gel de agarosa: P1G, P2G e IT1G"><img src="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png" alt="Gel de agarosa para P1G, P2G e IT1G"></a></td>
-</tr>
-<tr><td>P2G</td><td>121.6</td><td>2.12</td><td>2.07</td></tr>
-<tr><td>IT1G</td><td>1117.5</td><td>2.11</td><td>2.31</td></tr>
-</tbody>
-</table>
+| Muestra | NanoDrop (ng/µl) | A260/A280 | A260/A230 | Integridad en gel de agarosa 1.5%, 100 mV, 30 min |
+|----------|----------|----------|----------|----------------------------------|
+| P31 | 1142.7 | 2.14 | 2.10 | [![Gel de agarosa para P31, P32 e IT11](../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png){alt="Gel de agarosa para P31, P32 e IT11"}](../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png "Gel de agarosa: P31, P32 e IT11") |
+| P32 | 813.4 | 2.14 | 2.18 |  |
+| IT11 | 534.3 | 2.13 | 2.00 |  |
+| P33 | 338.9 | 2.12 | 2.24 | [![Gel de agarosa para P33, P34 e IT12](../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png){alt="Gel de agarosa para P33, P34 e IT12"}](../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png "Gel de agarosa: P33, P34 e IT12") |
+| P34 | 440.5 | 2.10 | 2.27 |  |
+| IT12 | 974.0 | 2.13 | 2.36 |  |
+| P35 | 299.3 | 2.12 | 1.08 | [![Gel de agarosa para P35, P36 e IT13](../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png){alt="Gel de agarosa para P35, P36 e IT13"}](../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png "Gel de agarosa: P35, P36 e IT13") |
+| P36 | 308.8 | 2.13 | 2.18 |  |
+| IT13 | 367.6 | 2.13 | 1.99 |  |
+| P37 | 191.5 | 2.10 | 2.20 | [![Gel de agarosa para P37, P38, P39, P40 e IT14](../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png){alt="Gel de agarosa para P37, P38, P39, P40 e IT14"}](../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png "Gel de agarosa: P37, P38, P39, P40 e IT14") |
+| P38 | 209.5 | 2.14 | 2.05 |  |
+| P39 | 827.3 | 2.15 | 2.31 |  |
+| P40 | 359.5 | 2.14 | 2.17 |  |
+| IT14 | 822.9 | 2.14 | 2.31 |  |
+| P41 | 583.6 | 2.10 | 2.29 | [![Gel de agarosa para P41, P42, P43, P44 e IT15](../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png){alt="Gel de agarosa para P41, P42, P43, P44 e IT15"}](../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png "Gel de agarosa: P41, P42, P43, P44 e IT15") |
+| P42 | 506.5 | 2.10 | 2.15 |  |
+| P43 | 588.0 | 2.10 | 2.33 |  |
+| P44 | 1028.3 | 2.13 | 2.14 |  |
+| IT15 | 727.2 | 2.10 | 2.29 |  |
+| P45 | 529.7 | 2.05 | 2.33 | [![Gel de agarosa para P45, P46, P47, P48 e IT16](../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png){alt="Gel de agarosa para P45, P46, P47, P48 e IT16"}](../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png "Gel de agarosa: P45, P46, P47, P48 e IT16") |
+| P46 | 383.0 | 2.09 | 2.11 |  |
+| P47 | 218.3 | 2.07 | 2.14 |  |
+| P48 | 291.2 | 2.09 | 1.77 |  |
+| IT16 | 963.5 | 2.07 | 2.31 |  |
+| P49 | 444.2 | 2.09 | 2.21 | [![Gel de agarosa para P49, P50, P51, P52 e IT17](../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png){alt="Gel de agarosa para P49, P50, P51, P52 e IT17"}](../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png "Gel de agarosa: P49, P50, P51, P52 e IT17") |
+| P50 | 236.5 | 2.11 | 2.13 |  |
+| P51 | 927.5 | 2.11 | 2.26 |  |
+| P52 | 385.8 | 2.14 | 1.08 |  |
+| IT17 | 1327.1 | 2.10 | 2.24 |  |
+| P1G | 117.6 | 2.13 | 1.73 | [![Gel de agarosa para P1G, P2G e IT1G](../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png){alt="Gel de agarosa para P1G, P2G e IT1G"}](../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png "Gel de agarosa: P1G, P2G e IT1G") |
+| P2G | 121.6 | 2.12 | 2.07 |  |
+| IT1G | 1117.5 | 2.11 | 2.31 |  |
 
 Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa. Las imágenes del gel proceden del documento original `Resumen_extracciones.docx`; cada imagen abarca el bloque de muestras cargadas conjuntamente en el mismo gel.
 :::
@@ -187,7 +188,7 @@ En conjunto, el control de calidad indicó que la mayoría de las muestras cumpl
 
 ::: {#tbl-rna-qc}
 | No. | Muestra | Nucleic Acid ID | Concentración (ng/µl) | Volumen (µl) | Cantidad total (µg) | RIN | QC | Observación |
-|:---:|:--------|:----------------|----------------------:|-------------:|--------------------:|----:|:---:|:------------|
+|:------:|:-------|:-------|-------:|-------:|-------:|-------:|:------:|:-------|
 | 1 | P31 | EKRN240028385-1A | 1851.34 | 16 | 29.62 | 7.7 | Pass | N/A |
 | 2 | P32 | EKRN240028386-1A | 2022.42 | 16 | 32.36 | 8.3 | Pass | N/A |
 | 3 | P33 | EKRN240028387-1A | 483.84 | 13 | 6.29 | 8.8 | Pass | N/A |
@@ -220,7 +221,7 @@ En conjunto, el control de calidad indicó que la mayoría de las muestras cumpl
 
 ## Electroferogramas Bioanalyzer
 
-::: {#fig-rna-electropherograms}
+:::: {#fig-rna-electropherograms}
 ::: panel-tabset
 ### P31
 
@@ -328,7 +329,7 @@ En conjunto, el control de calidad indicó que la mayoría de las muestras cumpl
 :::
 
 Electroferogramas de control de calidad de ARN generados con Agilent 5400 Bioanalyzer. Cada pestaña corresponde a una muestra y permite revisar la distribución de fragmentos y los picos ribosomales utilizados para estimar la integridad del ARN.
-:::
+::::
 ::::::
 
 ## Secuenciación y marco técnico
@@ -337,7 +338,7 @@ Las bibliotecas RNA-seq se generaron a partir de mRNA enriquecido por selección
 
 ::: {#tbl-rnaseq-specs}
 | Parámetro | Descripción |
-|:-----------------------------------|:-----------------------------------|
+|:---------------------------|:-------------------------------------------|
 | Plataforma | Illumina NovaSeq X Plus |
 | Configuración de lectura | Paired-end, 2 x 150 pb |
 | Preparación de librerías | mRNA específico de hebra, enriquecido por poli(A) |
