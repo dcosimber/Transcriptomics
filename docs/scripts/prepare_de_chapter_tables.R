@@ -39,17 +39,46 @@ contrast_order <- c(
   "P_BD_vs_N_BL"
 )
 
+contrast_label <- c(
+  N_OD_vs_N_BL = "Normal: superficie ocular oscura vs superficie ciega clara",
+  P_OD_vs_P_OL = "Pseudoalbino: superficie ocular oscura vs superficie ocular clara",
+  P_BD_vs_P_BL = "Pseudoalbino: superficie ciega oscura vs superficie ciega clara",
+  P_OL_vs_P_BL = "Pseudoalbino: superficie ocular clara vs superficie ciega clara",
+  P_BD_vs_P_OD = "Pseudoalbino: superficie ciega oscura vs superficie ocular oscura",
+  P_surface_x_pigmentation = "Pseudoalbino: interaccion superficie ocular/ciega por pigmentacion clara/oscura",
+  P_OL_vs_N_OD = "Pseudoalbino: superficie ocular clara vs Normal: superficie ocular oscura",
+  P_BD_vs_N_BL = "Pseudoalbino: superficie ciega oscura vs Normal: superficie ciega clara"
+)
+
+short_label <- c(
+  N_OD_vs_N_BL = "Normal: ocular oscura vs ciega clara",
+  P_OD_vs_P_OL = "Pseudoalbino: ocular oscura vs ocular clara",
+  P_BD_vs_P_BL = "Pseudoalbino: ciega oscura vs ciega clara",
+  P_OL_vs_P_BL = "Pseudoalbino: ocular clara vs ciega clara",
+  P_BD_vs_P_OD = "Pseudoalbino: ciega oscura vs ocular oscura",
+  P_surface_x_pigmentation = "Pseudoalbino: superficie x pigmentacion",
+  P_OL_vs_N_OD = "Pseudoalbino: ocular clara vs Normal: ocular oscura",
+  P_BD_vs_N_BL = "Pseudoalbino: ciega oscura vs Normal: ciega clara"
+)
+
 status <- status[match(contrast_order, status$contrast), ]
+status$label <- unname(contrast_label[status$contrast])
+status$short_label <- unname(short_label[status$contrast])
+
+sig$label <- unname(contrast_label[sig$contrast])
+sig$short_label <- unname(short_label[sig$contrast])
+top50$label <- unname(contrast_label[top50$contrast])
+top50$short_label <- unname(short_label[top50$contrast])
 
 quick_read <- c(
-  N_OD_vs_N_BL = "Referencia fisiologica dark/light; recupera pigmentacion normal y diferencias estructurales de superficie.",
+  N_OD_vs_N_BL = "Referencia fisiologica normal entre superficie ocular oscura y superficie ciega clara.",
   P_OD_vs_P_OL = "Pseudoalbinismo ocular; mezcla senal de pigmentacion con matriz extracelular y remodelado tisular.",
-  P_BD_vs_P_BL = "Pigmentacion ectopica en superficie blind; no reproduce limpiamente el eje melanogenico normal.",
+  P_BD_vs_P_BL = "Pigmentacion ectopica en superficie ciega pseudoalbina; no reproduce limpiamente el eje melanogenico normal.",
   P_OL_vs_P_BL = "Color claro constante; demuestra que las zonas claras pseudoalbinas retienen identidad de superficie.",
-  P_BD_vs_P_OD = "Color oscuro constante; separa blind dark de ocular dark con sesgo completo hacia blind dark.",
+  P_BD_vs_P_OD = "Color oscuro constante; separa superficie ciega oscura de superficie ocular oscura con sesgo completo hacia la superficie ciega.",
   P_surface_x_pigmentation = "Interaccion estricta superficie por pigmentacion; lista corta y biologicamente focalizada.",
-  P_OL_vs_N_OD = "Estado ocular claro anomalo frente al ocular oscuro esperado; perdida parcial del programa normal.",
-  P_BD_vs_N_BL = "Blind dark anomalo frente al blind claro esperado; contraste mas intenso y mas divergente."
+  P_OL_vs_N_OD = "Superficie ocular clara pseudoalbina frente a superficie ocular oscura normal; perdida parcial del programa normal.",
+  P_BD_vs_N_BL = "Superficie ciega oscura pseudoalbina frente a superficie ciega clara normal; contraste mas intenso y mas divergente."
 )
 
 summary_table <- data.frame(

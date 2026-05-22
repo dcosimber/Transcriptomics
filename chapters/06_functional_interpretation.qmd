@@ -51,7 +51,7 @@ El número de términos significativos varía mucho entre contrastes. `N_OD_vs_N
 
 : Resumen de términos funcionales significativos por contraste. {#tbl-functional-contrast-summary}
 
-El mapa de categorías de @fig-functional-category-heatmap resume el patrón más útil para interpretar el bloque. Los círculos indican cuántos términos GSEA significativos caen en cada categoría; el color muestra el NES dominante. El resultado es más claro que un dotplot global: el eje normal tiene pigmentación positiva y matriz negativa; el pseudoalbinismo ocular mezcla músculo/mitocondria/matriz con epitelio y retinoides; la cara blind oscura se desplaza hacia músculo, sarcómero y metabolismo; y los contrastes anómalos frente a normal capturan reprogramación tisular amplia.
+El mapa de categorías de @fig-functional-category-heatmap resume el patrón más útil para interpretar el bloque. Los círculos indican cuántos términos GSEA significativos caen en cada categoría; el color muestra el NES dominante. El resultado es más claro que un dotplot global: el eje normal tiene pigmentación positiva y matriz negativa; el pseudoalbinismo ocular mezcla músculo/mitocondria/matriz con epitelio y retinoides; la cara ciega oscura se desplaza hacia músculo, sarcómero y metabolismo; y los contrastes anómalos frente a normal capturan reprogramación tisular amplia.
 
 ![Mapa funcional por categorías biológicas principales. El tamaño indica número de términos GSEA significativos; el color, el NES dominante de la categoría.](../figures/06_functional/summary/functional_category_heatmap.png){#fig-functional-category-heatmap width="95%"}
 
@@ -59,89 +59,89 @@ El mapa de categorías de @fig-functional-category-heatmap resume el patrón má
 
 ## Resultados por Comparación
 
-### Eje Normal Dark Light
+### Normal: Superficie Ocular Oscura Frente a Superficie Ciega Clara
 
 `N_OD_vs_N_BL` valida la referencia fisiológica del estudio. GSEA detectó **309 términos** significativos: **92** con NES positivo hacia `N_OD` y **217** con NES negativo hacia `N_BL`. El lado positivo incluye mitocondria, traducción/ribosoma, melanosoma, diferenciación melanocítica y metabolismo relacionado con pigmentación. ORA refuerza esa lectura con términos como biosíntesis de tetrahidrobiopterina, diferenciación melanocítica y melanosoma en la lista `up`.
 
 En sentido negativo aparecen matriz extracelular, colágeno, adhesión, heparin binding, angiogénesis, desarrollo y guía axonal. Esto confirma que el contraste normal no es un eje de color puro: combina pigmentación ocular con diferencias profundas de superficie y organización tisular.
 
 ::: {#fig-functional-nod-nbl layout-ncol="2"}
-![GSEA funcional del contraste normal ocular dark frente a normal blind light.](../figures/06_functional/contrasts/N_OD_vs_N_BL/functional_gsea_top_terms_N_OD_vs_N_BL.png)
+![GSEA funcional del contraste normal ocular oscura frente a normal ciega clara.](../figures/06_functional/contrasts/N_OD_vs_N_BL/functional_gsea_top_terms_N_OD_vs_N_BL.png)
 
-![ORA funcional del contraste normal ocular dark frente a normal blind light.](../figures/06_functional/contrasts/N_OD_vs_N_BL/functional_ora_top_terms_N_OD_vs_N_BL.png)
+![ORA funcional del contraste normal ocular oscura frente a normal ciega clara.](../figures/06_functional/contrasts/N_OD_vs_N_BL/functional_ora_top_terms_N_OD_vs_N_BL.png)
 
 Enriquecimiento funcional de `N_OD_vs_N_BL`. Los términos positivos se desplazan hacia `N_OD`; los negativos, hacia `N_BL`.
 :::
 
 Archivos: [GSEA significativo](../tables/06_functional/by_contrast/N_OD_vs_N_BL_gsea_significant.tsv), [ORA significativo](../tables/06_functional/by_contrast/N_OD_vs_N_BL_ora_significant.tsv), [términos top](../tables/06_functional/by_contrast/N_OD_vs_N_BL_functional_top_terms.tsv).
 
-### Pseudoalbinismo Ocular
+### Pseudoalbino: Superficie Ocular Oscura Frente a Superficie Ocular Clara
 
 `P_OD_vs_P_OL` separa la región ocular oscura pseudoalbina de la ocular clara pseudoalbina. GSEA detectó **155 términos** significativos, con un reparto relativamente equilibrado: **86** positivos y **69** negativos. El lado positivo se inclina hacia mitocondria, ribosoma, sarcómero, músculo y matriz extracelular. ORA añade colágeno y matriz como señales robustas de la lista de DEGs.
 
 El lado negativo es biológicamente interesante porque reúne desmosoma, unión célula-célula, señalización intracelular, diferenciación neuronal y unión a ácido retinoico. Junto con los genes `dgat2` y `crabp1a` vistos en expresión diferencial, esto sugiere que la zona ocular clara pseudoalbina no es solo una región con menos pigmento: muestra un estado epitelial/de señalización distinto, con retinoides y adhesión celular como ejes plausibles.
 
 ::: {#fig-functional-pod-pol layout-ncol="2"}
-![GSEA funcional del contraste pseudoalbino ocular dark frente a ocular light.](../figures/06_functional/contrasts/P_OD_vs_P_OL/functional_gsea_top_terms_P_OD_vs_P_OL.png)
+![GSEA funcional del contraste pseudoalbino ocular oscura frente a ocular clara.](../figures/06_functional/contrasts/P_OD_vs_P_OL/functional_gsea_top_terms_P_OD_vs_P_OL.png)
 
-![ORA funcional del contraste pseudoalbino ocular dark frente a ocular light.](../figures/06_functional/contrasts/P_OD_vs_P_OL/functional_ora_top_terms_P_OD_vs_P_OL.png)
+![ORA funcional del contraste pseudoalbino ocular oscura frente a ocular clara.](../figures/06_functional/contrasts/P_OD_vs_P_OL/functional_ora_top_terms_P_OD_vs_P_OL.png)
 
 Enriquecimiento funcional de `P_OD_vs_P_OL`. La señal positiva se desplaza hacia `P_OD`; la negativa, hacia `P_OL`.
 :::
 
 Archivos: [GSEA significativo](../tables/06_functional/by_contrast/P_OD_vs_P_OL_gsea_significant.tsv), [ORA significativo](../tables/06_functional/by_contrast/P_OD_vs_P_OL_ora_significant.tsv), [términos top](../tables/06_functional/by_contrast/P_OD_vs_P_OL_functional_top_terms.tsv).
 
-### Pigmentación Ectópica Blind
+### Pseudoalbino: Superficie Ciega Oscura Frente a Superficie Ciega Clara
 
-`P_BD_vs_P_BL` pregunta si la pigmentación oscura ectópica en la cara blind activa un programa funcional comparable al eje normal. La respuesta es no de forma simple. GSEA detectó **122 términos** significativos, **84** positivos y **38** negativos. El lado positivo está dominado por Z disc, sarcómero, contracción muscular, alpha-actinin binding y metabolismo energético. ORA confirma una señal estructural, pero no una activación clara de melanogénesis en `P_BD`.
+`P_BD_vs_P_BL` pregunta si la pigmentación oscura ectópica en la cara ciega activa un programa funcional comparable al eje normal. La respuesta es no de forma simple. GSEA detectó **122 términos** significativos, **84** positivos y **38** negativos. El lado positivo está dominado por Z disc, sarcómero, contracción muscular, alpha-actinin binding y metabolismo energético. ORA confirma una señal estructural, pero no una activación clara de melanogénesis en `P_BD`.
 
 El lado negativo contiene desmosoma, epidermis, filamento intermedio, receptor complex y, de forma muy relevante, melanosoma y diferenciación melanocítica. Es decir, en este contraste los términos de pigmentación no sostienen que `P_BD` sea una copia molecular de la piel ocular oscura; aparecen más asociados al lado `P_BL` o a una dirección opuesta a la esperada para una simple ganancia de color.
 
 ::: {#fig-functional-pbd-pbl layout-ncol="2"}
-![GSEA funcional del contraste pseudoalbino blind dark frente a blind light.](../figures/06_functional/contrasts/P_BD_vs_P_BL/functional_gsea_top_terms_P_BD_vs_P_BL.png)
+![GSEA funcional del contraste pseudoalbino ciega oscura frente a ciega clara.](../figures/06_functional/contrasts/P_BD_vs_P_BL/functional_gsea_top_terms_P_BD_vs_P_BL.png)
 
-![ORA funcional del contraste pseudoalbino blind dark frente a blind light.](../figures/06_functional/contrasts/P_BD_vs_P_BL/functional_ora_top_terms_P_BD_vs_P_BL.png)
+![ORA funcional del contraste pseudoalbino ciega oscura frente a ciega clara.](../figures/06_functional/contrasts/P_BD_vs_P_BL/functional_ora_top_terms_P_BD_vs_P_BL.png)
 
 Enriquecimiento funcional de `P_BD_vs_P_BL`. La señal positiva se desplaza hacia `P_BD`; la negativa, hacia `P_BL`.
 :::
 
 Archivos: [GSEA significativo](../tables/06_functional/by_contrast/P_BD_vs_P_BL_gsea_significant.tsv), [ORA significativo](../tables/06_functional/by_contrast/P_BD_vs_P_BL_ora_significant.tsv), [términos top](../tables/06_functional/by_contrast/P_BD_vs_P_BL_functional_top_terms.tsv).
 
-### Superficie Bajo Color Claro
+### Pseudoalbino: Superficie Ocular Clara Frente a Superficie Ciega Clara
 
 `P_OL_vs_P_BL` mantiene constante el color claro y compara superficies pseudoalbinas. GSEA detectó **136 términos** significativos. Los términos positivos hacia `P_OL` incluyen morfogénesis embrionaria, proliferación/desarrollo, diferenciación neuronal, epidermis y señalización Wnt/categorías relacionadas. ORA en `up` destaca almacenamiento lipídico y gota lipídica, coherente con la presencia de `crabp1a` y `dgat2` en expresión diferencial.
 
 La dirección negativa hacia `P_BL` es muy fuerte para Z disc, M band, organización de sarcómero, contracción muscular, filamento fino, matriz extracelular y colágeno. Esta comparación muestra que dos regiones claras no son funcionalmente equivalentes: el color macroscópico queda subordinado a la identidad de superficie.
 
 ::: {#fig-functional-pol-pbl layout-ncol="2"}
-![GSEA funcional del contraste pseudoalbino ocular light frente a blind light.](../figures/06_functional/contrasts/P_OL_vs_P_BL/functional_gsea_top_terms_P_OL_vs_P_BL.png)
+![GSEA funcional del contraste pseudoalbino ocular clara frente a ciega clara.](../figures/06_functional/contrasts/P_OL_vs_P_BL/functional_gsea_top_terms_P_OL_vs_P_BL.png)
 
-![ORA funcional del contraste pseudoalbino ocular light frente a blind light.](../figures/06_functional/contrasts/P_OL_vs_P_BL/functional_ora_top_terms_P_OL_vs_P_BL.png)
+![ORA funcional del contraste pseudoalbino ocular clara frente a ciega clara.](../figures/06_functional/contrasts/P_OL_vs_P_BL/functional_ora_top_terms_P_OL_vs_P_BL.png)
 
 Enriquecimiento funcional de `P_OL_vs_P_BL`. La señal positiva se desplaza hacia `P_OL`; la negativa, hacia `P_BL`.
 :::
 
 Archivos: [GSEA significativo](../tables/06_functional/by_contrast/P_OL_vs_P_BL_gsea_significant.tsv), [ORA significativo](../tables/06_functional/by_contrast/P_OL_vs_P_BL_ora_significant.tsv), [términos top](../tables/06_functional/by_contrast/P_OL_vs_P_BL_functional_top_terms.tsv).
 
-### Superficie Bajo Color Oscuro
+### Pseudoalbino: Superficie Ciega Oscura Frente a Superficie Ocular Oscura
 
 `P_BD_vs_P_OD` mantiene constante el color oscuro dentro de pseudoalbinos. La señal funcional es más compacta que en otros contrastes: **27 términos** GSEA significativos, **23** positivos y **4** negativos. El lado positivo está dominado por Z disc, sarcómero, filamento fino, actin filament organization, skeletal myofibril assembly y structural constituent of muscle. ORA refuerza exactamente el mismo eje en la lista `up`.
 
 La señal negativa es escasa y se relaciona sobre todo con región extracelular, regeneración de aleta y complejos mitocondriales. La conclusión es muy consistente con el capítulo de expresión diferencial: bajo el mismo color oscuro, `P_BD` se distingue de `P_OD` por un programa estructural/muscular, no por melanogénesis terminal.
 
 ::: {#fig-functional-pbd-pod layout-ncol="2"}
-![GSEA funcional del contraste pseudoalbino blind dark frente a ocular dark.](../figures/06_functional/contrasts/P_BD_vs_P_OD/functional_gsea_top_terms_P_BD_vs_P_OD.png)
+![GSEA funcional del contraste pseudoalbino ciega oscura frente a ocular oscura.](../figures/06_functional/contrasts/P_BD_vs_P_OD/functional_gsea_top_terms_P_BD_vs_P_OD.png)
 
-![ORA funcional del contraste pseudoalbino blind dark frente a ocular dark.](../figures/06_functional/contrasts/P_BD_vs_P_OD/functional_ora_top_terms_P_BD_vs_P_OD.png)
+![ORA funcional del contraste pseudoalbino ciega oscura frente a ocular oscura.](../figures/06_functional/contrasts/P_BD_vs_P_OD/functional_ora_top_terms_P_BD_vs_P_OD.png)
 
 Enriquecimiento funcional de `P_BD_vs_P_OD`. La señal positiva se desplaza hacia `P_BD`; la negativa, hacia `P_OD`.
 :::
 
 Archivos: [GSEA significativo](../tables/06_functional/by_contrast/P_BD_vs_P_OD_gsea_significant.tsv), [ORA significativo](../tables/06_functional/by_contrast/P_BD_vs_P_OD_ora_significant.tsv), [términos top](../tables/06_functional/by_contrast/P_BD_vs_P_OD_functional_top_terms.tsv).
 
-### Interacción Superficie Por Pigmentación
+### Pseudoalbino: Interacción Superficie Por Pigmentación
 
-El modelo `P_surface_x_pigmentation` identifica procesos cuyo efecto dark/light cambia según la superficie. GSEA detectó **66 términos** significativos con equilibrio entre direcciones (**34** positivos y **32** negativos), mientras que ORA detectó **124** términos, principalmente en `all` y `up`.
+El modelo `P_surface_x_pigmentation` identifica procesos cuyo efecto de pigmentación clara/oscura cambia según la superficie ocular/ciega. GSEA detectó **66 términos** significativos con equilibrio entre direcciones (**34** positivos y **32** negativos), mientras que ORA detectó **124** términos, principalmente en `all` y `up`.
 
 La señal positiva combina desarrollo multicelular, lipid storage, signaling receptor binding, membrana plasmática, cytokine activity y categorías de señalización. ORA destaca con fuerza `BP: lipid storage`, en línea con los genes de interacción `dgat2`, `crabp1a` y `plin2`. La señal negativa agrupa mitocondria, complejo I respiratorio, NADH dehydrogenase y membrana interna mitocondrial. Por tanto, la interacción no es un gran programa de pigmentación, sino un eje no aditivo entre lípidos/señalización/desarrollo y metabolismo mitocondrial.
 
@@ -155,32 +155,32 @@ Enriquecimiento funcional de `P_surface_x_pigmentation`. Los términos represent
 
 Archivos: [GSEA significativo](../tables/06_functional/by_contrast/P_surface_x_pigmentation_gsea_significant.tsv), [ORA significativo](../tables/06_functional/by_contrast/P_surface_x_pigmentation_ora_significant.tsv), [términos top](../tables/06_functional/by_contrast/P_surface_x_pigmentation_functional_top_terms.tsv).
 
-### Ocular Claro Anómalo Frente a Ocular Oscuro Normal
+### Pseudoalbino: Superficie Ocular Clara Frente a Normal: Superficie Ocular Oscura
 
 `P_OL_vs_N_OD` compara una zona ocular clara pseudoalbina con el estado ocular oscuro normal esperado. ORA no detectó términos significativos con FDR < 0.05, pero GSEA sí identificó **207 términos**, con **151** positivos hacia `P_OL` y **56** negativos hacia `N_OD`.
 
 La señal positiva hacia `P_OL` incluye matriz extracelular, región extracelular, heparin binding, calcium ion binding, collagen fibril organization, Wnt signaling, transición epitelio-mesénquima, axon guidance y neural crest cell migration. Esta lectura es importante: la región ocular clara anómala no solo pierde rasgos del ocular oscuro normal; también gana un programa coordinado de matriz, desarrollo y señalización. En sentido negativo hacia `N_OD` aparecen inmunidad innata, respuesta inmune, metabolismo de ácido araquidónico, deubiquitinación y ubiquitin-protein transferase activity.
 
 ::: {#fig-functional-pol-nod layout-ncol="2"}
-![GSEA funcional del contraste pseudoalbino ocular light frente a normal ocular dark.](../figures/06_functional/contrasts/P_OL_vs_N_OD/functional_gsea_top_terms_P_OL_vs_N_OD.png)
+![GSEA funcional del contraste pseudoalbino ocular clara frente a normal ocular oscura.](../figures/06_functional/contrasts/P_OL_vs_N_OD/functional_gsea_top_terms_P_OL_vs_N_OD.png)
 
-![ORA funcional del contraste pseudoalbino ocular light frente a normal ocular dark.](../figures/06_functional/contrasts/P_OL_vs_N_OD/functional_ora_top_terms_P_OL_vs_N_OD.png)
+![ORA funcional del contraste pseudoalbino ocular clara frente a normal ocular oscura.](../figures/06_functional/contrasts/P_OL_vs_N_OD/functional_ora_top_terms_P_OL_vs_N_OD.png)
 
 Enriquecimiento funcional de `P_OL_vs_N_OD`. GSEA detecta señal coordinada aunque ORA no genera términos significativos.
 :::
 
 Archivos: [GSEA significativo](../tables/06_functional/by_contrast/P_OL_vs_N_OD_gsea_significant.tsv), [ORA significativo](../tables/06_functional/by_contrast/P_OL_vs_N_OD_ora_significant.tsv), [términos top](../tables/06_functional/by_contrast/P_OL_vs_N_OD_functional_top_terms.tsv).
 
-### Blind Oscuro Anómalo Frente a Blind Claro Normal
+### Pseudoalbino: Superficie Ciega Oscura Frente a Normal: Superficie Ciega Clara
 
 `P_BD_vs_N_BL` es el contraste funcionalmente más contundente junto con el eje normal. GSEA detectó **230 términos** significativos: **129** positivos hacia `P_BD` y **101** negativos hacia `N_BL`. ORA añadió **106** términos, con una señal `up` muy clara.
 
-El lado positivo hacia `P_BD` combina mitocondria, Z disc, sarcómero, contracción muscular, desarrollo de tejido muscular esquelético, sarcolemma y estructura celular. El lado negativo hacia `N_BL` incluye lisosoma, epidermis, inmunidad, respuesta inmune, regulación de apoptosis y señalización NIK/NF-kappaB. En conjunto, esta comparación no describe simplemente una mancha oscura: describe una región blind anómala con fuerte reorganización estructural, metabólica e inmuno-epidérmica.
+El lado positivo hacia `P_BD` combina mitocondria, Z disc, sarcómero, contracción muscular, desarrollo de tejido muscular esquelético, sarcolemma y estructura celular. El lado negativo hacia `N_BL` incluye lisosoma, epidermis, inmunidad, respuesta inmune, regulación de apoptosis y señalización NIK/NF-kappaB. En conjunto, esta comparación no describe simplemente una mancha oscura: describe una región ciega anómala con fuerte reorganización estructural, metabólica e inmuno-epidérmica.
 
 ::: {#fig-functional-pbd-nbl layout-ncol="2"}
-![GSEA funcional del contraste pseudoalbino blind dark frente a normal blind light.](../figures/06_functional/contrasts/P_BD_vs_N_BL/functional_gsea_top_terms_P_BD_vs_N_BL.png)
+![GSEA funcional del contraste pseudoalbino ciega oscura frente a normal ciega clara.](../figures/06_functional/contrasts/P_BD_vs_N_BL/functional_gsea_top_terms_P_BD_vs_N_BL.png)
 
-![ORA funcional del contraste pseudoalbino blind dark frente a normal blind light.](../figures/06_functional/contrasts/P_BD_vs_N_BL/functional_ora_top_terms_P_BD_vs_N_BL.png)
+![ORA funcional del contraste pseudoalbino ciega oscura frente a normal ciega clara.](../figures/06_functional/contrasts/P_BD_vs_N_BL/functional_ora_top_terms_P_BD_vs_N_BL.png)
 
 Enriquecimiento funcional de `P_BD_vs_N_BL`. La señal positiva se desplaza hacia `P_BD`; la negativa, hacia `N_BL`.
 :::
@@ -191,9 +191,9 @@ Archivos: [GSEA significativo](../tables/06_functional/by_contrast/P_BD_vs_N_BL_
 
 La lectura funcional reordena el resultado en cuatro capas:
 
-- `N_OD_vs_N_BL` confirma que el eje normal contiene pigmentación/melanocitos hacia piel ocular oscura, y matriz/desarrollo hacia piel blind clara.
+- `N_OD_vs_N_BL` confirma que el eje normal contiene pigmentación/melanocitos hacia piel ocular oscura, y matriz/desarrollo hacia piel ciega clara.
 - `P_OD_vs_P_OL` indica que el pseudoalbinismo ocular combina cambios de matriz, mitocondria, músculo, adhesión epitelial y retinoides; no es un apagado simple de melanogénesis.
-- `P_BD_vs_P_BL`, `P_BD_vs_P_OD` y `P_BD_vs_N_BL` muestran que la pigmentación ectópica blind está dominada por estructura tisular, músculo/sarcómero, metabolismo y epidermis/inmunidad, con poca evidencia de que reproduzca el programa ocular oscuro normal.
+- `P_BD_vs_P_BL`, `P_BD_vs_P_OD` y `P_BD_vs_N_BL` muestran que la pigmentación ectópica ciega está dominada por estructura tisular, músculo/sarcómero, metabolismo y epidermis/inmunidad, con poca evidencia de que reproduzca el programa ocular oscuro normal.
 - `P_surface_x_pigmentation` concentra la interacción en lípidos, retinoides/señalización y mitocondria, lo que propone un mecanismo no aditivo más focal que los contrastes simples.
 
 Esta síntesis es más compatible con una hipótesis tisular que con una hipótesis puramente pigmentaria. Los genes de melanogénesis son importantes en la referencia normal, pero la malpigmentación pseudoalbina parece depender también del microambiente cutáneo, matriz extracelular, identidad de superficie, señalización del desarrollo y composición celular.

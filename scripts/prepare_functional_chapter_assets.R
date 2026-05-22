@@ -24,25 +24,36 @@ contrast_order <- c(
 )
 
 short_label <- c(
-  N_OD_vs_N_BL = "N_OD vs N_BL",
-  P_OD_vs_P_OL = "P_OD vs P_OL",
-  P_BD_vs_P_BL = "P_BD vs P_BL",
-  P_OL_vs_P_BL = "P_OL vs P_BL",
-  P_BD_vs_P_OD = "P_BD vs P_OD",
-  P_surface_x_pigmentation = "Surface x pigment",
-  P_OL_vs_N_OD = "P_OL vs N_OD",
-  P_BD_vs_N_BL = "P_BD vs N_BL"
+  N_OD_vs_N_BL = "Normal: ocular oscura vs ciega clara",
+  P_OD_vs_P_OL = "Pseudoalbino: ocular oscura vs ocular clara",
+  P_BD_vs_P_BL = "Pseudoalbino: ciega oscura vs ciega clara",
+  P_OL_vs_P_BL = "Pseudoalbino: ocular clara vs ciega clara",
+  P_BD_vs_P_OD = "Pseudoalbino: ciega oscura vs ocular oscura",
+  P_surface_x_pigmentation = "Pseudoalbino: superficie x pigmentacion",
+  P_OL_vs_N_OD = "Pseudoalbino: ocular clara vs Normal: ocular oscura",
+  P_BD_vs_N_BL = "Pseudoalbino: ciega oscura vs Normal: ciega clara"
+)
+
+plot_label <- c(
+  N_OD_vs_N_BL = "Normal: ocular oscura\nvs ciega clara",
+  P_OD_vs_P_OL = "Pseudoalbino: ocular oscura\nvs ocular clara",
+  P_BD_vs_P_BL = "Pseudoalbino: ciega oscura\nvs ciega clara",
+  P_OL_vs_P_BL = "Pseudoalbino: ocular clara\nvs ciega clara",
+  P_BD_vs_P_OD = "Pseudoalbino: ciega oscura\nvs ocular oscura",
+  P_surface_x_pigmentation = "Pseudoalbino:\nsuperficie x pigmentacion",
+  P_OL_vs_N_OD = "Pseudoalbino: ocular clara\nvs Normal: ocular oscura",
+  P_BD_vs_N_BL = "Pseudoalbino: ciega oscura\nvs Normal: ciega clara"
 )
 
 contrast_question <- c(
-  N_OD_vs_N_BL = "Referencia fisiologica de pigmentacion y superficie.",
-  P_OD_vs_P_OL = "Cambios funcionales dentro de la superficie ocular pseudoalbina.",
-  P_BD_vs_P_BL = "Pigmentacion ectopica dentro de la superficie blind pseudoalbina.",
-  P_OL_vs_P_BL = "Efecto de superficie bajo color claro pseudoalbino.",
-  P_BD_vs_P_OD = "Efecto de superficie bajo color oscuro pseudoalbino.",
-  P_surface_x_pigmentation = "Interaccion superficie por pigmentacion.",
-  P_OL_vs_N_OD = "Ocular claro anomalo frente al ocular oscuro normal.",
-  P_BD_vs_N_BL = "Blind oscuro anomalo frente al blind claro normal."
+  N_OD_vs_N_BL = "Normal: superficie ocular oscura frente a superficie ciega clara.",
+  P_OD_vs_P_OL = "Pseudoalbino: superficie ocular oscura frente a superficie ocular clara.",
+  P_BD_vs_P_BL = "Pseudoalbino: superficie ciega oscura frente a superficie ciega clara.",
+  P_OL_vs_P_BL = "Pseudoalbino: superficie ocular clara frente a superficie ciega clara.",
+  P_BD_vs_P_OD = "Pseudoalbino: superficie ciega oscura frente a superficie ocular oscura.",
+  P_surface_x_pigmentation = "Pseudoalbino: interaccion superficie ocular/ciega por pigmentacion clara/oscura.",
+  P_OL_vs_N_OD = "Pseudoalbino: superficie ocular clara frente a Normal: superficie ocular oscura.",
+  P_BD_vs_N_BL = "Pseudoalbino: superficie ciega oscura frente a Normal: superficie ciega clara."
 )
 
 tables_dir <- file.path(project_dir, "tables", "06_functional")
@@ -302,6 +313,7 @@ for (contrast in contrast_order) {
   idx <- idx + 1
 }
 contrast_summary <- do.call(rbind, contrast_rows)
+contrast_summary[is.na(contrast_summary)] <- "NA"
 write_tsv(contrast_summary, file.path(tables_dir, "functional_contrast_summary.tsv"))
 
 top_all <- list()
@@ -370,9 +382,9 @@ counts <- rbind(
 )
 counts$n <- 1
 counts <- aggregate(n ~ contrast + method + direction, counts, sum)
-counts$short_label <- factor(unname(short_label[counts$contrast]), levels = unname(short_label[contrast_order]))
+counts$plot_label <- factor(unname(plot_label[counts$contrast]), levels = unname(plot_label[contrast_order]))
 
-p_counts <- ggplot(counts, aes(x = short_label, y = n, fill = direction)) +
+p_counts <- ggplot(counts, aes(x = plot_label, y = n, fill = direction)) +
   geom_col(width = 0.75, color = "grey25", linewidth = 0.15) +
   facet_wrap(~method, ncol = 1, scales = "free_y") +
   scale_fill_manual(values = c(
@@ -398,11 +410,11 @@ grid <- expand.grid(
   stringsAsFactors = FALSE
 )
 heat <- merge(grid, category_summary, by = c("contrast", "category"), all.x = TRUE)
-heat$short_label <- factor(unname(short_label[heat$contrast]), levels = unname(short_label[contrast_order]))
+heat$plot_label <- factor(unname(plot_label[heat$contrast]), levels = unname(plot_label[contrast_order]))
 heat$category_label <- factor(unname(category_label[heat$category]), levels = rev(unname(category_label[names(category_label) != "other"])))
 heat$n_terms[is.na(heat$n_terms)] <- 0
 
-p_heat <- ggplot(heat, aes(x = short_label, y = category_label)) +
+p_heat <- ggplot(heat, aes(x = plot_label, y = category_label)) +
   geom_point(aes(size = n_terms, fill = dominant_effect), shape = 21, color = "grey30", stroke = 0.2) +
   scale_fill_gradient2(low = "#4267A5", mid = "white", high = "#B6473B", midpoint = 0, na.value = "grey92") +
   scale_size_continuous(range = c(1.5, 8), breaks = c(1, 5, 15, 40, 80)) +
@@ -420,10 +432,10 @@ ggsave(file.path(figures_dir, "summary", "functional_category_heatmap.png"), p_h
 focused_summary <- read_tsv(file.path(project_dir, "tables", "05_de", "development_neural_crest_summary.tsv"))
 focused_summary$contrast <- factor(focused_summary$contrast, levels = contrast_order)
 focused_summary$category <- factor(focused_summary$category)
-focused_summary$short_label <- factor(unname(short_label[as.character(focused_summary$contrast)]), levels = unname(short_label[contrast_order]))
+focused_summary$plot_label <- factor(unname(plot_label[as.character(focused_summary$contrast)]), levels = unname(plot_label[contrast_order]))
 focused_summary$top_NES <- as_num(focused_summary$top_NES)
 focused_summary$n_terms_fdr_0_10 <- as_num(focused_summary$n_terms_fdr_0_10)
-p_focused <- ggplot(focused_summary, aes(x = short_label, y = category, fill = top_NES)) +
+p_focused <- ggplot(focused_summary, aes(x = plot_label, y = category, fill = top_NES)) +
   geom_tile(color = "white", linewidth = 0.25) +
   geom_text(aes(label = ifelse(n_terms_fdr_0_10 > 0, n_terms_fdr_0_10, "")), size = 3) +
   scale_fill_gradient2(low = "#4267A5", mid = "white", high = "#B6473B", midpoint = 0, na.value = "grey92") +
