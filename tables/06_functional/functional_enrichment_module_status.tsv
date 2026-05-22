@@ -1,0 +1,8 @@
+module	status	key_result
+custom_go_database	completed	20441 genes with custom GO
+go_ora	completed	460 ORA rows FDR < 0.05
+go_gsea	completed	1252 GSEA rows FDR < 0.05
+compare_cluster	completed	4744 compareCluster rows
+kegg	checked_not_run	Project gene IDs are ENSSMAG Ensembl identifiers. No validated ENSSMAG-to-KEGG gene mapping is available in the project, so KEGG enrichment is not run to avoid non-traceable mappings.
+interpret	skipped	Installed clusterProfiler 4.18.4 does not export interpret(). The documented interface is available in newer/development clusterProfiler releases.
+development_neural_crest	completed	429 focused rows FDR < 0.05

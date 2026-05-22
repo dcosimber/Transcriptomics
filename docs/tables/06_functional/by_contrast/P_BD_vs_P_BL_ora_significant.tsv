@@ -1,0 +1,17 @@
+method	contrast	effect_direction	ontology	GO_ID	term_label	term_clean	pvalue	p_adjust	qvalue	count	effect	signed_effect	primary_category	category_label
+ORA	P_BD_vs_P_BL	all_DEGs	BP	GO:0045104	BP: intermediate filament cytoskeleton organization	intermediate filament cytoskeleton organization	6.66002511237096e-06	0.00147852557494635	0.00136705778622351	4	27.054698457223	10.9385052278445	epidermis_epitelio	Epidermis/epitelio
+ORA	P_BD_vs_P_BL	all_DEGs	CC	GO:0030057	CC: desmosome	desmosome	3.63628370056376e-06	0.000276357561242845	0.000256453692566075	4	33.9426523297491	11.7617368222772	epidermis_epitelio	Epidermis/epitelio
+ORA	P_BD_vs_P_BL	down	BP	GO:0045104	BP: intermediate filament cytoskeleton organization	intermediate filament cytoskeleton organization	2.1216906627228e-06	0.00037129586597649	0.000310436844335231	4	35.6891766882516	-35.6891766882516	epidermis_epitelio	Epidermis/epitelio
+ORA	P_BD_vs_P_BL	down	BP	GO:0008544	BP: epidermis development	epidermis development	0.00027407593892357	0.0239816446558124	0.0200508186896717	3	19.8592999313658	-19.8592999313658	epidermis_epitelio	Epidermis/epitelio
+ORA	P_BD_vs_P_BL	down	BP	GO:0007043	BP: cell-cell junction assembly	cell-cell junction assembly	0.000726988827160797	0.02908947569651	0.0243214262966309	3	14.3171697179614	-14.3171697179614	epidermis_epitelio	Epidermis/epitelio
+ORA	P_BD_vs_P_BL	down	BP	GO:0006892	BP: post-Golgi vesicle-mediated transport	post-Golgi vesicle-mediated transport	0.000739002978396215	0.02908947569651	0.0243214262966309	2	41.0425531914894	-41.0425531914894	other	Otros
+ORA	P_BD_vs_P_BL	down	BP	GO:0042552	BP: myelination	myelination	0.000831127877043143	0.02908947569651	0.0243214262966309	3	13.6808510638298	-13.6808510638298	other	Otros
+ORA	P_BD_vs_P_BL	down	BP	GO:0098719	BP: sodium ion import across plasma membrane	sodium ion import across plasma membrane	0.00107819579097279	0.0314473772367065	0.0262928447272313	2	34.2021276595745	-34.2021276595745	other	Otros
+ORA	P_BD_vs_P_BL	down	BP	GO:0042060	BP: wound healing	wound healing	0.00141579639056247	0.0353949097640617	0.0295933380884486	3	11.4007092198582	-11.4007092198582	other	Otros
+ORA	P_BD_vs_P_BL	down	CC	GO:0030057	CC: desmosome	desmosome	1.18295826614197e-06	7.3343412500802e-05	6.47513998309288e-05	4	44.7754137115839	-44.7754137115839	epidermis_epitelio	Epidermis/epitelio
+ORA	P_BD_vs_P_BL	down	MF	GO:0005198	MF: structural molecule activity	structural molecule activity	0.000321170646062538	0.0253724810389405	0.0250175029564503	4	11.2872340425532	-11.2872340425532	other	Otros
+ORA	P_BD_vs_P_BL	down	MF	GO:0030368	MF: interleukin-17 receptor activity	interleukin-17 receptor activity	0.000912155636795483	0.0360301476534216	0.0355260616436135	2	40.6340425531915	-40.6340425531915	inmunidad_inflamacion	Inmunidad/inflamacion
+ORA	P_BD_vs_P_BL	up	BP	GO:0006094	BP: gluconeogenesis	gluconeogenesis	0.000577582540742886	0.0217412135897908	0.0104389945214138	2	47.6296296296296	47.6296296296296	other	Otros
+ORA	P_BD_vs_P_BL	up	BP	GO:0006096	BP: glycolytic process	glycolytic process	0.000762849599641781	0.0217412135897908	0.0104389945214138	2	41.4838709677419	41.4838709677419	other	Otros
+ORA	P_BD_vs_P_BL	up	CC	GO:0030017	CC: sarcomere	sarcomere	0.002678900083228	0.0481011983096899	0.0414268693576277	2	23.8238993710692	23.8238993710692	musculo_sarcomero	Musculo/sarcomero
+ORA	P_BD_vs_P_BL	up	CC	GO:0005811	CC: lipid droplet	lipid droplet	0.00437283620997181	0.0481011983096899	0.0414268693576277	2	18.5686274509804	18.5686274509804	lipidos	Lipidos

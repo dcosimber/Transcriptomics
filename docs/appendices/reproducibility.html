@@ -426,6 +426,7 @@ quarto render</code></pre>
 </ul>
 <p>El render del libro no requiere relanzar <code>nf-core/rnaseq</code> ni recalcular DESeq2; utiliza figuras, tablas y MultiQC ya exportados en el repositorio.</p>
 <p>El capítulo de expresión diferencial añade una capa ligera de síntesis con <code>scripts/prepare_de_chapter_tables.R</code>. Este script no cambia los modelos estadísticos: separa los DEGs anotados por contraste, resume genes destacados por dirección y prepara tablas descargables para la lectura del capítulo.</p>
+<p>El capítulo de enriquecimiento funcional añade otra capa de síntesis con <code>scripts/prepare_functional_chapter_assets.R</code>. Este script parte de <code>analysis/results/05_functional_enrichment</code>, filtra GSEA/ORA significativos, clasifica términos en categorías biológicas, genera tablas separadas por contraste y crea figuras funcionales nuevas para el libro. La ruta fuente puede redefinirse con <code>FUNCTIONAL_SOURCE_DIR</code>; en CESGA se usó <code>/mnt/lustre/scratch/nlsas/home/otras/pia/dci/holofish_rnaseq/analysis/results/05_functional_enrichment</code>.</p>
 </section>
 <section id="decisiones-de-inclusión-de-muestras" class="level2" data-number="B.3">
 <h2 data-number="B.3" class="anchored" data-anchor-id="decisiones-de-inclusión-de-muestras"><span class="header-section-number">B.3</span> Decisiones de inclusión de muestras</h2>
@@ -514,11 +515,14 @@ tables/05_de/by_contrast/
 tables/05_de/chapter_summaries/
 tables/05_de/gene_effect_correlations.tsv
 tables/05_de/go_enrichment_combined_summary.tsv
+tables/06_functional/
 figures/03_qc_r/
 figures/05_de/
+figures/06_functional/
 multiqc/star_salmon/
 multiqc/bam_qc/
-scripts/prepare_de_chapter_tables.R</code></pre>
+scripts/prepare_de_chapter_tables.R
+scripts/prepare_functional_chapter_assets.R</code></pre>
 </section>
 <section id="publicación" class="level2" data-number="B.7">
 <h2 data-number="B.7" class="anchored" data-anchor-id="publicación"><span class="header-section-number">B.7</span> Publicación</h2>

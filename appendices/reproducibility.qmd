@@ -23,6 +23,8 @@ El render del libro no requiere relanzar `nf-core/rnaseq` ni recalcular DESeq2; 
 
 El capítulo de expresión diferencial añade una capa ligera de síntesis con `scripts/prepare_de_chapter_tables.R`. Este script no cambia los modelos estadísticos: separa los DEGs anotados por contraste, resume genes destacados por dirección y prepara tablas descargables para la lectura del capítulo.
 
+El capítulo de enriquecimiento funcional añade otra capa de síntesis con `scripts/prepare_functional_chapter_assets.R`. Este script parte de `analysis/results/05_functional_enrichment`, filtra GSEA/ORA significativos, clasifica términos en categorías biológicas, genera tablas separadas por contraste y crea figuras funcionales nuevas para el libro. La ruta fuente puede redefinirse con `FUNCTIONAL_SOURCE_DIR`; en CESGA se usó `/mnt/lustre/scratch/nlsas/home/otras/pia/dci/holofish_rnaseq/analysis/results/05_functional_enrichment`.
+
 ## Decisiones de inclusión de muestras
 
 El análisis diferencial principal se restringe a muestras de piel. Las muestras de intestino y el bloque ambicolor/PNK se conservan para QC global, pero se excluyen de los modelos inferenciales principales.
@@ -69,11 +71,14 @@ tables/05_de/by_contrast/
 tables/05_de/chapter_summaries/
 tables/05_de/gene_effect_correlations.tsv
 tables/05_de/go_enrichment_combined_summary.tsv
+tables/06_functional/
 figures/03_qc_r/
 figures/05_de/
+figures/06_functional/
 multiqc/star_salmon/
 multiqc/bam_qc/
 scripts/prepare_de_chapter_tables.R
+scripts/prepare_functional_chapter_assets.R
 ```
 
 ## Publicación
