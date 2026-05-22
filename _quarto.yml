@@ -2,13 +2,15 @@ project:
   type: book
   output-dir: docs
   resources:
+    - figures/
+    - images/
     - multiqc/
     - tables/
 
 lang: es
 
 book:
-  title: "Holofishcolour project"
+  title: "HOLOFISHCOLOUR transcriptomics"
   site-url: "https://dcosimber.github.io/Transcriptomics/"
   sidebar:
     logo: images/holofishcolour_manhattan_logo_2026.png
@@ -23,24 +25,26 @@ book:
         - name: Instituto de Investigaciones Marinas (IIM-CSIC)
           city: Vigo
           state: Spain
-          url: www.iim.csic.es
+          url: https://www.iim.csic.es
         - name: Aquabiotec Lab
           city: Vigo
           state: Spain
           url: https://acuabiotec.csic.es
-
   date: last-modified
   chapters:
     - index.qmd
     - chapters/01_intro.qmd
     - chapters/02_exp_design.qmd
-    - chapters/02_methods_nfcore.qmd
     - chapters/03_results.qmd
+    - chapters/02_methods_nfcore.qmd
     - chapters/03_qc_multiqc.qmd
     - chapters/04_alignment_quant.qmd
     - chapters/05_differential_expression.qmd
+    - chapters/06_functional_interpretation.qmd
+    - chapters/07_conclusions.qmd
   appendices:
     - appendices/rna_extraction_protocol.md
+    - appendices/reproducibility.qmd
 
 bibliography: references.bib
 csl: vancouver-brackets.csl
@@ -50,9 +54,12 @@ format:
     toc: true
     toc-depth: 3
     toc-location: right
+    tbl-cap-location: top
+    fig-cap-location: bottom
     number-sections: true
     smooth-scroll: true
     anchor-sections: true
+    link-external-newwindow: true
     lightbox:
       match: auto
       effect: zoom

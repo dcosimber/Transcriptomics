@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>alignment_quant – Holofishcolour project</title>
+<title>7&nbsp; Alineamiento, cuantificación y matrices de expresión – HOLOFISHCOLOUR transcriptomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,10 +17,30 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -47,6 +67,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -251,8 +274,8 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04_alignment_quant.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">04_alignment_quant.html</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04_alignment_quant.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Alineamiento, cuantificación y matrices de expresión</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -270,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
       <img src="../images/holofishcolour_manhattan_logo_2026.png" alt="HOLOFISHCOLOUR" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Holofishcolour project</a> 
+      <a href="../">HOLOFISHCOLOUR transcriptomics</a>
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
@@ -281,69 +304,87 @@ ul.task-list li input[type="checkbox"] {
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
-    <div class="sidebar-menu-container"> 
+    <div class="sidebar-menu-container">
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">HOLOFISHCOLOUR transcriptomics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción, antecedentes y objetivos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/02_exp_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Materiales y métodos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental, muestreo y definición de grupos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/03_results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA Integrity Number (RIN): technical background</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Extracción de ARN, control de calidad molecular y secuenciación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
+  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
   <a href="../chapters/03_qc_multiqc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/04_alignment_quant.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">04_alignment_quant.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Alineamiento, cuantificación y matrices de expresión</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/05_differential_expression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/06_functional_interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/07_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusiones integradas</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
+      <div class="sidebar-item-container">
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Apéndices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+          </a>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../appendices/rna_extraction_protocol.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../appendices/reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reproducibilidad y decisiones analíticas</span></span></a>
   </div>
 </li>
       </ul>
@@ -353,18 +394,278 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+
+  <ul>
+  <li><a href="#objetivo-del-bloque" id="toc-objetivo-del-bloque" class="nav-link active" data-scroll-target="#objetivo-del-bloque"><span class="header-section-number">7.1</span> Objetivo del bloque</a></li>
+  <li><a href="#alineamiento-con-star" id="toc-alineamiento-con-star" class="nav-link" data-scroll-target="#alineamiento-con-star"><span class="header-section-number">7.2</span> Alineamiento con STAR</a></li>
+  <li><a href="#cuantificación-con-salmon" id="toc-cuantificación-con-salmon" class="nav-link" data-scroll-target="#cuantificación-con-salmon"><span class="header-section-number">7.3</span> Cuantificación con Salmon</a></li>
+  <li><a href="#tamaño-de-librería-y-genes-detectados" id="toc-tamaño-de-librería-y-genes-detectados" class="nav-link" data-scroll-target="#tamaño-de-librería-y-genes-detectados"><span class="header-section-number">7.4</span> Tamaño de librería y genes detectados</a></li>
+  <li><a href="#comparación-conceptual-entre-cuantificadores" id="toc-comparación-conceptual-entre-cuantificadores" class="nav-link" data-scroll-target="#comparación-conceptual-entre-cuantificadores"><span class="header-section-number">7.5</span> Comparación conceptual entre cuantificadores</a></li>
+  <li><a href="#normalización-y-transformación" id="toc-normalización-y-transformación" class="nav-link" data-scroll-target="#normalización-y-transformación"><span class="header-section-number">7.6</span> Normalización y transformación</a></li>
+  <li><a href="#trazabilidad-de-identificadores" id="toc-trazabilidad-de-identificadores" class="nav-link" data-scroll-target="#trazabilidad-de-identificadores"><span class="header-section-number">7.7</span> Trazabilidad de identificadores</a></li>
+  <li><a href="#limitaciones" id="toc-limitaciones" class="nav-link" data-scroll-target="#limitaciones"><span class="header-section-number">7.8</span> Limitaciones</a></li>
+  <li><a href="#conclusión-del-bloque" id="toc-conclusión-del-bloque" class="nav-link" data-scroll-target="#conclusión-del-bloque"><span class="header-section-number">7.9</span> Conclusión del bloque</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Alineamiento, cuantificación y matrices de expresión</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
 
 
 
 
+  </div>
 
 
 
+</header>
+
+
+<section id="objetivo-del-bloque" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="objetivo-del-bloque"><span class="header-section-number">7.1</span> Objetivo del bloque</h2>
+<p>Este capítulo conecta el procesamiento primario con el análisis estadístico. El objetivo es explicar qué representan los alineamientos STAR, qué salidas de cuantificación se generaron, por qué <strong>Salmon gene-level counts</strong> es la matriz principal para DESeq2 y cómo se usan <code>featureCounts</code> y <code>HTSeq</code> como recursos secundarios de sensibilidad.</p>
+</section>
+<section id="alineamiento-con-star" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="alineamiento-con-star"><span class="header-section-number">7.2</span> Alineamiento con STAR</h2>
+<p>El alineamiento se realizó con <strong>STAR</strong> contra el genoma de referencia de rodaballo ASM1334776v1 y la anotación Ensembl release 113. STAR es adecuado para RNA-seq porque permite mapear lecturas que cruzan uniones exon-exon y conserva información sobre alineamiento único, multimapeo y lecturas no alineadas <span class="citation" data-cites="Dobin2013STAR">[<a href="01_intro.html#ref-Dobin2013STAR" role="doc-biblioref">1</a>]</span>.</p>
+<p>La tasa media de alineamiento total fue <strong>97.52%</strong>, mientras que la tasa media de alineamiento único fue <strong>90.09%</strong>. Estos valores indican que la mayoría de lecturas son compatibles con la referencia y que la señal principal procede de alineamientos específicos.</p>
+<div id="fig-alignment-star-summary" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-alignment-star-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/02_nfcore/star_alignment_pct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;7.1: Resumen porcentual de alineamiento STAR por muestra."><img src="../figures/02_nfcore/star_alignment_pct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alignment-star-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.1: Resumen porcentual de alineamiento STAR por muestra.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Lectura técnica">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Lectura técnica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El alineamiento alto no demuestra por sí solo que todos los genes estén perfectamente anotados, pero sí descarta problemas graves de especie, contaminación masiva o incompatibilidad general entre lecturas y referencia. Para un análisis de expresión en una especie no modelo, esta es una condición necesaria antes de interpretar diferencias biológicas.</p>
+</div>
+</div>
+</section>
+<section id="cuantificación-con-salmon" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="cuantificación-con-salmon"><span class="header-section-number">7.3</span> Cuantificación con Salmon</h2>
+<p>La cuantificación primaria se realizó con <strong>Salmon</strong>, dentro de la estrategia <code>star_salmon</code> de nf-core/rnaseq. Salmon estima abundancias transcriptómicas y permite obtener matrices agregadas a nivel de gen, corrigiendo sesgos de longitud y composición cuando se trabaja con abundancias relativas <span class="citation" data-cites="Patro2017Salmon">[<a href="01_intro.html#ref-Patro2017Salmon" role="doc-biblioref">2</a>]</span>.</p>
+<p>En este proyecto, la inferencia diferencial usa <strong>conteos gene-level</strong> importados desde Salmon. La matriz de TPM se conserva para exploración y visualización, pero no se usa como entrada de DESeq2, ya que DESeq2 modela conteos y estima factores de tamaño y dispersión a partir de la distribución de conteos <span class="citation" data-cites="Love2014DESeq2">[<a href="01_intro.html#ref-Love2014DESeq2" role="doc-biblioref">3</a>]</span>.</p>
+<div id="tbl-quantification-outputs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-quantification-outputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;7.1: Salidas de cuantificación y uso analítico.
+</figcaption>
+<div aria-describedby="tbl-quantification-outputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Salida</th>
+<th style="text-align: left;">Uso en el proyecto</th>
+<th style="text-align: left;">Decisión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>salmon.merged.gene_counts.tsv</code></td>
+<td style="text-align: left;">Conteos génicos para DESeq2</td>
+<td style="text-align: left;">Entrada principal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>salmon.merged.gene_tpm.tsv</code></td>
+<td style="text-align: left;">Expresión relativa para exploración</td>
+<td style="text-align: left;">No se usa para inferencia DESeq2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>salmon.merged.gene.SummarizedExperiment.rds</code></td>
+<td style="text-align: left;">Objeto integrado de expresión</td>
+<td style="text-align: left;">Recurso reproducible</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Matrices featureCounts</td>
+<td style="text-align: left;">Conteo sobre anotación desde BAM</td>
+<td style="text-align: left;">Sensibilidad técnica</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Matrices HTSeq</td>
+<td style="text-align: left;">Conteo alternativo sobre anotación</td>
+<td style="text-align: left;">Sensibilidad técnica</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="tamaño-de-librería-y-genes-detectados" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="tamaño-de-librería-y-genes-detectados"><span class="header-section-number">7.4</span> Tamaño de librería y genes detectados</h2>
+<p>El número total de conteos Salmon a nivel génico fue suficiente en todas las bibliotecas. No se observó una biblioteca colapsada o con pérdida extrema de señal. La muestra <code>P33</code> tuvo la mayor profundidad de conteos y <code>P34</code> la menor, mientras que <code>P43</code> presentó el menor número de genes detectados con al menos 10 conteos. Estos extremos se consideran en la interpretación, pero no justifican exclusión automática.</p>
+<div id="fig-salmon-library-sizes" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-salmon-library-sizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/03_qc_r/salmon_library_sizes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;7.2: Tamaños de librería y número de genes detectados en Salmon gene-level."><img src="../figures/03_qc_r/salmon_library_sizes.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-salmon-library-sizes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.2: Tamaños de librería y número de genes detectados en Salmon gene-level.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-salmon-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-salmon-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;7.2: Resumen de rendimiento de la matriz Salmon gene-level.
+</figcaption>
+<div aria-describedby="tbl-salmon-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: left;">Resultado</th>
+<th style="text-align: left;">Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Conteos Salmon medios por muestra</td>
+<td style="text-align: left;">10.55 millones</td>
+<td style="text-align: left;">Profundidad adecuada para RNA-seq bulk</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mínimo de conteos Salmon</td>
+<td style="text-align: left;">8.15 millones (<code>P34</code>)</td>
+<td style="text-align: left;">Sin colapso de biblioteca</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Máximo de conteos Salmon</td>
+<td style="text-align: left;">17.81 millones (<code>P33</code>)</td>
+<td style="text-align: left;">Mayor profundidad, tratada por normalización</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Genes detectados medios con conteo ≥ 10</td>
+<td style="text-align: left;">13,826</td>
+<td style="text-align: left;">Complejidad compatible con análisis génico</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mínimo de genes detectados con conteo ≥ 10</td>
+<td style="text-align: left;">11,678 (<code>P43</code>)</td>
+<td style="text-align: left;">Punto de vigilancia, no exclusión automática</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="comparación-conceptual-entre-cuantificadores" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="comparación-conceptual-entre-cuantificadores"><span class="header-section-number">7.5</span> Comparación conceptual entre cuantificadores</h2>
+<p>El proyecto conserva tres aproximaciones complementarias:</p>
+<ul>
+<li><strong>Salmon gene-level</strong>: entrada principal para DESeq2, porque procede del flujo <code>star_salmon</code>, integra cuantificación transcriptómica y se maneja de forma estable en el análisis downstream.</li>
+<li><strong>featureCounts</strong>: conteo directo de lecturas alineadas contra features anotadas; útil para comprobar si los patrones principales dependen de la forma de cuantificar.</li>
+<li><strong>HTSeq</strong>: alternativa de conteo sobre anotación, mantenida como recurso de contraste técnico.</li>
+</ul>
+<p>La existencia de matrices alternativas no significa que el análisis deba mezclar resultados indiscriminadamente. Para evitar conclusiones dependientes de cambios de herramienta, el informe fija una fuente principal y reserva las otras para sensibilidad.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Decisión de matriz">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Decisión de matriz
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La matriz primaria para expresión diferencial es <strong>Salmon gene-level counts</strong>. <code>featureCounts</code> y <code>HTSeq</code> son recursos secundarios. Un resultado biológico se interpreta principalmente desde Salmon, y solo se contrasta con las matrices alternativas si aparece una señal técnica dudosa o una pregunta específica de robustez.</p>
+</div>
+</div>
+</section>
+<section id="normalización-y-transformación" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="normalización-y-transformación"><span class="header-section-number">7.6</span> Normalización y transformación</h2>
+<p>DESeq2 no compara conteos crudos directamente. Primero estima factores de tamaño para corregir diferencias de profundidad de biblioteca y después modela la dispersión de cada gen. Para exploración no supervisada, como PCA y distancias entre muestras, se usó una transformación estabilizadora de varianza. Esta transformación no sustituye al modelo de expresión diferencial; solo hace que las distancias globales entre muestras sean más interpretables.</p>
+<p>La separación observada en PCA se interpreta como una mezcla de estructura biológica, superficie, pigmentación, fenotipo y posibles contribuciones de fecha o individuo. Por este motivo, la inferencia se realiza por contraste y no mediante una lectura única del PCA.</p>
+<div id="fig-expression-exploration" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-expression-exploration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/03_qc_r/pca_all_skin_uncorrected.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="PCA de piel sin corrección adicional."><img src="../figures/03_qc_r/pca_all_skin_uncorrected.png" class="img-fluid figure-img"></a></p>
+<figcaption>PCA de piel sin corrección adicional.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/03_qc_r/sample_distance_heatmap_skin_core.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Mapa de calor de distancias entre muestras de piel."><img src="../figures/03_qc_r/sample_distance_heatmap_skin_core.png" class="img-fluid figure-img"></a></p>
+<figcaption>Mapa de calor de distancias entre muestras de piel.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-expression-exploration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.3: Exploración global de la matriz de expresión en las muestras de piel usadas para el análisis principal.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="trazabilidad-de-identificadores" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="trazabilidad-de-identificadores"><span class="header-section-number">7.7</span> Trazabilidad de identificadores</h2>
+<p>La anotación de <em>Scophthalmus maximus</em> utiliza identificadores Ensembl con prefijo <code>ENSSMAG</code>. Estos identificadores se conservan como clave primaria en todas las tablas. Los símbolos génicos, nombres funcionales y anotaciones por ortología son etiquetas auxiliares que facilitan la lectura biológica, pero no sustituyen al identificador estable.</p>
+<p>Este criterio es especialmente importante porque varios genes con efectos fuertes no tienen símbolo funcional local en la anotación disponible. En lugar de eliminarlos, se mantienen como candidatos trazables para curación manual posterior.</p>
+</section>
+<section id="limitaciones" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="limitaciones"><span class="header-section-number">7.8</span> Limitaciones</h2>
+<p>La cuantificación gene-level simplifica la complejidad de isoformas y transcritos alternativos. Esta decisión es adecuada para el objetivo principal, que es comparar programas génicos de piel, pero no permite una interpretación fina de isoformas sin análisis adicional. Del mismo modo, las anotaciones funcionales dependen de la calidad del genoma y del GTF de Ensembl release 113; genes sin símbolo o términos incompletos no deben interpretarse como ausencia de función.</p>
+</section>
+<section id="conclusión-del-bloque" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="conclusión-del-bloque"><span class="header-section-number">7.9</span> Conclusión del bloque</h2>
+<p>La combinación de STAR y Salmon produjo una matriz de expresión coherente, con profundidad suficiente y sin bibliotecas fallidas. El análisis downstream queda anclado a una decisión reproducible: <strong>DESeq2 sobre Salmon gene-level counts</strong>, manteniendo <code>ENSSMAG</code> como clave primaria y usando cuantificaciones alternativas solo como controles de sensibilidad.</p>
+
+
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Dobin2013STAR" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Dobin A., Davis C. A., Schlesinger F., Drenkow J., Zaleski C., Jha S., Batut P., Chaisson M., Gingeras T. R. <span>STAR: ultrafast universal RNA-seq aligner</span>. Bioinformatics; 2013; 29(1):15-21. doi:<a href="https://doi.org/10.1093/bioinformatics/bts635">10.1093/bioinformatics/bts635</a> <a href="https://doi.org/10.1093/bioinformatics/bts635">https://doi.org/10.1093/bioinformatics/bts635</a></div>
+</div>
+<div id="ref-Patro2017Salmon" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Patro R., Duggal G., Love M. I., Irizarry R. A., Kingsford C. <span>Salmon provides fast and bias-aware quantification of transcript expression</span>. Nature Methods; 2017; 14(4):417-419. doi:<a href="https://doi.org/10.1038/nmeth.4197">10.1038/nmeth.4197</a> <a href="https://doi.org/10.1038/nmeth.4197">https://doi.org/10.1038/nmeth.4197</a></div>
+</div>
+<div id="ref-Love2014DESeq2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Love M. I., Huber W., Anders S. <span>Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2</span>. Genome Biology; 2014; 15(12):550. doi:<a href="https://doi.org/10.1186/s13059-014-0550-8">10.1186/s13059-014-0550-8</a> <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a></div>
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -391,7 +692,7 @@ ul.task-list li input[type="checkbox"] {
     anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
+        if (clz.startsWith('code-annotation-')) {
           return true;
         }
       }
@@ -411,11 +712,11 @@ ul.task-list li input[type="checkbox"] {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Copiado");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
+        tooltip = new bootstrap.Tooltip(button,
+          { trigger: "manual",
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();    
+        tooltip.show();
       }
       setTimeout(function() {
         if (tooltip) {
@@ -467,6 +768,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -492,7 +798,7 @@ ul.task-list li input[type="checkbox"] {
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config); 
+      window.tippy(el, config);
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -567,7 +873,7 @@ ul.task-list li input[type="checkbox"] {
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined; 
+        let hash = undefined;
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -595,7 +901,7 @@ ul.task-list li input[type="checkbox"] {
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              } 
+              }
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -619,7 +925,7 @@ ul.task-list li input[type="checkbox"] {
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            } 
+            }
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -659,7 +965,7 @@ ul.task-list li input[type="checkbox"] {
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
+              // cook up a div (if necessary) and position it
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -784,7 +1090,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-page nav-page-previous">
       <a href="../chapters/03_qc_multiqc.html" class="pagination-link" aria-label="Control de calidad integrado con MultiQC">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></span>
-      </a>          
+      </a>
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/05_differential_expression.html" class="pagination-link" aria-label="Expresión diferencial">
@@ -793,6 +1099,38 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      }
+    });
+
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+
+  };
+
+})();
+          </script>
 
 
 

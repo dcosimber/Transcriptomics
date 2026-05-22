@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; RNA Integrity Number (RIN): technical background – Holofishcolour project</title>
+<title>4&nbsp; Extracción de ARN, control de calidad molecular y secuenciación – HOLOFISHCOLOUR transcriptomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
   vertical-align: middle;
 }
 </style>
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/03_qc_multiqc.html" rel="next">
-<link href="../chapters/02_methods_nfcore.html" rel="prev">
+<link href="../chapters/02_methods_nfcore.html" rel="next">
+<link href="../chapters/02_exp_design.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -254,8 +254,8 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03_results.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA Integrity Number (RIN): technical background</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/03_results.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Extracción de ARN, control de calidad molecular y secuenciación</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <img src="../images/holofishcolour_manhattan_logo_2026.png" alt="HOLOFISHCOLOUR" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Holofishcolour project</a> 
+      <a href="../">HOLOFISHCOLOUR transcriptomics</a>
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
@@ -284,69 +284,87 @@ ul.task-list li input[type="checkbox"] {
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
-    <div class="sidebar-menu-container"> 
+    <div class="sidebar-menu-container">
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">HOLOFISHCOLOUR transcriptomics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción, antecedentes y objetivos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/02_exp_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Materiales y métodos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental, muestreo y definición de grupos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/03_results.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA Integrity Number (RIN): technical background</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Extracción de ARN, control de calidad molecular y secuenciación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
+  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
   <a href="../chapters/03_qc_multiqc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/04_alignment_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">04_alignment_quant.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Alineamiento, cuantificación y matrices de expresión</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/05_differential_expression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/06_functional_interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/07_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusiones integradas</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
+      <div class="sidebar-item-container">
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Apéndices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+          </a>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../appendices/rna_extraction_protocol.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../appendices/reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reproducibilidad y decisiones analíticas</span></span></a>
   </div>
 </li>
       </ul>
@@ -356,8 +374,20 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+
+  <ul>
+  <li><a href="#objetivo-del-bloque" id="toc-objetivo-del-bloque" class="nav-link active" data-scroll-target="#objetivo-del-bloque"><span class="header-section-number">4.1</span> Objetivo del bloque</a></li>
+  <li><a href="#extracción-de-arn" id="toc-extracción-de-arn" class="nav-link" data-scroll-target="#extracción-de-arn"><span class="header-section-number">4.2</span> Extracción de ARN</a></li>
+  <li><a href="#control-preliminar-de-extracción" id="toc-control-preliminar-de-extracción" class="nav-link" data-scroll-target="#control-preliminar-de-extracción"><span class="header-section-number">4.3</span> Control preliminar de extracción</a></li>
+  <li><a href="#control-bioanalyzer-de-novogene" id="toc-control-bioanalyzer-de-novogene" class="nav-link" data-scroll-target="#control-bioanalyzer-de-novogene"><span class="header-section-number">4.4</span> Control Bioanalyzer de Novogene</a></li>
+  <li><a href="#electroferogramas" id="toc-electroferogramas" class="nav-link" data-scroll-target="#electroferogramas"><span class="header-section-number">4.5</span> Electroferogramas</a></li>
+  <li><a href="#secuenciación" id="toc-secuenciación" class="nav-link" data-scroll-target="#secuenciación"><span class="header-section-number">4.6</span> Secuenciación</a></li>
+  <li><a href="#conclusión-del-bloque" id="toc-conclusión-del-bloque" class="nav-link" data-scroll-target="#conclusión-del-bloque"><span class="header-section-number">4.7</span> Conclusión del bloque</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -365,445 +395,702 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA Integrity Number (RIN): technical background</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Extracción de ARN, control de calidad molecular y secuenciación</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    
-  
-    
+
+
+
   </div>
-  
+
 
 
 </header>
 
 
-<p>The complete quality control results for all submitted samples are summarized in <a href="#tbl-rnaseq-qc" class="quarto-xref">Tabla&nbsp;<span>5.1</span></a>, including RNA concentration, total RNA amount, RNA Integrity Number (RIN), and final QC status. Representative electropherograms generated during the analysis are shown in <a href="#fig-rin-electropherograms" class="quarto-xref">Figura&nbsp;<span>5.1</span></a>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="objetivo-del-bloque" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="objetivo-del-bloque"><span class="header-section-number">4.1</span> Objetivo del bloque</h2>
+<p>Este capítulo documenta la calidad del material biológico antes de entrar en el procesamiento bioinformático. Su papel es responder si el ARN enviado a preparación de bibliotecas tenía concentración, pureza e integridad compatibles con RNA-seq, y qué muestras llegaron finalmente a secuenciación.</p>
+</section>
+<section id="extracción-de-arn" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="extracción-de-arn"><span class="header-section-number">4.2</span> Extracción de ARN</h2>
+<p>El ARN total se aisló a partir de fragmentos de piel y de muestras intestinales complementarias mediante un protocolo basado en TRIzol<sup>TM</sup> y tubos Phasemaker<sup>TM</sup>, seguido de purificación en columna y digestión con DNasa. El procedimiento completo se conserva en el anexo <a href="../appendices/rna_extraction_protocol.html">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</a>.</p>
+<p>La extracción se evaluó en dos niveles. Primero se realizó un control interno mediante NanoDrop y gel de agarosa al <strong>1.5%</strong>. Después, Novogene evaluó las muestras mediante <strong>Agilent 5400 Bioanalyzer</strong>, generando concentraciones, cantidades totales, perfiles electroforéticos y valores de <strong>RIN</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Lectura del RIN">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota
+<span class="screen-reader-only">Nota</span>Lectura del RIN
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="fig-rin-electropherograms" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rin-electropherograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figures/01_intro/RIN_explanation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;5.1: Representative RNA electropherograms illustrating different levels of RNA integrity (RIN = 10, 5, and 3)."><img src="../figures/01_intro/RIN_explanation.png" class="img-fluid figure-img" style="width:85.0%"></a>
+<p>El <strong>RNA Integrity Number</strong> resume la integridad del ARN en una escala de 1 a 10. Valores altos indican perfiles electroforéticos con picos ribosomales definidos y baja fragmentación; valores bajos indican degradación, acumulación de fragmentos pequeños y pérdida de estructura en el electroferograma.</p>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rin-electropherograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5.1: Representative RNA electropherograms illustrating different levels of RNA integrity (RIN = 10, 5, and 3).
+</div>
+<div id="fig-rin-profiles" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rin-profiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/02_exp_design/rin_integrity_examples.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;4.1: Perfiles electroforéticos representativos para ARN íntegro, parcialmente degradado y degradado."><img src="../figures/02_exp_design/rin_integrity_examples.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rin-profiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.1: Perfiles electroforéticos representativos para ARN íntegro, parcialmente degradado y degradado.
 </figcaption>
 </figure>
 </div>
-<p>The <strong>RNA Integrity Number (RIN)</strong> is a numerical score ranging from <strong>1 (fully degraded RNA)</strong> to <strong>10 (intact RNA)</strong>, widely used to assess total RNA quality. RIN values are computed from automated electrophoretic analyses performed on platforms such as the Agilent Bioanalyzer.</p>
-<p>The RIN algorithm evaluates multiple features of the electropherogram, including:</p>
-<ul>
-<li>The presence, height, and sharpness of ribosomal RNA peaks (primarily <strong>18S and 28S rRNA</strong> in eukaryotes). High-quality RNA typically displays well-defined 18S and 28S peaks with an approximate <strong>2:1 intensity ratio</strong>.</li>
-<li>Background signal and degree of fragmentation. Degraded RNA is characterized by reduced or absent ribosomal peaks and increased signal corresponding to low-molecular-weight fragments.</li>
-<li>Overall signal distribution across fragment sizes, reflecting progressive RNA degradation.</li>
-</ul>
-<p>In high-quality samples, electropherograms show sharp and well-resolved rRNA peaks with low background noise. In contrast, degraded samples exhibit flattened or missing rRNA peaks and a pronounced accumulation of short RNA fragments.</p>
-</div>
-</div>
-<p>Most samples exhibited <strong>RIN values between 7.0 and 9.8</strong>, which are generally considered suitable for RNA-Seq library construction and downstream differential gene expression analyses. RNA concentrations also fell within acceptable ranges for library preparation, although moderate variability among samples was observed.</p>
-<p>Two samples deviated from the expected quality standards:</p>
-<ul>
-<li><strong>IT12</strong> showed a <strong>low RIN value (3.8)</strong>, indicating substantial RNA degradation. This sample was classified as <em>Fail</em> and deemed unsuitable for RNA-Seq.</li>
-<li><strong>IT16</strong> displayed an intermediate <strong>RIN value of 6.0</strong>, suggesting partial degradation that could compromise sequencing quality and data interpretation.</li>
-</ul>
-<p>Additionally, <strong>ITPNK</strong> exhibited slight genomic DNA contamination, as indicated in the Novogene QC report. Despite this observation, the sample passed overall QC criteria.</p>
-<p>Given that the sequencing budget covered <strong>24 RNA-Seq libraries</strong> and <strong>26 samples</strong> were initially submitted, <strong>samples IT12 and IT16 were excluded from sequencing</strong>. The remaining samples met the quality requirements for transcriptomic analysis and were retained for RNA-Seq library preparation and sequencing.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="" aria-current="page">QC Summary</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Bioanalyzer Electropherograms</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div id="tbl-rnaseq-qc" class="quarto-float quarto-figure quarto-figure-center anchored">
+</section>
+<section id="control-preliminar-de-extracción" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="control-preliminar-de-extracción"><span class="header-section-number">4.3</span> Control preliminar de extracción</h2>
+<p>El control preliminar mostró concentraciones generalmente suficientes para continuar, aunque con variabilidad entre muestras. Las ratios A260/A280 fueron compatibles con ARN relativamente puro en la mayoría de extracciones. Las ratios A260/A230 fueron más variables, como es habitual en extracciones con fenol/columna, y se interpretaron junto con el gel y el control posterior de Bioanalyzer.</p>
+<div id="tbl-rna-extraction-nanodrop" class="rna-gel-table quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rnaseq-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;5.1: Summary of RNA concentration, integrity (RIN), and QC status for samples assessed prior to RNA-Seq library preparation.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rna-extraction-nanodrop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;4.1: Control preliminar de extracción de ARN mediante NanoDrop y gel de agarosa.
 </figcaption>
-<div aria-describedby="tbl-rnaseq-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
+<div aria-describedby="tbl-rna-extraction-nanodrop-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="rna-gel-table caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: center;">No.</th>
-<th style="text-align: center;">Sample</th>
-<th style="text-align: center;">Concentration (ng/µl)</th>
-<th style="text-align: center;">Volume (µl)</th>
-<th style="text-align: center;">Total amount (µg)</th>
-<th style="text-align: center;">RIN</th>
-<th style="text-align: center;">Sample QC Results</th>
+<th style="text-align: left;">Muestra</th>
+<th style="text-align: right;">NanoDrop (ng/µl)</th>
+<th style="text-align: right;">A260/A280</th>
+<th style="text-align: right;">A260/A230</th>
+<th style="text-align: left;">Gel de agarosa</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">P31</td>
-<td style="text-align: center;">1851.34</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">29.62141</td>
-<td style="text-align: center;">7.7</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P31</td>
+<td style="text-align: right;">1142.7</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_01_P31_P32_IT11.png">Bloque P31, P32 e IT11</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">P32</td>
-<td style="text-align: center;">2022.42</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">32.35878</td>
-<td style="text-align: center;">8.3</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P32</td>
+<td style="text-align: right;">813.4</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: right;">2.18</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">P33</td>
-<td style="text-align: center;">483.84</td>
-<td style="text-align: center;">13</td>
-<td style="text-align: center;">6.28990</td>
-<td style="text-align: center;">8.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">IT11</td>
+<td style="text-align: right;">534.3</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">P34</td>
-<td style="text-align: center;">826.81</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: center;">14.05583</td>
-<td style="text-align: center;">8.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P33</td>
+<td style="text-align: right;">338.9</td>
+<td style="text-align: right;">2.12</td>
+<td style="text-align: right;">2.24</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_02_P33_P34_IT12.png">Bloque P33, P34 e IT12</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">P35</td>
-<td style="text-align: center;">430.00</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">6.87994</td>
-<td style="text-align: center;">8.2</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P34</td>
+<td style="text-align: right;">440.5</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">2.27</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">P36</td>
-<td style="text-align: center;">447.89</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">7.16622</td>
-<td style="text-align: center;">7.2</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">IT12</td>
+<td style="text-align: right;">974.0</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">2.36</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">P41</td>
-<td style="text-align: center;">1270.12</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">20.32186</td>
-<td style="text-align: center;">9.3</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P35</td>
+<td style="text-align: right;">299.3</td>
+<td style="text-align: right;">2.12</td>
+<td style="text-align: right;">1.08</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_03_P35_P36_IT13.png">Bloque P35, P36 e IT13</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">P42</td>
-<td style="text-align: center;">888.98</td>
-<td style="text-align: center;">19</td>
-<td style="text-align: center;">16.89067</td>
-<td style="text-align: center;">8.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P36</td>
+<td style="text-align: right;">308.8</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">2.18</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: center;">P43</td>
-<td style="text-align: center;">1343.73</td>
-<td style="text-align: center;">19</td>
-<td style="text-align: center;">25.53087</td>
-<td style="text-align: center;">8.0</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">IT13</td>
+<td style="text-align: right;">367.6</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">1.99</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">P44</td>
-<td style="text-align: center;">1961.08</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">35.29941</td>
-<td style="text-align: center;">7.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P37</td>
+<td style="text-align: right;">191.5</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">2.20</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_04_P37_P40_IT14.png">Bloque P37, P38, P39, P40 e IT14</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">P45</td>
-<td style="text-align: center;">709.86</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">12.77749</td>
-<td style="text-align: center;">8.1</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P38</td>
+<td style="text-align: right;">209.5</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: right;">2.05</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">P46</td>
-<td style="text-align: center;">768.56</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">13.83416</td>
-<td style="text-align: center;">8.9</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P39</td>
+<td style="text-align: right;">827.3</td>
+<td style="text-align: right;">2.15</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">13</td>
-<td style="text-align: center;">P47</td>
-<td style="text-align: center;">342.27</td>
-<td style="text-align: center;">19</td>
-<td style="text-align: center;">6.50313</td>
-<td style="text-align: center;">8.5</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P40</td>
+<td style="text-align: right;">359.5</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: right;">2.17</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">14</td>
-<td style="text-align: center;">P48</td>
-<td style="text-align: center;">404.26</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: center;">6.87242</td>
-<td style="text-align: center;">7.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">IT14</td>
+<td style="text-align: right;">822.9</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">15</td>
-<td style="text-align: center;">P49</td>
-<td style="text-align: center;">954.50</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">15.27201</td>
-<td style="text-align: center;">8.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P41</td>
+<td style="text-align: right;">583.6</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_05_P41_P44_IT15.png">Bloque P41, P42, P43, P44 e IT15</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">P50</td>
-<td style="text-align: center;">295.43</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">4.72680</td>
-<td style="text-align: center;">9.6</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P42</td>
+<td style="text-align: right;">506.5</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">2.15</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">17</td>
-<td style="text-align: center;">P51</td>
-<td style="text-align: center;">2511.00</td>
-<td style="text-align: center;">13</td>
-<td style="text-align: center;">32.64302</td>
-<td style="text-align: center;">9.5</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P43</td>
+<td style="text-align: right;">588.0</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">2.33</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">P52</td>
-<td style="text-align: center;">578.87</td>
-<td style="text-align: center;">15</td>
-<td style="text-align: center;">8.68312</td>
-<td style="text-align: center;">9.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P44</td>
+<td style="text-align: right;">1028.3</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">19</td>
-<td style="text-align: center;">P1G</td>
-<td style="text-align: center;">150.06</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">2.40097</td>
-<td style="text-align: center;">8.9</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">IT15</td>
+<td style="text-align: right;">727.2</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">2.29</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">20</td>
-<td style="text-align: center;">P2G</td>
-<td style="text-align: center;">192.33</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">3.07729</td>
-<td style="text-align: center;">9.0</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P45</td>
+<td style="text-align: right;">529.7</td>
+<td style="text-align: right;">2.05</td>
+<td style="text-align: right;">2.33</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_06_P45_P48_IT16.png">Bloque P45, P46, P47, P48 e IT16</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">21</td>
-<td style="text-align: center;">PNKD</td>
-<td style="text-align: center;">417.18</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">7.50923</td>
-<td style="text-align: center;">8.7</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P46</td>
+<td style="text-align: right;">383.0</td>
+<td style="text-align: right;">2.09</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">22</td>
-<td style="text-align: center;">PNKV</td>
-<td style="text-align: center;">221.19</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: center;">3.76027</td>
-<td style="text-align: center;">8.4</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P47</td>
+<td style="text-align: right;">218.3</td>
+<td style="text-align: right;">2.07</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">23</td>
-<td style="text-align: center;">IT12</td>
-<td style="text-align: center;">2422.80</td>
-<td style="text-align: center;">17</td>
-<td style="text-align: center;">41.18753</td>
-<td style="text-align: center;">3.8</td>
-<td style="text-align: center;">Fail</td>
+<td style="text-align: left;">P48</td>
+<td style="text-align: right;">291.2</td>
+<td style="text-align: right;">2.09</td>
+<td style="text-align: right;">1.77</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">24</td>
-<td style="text-align: center;">IT16</td>
-<td style="text-align: center;">2988.15</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">53.78664</td>
-<td style="text-align: center;">6.0</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">IT16</td>
+<td style="text-align: right;">963.5</td>
+<td style="text-align: right;">2.07</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">IT1G</td>
-<td style="text-align: center;">2842.68</td>
-<td style="text-align: center;">16</td>
-<td style="text-align: center;">45.48292</td>
-<td style="text-align: center;">7.8</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P49</td>
+<td style="text-align: right;">444.2</td>
+<td style="text-align: right;">2.09</td>
+<td style="text-align: right;">2.21</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_07_P49_P52_IT17.png">Bloque P49, P50, P51, P52 e IT17</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">26</td>
-<td style="text-align: center;">ITPNK</td>
-<td style="text-align: center;">4493.36</td>
-<td style="text-align: center;">18</td>
-<td style="text-align: center;">80.88050</td>
-<td style="text-align: center;">7.1</td>
-<td style="text-align: center;">Pass</td>
+<td style="text-align: left;">P50</td>
+<td style="text-align: right;">236.5</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: left;">Mismo bloque</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P51</td>
+<td style="text-align: right;">927.5</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;">2.26</td>
+<td style="text-align: left;">Mismo bloque</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P52</td>
+<td style="text-align: right;">385.8</td>
+<td style="text-align: right;">2.14</td>
+<td style="text-align: right;">1.08</td>
+<td style="text-align: left;">Mismo bloque</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IT17</td>
+<td style="text-align: right;">1327.1</td>
+<td style="text-align: right;">2.10</td>
+<td style="text-align: right;">2.24</td>
+<td style="text-align: left;">Mismo bloque</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P1G</td>
+<td style="text-align: right;">117.6</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">1.73</td>
+<td style="text-align: left;"><a href="../figures/02_exp_design/rna_extraction_gels/gel_block_08_P1G_P2G_IT1G.png">Bloque P1G, P2G e IT1G</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P2G</td>
+<td style="text-align: right;">121.6</td>
+<td style="text-align: right;">2.12</td>
+<td style="text-align: right;">2.07</td>
+<td style="text-align: left;">Mismo bloque</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IT1G</td>
+<td style="text-align: right;">1117.5</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: left;">Mismo bloque</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
+</section>
+<section id="control-bioanalyzer-de-novogene" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="control-bioanalyzer-de-novogene"><span class="header-section-number">4.4</span> Control Bioanalyzer de Novogene</h2>
+<p>El control final de Novogene confirmó que la mayoría de las muestras presentaban integridad suficiente para preparación de bibliotecas RNA-seq. La mayor parte de los valores de RIN se situó entre <strong>7.0</strong> y <strong>9.8</strong>, rango compatible con análisis de expresión. Dos muestras intestinales requirieron atención especial: <strong>IT12</strong> tuvo <strong>RIN = 3.8</strong> y fue clasificada como no apta; <strong>IT16</strong> mostró <strong>RIN = 6.0</strong>, compatible con degradación parcial. Además, <strong>ITPNK</strong> fue aceptada, aunque el informe técnico indicó ligera contaminación genómica.</p>
+<p>Dado que el presupuesto contemplaba <strong>24 bibliotecas RNA-seq</strong> y se habían evaluado <strong>26 muestras</strong>, se excluyeron <strong>IT12</strong> e <strong>IT16</strong> antes de la secuenciación. Las 24 muestras restantes pasaron a preparación de bibliotecas y procesamiento bioinformático.</p>
+<div id="tbl-rna-qc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rna-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;4.2: Resumen de concentración, cantidad total, integridad de ARN y decisión QC antes de la preparación de bibliotecas.
+</figcaption>
+<div aria-describedby="tbl-rna-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Muestra</th>
+<th style="text-align: right;">Concentración (ng/µl)</th>
+<th style="text-align: right;">Cantidad total (µg)</th>
+<th style="text-align: right;">RIN</th>
+<th style="text-align: left;">QC</th>
+<th style="text-align: left;">Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">P31</td>
+<td style="text-align: right;">1851.34</td>
+<td style="text-align: right;">29.62</td>
+<td style="text-align: right;">7.7</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P32</td>
+<td style="text-align: right;">2022.42</td>
+<td style="text-align: right;">32.36</td>
+<td style="text-align: right;">8.3</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P33</td>
+<td style="text-align: right;">483.84</td>
+<td style="text-align: right;">6.29</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P34</td>
+<td style="text-align: right;">826.81</td>
+<td style="text-align: right;">14.06</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P35</td>
+<td style="text-align: right;">430.00</td>
+<td style="text-align: right;">6.88</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P36</td>
+<td style="text-align: right;">447.89</td>
+<td style="text-align: right;">7.17</td>
+<td style="text-align: right;">7.2</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P41</td>
+<td style="text-align: right;">1270.12</td>
+<td style="text-align: right;">20.32</td>
+<td style="text-align: right;">9.3</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P42</td>
+<td style="text-align: right;">888.98</td>
+<td style="text-align: right;">16.89</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P43</td>
+<td style="text-align: right;">1343.73</td>
+<td style="text-align: right;">25.53</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P44</td>
+<td style="text-align: right;">1961.08</td>
+<td style="text-align: right;">35.30</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P45</td>
+<td style="text-align: right;">709.86</td>
+<td style="text-align: right;">12.78</td>
+<td style="text-align: right;">8.1</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P46</td>
+<td style="text-align: right;">768.56</td>
+<td style="text-align: right;">13.83</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P47</td>
+<td style="text-align: right;">342.27</td>
+<td style="text-align: right;">6.50</td>
+<td style="text-align: right;">8.5</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P48</td>
+<td style="text-align: right;">404.26</td>
+<td style="text-align: right;">6.87</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P49</td>
+<td style="text-align: right;">954.50</td>
+<td style="text-align: right;">15.27</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P50</td>
+<td style="text-align: right;">295.43</td>
+<td style="text-align: right;">4.73</td>
+<td style="text-align: right;">9.6</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P51</td>
+<td style="text-align: right;">2511.00</td>
+<td style="text-align: right;">32.64</td>
+<td style="text-align: right;">9.5</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P52</td>
+<td style="text-align: right;">578.87</td>
+<td style="text-align: right;">8.68</td>
+<td style="text-align: right;">9.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1G</td>
+<td style="text-align: right;">150.06</td>
+<td style="text-align: right;">2.40</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P2G</td>
+<td style="text-align: right;">192.33</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">9.0</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PNKD</td>
+<td style="text-align: right;">417.18</td>
+<td style="text-align: right;">7.51</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PNKV</td>
+<td style="text-align: right;">221.19</td>
+<td style="text-align: right;">3.76</td>
+<td style="text-align: right;">8.4</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IT12</td>
+<td style="text-align: right;">2422.80</td>
+<td style="text-align: right;">41.19</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: left;">Fail</td>
+<td style="text-align: left;">RIN no cualificado</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">IT16</td>
+<td style="text-align: right;">2988.15</td>
+<td style="text-align: right;">53.79</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">No secuenciada</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IT1G</td>
+<td style="text-align: right;">2842.68</td>
+<td style="text-align: right;">45.48</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ITPNK</td>
+<td style="text-align: right;">4493.36</td>
+<td style="text-align: right;">80.88</td>
+<td style="text-align: right;">7.1</td>
+<td style="text-align: left;">Pass</td>
+<td style="text-align: left;">Ligera contaminación genómica</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div>
+</figure>
+</div>
+</section>
+<section id="electroferogramas" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="electroferogramas"><span class="header-section-number">4.5</span> Electroferogramas</h2>
+<p>Los electroferogramas individuales se conservan como evidencia visual del control Bioanalyzer. Se muestran en paneles para mantener trazabilidad sin saturar la lectura principal.</p>
+<div id="fig-rna-electropherograms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rna-electropherograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">IT12</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">IT16</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">IT1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">ITPNK</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">PNKD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">PNKV</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">P1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">P2G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-9-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-9" role="tab" aria-controls="tabset-1-9" aria-selected="false" href="">P31</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-10-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-10" role="tab" aria-controls="tabset-1-10" aria-selected="false" href="">P32</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-11-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-11" role="tab" aria-controls="tabset-1-11" aria-selected="false" href="">P33</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-12-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-12" role="tab" aria-controls="tabset-1-12" aria-selected="false" href="">P34</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-13-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-13" role="tab" aria-controls="tabset-1-13" aria-selected="false" href="">P35</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-14-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-14" role="tab" aria-controls="tabset-1-14" aria-selected="false" href="">P36</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-15-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-15" role="tab" aria-controls="tabset-1-15" aria-selected="false" href="">P41</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-16-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-16" role="tab" aria-controls="tabset-1-16" aria-selected="false" href="">P42</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-17-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-17" role="tab" aria-controls="tabset-1-17" aria-selected="false" href="">P43</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-18-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-18" role="tab" aria-controls="tabset-1-18" aria-selected="false" href="">P44</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-19-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-19" role="tab" aria-controls="tabset-1-19" aria-selected="false" href="">P45</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-20-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-20" role="tab" aria-controls="tabset-1-20" aria-selected="false" href="">P46</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-21-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-21" role="tab" aria-controls="tabset-1-21" aria-selected="false" href="">P47</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-22-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-22" role="tab" aria-controls="tabset-1-22" aria-selected="false" href="">P48</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-23-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-23" role="tab" aria-controls="tabset-1-23" aria-selected="false" href="">P49</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-24-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-24" role="tab" aria-controls="tabset-1-24" aria-selected="false" href="">P50</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-25-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-25" role="tab" aria-controls="tabset-1-25" aria-selected="false" href="">P51</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-26-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-26" role="tab" aria-controls="tabset-1-26" aria-selected="false" href="">P52</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="" aria-current="page">P31</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">P32</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">P33</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">P34</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">P35</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">P36</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">P41</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">P42</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-9-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-9" role="tab" aria-controls="tabset-1-9" aria-selected="false" href="">P43</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-10-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-10" role="tab" aria-controls="tabset-1-10" aria-selected="false" href="">P44</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-11-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-11" role="tab" aria-controls="tabset-1-11" aria-selected="false" href="">P45</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-12-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-12" role="tab" aria-controls="tabset-1-12" aria-selected="false" href="">P46</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-13-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-13" role="tab" aria-controls="tabset-1-13" aria-selected="false" href="">P47</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-14-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-14" role="tab" aria-controls="tabset-1-14" aria-selected="false" href="">P48</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-15-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-15" role="tab" aria-controls="tabset-1-15" aria-selected="false" href="">P49</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-16-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-16" role="tab" aria-controls="tabset-1-16" aria-selected="false" href="">P50</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-17-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-17" role="tab" aria-controls="tabset-1-17" aria-selected="false" href="">P51</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-18-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-18" role="tab" aria-controls="tabset-1-18" aria-selected="false" href="">P52</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-19-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-19" role="tab" aria-controls="tabset-1-19" aria-selected="false" href="">P1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-20-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-20" role="tab" aria-controls="tabset-1-20" aria-selected="false" href="">P2G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-21-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-21" role="tab" aria-controls="tabset-1-21" aria-selected="false" href="">PNKD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-22-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-22" role="tab" aria-controls="tabset-1-22" aria-selected="false" href="">PNKV</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-23-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-23" role="tab" aria-controls="tabset-1-23" aria-selected="false" href="">IT12</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-24-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-24" role="tab" aria-controls="tabset-1-24" aria-selected="false" href="">IT16</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-25-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-25" role="tab" aria-controls="tabset-1-25" aria-selected="false" href="">IT1G</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-26-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-26" role="tab" aria-controls="tabset-1-26" aria-selected="false" href="">ITPNK</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><a href="../figures/01_intro/integrity_RIN/IT12.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../figures/01_intro/integrity_RIN/IT12.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P31.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P31.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><a href="../figures/01_intro/integrity_RIN/IT16.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../figures/01_intro/integrity_RIN/IT16.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P32.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P32.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><a href="../figures/01_intro/integrity_RIN/IT1G.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../figures/01_intro/integrity_RIN/IT1G.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P33.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P33.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<p><a href="../figures/01_intro/integrity_RIN/ITPNK.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="../figures/01_intro/integrity_RIN/ITPNK.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P34.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P34.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
-<p><a href="../figures/01_intro/integrity_RIN/PNKD.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="../figures/01_intro/integrity_RIN/PNKD.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P35.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P35.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
-<p><a href="../figures/01_intro/integrity_RIN/PNKV.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="../figures/01_intro/integrity_RIN/PNKV.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P36.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P36.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P1G.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="../figures/01_intro/integrity_RIN/P1G.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P41.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P41.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P2G.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="../figures/01_intro/integrity_RIN/P2G.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P42.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P42.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-9" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-9-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P31.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="../figures/01_intro/integrity_RIN/P31.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P43.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P43.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-10" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-10-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P32.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="../figures/01_intro/integrity_RIN/P32.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P44.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P44.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-11" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-11-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P33.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="../figures/01_intro/integrity_RIN/P33.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P45.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P45.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-12" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-12-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P34.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="../figures/01_intro/integrity_RIN/P34.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P46.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P46.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-13" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-13-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P35.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="../figures/01_intro/integrity_RIN/P35.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P47.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P47.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-14" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-14-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P36.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="../figures/01_intro/integrity_RIN/P36.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P48.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P48.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-15" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-15-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P41.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="../figures/01_intro/integrity_RIN/P41.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P49.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P49.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-16" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-16-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P42.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="../figures/01_intro/integrity_RIN/P42.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P50.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P50.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-17" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-17-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P43.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="../figures/01_intro/integrity_RIN/P43.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P51.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P51.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-18" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-18-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P44.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="../figures/01_intro/integrity_RIN/P44.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P52.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P52.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-19" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-19-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P45.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="../figures/01_intro/integrity_RIN/P45.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P1G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P1G.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-20" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-20-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P46.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="../figures/01_intro/integrity_RIN/P46.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/P2G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/P2G.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-21" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-21-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P47.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="../figures/01_intro/integrity_RIN/P47.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/PNKD.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/PNKD.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-22" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-22-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P48.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="../figures/01_intro/integrity_RIN/P48.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/PNKV.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/PNKV.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-23" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-23-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P49.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="../figures/01_intro/integrity_RIN/P49.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/IT12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/IT12.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-24" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-24-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P50.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="../figures/01_intro/integrity_RIN/P50.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/IT16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/IT16.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-25" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-25-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P51.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="../figures/01_intro/integrity_RIN/P51.PNG" class="img-fluid"></a></p>
+<p><a href="../figures/02_exp_design/bioanalyzer/IT1G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/IT1G.png" class="img-fluid figure-img"></a></p>
 </div>
 <div id="tabset-1-26" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-26-tab">
-<p><a href="../figures/01_intro/integrity_RIN/P52.PNG" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="../figures/01_intro/integrity_RIN/P52.PNG" class="img-fluid"></a></p>
-</div>
-</div>
-</div>
-<p>Figure: RNA quality control electropherograms generated using the Agilent 5400 Bioanalyzer. Each tab corresponds to one sample and displays the characteristic 18S and 28S rRNA peaks and fragment size distribution used to assess RNA integrity prior to sequencing.</p>
+<p><a href="../figures/02_exp_design/bioanalyzer/ITPNK.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación."><img src="../figures/02_exp_design/bioanalyzer/ITPNK.png" class="img-fluid figure-img"></a></p>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rna-electropherograms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.2: Electroferogramas Bioanalyzer de las muestras evaluadas antes de secuenciación.
+</figcaption>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Technical notes from the Novogene RNA QC report
+</section>
+<section id="secuenciación" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="secuenciación"><span class="header-section-number">4.6</span> Secuenciación</h2>
+<p>Las bibliotecas RNA-seq se generaron a partir de mRNA enriquecido por selección de poli(A), con protocolo específico de hebra y secuenciación paired-end de <strong>150 pb</strong>. El servicio fue realizado por Novogene dentro de la modalidad WOBI Plant and Animal Whole Genome Sequencing.</p>
+<div id="tbl-rnaseq-specs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rnaseq-specs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;4.3: Especificaciones generales de la fase de secuenciación.
+</figcaption>
+<div aria-describedby="tbl-rnaseq-specs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plataforma</td>
+<td style="text-align: left;">Illumina NovaSeq X Plus</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Configuración de lectura</td>
+<td style="text-align: left;">Paired-end, 2 x 150 pb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Preparación de librerías</td>
+<td style="text-align: left;">mRNA específico de hebra, enriquecido por poli(A)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Criterio de calidad contratado</td>
+<td style="text-align: left;">Al menos 85% de bases con Q30 o superior</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Salida mínima esperada</td>
+<td style="text-align: left;">Al menos 6 Gb por muestra</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bibliotecas secuenciadas</td>
+<td style="text-align: left;">24</td>
+</tr>
+</tbody>
+</table>
 </div>
+</figure>
 </div>
-<div class="callout-body-container callout-body">
-<p><strong>Q1. What is the influence of RNA concentration on library construction?</strong><br>
-RNA concentration determines the total RNA input available for library preparation. Insufficient RNA input may result in low library yield or library construction failure. Additional RNA concentration steps may increase degradation risk.</p>
-<p><strong>Q2. Does genomic DNA contamination affect poly(A)-enriched mRNA library preparation?</strong><br>
-Genomic DNA is not retained during poly(A) enrichment–based mRNA library preparation. Therefore, low-level genomic DNA contamination does not affect downstream library construction when samples pass QC.</p>
-<p><strong>Q3. What RNA purification methods are used and how much RNA loss is expected?</strong><br>
-RNA purification is typically performed using column-based or magnetic bead–based methods. RNA loss after purification is expected to be approximately <strong>60%</strong>, depending on the purification strategy and initial RNA quality.</p>
-</div>
-</div>
-<hr>
+</section>
+<section id="conclusión-del-bloque" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="conclusión-del-bloque"><span class="header-section-number">4.7</span> Conclusión del bloque</h2>
+<p>La evidencia previa al procesamiento bioinformático indica que las muestras secuenciadas partieron de ARN mayoritariamente íntegro y apto para RNA-seq. Las exclusiones se realizaron antes de la generación de bibliotecas, de modo que el conjunto procesado por <code>nf-core/rnaseq</code> no contiene las muestras con RIN claramente problemático. A partir de este punto, la evaluación crítica pasa de la calidad molecular del ARN a la calidad de lecturas, alineamiento, cuantificación y estructura global de expresión.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -830,7 +1117,7 @@ RNA purification is typically performed using column-based or magnetic bead–ba
     anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
+        if (clz.startsWith('code-annotation-')) {
           return true;
         }
       }
@@ -850,11 +1137,11 @@ RNA purification is typically performed using column-based or magnetic bead–ba
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Copiado");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
+        tooltip = new bootstrap.Tooltip(button,
+          { trigger: "manual",
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();    
+        tooltip.show();
       }
       setTimeout(function() {
         if (tooltip) {
@@ -906,6 +1193,11 @@ RNA purification is typically performed using column-based or magnetic bead–ba
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -931,7 +1223,7 @@ RNA purification is typically performed using column-based or magnetic bead–ba
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config); 
+      window.tippy(el, config);
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -1006,7 +1298,7 @@ RNA purification is typically performed using column-based or magnetic bead–ba
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined; 
+        let hash = undefined;
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -1034,7 +1326,7 @@ RNA purification is typically performed using column-based or magnetic bead–ba
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              } 
+              }
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -1058,7 +1350,7 @@ RNA purification is typically performed using column-based or magnetic bead–ba
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            } 
+            }
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -1098,7 +1390,7 @@ RNA purification is typically performed using column-based or magnetic bead–ba
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
+              // cook up a div (if necessary) and position it
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -1221,13 +1513,13 @@ RNA purification is typically performed using column-based or magnetic bead–ba
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/02_methods_nfcore.html" class="pagination-link" aria-label="Preprocesamiento bioinformático con nf-core/rnaseq">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span>
-      </a>          
+      <a href="../chapters/02_exp_design.html" class="pagination-link" aria-label="Diseño experimental, muestreo y definición de grupos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental, muestreo y definición de grupos</span></span>
+      </a>
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/03_qc_multiqc.html" class="pagination-link" aria-label="Control de calidad integrado con MultiQC">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/02_methods_nfcore.html" class="pagination-link" aria-label="Preprocesamiento bioinformático con nf-core/rnaseq">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1250,18 +1542,18 @@ RNA purification is typically performed using column-based or magnetic bead–ba
             slideConfig.href = srcAttr;
           }
         }
-      } 
+      }
     });
-  
+
     lightboxQuarto.on('slide_after_load', (data) => {
       const { slideIndex, slideNode, slideConfig, player, trigger } = data;
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(slideNode);
       }
     });
-  
+
   };
-  
+
 })();
           </script>
 

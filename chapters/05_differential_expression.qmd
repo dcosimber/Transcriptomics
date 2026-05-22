@@ -1,8 +1,12 @@
 # Expresión diferencial
 
-Este capítulo documenta el análisis de expresión diferencial realizado sobre las muestras de piel del proyecto **HOLOFISHCOLOUR**. El objetivo no es solo listar genes significativos, sino construir una lectura interpretable de los ejes transcriptómicos asociados a **superficie corporal**, **pigmentación normal**, **pseudoalbinismo** y **pigmentación ectópica**.
+## Objetivo del bloque
 
-El análisis parte de la cuantificación génica generada por [`Salmon`](https://combine-lab.github.io/salmon/) [@Patro2017Salmon] a partir del flujo `star_salmon` de nf-core/rnaseq. Los modelos de expresión diferencial se ajustaron con [`DESeq2`](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) [@Love2014DESeq2], usando conteos enteros a nivel de gen, filtrado mínimo de expresión y diseños específicos para cada contraste. El enriquecimiento funcional posterior se realizó con anotaciones Gene Ontology y herramientas de análisis de términos biológicos, incluyendo [`clusterProfiler`](https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html) [@Yu2012].
+Este capítulo documenta los modelos de expresión diferencial realizados sobre las muestras de piel del proyecto **HOLOFISHCOLOUR**. Su objetivo es describir qué contrastes se ajustaron, cuántos genes se evaluaron, qué señales dominan cada comparación y qué resultados deben pasar a interpretación funcional.
+
+La lectura biológica profunda de términos GO y procesos celulares se desarrolla en el capítulo siguiente. Aquí se mantiene el foco en el modelado estadístico, la dirección de los efectos, los genes destacados, los solapamientos entre contrastes y la trazabilidad de las tablas.
+
+El análisis parte de la cuantificación génica generada por [`Salmon`](https://combine-lab.github.io/salmon/) [@Patro2017Salmon] a partir del flujo `star_salmon` de nf-core/rnaseq. Los modelos se ajustaron con [`DESeq2`](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) [@Love2014DESeq2], usando conteos enteros a nivel de gen, filtrado mínimo de expresión y diseños específicos para cada contraste.
 
 ::: {.callout-note title="Cómo leer los contrastes"}
 En todas las tablas, un `log2FoldChange` positivo indica mayor expresión en el **primer grupo** del contraste. Por ejemplo, en `N_OD_vs_N_BL`, los genes con log2FC positivo están más expresados en piel normal ocular oscura (`N_OD`) que en piel normal blind clara (`N_BL`). Un log2FC negativo indica el patrón inverso.
@@ -12,7 +16,7 @@ En todas las tablas, un `log2FoldChange` positivo indica mayor expresión en el 
 
 El análisis diferencial principal se restringió a **20 muestras de piel**. Las muestras de intestino y el bloque exploratorio PNK/ambicoloration se conservaron en el QC global, pero no se incluyeron en los contrastes inferenciales principales. Este punto es importante: el análisis no busca mezclar todos los fenotipos disponibles, sino responder preguntas biológicas concretas dentro de un diseño con superficies y estados pigmentarios comparables.
 
-Los genes se mantuvieron para modelado cuando presentaban al menos **10 conteos en 3 muestras**. La significación se definió como **FDR < 0.05** y, para las tablas filtradas de genes diferencialmente expresados (DEGs) usadas en interpretación, se añadió un umbral de **|log2FC| ≥ 1**. Este doble criterio evita sobrerrepresentar cambios estadísticamente significativos pero de magnitud muy pequeña.
+Los genes se mantuvieron para modelado cuando presentaban al menos **10 conteos en 3 muestras**. La significación se definió como **FDR < 0.05** y, para las tablas filtradas de genes diferencialmente expresados usadas en interpretación, se añadió un umbral de **|log2FC| ≥ 1**. Este doble criterio evita sobrerrepresentar cambios estadísticamente significativos pero de magnitud muy pequeña.
 
 | Contraste | Pregunta biológica | Diseño | Clase |
 |---|---|---|---|
@@ -86,7 +90,7 @@ La siguiente tabla muestra los tres genes más significativos por contraste entr
 : Genes más significativos por contraste entre los DEGs filtrados. Las anotaciones sin símbolo deben conservar el identificador `ENSSMAG` como referencia estable.
 
 ::: {.callout-warning title="Anotación incompleta no significa ausencia de biología"}
-Varios genes altamente significativos aparecen como `ENSSMAG...` sin símbolo funcional local. En un genoma no modelo como *Scophthalmus maximus*, esto es esperable. Estos genes no deben descartarse: conviene tratarlos como candidatos para curación manual mediante ortología, dominios proteicos, sintenia o anotación actualizada.
+Varios genes altamente significativos aparecen como identificadores `ENSSMAG` sin símbolo funcional local. En un genoma no modelo como *Scophthalmus maximus*, esto es esperable. Estos genes no deben descartarse: conviene tratarlos como candidatos para curación manual mediante ortología, dominios proteicos, sintenia o anotación actualizada.
 :::
 
 ## Figuras por contraste
@@ -240,40 +244,11 @@ Resumen visual de solapamientos entre contrastes. La señal compartida existe, p
 
 ![Solapamientos entre contrastes pseudoalbinos dentro de superficie y modelo de interacción.](../figures/05_de/summary/upset_pseudoalbino_within_and_surface.png){#fig-de-upset-pseudo width="90%"}
 
-## Enriquecimiento funcional e interpretación biológica
+## Puente hacia interpretación funcional
 
-El análisis funcional confirma que los cambios no se reducen a genes individuales. En el eje normal `N_OD_vs_N_BL`, los términos con NES positivo incluyen **melanosome**, **melanocyte differentiation**, **melanosome organization** y **melanin biosynthetic process**, coherentes con mayor actividad pigmentaria en piel ocular oscura. En cambio, términos con NES negativo apuntan a **extracellular matrix**, **collagen-containing extracellular matrix**, **axon guidance**, **angiogenesis** y rutas de desarrollo, más asociadas al lado blind claro.
+El análisis estadístico muestra que los contrastes no son equivalentes entre sí. `N_OD_vs_N_BL` recupera el eje fisiológico de pigmentación normal; `P_OD_vs_P_OL` conserva parte de esa estructura, pero con señales adicionales de tejido; `P_BD_vs_P_BL` y `P_BD_vs_N_BL` son más divergentes y sugieren que la pigmentación ectópica de la cara ciega no reproduce de forma simple una piel ocular oscura normal.
 
-En los contrastes pseudoalbinos, la señal funcional se vuelve más compleja. `P_OD_vs_P_OL` conserva parte del eje de superficie/pigmentación, pero se acompaña de remodelado de matriz extracelular. `P_BD_vs_P_BL` y `P_BD_vs_N_BL` muestran una señal fuerte de desarrollo, estructura tisular, epidermis, músculo/contracción y metabolismo mitocondrial. Esta combinación sugiere que la pigmentación ectópica blind puede reflejar cambios de **identidad tisular**, **estado celular** o **microambiente**, además de pigmentación.
-
-::: {#fig-de-go-summary layout-ncol="2"}
-![Dotplot GSEA de términos GO resumidos por contraste.](../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png)
-
-![Dotplot ORA de términos GO resumidos por contraste.](../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png)
-
-Resumen funcional de términos GO por contraste. GSEA captura cambios coordinados a lo largo de toda la lista ordenada; ORA resume términos sobrerrepresentados entre genes filtrados.
-:::
-
-| Contraste | Categoría | n términos FDR < 0.10 | Término principal | NES | FDR |
-|---|---|---:|---|---:|---:|
-| `N_OD_vs_N_BL` | Pigmentación/melanocito | 7 | `CC: melanosome` | 2.39 | 4.04e-06 |
-| `N_OD_vs_N_BL` | Neural crest | 2 | `BP: neural crest cell migration` | -1.53 | 3.22e-02 |
-| `N_OD_vs_N_BL` | Wnt/retinoides | 4 | `BP: positive regulation of Wnt signaling pathway` | -2.22 | 4.98e-04 |
-| `P_OD_vs_P_OL` | Desarrollo/patterning | 19 | `BP: skeletal muscle thin filament assembly` | 2.40 | 2.20e-05 |
-| `P_OD_vs_P_OL` | Wnt/retinoides | 1 | `MF: retinoic acid binding` | -1.85 | 4.34e-02 |
-| `P_BD_vs_P_BL` | Pigmentación/melanocito | 4 | `CC: melanosome` | -2.08 | 3.18e-03 |
-| `P_BD_vs_N_BL` | Desarrollo/patterning | 22 | `BP: skeletal muscle tissue development` | 2.92 | 7.17e-18 |
-| `P_OL_vs_N_OD` | Wnt/retinoides | 10 | `BP: Wnt signaling pathway` | 2.15 | 1.56e-06 |
-| `P_OL_vs_N_OD` | Neural crest | 2 | `BP: neural crest cell migration` | 1.83 | 2.77e-03 |
-| `P_surface_x_pigmentation` | Desarrollo/patterning | 1 | `BP: multicellular organism development` | 1.74 | 6.27e-03 |
-
-: Términos funcionales seleccionados de categorías de desarrollo, cresta neural, Wnt/retinoides y pigmentación. El signo del NES indica enriquecimiento hacia genes con log2FC positivo o negativo según el contraste.
-
-![Resumen de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste.](../figures/05_de/enrichment/development_neural_crest_terms.png){#fig-de-development-neural-crest width="95%"}
-
-::: {.callout-important title="Hipótesis biológica de trabajo"}
-Los resultados apoyan una hipótesis en la que el pseudoalbinismo no se explica únicamente por apagado terminal de melanogénesis. La señal apunta a una combinación de **programas pigmentarios**, **desarrollo/cresta neural**, **Wnt/retinoides**, **matriz extracelular**, **epidermis** y **composición tisular**. En particular, la pigmentación ectópica blind parece más divergente del eje normal que la pérdida de pigmentación en la superficie ocular.
-:::
+La interpretación funcional detallada se presenta en el capítulo siguiente, donde se integran GSEA, ORA, categorías GO dirigidas y lectura biológica por proceso.
 
 ## Implicaciones para resultados de paper
 

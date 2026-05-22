@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Expresión diferencial – Holofishcolour project</title>
+<title>8&nbsp; Expresión diferencial – HOLOFISHCOLOUR transcriptomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
   vertical-align: middle;
 }
 /* CSS for citations */
@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../appendices/rna_extraction_protocol.html" rel="next">
+<link href="../chapters/06_functional_interpretation.html" rel="next">
 <link href="../chapters/04_alignment_quant.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -275,7 +275,7 @@ div.csl-indent {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/05_differential_expression.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -293,7 +293,7 @@ div.csl-indent {
       <img src="../images/holofishcolour_manhattan_logo_2026.png" alt="HOLOFISHCOLOUR" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Holofishcolour project</a> 
+      <a href="../">HOLOFISHCOLOUR transcriptomics</a>
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
@@ -304,69 +304,87 @@ div.csl-indent {
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
-    <div class="sidebar-menu-container"> 
+    <div class="sidebar-menu-container">
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">HOLOFISHCOLOUR transcriptomics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción, antecedentes y objetivos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/02_exp_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Materiales y métodos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental, muestreo y definición de grupos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/03_results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA Integrity Number (RIN): technical background</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Extracción de ARN, control de calidad molecular y secuenciación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
+  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
   <a href="../chapters/03_qc_multiqc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/04_alignment_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">04_alignment_quant.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Alineamiento, cuantificación y matrices de expresión</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/05_differential_expression.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/06_functional_interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/07_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusiones integradas</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
+      <div class="sidebar-item-container">
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Apéndices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+          </a>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../appendices/rna_extraction_protocol.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../appendices/reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reproducibilidad y decisiones analíticas</span></span></a>
   </div>
 </li>
       </ul>
@@ -379,16 +397,17 @@ div.csl-indent {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
-   
+
   <ul>
-  <li><a href="#diseño-analítico" id="toc-diseño-analítico" class="nav-link active" data-scroll-target="#diseño-analítico"><span class="header-section-number">8.1</span> Diseño analítico</a></li>
-  <li><a href="#resumen-global-de-degs" id="toc-resumen-global-de-degs" class="nav-link" data-scroll-target="#resumen-global-de-degs"><span class="header-section-number">8.2</span> Resumen global de DEGs</a></li>
-  <li><a href="#genes-destacados-por-contraste" id="toc-genes-destacados-por-contraste" class="nav-link" data-scroll-target="#genes-destacados-por-contraste"><span class="header-section-number">8.3</span> Genes destacados por contraste</a></li>
-  <li><a href="#figuras-por-contraste" id="toc-figuras-por-contraste" class="nav-link" data-scroll-target="#figuras-por-contraste"><span class="header-section-number">8.4</span> Figuras por contraste</a></li>
-  <li><a href="#solapamientos-y-coherencia-entre-ejes" id="toc-solapamientos-y-coherencia-entre-ejes" class="nav-link" data-scroll-target="#solapamientos-y-coherencia-entre-ejes"><span class="header-section-number">8.5</span> Solapamientos y coherencia entre ejes</a></li>
-  <li><a href="#enriquecimiento-funcional-e-interpretación-biológica" id="toc-enriquecimiento-funcional-e-interpretación-biológica" class="nav-link" data-scroll-target="#enriquecimiento-funcional-e-interpretación-biológica"><span class="header-section-number">8.6</span> Enriquecimiento funcional e interpretación biológica</a></li>
-  <li><a href="#implicaciones-para-resultados-de-paper" id="toc-implicaciones-para-resultados-de-paper" class="nav-link" data-scroll-target="#implicaciones-para-resultados-de-paper"><span class="header-section-number">8.7</span> Implicaciones para resultados de paper</a></li>
-  <li><a href="#archivos-derivados" id="toc-archivos-derivados" class="nav-link" data-scroll-target="#archivos-derivados"><span class="header-section-number">8.8</span> Archivos derivados</a></li>
+  <li><a href="#objetivo-del-bloque" id="toc-objetivo-del-bloque" class="nav-link active" data-scroll-target="#objetivo-del-bloque"><span class="header-section-number">8.1</span> Objetivo del bloque</a></li>
+  <li><a href="#diseño-analítico" id="toc-diseño-analítico" class="nav-link" data-scroll-target="#diseño-analítico"><span class="header-section-number">8.2</span> Diseño analítico</a></li>
+  <li><a href="#resumen-global-de-degs" id="toc-resumen-global-de-degs" class="nav-link" data-scroll-target="#resumen-global-de-degs"><span class="header-section-number">8.3</span> Resumen global de DEGs</a></li>
+  <li><a href="#genes-destacados-por-contraste" id="toc-genes-destacados-por-contraste" class="nav-link" data-scroll-target="#genes-destacados-por-contraste"><span class="header-section-number">8.4</span> Genes destacados por contraste</a></li>
+  <li><a href="#figuras-por-contraste" id="toc-figuras-por-contraste" class="nav-link" data-scroll-target="#figuras-por-contraste"><span class="header-section-number">8.5</span> Figuras por contraste</a></li>
+  <li><a href="#solapamientos-y-coherencia-entre-ejes" id="toc-solapamientos-y-coherencia-entre-ejes" class="nav-link" data-scroll-target="#solapamientos-y-coherencia-entre-ejes"><span class="header-section-number">8.6</span> Solapamientos y coherencia entre ejes</a></li>
+  <li><a href="#puente-hacia-interpretación-funcional" id="toc-puente-hacia-interpretación-funcional" class="nav-link" data-scroll-target="#puente-hacia-interpretación-funcional"><span class="header-section-number">8.7</span> Puente hacia interpretación funcional</a></li>
+  <li><a href="#implicaciones-para-resultados-de-paper" id="toc-implicaciones-para-resultados-de-paper" class="nav-link" data-scroll-target="#implicaciones-para-resultados-de-paper"><span class="header-section-number">8.8</span> Implicaciones para resultados de paper</a></li>
+  <li><a href="#archivos-derivados" id="toc-archivos-derivados" class="nav-link" data-scroll-target="#archivos-derivados"><span class="header-section-number">8.9</span> Archivos derivados</a></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
@@ -406,18 +425,21 @@ div.csl-indent {
 
 <div class="quarto-title-meta">
 
-    
-  
-    
+
+
+
   </div>
-  
+
 
 
 </header>
 
 
-<p>Este capítulo documenta el análisis de expresión diferencial realizado sobre las muestras de piel del proyecto <strong>HOLOFISHCOLOUR</strong>. El objetivo no es solo listar genes significativos, sino construir una lectura interpretable de los ejes transcriptómicos asociados a <strong>superficie corporal</strong>, <strong>pigmentación normal</strong>, <strong>pseudoalbinismo</strong> y <strong>pigmentación ectópica</strong>.</p>
-<p>El análisis parte de la cuantificación génica generada por <a href="https://combine-lab.github.io/salmon/"><code>Salmon</code></a> <span class="citation" data-cites="Patro2017Salmon">[<a href="01_intro.html#ref-Patro2017Salmon" role="doc-biblioref">1</a>]</span> a partir del flujo <code>star_salmon</code> de nf-core/rnaseq. Los modelos de expresión diferencial se ajustaron con <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html"><code>DESeq2</code></a> <span class="citation" data-cites="Love2014DESeq2">[<a href="01_intro.html#ref-Love2014DESeq2" role="doc-biblioref">2</a>]</span>, usando conteos enteros a nivel de gen, filtrado mínimo de expresión y diseños específicos para cada contraste. El enriquecimiento funcional posterior se realizó con anotaciones Gene Ontology y herramientas de análisis de términos biológicos, incluyendo <a href="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html"><code>clusterProfiler</code></a> <span class="citation" data-cites="Yu2012">[<a href="01_intro.html#ref-Yu2012" role="doc-biblioref">3</a>]</span>.</p>
+<section id="objetivo-del-bloque" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="objetivo-del-bloque"><span class="header-section-number">8.1</span> Objetivo del bloque</h2>
+<p>Este capítulo documenta los modelos de expresión diferencial realizados sobre las muestras de piel del proyecto <strong>HOLOFISHCOLOUR</strong>. Su objetivo es describir qué contrastes se ajustaron, cuántos genes se evaluaron, qué señales dominan cada comparación y qué resultados deben pasar a interpretación funcional.</p>
+<p>La lectura biológica profunda de términos GO y procesos celulares se desarrolla en el capítulo siguiente. Aquí se mantiene el foco en el modelado estadístico, la dirección de los efectos, los genes destacados, los solapamientos entre contrastes y la trazabilidad de las tablas.</p>
+<p>El análisis parte de la cuantificación génica generada por <a href="https://combine-lab.github.io/salmon/"><code>Salmon</code></a> <span class="citation" data-cites="Patro2017Salmon">[<a href="01_intro.html#ref-Patro2017Salmon" role="doc-biblioref">1</a>]</span> a partir del flujo <code>star_salmon</code> de nf-core/rnaseq. Los modelos se ajustaron con <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html"><code>DESeq2</code></a> <span class="citation" data-cites="Love2014DESeq2">[<a href="01_intro.html#ref-Love2014DESeq2" role="doc-biblioref">2</a>]</span>, usando conteos enteros a nivel de gen, filtrado mínimo de expresión y diseños específicos para cada contraste.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Cómo leer los contrastes">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -431,10 +453,11 @@ div.csl-indent {
 <p>En todas las tablas, un <code>log2FoldChange</code> positivo indica mayor expresión en el <strong>primer grupo</strong> del contraste. Por ejemplo, en <code>N_OD_vs_N_BL</code>, los genes con log2FC positivo están más expresados en piel normal ocular oscura (<code>N_OD</code>) que en piel normal blind clara (<code>N_BL</code>). Un log2FC negativo indica el patrón inverso.</p>
 </div>
 </div>
-<section id="diseño-analítico" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="diseño-analítico"><span class="header-section-number">8.1</span> Diseño analítico</h2>
+</section>
+<section id="diseño-analítico" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="diseño-analítico"><span class="header-section-number">8.2</span> Diseño analítico</h2>
 <p>El análisis diferencial principal se restringió a <strong>20 muestras de piel</strong>. Las muestras de intestino y el bloque exploratorio PNK/ambicoloration se conservaron en el QC global, pero no se incluyeron en los contrastes inferenciales principales. Este punto es importante: el análisis no busca mezclar todos los fenotipos disponibles, sino responder preguntas biológicas concretas dentro de un diseño con superficies y estados pigmentarios comparables.</p>
-<p>Los genes se mantuvieron para modelado cuando presentaban al menos <strong>10 conteos en 3 muestras</strong>. La significación se definió como <strong>FDR &lt; 0.05</strong> y, para las tablas filtradas de genes diferencialmente expresados (DEGs) usadas en interpretación, se añadió un umbral de <strong>|log2FC| ≥ 1</strong>. Este doble criterio evita sobrerrepresentar cambios estadísticamente significativos pero de magnitud muy pequeña.</p>
+<p>Los genes se mantuvieron para modelado cuando presentaban al menos <strong>10 conteos en 3 muestras</strong>. La significación se definió como <strong>FDR &lt; 0.05</strong> y, para las tablas filtradas de genes diferencialmente expresados usadas en interpretación, se añadió un umbral de <strong>|log2FC| ≥ 1</strong>. Este doble criterio evita sobrerrepresentar cambios estadísticamente significativos pero de magnitud muy pequeña.</p>
 <table class="caption-top table">
 <caption>Contrastes diferenciales implementados en DESeq2. La inclusión de <code>turbot_id</code> en los contrastes pareados controla el efecto individual cuando las dos superficies proceden del mismo pez.</caption>
 <colgroup>
@@ -516,8 +539,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="resumen-global-de-degs" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="resumen-global-de-degs"><span class="header-section-number">8.2</span> Resumen global de DEGs</h2>
+<section id="resumen-global-de-degs" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="resumen-global-de-degs"><span class="header-section-number">8.3</span> Resumen global de DEGs</h2>
 <p>Se completaron los <strong>8 contrastes</strong> previstos. El número de genes evaluados por contraste osciló entre <strong>13878</strong> y <strong>15101</strong>, dependiendo del subconjunto de muestras y del filtrado por expresión. El contraste con mayor número de genes diferencialmente expresados fue <code>P_BD_vs_N_BL</code> (<strong>288 DEGs</strong>), seguido por el eje fisiológico <code>N_OD_vs_N_BL</code> (<strong>218 DEGs</strong>) y el contraste pseudoalbino ocular <code>P_OD_vs_P_OL</code> (<strong>156 DEGs</strong>).</p>
 <div id="fig-de-summary-counts" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -628,8 +651,8 @@ Figura&nbsp;8.1: Número de genes diferencialmente expresados por contraste, sep
 </table>
 <p>La estructura global ya sugiere una conclusión importante: el pseudoalbinismo no se comporta como una simple inversión del eje normal de pigmentación. La región ocular clara pseudoalbina conserva parte del eje normal, pero de forma parcial; la región blind oscura muestra un patrón más divergente, dominado por señales estructurales, epidérmicas, musculares/metabólicas y de composición celular.</p>
 </section>
-<section id="genes-destacados-por-contraste" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="genes-destacados-por-contraste"><span class="header-section-number">8.3</span> Genes destacados por contraste</h2>
+<section id="genes-destacados-por-contraste" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="genes-destacados-por-contraste"><span class="header-section-number">8.4</span> Genes destacados por contraste</h2>
 <p>La siguiente tabla muestra los tres genes más significativos por contraste entre los DEGs filtrados con FDR &lt; 0.05 y |log2FC| ≥ 1. No debe interpretarse como una lista definitiva de candidatos causales, sino como un índice de qué señales dominan cada comparación.</p>
 <table class="caption-top table">
 <caption>Genes más significativos por contraste entre los DEGs filtrados. Las anotaciones sin símbolo deben conservar el identificador <code>ENSSMAG</code> como referencia estable.</caption>
@@ -856,12 +879,12 @@ Figura&nbsp;8.1: Número de genes diferencialmente expresados por contraste, sep
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Varios genes altamente significativos aparecen como <code>ENSSMAG...</code> sin símbolo funcional local. En un genoma no modelo como <em>Scophthalmus maximus</em>, esto es esperable. Estos genes no deben descartarse: conviene tratarlos como candidatos para curación manual mediante ortología, dominios proteicos, sintenia o anotación actualizada.</p>
+<p>Varios genes altamente significativos aparecen como identificadores <code>ENSSMAG</code> sin símbolo funcional local. En un genoma no modelo como <em>Scophthalmus maximus</em>, esto es esperable. Estos genes no deben descartarse: conviene tratarlos como candidatos para curación manual mediante ortología, dominios proteicos, sintenia o anotación actualizada.</p>
 </div>
 </div>
 </section>
-<section id="figuras-por-contraste" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="figuras-por-contraste"><span class="header-section-number">8.4</span> Figuras por contraste</h2>
+<section id="figuras-por-contraste" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="figuras-por-contraste"><span class="header-section-number">8.5</span> Figuras por contraste</h2>
 <p>Las figuras siguientes combinan tres vistas complementarias por contraste. El <strong>volcano plot</strong> muestra magnitud y significación; el <strong>MA plot</strong> permite detectar si los efectos dependen de la abundancia media; y el <strong>heatmap</strong> resume si los genes más variables/señalados separan las muestras de forma coherente con el diseño.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="" aria-current="page">N_OD_vs_N_BL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">P_OD_vs_P_OL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">P_BD_vs_P_BL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">P_OL_vs_P_BL</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">P_BD_vs_P_OD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">P_surface_x_pigmentation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">P_OL_vs_N_OD</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">P_BD_vs_N_BL</a></li></ul>
@@ -1173,8 +1196,8 @@ Figura&nbsp;8.9: Contraste <code>P_BD_vs_N_BL</code>. La comparación captura la
 </div>
 </div>
 </section>
-<section id="solapamientos-y-coherencia-entre-ejes" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="solapamientos-y-coherencia-entre-ejes"><span class="header-section-number">8.5</span> Solapamientos y coherencia entre ejes</h2>
+<section id="solapamientos-y-coherencia-entre-ejes" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="solapamientos-y-coherencia-entre-ejes"><span class="header-section-number">8.6</span> Solapamientos y coherencia entre ejes</h2>
 <p>La comparación entre contrastes muestra que el eje pseudoalbino ocular comparte solo parcialmente el programa normal dark/light, mientras que el eje blind pseudoalbino es mucho más divergente. Las correlaciones de efecto génico son bajas: <code>N_OD_vs_N_BL</code> frente a <code>P_OD_vs_P_OL</code> muestra una correlación de Pearson de <strong>0.221</strong>, mientras que <code>N_OD_vs_N_BL</code> frente a <code>P_BD_vs_P_BL</code> es negativa (<strong>-0.141</strong>). Esto apoya una interpretación de <strong>conservación parcial en ocular</strong> y <strong>reprogramación divergente en blind</strong>.</p>
 <table class="caption-top table">
 <caption>Correlaciones entre efectos génicos de contrastes relacionados. Se usan todos los genes comparables, no solo DEGs filtrados.</caption>
@@ -1288,166 +1311,13 @@ Figura&nbsp;8.11: Solapamientos entre contrastes pseudoalbinos dentro de superfi
 </figure>
 </div>
 </section>
-<section id="enriquecimiento-funcional-e-interpretación-biológica" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="enriquecimiento-funcional-e-interpretación-biológica"><span class="header-section-number">8.6</span> Enriquecimiento funcional e interpretación biológica</h2>
-<p>El análisis funcional confirma que los cambios no se reducen a genes individuales. En el eje normal <code>N_OD_vs_N_BL</code>, los términos con NES positivo incluyen <strong>melanosome</strong>, <strong>melanocyte differentiation</strong>, <strong>melanosome organization</strong> y <strong>melanin biosynthetic process</strong>, coherentes con mayor actividad pigmentaria en piel ocular oscura. En cambio, términos con NES negativo apuntan a <strong>extracellular matrix</strong>, <strong>collagen-containing extracellular matrix</strong>, <strong>axon guidance</strong>, <strong>angiogenesis</strong> y rutas de desarrollo, más asociadas al lado blind claro.</p>
-<p>En los contrastes pseudoalbinos, la señal funcional se vuelve más compleja. <code>P_OD_vs_P_OL</code> conserva parte del eje de superficie/pigmentación, pero se acompaña de remodelado de matriz extracelular. <code>P_BD_vs_P_BL</code> y <code>P_BD_vs_N_BL</code> muestran una señal fuerte de desarrollo, estructura tisular, epidermis, músculo/contracción y metabolismo mitocondrial. Esta combinación sugiere que la pigmentación ectópica blind puede reflejar cambios de <strong>identidad tisular</strong>, <strong>estado celular</strong> o <strong>microambiente</strong>, además de pigmentación.</p>
-<div id="fig-de-go-summary" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-de-go-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="Dotplot GSEA de términos GO resumidos por contraste."><img src="../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png" class="img-fluid figure-img"></a></p>
-<figcaption>Dotplot GSEA de términos GO resumidos por contraste.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Dotplot ORA de términos GO resumidos por contraste."><img src="../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png" class="img-fluid figure-img"></a></p>
-<figcaption>Dotplot ORA de términos GO resumidos por contraste.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-go-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;8.12: Resumen funcional de términos GO por contraste. GSEA captura cambios coordinados a lo largo de toda la lista ordenada; ORA resume términos sobrerrepresentados entre genes filtrados.
-</figcaption>
-</figure>
-</div>
-<table class="caption-top table">
-<caption>Términos funcionales seleccionados de categorías de desarrollo, cresta neural, Wnt/retinoides y pigmentación. El signo del NES indica enriquecimiento hacia genes con log2FC positivo o negativo según el contraste.</caption>
-<colgroup>
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 19%">
-<col style="width: 14%">
-<col style="width: 19%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Contraste</th>
-<th>Categoría</th>
-<th style="text-align: right;">n términos FDR &lt; 0.10</th>
-<th>Término principal</th>
-<th style="text-align: right;">NES</th>
-<th style="text-align: right;">FDR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>N_OD_vs_N_BL</code></td>
-<td>Pigmentación/melanocito</td>
-<td style="text-align: right;">7</td>
-<td><code>CC: melanosome</code></td>
-<td style="text-align: right;">2.39</td>
-<td style="text-align: right;">4.04e-06</td>
-</tr>
-<tr class="even">
-<td><code>N_OD_vs_N_BL</code></td>
-<td>Neural crest</td>
-<td style="text-align: right;">2</td>
-<td><code>BP: neural crest cell migration</code></td>
-<td style="text-align: right;">-1.53</td>
-<td style="text-align: right;">3.22e-02</td>
-</tr>
-<tr class="odd">
-<td><code>N_OD_vs_N_BL</code></td>
-<td>Wnt/retinoides</td>
-<td style="text-align: right;">4</td>
-<td><code>BP: positive regulation of Wnt signaling pathway</code></td>
-<td style="text-align: right;">-2.22</td>
-<td style="text-align: right;">4.98e-04</td>
-</tr>
-<tr class="even">
-<td><code>P_OD_vs_P_OL</code></td>
-<td>Desarrollo/patterning</td>
-<td style="text-align: right;">19</td>
-<td><code>BP: skeletal muscle thin filament assembly</code></td>
-<td style="text-align: right;">2.40</td>
-<td style="text-align: right;">2.20e-05</td>
-</tr>
-<tr class="odd">
-<td><code>P_OD_vs_P_OL</code></td>
-<td>Wnt/retinoides</td>
-<td style="text-align: right;">1</td>
-<td><code>MF: retinoic acid binding</code></td>
-<td style="text-align: right;">-1.85</td>
-<td style="text-align: right;">4.34e-02</td>
-</tr>
-<tr class="even">
-<td><code>P_BD_vs_P_BL</code></td>
-<td>Pigmentación/melanocito</td>
-<td style="text-align: right;">4</td>
-<td><code>CC: melanosome</code></td>
-<td style="text-align: right;">-2.08</td>
-<td style="text-align: right;">3.18e-03</td>
-</tr>
-<tr class="odd">
-<td><code>P_BD_vs_N_BL</code></td>
-<td>Desarrollo/patterning</td>
-<td style="text-align: right;">22</td>
-<td><code>BP: skeletal muscle tissue development</code></td>
-<td style="text-align: right;">2.92</td>
-<td style="text-align: right;">7.17e-18</td>
-</tr>
-<tr class="even">
-<td><code>P_OL_vs_N_OD</code></td>
-<td>Wnt/retinoides</td>
-<td style="text-align: right;">10</td>
-<td><code>BP: Wnt signaling pathway</code></td>
-<td style="text-align: right;">2.15</td>
-<td style="text-align: right;">1.56e-06</td>
-</tr>
-<tr class="odd">
-<td><code>P_OL_vs_N_OD</code></td>
-<td>Neural crest</td>
-<td style="text-align: right;">2</td>
-<td><code>BP: neural crest cell migration</code></td>
-<td style="text-align: right;">1.83</td>
-<td style="text-align: right;">2.77e-03</td>
-</tr>
-<tr class="even">
-<td><code>P_surface_x_pigmentation</code></td>
-<td>Desarrollo/patterning</td>
-<td style="text-align: right;">1</td>
-<td><code>BP: multicellular organism development</code></td>
-<td style="text-align: right;">1.74</td>
-<td style="text-align: right;">6.27e-03</td>
-</tr>
-</tbody>
-</table>
-<div id="fig-de-development-neural-crest" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-de-development-neural-crest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figures/05_de/enrichment/development_neural_crest_terms.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste."><img src="../figures/05_de/enrichment/development_neural_crest_terms.png" class="img-fluid figure-img" style="width:95.0%"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-de-development-neural-crest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste.
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-important callout-titled" title="Hipótesis biológica de trabajo">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Hipótesis biológica de trabajo
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Los resultados apoyan una hipótesis en la que el pseudoalbinismo no se explica únicamente por apagado terminal de melanogénesis. La señal apunta a una combinación de <strong>programas pigmentarios</strong>, <strong>desarrollo/cresta neural</strong>, <strong>Wnt/retinoides</strong>, <strong>matriz extracelular</strong>, <strong>epidermis</strong> y <strong>composición tisular</strong>. En particular, la pigmentación ectópica blind parece más divergente del eje normal que la pérdida de pigmentación en la superficie ocular.</p>
-</div>
-</div>
+<section id="puente-hacia-interpretación-funcional" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="puente-hacia-interpretación-funcional"><span class="header-section-number">8.7</span> Puente hacia interpretación funcional</h2>
+<p>El análisis estadístico muestra que los contrastes no son equivalentes entre sí. <code>N_OD_vs_N_BL</code> recupera el eje fisiológico de pigmentación normal; <code>P_OD_vs_P_OL</code> conserva parte de esa estructura, pero con señales adicionales de tejido; <code>P_BD_vs_P_BL</code> y <code>P_BD_vs_N_BL</code> son más divergentes y sugieren que la pigmentación ectópica de la cara ciega no reproduce de forma simple una piel ocular oscura normal.</p>
+<p>La interpretación funcional detallada se presenta en el capítulo siguiente, donde se integran GSEA, ORA, categorías GO dirigidas y lectura biológica por proceso.</p>
 </section>
-<section id="implicaciones-para-resultados-de-paper" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="implicaciones-para-resultados-de-paper"><span class="header-section-number">8.7</span> Implicaciones para resultados de paper</h2>
+<section id="implicaciones-para-resultados-de-paper" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="implicaciones-para-resultados-de-paper"><span class="header-section-number">8.8</span> Implicaciones para resultados de paper</h2>
 <p>Los resultados pueden organizarse en tres mensajes principales para una sección de resultados:</p>
 <ol type="1">
 <li>El eje normal <code>N_OD_vs_N_BL</code> recupera un programa pigmentario esperado, con genes como <code>tyrp1b</code>, <code>TYRP1</code>, <code>tyr</code>, <code>mlpha</code> y <code>sox10</code>, y enriquecimiento de términos de melanosoma y melanogénesis.</li>
@@ -1468,8 +1338,8 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
 </div>
 </div>
 </section>
-<section id="archivos-derivados" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="archivos-derivados"><span class="header-section-number">8.8</span> Archivos derivados</h2>
+<section id="archivos-derivados" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="archivos-derivados"><span class="header-section-number">8.9</span> Archivos derivados</h2>
 <p>Los archivos TSV principales se incluyen como recursos del libro para trazabilidad y copia:</p>
 <ul>
 <li><a href="../tables/05_de/deg_contrast_status.tsv">Resumen de contrastes DESeq2</a></li>
@@ -1490,9 +1360,6 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
 </div>
 <div id="ref-Love2014DESeq2" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[2] </div><div class="csl-right-inline">Love M. I., Huber W., Anders S. <span>Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2</span>. Genome Biology; 2014; 15(12):550. doi:<a href="https://doi.org/10.1186/s13059-014-0550-8">10.1186/s13059-014-0550-8</a> <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a></div>
-</div>
-<div id="ref-Yu2012" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Yu G., Wang L. G., Han Y., He Q. Y. <span>ClusterProfiler: An R package for comparing biological themes among gene clusters</span>. OMICS A Journal of Integrative Biology; 2012; 16(5):284-287. doi:<a href="https://doi.org/10.1089/OMI.2011.0118">10.1089/OMI.2011.0118</a> <a href="https://scholar.google.com/scholar_url?url=https://journals.sagepub.com/doi/pdf/10.1089/omi.2011.0118&amp;hl=es&amp;sa=T&amp;oi=ucasa&amp;ct=ufr&amp;ei=EKklaa7fM9ToieoP5Py5yQs&amp;scisig=ABGrvjJFFYw7AZsFKPSB1zuPuJZM">https://scholar.google.com/scholar_url?url=https://journals.sagepub.com/doi/pdf/10.1089/omi.2011.0118&amp;hl=es&amp;sa=T&amp;oi=ucasa&amp;ct=ufr&amp;ei=EKklaa7fM9ToieoP5Py5yQs&amp;scisig=ABGrvjJFFYw7AZsFKPSB1zuPuJZM</a></div>
 </div>
 </div>
 
@@ -1524,7 +1391,7 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
     anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
+        if (clz.startsWith('code-annotation-')) {
           return true;
         }
       }
@@ -1544,11 +1411,11 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Copiado");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
+        tooltip = new bootstrap.Tooltip(button,
+          { trigger: "manual",
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();    
+        tooltip.show();
       }
       setTimeout(function() {
         if (tooltip) {
@@ -1600,6 +1467,11 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1625,7 +1497,7 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config); 
+      window.tippy(el, config);
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -1700,7 +1572,7 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined; 
+        let hash = undefined;
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -1728,7 +1600,7 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              } 
+              }
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -1752,7 +1624,7 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            } 
+            }
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -1792,7 +1664,7 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
+              // cook up a div (if necessary) and position it
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -1915,13 +1787,13 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/04_alignment_quant.html" class="pagination-link" aria-label="04_alignment_quant.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">04_alignment_quant.html</span></span>
-      </a>          
+      <a href="../chapters/04_alignment_quant.html" class="pagination-link" aria-label="Alineamiento, cuantificación y matrices de expresión">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Alineamiento, cuantificación y matrices de expresión</span></span>
+      </a>
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../appendices/rna_extraction_protocol.html" class="pagination-link" aria-label="Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/06_functional_interpretation.html" class="pagination-link" aria-label="Enriquecimiento funcional e interpretación biológica">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1944,18 +1816,18 @@ Figura&nbsp;8.13: Resumen de términos de desarrollo, cresta neural, Wnt/retinoi
             slideConfig.href = srcAttr;
           }
         }
-      } 
+      }
     });
-  
+
     lightboxQuarto.on('slide_after_load', (data) => {
       const { slideIndex, slideNode, slideConfig, player, trigger } = data;
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(slideNode);
       }
     });
-  
+
   };
-  
+
 })();
           </script>
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Preprocesamiento bioinformático con nf-core/rnaseq – Holofishcolour project</title>
+<title>5&nbsp; Preprocesamiento bioinformático con nf-core/rnaseq – HOLOFISHCOLOUR transcriptomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
   vertical-align: middle;
 }
 </style>
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/03_results.html" rel="next">
-<link href="../chapters/02_exp_design.html" rel="prev">
+<link href="../chapters/03_qc_multiqc.html" rel="next">
+<link href="../chapters/03_results.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -254,8 +254,8 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02_methods_nfcore.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/02_methods_nfcore.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -273,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
       <img src="../images/holofishcolour_manhattan_logo_2026.png" alt="HOLOFISHCOLOUR" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Holofishcolour project</a> 
+      <a href="../">HOLOFISHCOLOUR transcriptomics</a>
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
@@ -284,69 +284,87 @@ ul.task-list li input[type="checkbox"] {
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
-    <div class="sidebar-menu-container"> 
+    <div class="sidebar-menu-container">
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">HOLOFISHCOLOUR transcriptomics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/01_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción, antecedentes y objetivos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/02_exp_design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Materiales y métodos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Diseño experimental, muestreo y definición de grupos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/03_results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA Integrity Number (RIN): technical background</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Extracción de ARN, control de calidad molecular y secuenciación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
+  <a href="../chapters/02_methods_nfcore.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
   <a href="../chapters/03_qc_multiqc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/04_alignment_quant.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">04_alignment_quant.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Alineamiento, cuantificación y matrices de expresión</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../chapters/05_differential_expression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/06_functional_interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../chapters/07_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusiones integradas</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
+      <div class="sidebar-item-container">
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Apéndices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+          </a>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="../appendices/rna_extraction_protocol.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container">
+  <a href="../appendices/reproducibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reproducibilidad y decisiones analíticas</span></span></a>
   </div>
 </li>
       </ul>
@@ -359,20 +377,19 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
-   
+
   <ul>
-  <li><a href="#pregunta-técnica-de-esta-fase" id="toc-pregunta-técnica-de-esta-fase" class="nav-link active" data-scroll-target="#pregunta-técnica-de-esta-fase"><span class="header-section-number">4.1</span> Pregunta técnica de esta fase</a></li>
-  <li><a href="#configuración-reproducible-del-pipeline" id="toc-configuración-reproducible-del-pipeline" class="nav-link" data-scroll-target="#configuración-reproducible-del-pipeline"><span class="header-section-number">4.2</span> Configuración reproducible del pipeline</a></li>
-  <li><a href="#referencia-genómica-y-anotación" id="toc-referencia-genómica-y-anotación" class="nav-link" data-scroll-target="#referencia-genómica-y-anotación"><span class="header-section-number">4.3</span> Referencia genómica y anotación</a></li>
-  <li><a href="#arquitectura-del-flujo-de-preprocesamiento" id="toc-arquitectura-del-flujo-de-preprocesamiento" class="nav-link" data-scroll-target="#arquitectura-del-flujo-de-preprocesamiento"><span class="header-section-number">4.4</span> Arquitectura del flujo de preprocesamiento</a></li>
-  <li><a href="#rendimiento-global-del-run" id="toc-rendimiento-global-del-run" class="nav-link" data-scroll-target="#rendimiento-global-del-run"><span class="header-section-number">4.5</span> Rendimiento global del run</a></li>
-  <li><a href="#filtrado-de-lecturas-con-fastp" id="toc-filtrado-de-lecturas-con-fastp" class="nav-link" data-scroll-target="#filtrado-de-lecturas-con-fastp"><span class="header-section-number">4.6</span> Filtrado de lecturas con fastp</a></li>
-  <li><a href="#adaptadores-gc-y-complejidad" id="toc-adaptadores-gc-y-complejidad" class="nav-link" data-scroll-target="#adaptadores-gc-y-complejidad"><span class="header-section-number">4.7</span> Adaptadores, GC y complejidad</a></li>
-  <li><a href="#alineamiento-con-star" id="toc-alineamiento-con-star" class="nav-link" data-scroll-target="#alineamiento-con-star"><span class="header-section-number">4.8</span> Alineamiento con STAR</a></li>
-  <li><a href="#información-de-cadena-de-la-biblioteca" id="toc-información-de-cadena-de-la-biblioteca" class="nav-link" data-scroll-target="#información-de-cadena-de-la-biblioteca"><span class="header-section-number">4.9</span> Información de cadena de la biblioteca</a></li>
-  <li><a href="#tabla-copiable-por-muestra" id="toc-tabla-copiable-por-muestra" class="nav-link" data-scroll-target="#tabla-copiable-por-muestra"><span class="header-section-number">4.10</span> Tabla copiable por muestra</a></li>
-  <li><a href="#cuantificación-con-salmon-y-matrices-resultantes" id="toc-cuantificación-con-salmon-y-matrices-resultantes" class="nav-link" data-scroll-target="#cuantificación-con-salmon-y-matrices-resultantes"><span class="header-section-number">4.11</span> Cuantificación con Salmon y matrices resultantes</a></li>
-  <li><a href="#implicaciones-para-el-análisis-biológico" id="toc-implicaciones-para-el-análisis-biológico" class="nav-link" data-scroll-target="#implicaciones-para-el-análisis-biológico"><span class="header-section-number">4.12</span> Implicaciones para el análisis biológico</a></li>
+  <li><a href="#objetivo-del-bloque" id="toc-objetivo-del-bloque" class="nav-link active" data-scroll-target="#objetivo-del-bloque"><span class="header-section-number">5.1</span> Objetivo del bloque</a></li>
+  <li><a href="#pregunta-técnica" id="toc-pregunta-técnica" class="nav-link" data-scroll-target="#pregunta-técnica"><span class="header-section-number">5.2</span> Pregunta técnica</a></li>
+  <li><a href="#configuración-reproducible" id="toc-configuración-reproducible" class="nav-link" data-scroll-target="#configuración-reproducible"><span class="header-section-number">5.3</span> Configuración reproducible</a></li>
+  <li><a href="#referencia-genómica-y-anotación" id="toc-referencia-genómica-y-anotación" class="nav-link" data-scroll-target="#referencia-genómica-y-anotación"><span class="header-section-number">5.4</span> Referencia genómica y anotación</a></li>
+  <li><a href="#arquitectura-del-flujo" id="toc-arquitectura-del-flujo" class="nav-link" data-scroll-target="#arquitectura-del-flujo"><span class="header-section-number">5.5</span> Arquitectura del flujo</a></li>
+  <li><a href="#rendimiento-global" id="toc-rendimiento-global" class="nav-link" data-scroll-target="#rendimiento-global"><span class="header-section-number">5.6</span> Rendimiento global</a></li>
+  <li><a href="#filtrado-con-fastp" id="toc-filtrado-con-fastp" class="nav-link" data-scroll-target="#filtrado-con-fastp"><span class="header-section-number">5.7</span> Filtrado con fastp</a></li>
+  <li><a href="#alineamiento-y-orientación-de-biblioteca" id="toc-alineamiento-y-orientación-de-biblioteca" class="nav-link" data-scroll-target="#alineamiento-y-orientación-de-biblioteca"><span class="header-section-number">5.8</span> Alineamiento y orientación de biblioteca</a></li>
+  <li><a href="#tabla-por-muestra" id="toc-tabla-por-muestra" class="nav-link" data-scroll-target="#tabla-por-muestra"><span class="header-section-number">5.9</span> Tabla por muestra</a></li>
+  <li><a href="#salidas-para-downstream" id="toc-salidas-para-downstream" class="nav-link" data-scroll-target="#salidas-para-downstream"><span class="header-section-number">5.10</span> Salidas para downstream</a></li>
+  <li><a href="#conclusión-del-bloque" id="toc-conclusión-del-bloque" class="nav-link" data-scroll-target="#conclusión-del-bloque"><span class="header-section-number">5.11</span> Conclusión del bloque</a></li>
   </ul>
 </nav>
     </div>
@@ -382,60 +399,61 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Preprocesamiento bioinformático con nf-core/rnaseq</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    
-  
-    
+
+
+
   </div>
-  
+
 
 
 </header>
 
 
-<p>Este capítulo describe la <strong>fase de preprocesamiento primario</strong> del RNA-seq de HOLOFISHCOLOUR. Su función es convertir los ficheros FASTQ en una matriz de expresión reproducible, auditada y preparada para el análisis estadístico posterior. En esta etapa todavía no se prueban hipótesis biológicas; se evalúa si los datos tienen la calidad técnica necesaria para sostener comparaciones transcriptómicas entre regiones de piel normal y pseudoalbina.</p>
-<p>El procesamiento se realizó con <strong><code>nf-core/rnaseq</code></strong>, usando el perfil <strong><code>star_salmon</code></strong>: control de calidad de lecturas, recorte con <strong>fastp</strong>, alineamiento con <strong>STAR</strong>, cuantificación con <strong>Salmon</strong>, controles post-alineamiento y consolidación de métricas con <strong>MultiQC</strong>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Lectura rápida del capítulo">
+<section id="objetivo-del-bloque" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="objetivo-del-bloque"><span class="header-section-number">5.1</span> Objetivo del bloque</h2>
+<p>Este capítulo describe la fase de procesamiento primario del RNA-seq. Su función es documentar cómo se transformaron los FASTQ en salidas auditables de calidad, alineamiento y cuantificación. Todavía no se prueban hipótesis biológicas; se verifica que los datos tienen calidad suficiente para sostener comparaciones transcriptómicas entre regiones de piel normal y pseudoalbina.</p>
+<p>El procesamiento se realizó con <strong><code>nf-core/rnaseq</code></strong>, usando la estrategia <strong><code>star_salmon</code></strong>: control de calidad de lecturas, filtrado con <code>fastp</code>, alineamiento con <code>STAR</code>, cuantificación con <code>Salmon</code>, controles post-alineamiento e integración de métricas con <code>MultiQC</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Resultado técnico global">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Lectura rápida del capítulo
+<span class="screen-reader-only">Nota</span>Resultado técnico global
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El preprocesamiento produjo un conjunto de datos técnicamente sólido: <strong>24 bibliotecas</strong> procesadas, <strong>98.45%</strong> de lecturas retenidas tras filtrado, <strong>94.71%</strong> de bases Q30, <strong>97.52%</strong> de alineamiento medio y <strong>90.09%</strong> de lecturas unívocamente alineadas. Estos valores apoyan el uso de las matrices <strong>Salmon gene-level</strong> como entrada principal del análisis diferencial.</p>
+<p>El flujo procesó <strong>24 bibliotecas</strong> con métricas sólidas: <strong>98.45%</strong> de lecturas retenidas tras filtrado, <strong>94.71%</strong> de bases Q30 post-filtrado, <strong>97.52%</strong> de alineamiento STAR total y <strong>90.09%</strong> de alineamiento único. Estos valores apoyan el uso de las matrices <strong>Salmon gene-level</strong> como entrada principal del análisis diferencial.</p>
 </div>
 </div>
-<section id="pregunta-técnica-de-esta-fase" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="pregunta-técnica-de-esta-fase"><span class="header-section-number">4.1</span> Pregunta técnica de esta fase</h2>
-<p>La pregunta principal del preprocesamiento es:</p>
-<blockquote class="blockquote">
-<p>¿Son las lecturas, el alineamiento y la cuantificación suficientemente consistentes como para interpretar diferencias de expresión sin que el resultado esté dominado por artefactos técnicos?</p>
-</blockquote>
-<p>Para responderla se evaluaron cuatro niveles:</p>
-<ol type="1">
-<li><strong>Calidad de secuenciación:</strong> bases Q30, adaptadores y composición de lecturas.</li>
-<li><strong>Eficiencia de filtrado:</strong> proporción de lecturas conservadas por fastp.</li>
-<li><strong>Compatibilidad con la referencia:</strong> tasas de alineamiento total y único frente al genoma de <em>Scophthalmus maximus</em>.</li>
-<li><strong>Trazabilidad de resultados:</strong> versiones, parámetros, informes MultiQC y matrices exportadas.</li>
-</ol>
 </section>
-<section id="configuración-reproducible-del-pipeline" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="configuración-reproducible-del-pipeline"><span class="header-section-number">4.2</span> Configuración reproducible del pipeline</h2>
-<p>La ejecución documentada corresponde a <code>nf-core/rnaseq</code> versión <strong><code>v3.25.0-g891468c</code></strong>, con <strong>Nextflow <code>25.10.3</code></strong>. La configuración usó el flujo <code>star_salmon</code>, adecuado cuando se quiere combinar un alineamiento <em>splice-aware</em> con STAR y una cuantificación transcriptómica robusta con Salmon.</p>
-<p>Las rutas y parámetros clave se resumen en <a href="#tbl-nfcore-config" class="quarto-xref">Tabla&nbsp;<span>4.1</span></a>. La tabla está renderizada como HTML textual por Quarto, por lo que puede seleccionarse y copiarse directamente desde la web.</p>
+<section id="pregunta-técnica" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="pregunta-técnica"><span class="header-section-number">5.2</span> Pregunta técnica</h2>
+<p>La pregunta central del preprocesamiento es si las lecturas, el alineamiento y la cuantificación son suficientemente consistentes como para interpretar diferencias de expresión sin que el resultado esté dominado por artefactos técnicos.</p>
+<p>Para responderla se evaluaron:</p>
+<ul>
+<li>calidad de secuenciación, bases Q30, adaptadores y composición de lecturas;</li>
+<li>eficiencia de filtrado y proporción de lecturas conservadas;</li>
+<li>compatibilidad con la referencia de <em>Scophthalmus maximus</em>;</li>
+<li>orientación de biblioteca y coherencia de strandedness;</li>
+<li>duplicación y complejidad de biblioteca;</li>
+<li>trazabilidad de versiones, parámetros, informes MultiQC y matrices exportadas.</li>
+</ul>
+</section>
+<section id="configuración-reproducible" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="configuración-reproducible"><span class="header-section-number">5.3</span> Configuración reproducible</h2>
+<p>La ejecución documentada corresponde a <code>nf-core/rnaseq</code> versión <strong><code>v3.25.0-g891468c</code></strong>, con <strong>Nextflow <code>25.10.3</code></strong>. La estrategia <code>star_salmon</code> combina un alineamiento genómico <em>splice-aware</em> con una cuantificación transcriptómica robusta.</p>
 <div id="tbl-nfcore-config" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nfcore-config-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;4.1: Configuración principal del preprocesamiento con <code>nf-core/rnaseq</code>.
+Tabla&nbsp;5.1: Configuración principal del procesamiento con <code>nf-core/rnaseq</code>.
 </figcaption>
 <div aria-describedby="tbl-nfcore-config-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -446,102 +464,89 @@ Tabla&nbsp;4.1: Configuración principal del preprocesamiento con <code>nf-core/
 </colgroup>
 <thead>
 <tr class="header">
-<th>Aspecto</th>
-<th>Valor utilizado</th>
-<th>Interpretación</th>
+<th style="text-align: left;">Aspecto</th>
+<th style="text-align: left;">Valor utilizado</th>
+<th style="text-align: left;">Interpretación</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Pipeline</td>
-<td><code>nf-core/rnaseq</code></td>
-<td>Flujo comunitario reproducible para RNA-seq</td>
+<td style="text-align: left;">Pipeline</td>
+<td style="text-align: left;"><code>nf-core/rnaseq</code></td>
+<td style="text-align: left;">Flujo comunitario reproducible para RNA-seq</td>
 </tr>
 <tr class="even">
-<td>Versión workflow</td>
-<td><code>v3.25.0-g891468c</code></td>
-<td>Fija la lógica del pipeline</td>
+<td style="text-align: left;">Versión workflow</td>
+<td style="text-align: left;"><code>v3.25.0-g891468c</code></td>
+<td style="text-align: left;">Fija la lógica del pipeline</td>
 </tr>
 <tr class="odd">
-<td>Motor</td>
-<td>Nextflow <code>25.10.3</code></td>
-<td>Controla ejecución, caché y trazabilidad</td>
+<td style="text-align: left;">Motor</td>
+<td style="text-align: left;">Nextflow <code>25.10.3</code></td>
+<td style="text-align: left;">Controla ejecución, caché y trazabilidad</td>
 </tr>
 <tr class="even">
-<td>Estrategia</td>
-<td><code>star_salmon</code></td>
-<td>STAR para alineamiento; Salmon para cuantificación</td>
+<td style="text-align: left;">Estrategia</td>
+<td style="text-align: left;"><code>star_salmon</code></td>
+<td style="text-align: left;">STAR para alineamiento; Salmon para cuantificación</td>
 </tr>
 <tr class="odd">
-<td>Trimming</td>
-<td>fastp <code>1.0.1</code></td>
-<td>Recorte y filtrado automático de lecturas</td>
+<td style="text-align: left;">Trimming</td>
+<td style="text-align: left;">fastp <code>1.0.1</code></td>
+<td style="text-align: left;">Recorte y filtrado automático de lecturas</td>
 </tr>
 <tr class="even">
-<td>Argumentos fastp</td>
-<td><code>--detect_adapter_for_pe</code></td>
-<td>Detección automática de adaptadores en paired-end</td>
+<td style="text-align: left;">Argumentos fastp</td>
+<td style="text-align: left;"><code>--detect_adapter_for_pe</code></td>
+<td style="text-align: left;">Detección automática de adaptadores paired-end</td>
 </tr>
 <tr class="odd">
-<td>Referencia FASTA</td>
-<td><code>Scophthalmus_maximus.ASM1334776v1.dna.toplevel.fa.gz</code></td>
-<td>Genoma completo de rodaballo, incluyendo contigs/scaffolds</td>
+<td style="text-align: left;">Referencia FASTA</td>
+<td style="text-align: left;"><code>Scophthalmus_maximus.ASM1334776v1.dna.toplevel.fa.gz</code></td>
+<td style="text-align: left;">Genoma completo de rodaballo</td>
 </tr>
 <tr class="even">
-<td>Anotación GTF</td>
-<td><code>Scophthalmus_maximus.ASM1334776v1.113.gtf.gz</code></td>
-<td>Anotación Ensembl release 113</td>
+<td style="text-align: left;">Anotación GTF</td>
+<td style="text-align: left;"><code>Scophthalmus_maximus.ASM1334776v1.113.gtf.gz</code></td>
+<td style="text-align: left;">Anotación Ensembl release 113</td>
 </tr>
 <tr class="odd">
-<td>Salida principal</td>
-<td><code>results/nfcore_rnaseq/</code></td>
-<td>Carpeta con QC, alineamientos, Salmon y MultiQC</td>
+<td style="text-align: left;">Salida principal</td>
+<td style="text-align: left;"><code>results/nfcore_rnaseq/</code></td>
+<td style="text-align: left;">Carpeta con QC, alineamientos, Salmon y MultiQC</td>
 </tr>
 <tr class="even">
-<td>Recursos máximos</td>
-<td>32 CPUs, 160 GB RAM, 24 h</td>
-<td>Límites de ejecución en CESGA</td>
+<td style="text-align: left;">Recursos máximos</td>
+<td style="text-align: left;">32 CPUs, 160 GB RAM, 24 h</td>
+<td style="text-align: left;">Límites de ejecución en CESGA</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Por qué star_salmon">
+<div class="callout callout-style-default callout-tip callout-titled" title="Por qué STAR y Salmon">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Por qué star_salmon
+<span class="screen-reader-only">Tip</span>Por qué STAR y Salmon
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La combinación <strong>STAR + Salmon</strong> permite conservar evidencia de alineamiento genómico, útil para auditar tasas de mapeo y calidad de BAM, y al mismo tiempo obtener cuantificaciones transcriptómicas/gene-level preparadas para importación downstream. En este proyecto, la matriz <strong>Salmon gene-level</strong> se toma como entrada primaria para DESeq2.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="fastp, no Trim Galore">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>fastp, no Trim Galore
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En esta ejecución <strong>no se usó Trim Galore</strong>. <code>nf-core/rnaseq</code> puede configurarse con distintos motores de trimming, pero aquí el recorte y filtrado de lecturas paired-end se realizó con <strong><a href="https://github.com/OpenGene/fastp"><code>fastp</code></a></strong> mediante <code>--detect_adapter_for_pe</code>. Por tanto, las métricas de adaptadores, bases descartadas, calidad post-filtrado y retención de lecturas deben leerse en los apartados de <code>fastp</code>, no en una sección de Trim Galore.</p>
+<p>La combinación <strong>STAR + Salmon</strong> permite conservar evidencia de alineamiento genómico, útil para auditar tasas de mapeo y calidad de BAM, y al mismo tiempo obtener cuantificaciones transcriptómicas/gene-level preparadas para importación downstream. En este proyecto, Salmon gene-level se toma como matriz primaria para DESeq2.</p>
 </div>
 </div>
 </section>
-<section id="referencia-genómica-y-anotación" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="referencia-genómica-y-anotación"><span class="header-section-number">4.3</span> Referencia genómica y anotación</h2>
+<section id="referencia-genómica-y-anotación" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="referencia-genómica-y-anotación"><span class="header-section-number">5.4</span> Referencia genómica y anotación</h2>
 <p>Las lecturas se alinearon contra el ensamblado <strong>ASM1334776v1</strong> de <em>Scophthalmus maximus</em> procedente de <strong>Ensembl release 113</strong>. Se utilizó el FASTA <code>dna.toplevel</code>, que incluye cromosomas, contigs no colocados y scaffolds, junto con la anotación completa en formato GTF.</p>
-<p>Esta decisión es importante en una especie no modelo como el rodaballo. Una referencia restringida a cromosomas principales podría perder lecturas de genes anotados en regiones todavía no integradas en cromosomas. El uso de <code>dna.toplevel</code> reduce ese riesgo y mejora la coherencia entre alineamiento, anotación y cuantificación.</p>
+<p>Esta decisión es relevante en una especie no modelo. Una referencia restringida a cromosomas principales podría perder lecturas de genes anotados en regiones todavía no integradas. El uso de <code>dna.toplevel</code> reduce ese riesgo y mejora la coherencia entre alineamiento, anotación y cuantificación.</p>
 <div id="tbl-reference-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reference-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;4.2: Referencia genómica usada para alineamiento y cuantificación.
+Tabla&nbsp;5.2: Referencia genómica usada para alineamiento y cuantificación.
 </figcaption>
 <div aria-describedby="tbl-reference-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -552,41 +557,41 @@ Tabla&nbsp;4.2: Referencia genómica usada para alineamiento y cuantificación.
 </colgroup>
 <thead>
 <tr class="header">
-<th>Elemento</th>
-<th>Valor</th>
-<th>Consecuencia práctica</th>
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: left;">Valor</th>
+<th style="text-align: left;">Consecuencia práctica</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Especie</td>
-<td><em>Scophthalmus maximus</em></td>
-<td>Referencia específica de rodaballo</td>
+<td style="text-align: left;">Especie</td>
+<td style="text-align: left;"><em>Scophthalmus maximus</em></td>
+<td style="text-align: left;">Referencia específica de rodaballo</td>
 </tr>
 <tr class="even">
-<td>Ensamblado</td>
-<td>ASM1334776v1</td>
-<td>Misma base genómica para STAR y Salmon</td>
+<td style="text-align: left;">Ensamblado</td>
+<td style="text-align: left;">ASM1334776v1</td>
+<td style="text-align: left;">Misma base genómica para STAR y Salmon</td>
 </tr>
 <tr class="odd">
-<td>Fuente</td>
-<td>Ensembl release 113</td>
-<td>Anotación trazable y versionada</td>
+<td style="text-align: left;">Fuente</td>
+<td style="text-align: left;">Ensembl release 113</td>
+<td style="text-align: left;">Anotación trazable y versionada</td>
 </tr>
 <tr class="even">
-<td>FASTA</td>
-<td><code>dna.toplevel.fa.gz</code></td>
-<td>Incluye cromosomas, contigs y scaffolds</td>
+<td style="text-align: left;">FASTA</td>
+<td style="text-align: left;"><code>dna.toplevel.fa.gz</code></td>
+<td style="text-align: left;">Incluye cromosomas, contigs y scaffolds</td>
 </tr>
 <tr class="odd">
-<td>Anotación</td>
-<td><code>gtf.gz</code></td>
-<td>Compatible con STAR, Salmon, featureCounts y HTSeq</td>
+<td style="text-align: left;">Anotación</td>
+<td style="text-align: left;"><code>gtf.gz</code></td>
+<td style="text-align: left;">Compatible con STAR, Salmon, featureCounts y HTSeq</td>
 </tr>
 <tr class="even">
-<td>Identificador primario</td>
-<td><code>ENSSMAG...</code></td>
-<td>Clave estable durante todo el análisis</td>
+<td style="text-align: left;">Identificador primario</td>
+<td style="text-align: left;"><code>ENSSMAG</code></td>
+<td style="text-align: left;">Clave estable durante todo el análisis</td>
 </tr>
 </tbody>
 </table>
@@ -603,17 +608,17 @@ Tabla&nbsp;4.2: Referencia genómica usada para alineamiento y cuantificación.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Durante todo el análisis se mantiene <strong><code>ENSSMAG...</code> como identificador primario</strong>. Los símbolos de genes, nombres funcionales y ortólogos se usan como etiquetas interpretativas, no como claves. Esta regla evita pérdidas de trazabilidad al conectar matrices, DEGs y enriquecimiento funcional.</p>
+<p>Durante todo el análisis se mantiene <strong><code>ENSSMAG</code> como identificador primario</strong>. Los símbolos, nombres funcionales y ortólogos se usan como etiquetas interpretativas, no como claves. Esta regla evita pérdidas de trazabilidad al conectar matrices, DEGs y enriquecimiento funcional.</p>
 </div>
 </div>
 </section>
-<section id="arquitectura-del-flujo-de-preprocesamiento" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="arquitectura-del-flujo-de-preprocesamiento"><span class="header-section-number">4.4</span> Arquitectura del flujo de preprocesamiento</h2>
-<p>El flujo de trabajo puede leerse como una cadena de control de calidad progresivo. Cada etapa produce una salida útil y, además, una evidencia de auditoría que permite decidir si las muestras continúan hacia el análisis downstream.</p>
+<section id="arquitectura-del-flujo" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="arquitectura-del-flujo"><span class="header-section-number">5.5</span> Arquitectura del flujo</h2>
+<p>El pipeline puede leerse como una cadena de control de calidad progresivo. Cada etapa produce una salida útil para el análisis y una evidencia de auditoría para decidir si las muestras continúan hacia downstream.</p>
 <div id="tbl-nfcore-modules" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nfcore-modules-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;4.3: Etapas principales del procesamiento primario y uso de sus salidas.
+Tabla&nbsp;5.3: Etapas principales del procesamiento primario y uso de sus salidas.
 </figcaption>
 <div aria-describedby="tbl-nfcore-modules-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -625,319 +630,241 @@ Tabla&nbsp;4.3: Etapas principales del procesamiento primario y uso de sus salid
 </colgroup>
 <thead>
 <tr class="header">
-<th>Etapa</th>
-<th>Herramienta principal</th>
-<th>Salida relevante</th>
-<th>Decisión que informa</th>
+<th style="text-align: left;">Etapa</th>
+<th style="text-align: left;">Herramienta principal</th>
+<th style="text-align: left;">Salida relevante</th>
+<th style="text-align: left;">Decisión que informa</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Validación FASTQ</td>
-<td><code>fq</code> / <code>fq-lint</code></td>
-<td>Informes de integridad</td>
-<td>Detectar ficheros corruptos o mal formados</td>
+<td style="text-align: left;">Validación FASTQ</td>
+<td style="text-align: left;"><code>fq</code> / <code>fq-lint</code></td>
+<td style="text-align: left;">Informes de integridad</td>
+<td style="text-align: left;">Detectar ficheros corruptos o mal formados</td>
 </tr>
 <tr class="even">
-<td>QC inicial</td>
-<td>FastQC</td>
-<td>HTML/ZIP por lectura</td>
-<td>Evaluar calidad, GC, adaptadores y sesgos</td>
+<td style="text-align: left;">QC inicial</td>
+<td style="text-align: left;">FastQC</td>
+<td style="text-align: left;">HTML/ZIP por lectura</td>
+<td style="text-align: left;">Evaluar calidad, GC, adaptadores y sesgos</td>
 </tr>
 <tr class="odd">
-<td>Filtrado</td>
-<td>fastp</td>
-<td>JSON/HTML/logs</td>
-<td>Confirmar retención de lecturas y Q30</td>
+<td style="text-align: left;">Filtrado</td>
+<td style="text-align: left;">fastp</td>
+<td style="text-align: left;">JSON/HTML/logs</td>
+<td style="text-align: left;">Confirmar retención de lecturas y Q30</td>
 </tr>
 <tr class="even">
-<td>Índices</td>
-<td>STAR / Salmon</td>
-<td>Índices genómicos/transcriptómicos</td>
-<td>Reproducibilidad de referencia</td>
+<td style="text-align: left;">Índices</td>
+<td style="text-align: left;">STAR / Salmon</td>
+<td style="text-align: left;">Índices genómicos/transcriptómicos</td>
+<td style="text-align: left;">Reproducibilidad de referencia</td>
 </tr>
 <tr class="odd">
-<td>Alineamiento</td>
-<td>STAR</td>
-<td>BAM y métricas de mapeo</td>
-<td>Compatibilidad muestra-referencia</td>
+<td style="text-align: left;">Alineamiento</td>
+<td style="text-align: left;">STAR</td>
+<td style="text-align: left;">BAM y métricas de mapeo</td>
+<td style="text-align: left;">Compatibilidad muestra-referencia</td>
 </tr>
 <tr class="even">
-<td>Duplicados</td>
-<td>Picard</td>
-<td>Porcentaje de duplicación</td>
-<td>Complejidad de biblioteca</td>
+<td style="text-align: left;">Duplicados</td>
+<td style="text-align: left;">Picard</td>
+<td style="text-align: left;">Porcentaje de duplicación</td>
+<td style="text-align: left;">Complejidad de biblioteca</td>
 </tr>
 <tr class="odd">
-<td>QC RNA-seq post-alineamiento</td>
-<td>Qualimap</td>
-<td>Informes RNA-seq QC por muestra</td>
-<td>Origen genómico de lecturas y sesgo 5’-3’</td>
+<td style="text-align: left;">QC RNA-seq post-alineamiento</td>
+<td style="text-align: left;">Qualimap</td>
+<td style="text-align: left;">Informes RNA-seq QC</td>
+<td style="text-align: left;">Origen genómico y sesgo de cobertura</td>
 </tr>
 <tr class="even">
-<td>Sesgos post-alineamiento</td>
-<td>RSeQC</td>
-<td>Distribución de lecturas, junctions y strandedness</td>
-<td>Coherencia de biblioteca y anotación</td>
+<td style="text-align: left;">Sesgos post-alineamiento</td>
+<td style="text-align: left;">RSeQC</td>
+<td style="text-align: left;">Distribución de lecturas, junctions y strandedness</td>
+<td style="text-align: left;">Coherencia de biblioteca y anotación</td>
 </tr>
 <tr class="odd">
-<td>Duplicación dependiente de expresión</td>
-<td>dupRadar</td>
-<td>Gráficos por muestra</td>
-<td>Distinguir duplicación técnica de señal de expresión alta</td>
+<td style="text-align: left;">Duplicación dependiente de expresión</td>
+<td style="text-align: left;">dupRadar</td>
+<td style="text-align: left;">Gráficos por muestra</td>
+<td style="text-align: left;">Distinguir duplicación técnica de abundancia real</td>
 </tr>
 <tr class="even">
-<td>Conteo sobre anotación</td>
-<td>featureCounts</td>
-<td>Conteos por gen/feature</td>
-<td>Matriz alternativa para contraste técnico</td>
+<td style="text-align: left;">Conteo sobre anotación</td>
+<td style="text-align: left;">featureCounts</td>
+<td style="text-align: left;">Conteos por gen/feature</td>
+<td style="text-align: left;">Matriz alternativa para sensibilidad</td>
 </tr>
 <tr class="odd">
-<td>Reconstrucción/transcritos</td>
-<td>StringTie</td>
-<td>Abundancias y ficheros Ballgown</td>
-<td>Recurso secundario de cuantificación/transcritos</td>
+<td style="text-align: left;">Reconstrucción/transcritos</td>
+<td style="text-align: left;">StringTie</td>
+<td style="text-align: left;">Abundancias y ficheros Ballgown</td>
+<td style="text-align: left;">Recurso secundario</td>
 </tr>
 <tr class="even">
-<td>Cuantificación</td>
-<td>Salmon</td>
-<td>Abundancias por transcrito/gen</td>
-<td>Entrada a matrices de expresión</td>
+<td style="text-align: left;">Cuantificación</td>
+<td style="text-align: left;">Salmon</td>
+<td style="text-align: left;">Abundancias por transcrito/gen</td>
+<td style="text-align: left;">Entrada principal a matrices de expresión</td>
 </tr>
 <tr class="odd">
-<td>Integración</td>
-<td>MultiQC</td>
-<td>Figuras y tablas comparativas</td>
-<td>Revisión global del run</td>
+<td style="text-align: left;">Integración</td>
+<td style="text-align: left;">MultiQC</td>
+<td style="text-align: left;">Figuras y tablas comparativas</td>
+<td style="text-align: left;">Revisión global del run</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<div class="callout callout-style-default callout-important callout-titled" title="Módulos presentes pero todavía no todos integrados en figuras">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Módulos presentes pero todavía no todos integrados en figuras
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>El capítulo de QC integrado prioriza por ahora los módulos que quedaron agregados en el HTML de MultiQC copiado a la web: <code>fastp</code>, <code>STAR</code>, <code>Samtools</code>, <code>Picard</code>, <code>strand check</code> y versiones. El directorio completo de resultados también contiene salidas de <strong>Qualimap</strong>, <strong>RSeQC</strong>, <strong>dupRadar</strong>, <strong>featureCounts</strong> y <strong>StringTie</strong>. En cambio, <strong>Preseq</strong> no se ejecutó (<code>skip_preseq: true</code>). Las salidas post-alineamiento forman parte de la auditoría técnica y deben incorporarse progresivamente cuando se documente el QC con mayor detalle.</p>
-</div>
-</div>
 </section>
-<section id="rendimiento-global-del-run" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="rendimiento-global-del-run"><span class="header-section-number">4.5</span> Rendimiento global del run</h2>
-<p>El run procesó <strong>24 bibliotecas paired-end</strong>. La profundidad media reportada por STAR fue de <strong>24.51 millones</strong> de lecturas por muestra, con un rango entre <strong>20.15 M</strong> (<code>PNKV</code>) y <strong>42.92 M</strong> (<code>P33</code>). La variación de profundidad existe, pero no es extrema para un experimento bulk RNA-seq; además, el análisis diferencial posterior utiliza normalización de tamaño de biblioteca.</p>
+<section id="rendimiento-global" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="rendimiento-global"><span class="header-section-number">5.6</span> Rendimiento global</h2>
+<p>El run procesó <strong>24 bibliotecas paired-end</strong>. La profundidad media reportada por STAR fue de <strong>24.51 millones</strong> de lecturas por muestra, con un rango entre <strong>20.15 M</strong> (<code>PNKV</code>) y <strong>42.92 M</strong> (<code>P33</code>). La variación de profundidad no es extrema para RNA-seq bulk y se trata posteriormente mediante normalización de tamaño de biblioteca.</p>
 <div id="tbl-run-summary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-run-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;4.4: Resumen cuantitativo de las métricas principales del preprocesamiento.
+Tabla&nbsp;5.4: Resumen cuantitativo de las métricas principales del preprocesamiento.
 </figcaption>
 <div aria-describedby="tbl-run-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 22%">
-<col style="width: 22%">
-<col style="width: 22%">
-<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Métrica</th>
+<th style="text-align: left;">Métrica</th>
 <th style="text-align: right;">Media</th>
 <th style="text-align: right;">Mínimo</th>
 <th style="text-align: right;">Máximo</th>
-<th>Lectura técnica</th>
+<th style="text-align: left;">Lectura técnica</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Lecturas STAR por muestra (M)</td>
+<td style="text-align: left;">Lecturas STAR por muestra (M)</td>
 <td style="text-align: right;">24.51</td>
 <td style="text-align: right;">20.15 (<code>PNKV</code>)</td>
 <td style="text-align: right;">42.92 (<code>P33</code>)</td>
-<td>Profundidad suficiente y moderadamente variable</td>
+<td style="text-align: left;">Profundidad suficiente y moderadamente variable</td>
 </tr>
 <tr class="even">
-<td>Lecturas retenidas por fastp (%)</td>
+<td style="text-align: left;">Lecturas retenidas por fastp (%)</td>
 <td style="text-align: right;">98.45</td>
 <td style="text-align: right;">97.92 (<code>P49</code>)</td>
 <td style="text-align: right;">98.84 (<code>PNKD</code>)</td>
-<td>Filtrado suave, sin pérdidas masivas</td>
+<td style="text-align: left;">Filtrado suave, sin pérdidas masivas</td>
 </tr>
 <tr class="odd">
-<td>Bases Q30 post-filtrado (%)</td>
+<td style="text-align: left;">Bases Q30 post-filtrado (%)</td>
 <td style="text-align: right;">94.71</td>
 <td style="text-align: right;">93.23 (<code>P49</code>)</td>
 <td style="text-align: right;">95.81 (<code>P33</code>)</td>
-<td>Calidad alta en todo el lote</td>
+<td style="text-align: left;">Calidad alta en todo el lote</td>
 </tr>
 <tr class="even">
-<td>Adaptadores detectados (%)</td>
+<td style="text-align: left;">Adaptadores detectados (%)</td>
 <td style="text-align: right;">5.24</td>
 <td style="text-align: right;">3.32 (<code>P34</code>)</td>
 <td style="text-align: right;">9.67 (<code>PNKIT</code>)</td>
-<td>Contaminación por adaptadores controlada por fastp</td>
+<td style="text-align: left;">Contaminación por adaptadores controlada</td>
 </tr>
 <tr class="odd">
-<td>Alineamiento STAR total (%)</td>
+<td style="text-align: left;">Alineamiento STAR total (%)</td>
 <td style="text-align: right;">97.52</td>
 <td style="text-align: right;">96.31 (<code>P44</code>)</td>
 <td style="text-align: right;">98.31 (<code>PNKD</code>)</td>
-<td>Muy buena compatibilidad con la referencia</td>
+<td style="text-align: left;">Muy buena compatibilidad con referencia</td>
 </tr>
 <tr class="even">
-<td>Alineamiento único STAR (%)</td>
+<td style="text-align: left;">Alineamiento único STAR (%)</td>
 <td style="text-align: right;">90.09</td>
 <td style="text-align: right;">86.56 (<code>P44</code>)</td>
 <td style="text-align: right;">91.71 (<code>P48</code>)</td>
-<td>Señal mayoritariamente específica</td>
+<td style="text-align: left;">Señal mayoritariamente específica</td>
 </tr>
 <tr class="odd">
-<td>Duplicación fastp (%)</td>
+<td style="text-align: left;">Duplicación fastp (%)</td>
 <td style="text-align: right;">22.35</td>
 <td style="text-align: right;">9.86 (<code>P2G</code>)</td>
 <td style="text-align: right;">32.10 (<code>P47</code>)</td>
-<td>Variación moderada de complejidad</td>
+<td style="text-align: left;">Variación moderada de complejidad</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Interpretación técnica">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Interpretación técnica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>No hay evidencia de un fallo global de secuenciación, trimming o alineamiento. Las muestras con valores extremos (<code>P44</code>, <code>P47</code>, <code>P49</code>, <code>PNKIT</code>) no muestran patrones suficientemente severos como para justificar exclusión técnica automática. Cualquier exclusión posterior debe evaluarse junto con metadatos biológicos, PCA y diseño experimental.</p>
-</div>
-</div>
 </section>
-<section id="filtrado-de-lecturas-con-fastp" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="filtrado-de-lecturas-con-fastp"><span class="header-section-number">4.6</span> Filtrado de lecturas con fastp</h2>
-<p>El filtrado con <strong>fastp</strong> fue eficaz y conservador. La proporción de lecturas retenidas se mantuvo entre <strong>97.92%</strong> y <strong>98.84%</strong> (<a href="#tbl-run-summary" class="quarto-xref">Tabla&nbsp;<span>4.4</span></a>), lo que indica que el pipeline no tuvo que descartar grandes fracciones de ninguna muestra. Este patrón es deseable: evita que la normalización posterior tenga que compensar pérdidas técnicas fuertes entre bibliotecas.</p>
-<p><a href="#fig-fastp-filtered" class="quarto-xref">Figura&nbsp;<span>4.1</span></a> muestra visualmente esta estabilidad. La muestra con menor retención fue <strong><code>P49</code></strong> (97.92%), pero sigue estando dentro de un rango alto para RNA-seq paired-end. La muestra con mayor retención fue <strong><code>PNKD</code></strong> (98.84%).</p>
+<section id="filtrado-con-fastp" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="filtrado-con-fastp"><span class="header-section-number">5.7</span> Filtrado con fastp</h2>
+<p>El filtrado con <strong>fastp</strong> fue eficaz y conservador. La proporción de lecturas retenidas se mantuvo entre <strong>97.92%</strong> y <strong>98.84%</strong>, lo que indica que el pipeline no tuvo que descartar grandes fracciones de ninguna muestra. Este patrón evita que la normalización posterior tenga que compensar pérdidas técnicas severas entre bibliotecas.</p>
 <div id="fig-fastp-filtered" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fastp-filtered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figures/02_nfcore/fastp_filtered_reads_pct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;4.1: Porcentaje de lecturas que sobreviven al filtrado de fastp. La retención es alta y homogénea en todas las muestras."><img src="../figures/02_nfcore/fastp_filtered_reads_pct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+<a href="../figures/02_nfcore/fastp_filtered_reads_pct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;5.1: Porcentaje de lecturas que sobreviven al filtrado de fastp. La retención es alta y homogénea en todas las muestras."><img src="../figures/02_nfcore/fastp_filtered_reads_pct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fastp-filtered-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.1: Porcentaje de lecturas que sobreviven al filtrado de fastp. La retención es alta y homogénea en todas las muestras.
+Figura&nbsp;5.1: Porcentaje de lecturas que sobreviven al filtrado de fastp. La retención es alta y homogénea en todas las muestras.
 </figcaption>
 </figure>
 </div>
-<p>La calidad por ciclo después del filtrado se mantuvo alta. La media de bases <strong>Q30</strong> fue <strong>94.71%</strong>, con valores entre <strong>93.23%</strong> (<code>P49</code>) y <strong>95.81%</strong> (<code>P33</code>). En <a href="#fig-fastp-quality" class="quarto-xref">Figura&nbsp;<span>4.2</span></a> se observa que la calidad por ciclo es compatible con análisis transcriptómico cuantitativo.</p>
+<p>La calidad por ciclo después del filtrado se mantuvo alta. La media de bases <strong>Q30</strong> fue <strong>94.71%</strong>, con valores entre <strong>93.23%</strong> (<code>P49</code>) y <strong>95.81%</strong> (<code>P33</code>).</p>
 <div id="fig-fastp-quality" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fastp-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figures/02_nfcore/fastp_read1_quality_after_filtering.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;4.2: Calidad por ciclo en Read 1 después del filtrado con fastp."><img src="../figures/02_nfcore/fastp_read1_quality_after_filtering.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+<a href="../figures/02_nfcore/fastp_read1_quality_after_filtering.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;5.2: Calidad por ciclo en Read 1 después del filtrado con fastp."><img src="../figures/02_nfcore/fastp_read1_quality_after_filtering.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fastp-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.2: Calidad por ciclo en Read 1 después del filtrado con fastp.
+Figura&nbsp;5.2: Calidad por ciclo en Read 1 después del filtrado con fastp.
 </figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lectura biológica">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Lectura biológica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La alta retención y calidad de lecturas reduce la probabilidad de que diferencias posteriores entre piel ocular/blind, zonas claras/oscuras o regiones pseudoalbinas estén dominadas por degradación técnica de FASTQ. Esto no demuestra diferencias biológicas, pero sí deja el dato en condiciones razonables para buscarlas.</p>
-</div>
-</div>
 </section>
-<section id="adaptadores-gc-y-complejidad" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="adaptadores-gc-y-complejidad"><span class="header-section-number">4.7</span> Adaptadores, GC y complejidad</h2>
-<p>La proporción media de adaptadores detectados fue <strong>5.24%</strong>, con un máximo de <strong>9.67%</strong> en <code>PNKIT</code>. El uso de <code>--detect_adapter_for_pe</code> permitió detectar y recortar adaptadores automáticamente. Como la retención post-filtrado sigue siendo alta, estos niveles no comprometen el run.</p>
-<p>La proporción de GC post-filtrado fue estable, con media <strong>49.36%</strong>, mínimo <strong>47.34%</strong> (<code>P34</code>) y máximo <strong>51.23%</strong> (<code>P1G</code>). Esta estabilidad sugiere que no hay una muestra con composición nucleotídica anómala evidente que apunte a contaminación o sesgo extremo de biblioteca.</p>
-<p>La duplicación media estimada por fastp fue <strong>22.35%</strong>. El rango fue amplio pero esperable para RNA-seq bulk: <strong>9.86%</strong> (<code>P2G</code>) a <strong>32.10%</strong> (<code>P47</code>). En RNA-seq, una duplicación moderada puede reflejar tanto complejidad técnica como abundancia real de transcritos muy expresados. Por tanto, se interpreta con cautela y no como criterio único de exclusión.</p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Punto de vigilancia">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Advertencia</span>Punto de vigilancia
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>P47</code> presenta la mayor duplicación estimada (<strong>32.10%</strong>) y <code>P44</code> el menor alineamiento único (<strong>86.56%</strong>). Ambos valores son señales para vigilar en PCA y análisis downstream, pero no constituyen por sí solos un fallo técnico.</p>
-</div>
-</div>
-</section>
-<section id="alineamiento-con-star" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="alineamiento-con-star"><span class="header-section-number">4.8</span> Alineamiento con STAR</h2>
-<p>El alineamiento frente a la referencia de rodaballo fue robusto. La tasa media de alineamiento total fue <strong>97.52%</strong>, con un rango estrecho entre <strong>96.31%</strong> (<code>P44</code>) y <strong>98.31%</strong> (<code>PNKD</code>). Este resultado es importante porque valida la compatibilidad entre las lecturas del experimento y el genoma/anotación utilizados.</p>
-<p>La fracción de lecturas <strong>unívocamente alineadas</strong> fue también alta: media <strong>90.09%</strong>, mínimo <strong>86.56%</strong> (<code>P44</code>) y máximo <strong>91.71%</strong> (<code>P48</code>). Una tasa alta de alineamiento único favorece una cuantificación más interpretable, especialmente en genes con familias parálogas, isoformas similares o regiones repetitivas.</p>
-<p><a href="#fig-star-alignment" class="quarto-xref">Figura&nbsp;<span>4.3</span></a> resume la composición porcentual del alineamiento por muestra. No se observa una muestra con colapso general del mapeo.</p>
+<section id="alineamiento-y-orientación-de-biblioteca" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="alineamiento-y-orientación-de-biblioteca"><span class="header-section-number">5.8</span> Alineamiento y orientación de biblioteca</h2>
+<p>El alineamiento frente a la referencia de rodaballo fue robusto. La tasa media de alineamiento total fue <strong>97.52%</strong>, con un rango estrecho entre <strong>96.31%</strong> (<code>P44</code>) y <strong>98.31%</strong> (<code>PNKD</code>). La fracción de lecturas unívocamente alineadas fue alta, con media <strong>90.09%</strong>, mínimo <strong>86.56%</strong> (<code>P44</code>) y máximo <strong>91.71%</strong> (<code>P48</code>).</p>
 <div id="fig-star-alignment" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-star-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figures/02_nfcore/star_alignment_pct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;4.3: Resumen porcentual de alineamiento STAR por muestra."><img src="../figures/02_nfcore/star_alignment_pct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+<a href="../figures/02_nfcore/star_alignment_pct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;5.3: Resumen porcentual de alineamiento STAR por muestra."><img src="../figures/02_nfcore/star_alignment_pct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-star-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.3: Resumen porcentual de alineamiento STAR por muestra.
+Figura&nbsp;5.3: Resumen porcentual de alineamiento STAR por muestra.
 </figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-important callout-titled" title="Interpretación técnica">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Interpretación técnica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Las tasas de mapeo total y único apoyan que <strong>ASM1334776v1 + Ensembl 113</strong> es una referencia adecuada para este conjunto de datos. Si existiera contaminación fuerte, degradación extrema o una referencia inadecuada, esperaríamos caídas más marcadas en el alineamiento o incrementos de lecturas no mapeadas.</p>
-</div>
-</div>
-</section>
-<section id="información-de-cadena-de-la-biblioteca" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="información-de-cadena-de-la-biblioteca"><span class="header-section-number">4.9</span> Información de cadena de la biblioteca</h2>
-<p>La comprobación de <strong>strandedness</strong> es esencial en RNA-seq, porque una orientación mal especificada puede afectar genes solapantes, transcritos antisense y estimaciones de abundancia. nf-core/rnaseq resume esta evaluación en MultiQC.</p>
-<p><a href="#fig-strand-check" class="quarto-xref">Figura&nbsp;<span>4.4</span></a> documenta la composición de cadena estimada. Esta figura funciona como control de coherencia entre el protocolo de biblioteca y la interpretación de las lecturas durante alineamiento/cuantificación.</p>
+<p>La comprobación de <strong>strandedness</strong> confirmó que las bibliotecas eran coherentes con una orientación <code>reverse</code>. Esta comprobación es importante porque una orientación mal especificada puede afectar genes solapantes, transcritos antisense y estimaciones de abundancia.</p>
 <div id="fig-strand-check" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-strand-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../figures/02_nfcore/strand_check_composition.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;4.4: Composición de strandedness estimada por nf-core/rnaseq y resumida en MultiQC."><img src="../figures/02_nfcore/strand_check_composition.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+<a href="../figures/02_nfcore/strand_check_composition.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;5.4: Composición de strandedness estimada por nf-core/rnaseq y resumida en MultiQC."><img src="../figures/02_nfcore/strand_check_composition.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-strand-check-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.4: Composición de strandedness estimada por nf-core/rnaseq y resumida en MultiQC.
+Figura&nbsp;5.4: Composición de strandedness estimada por nf-core/rnaseq y resumida en MultiQC.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="tabla-copiable-por-muestra" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="tabla-copiable-por-muestra"><span class="header-section-number">4.10</span> Tabla copiable por muestra</h2>
-<p><a href="#tbl-sample-qc" class="quarto-xref">Tabla&nbsp;<span>4.5</span></a> reúne las métricas principales por muestra. Se incluye en formato de tabla renderizada para que pueda copiarse directamente desde la web y reutilizarse en notas, revisiones o informes.</p>
+<section id="tabla-por-muestra" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="tabla-por-muestra"><span class="header-section-number">5.9</span> Tabla por muestra</h2>
+<p><a href="#tbl-sample-qc" class="quarto-xref">Tabla&nbsp;<span>5.5</span></a> reúne las métricas principales por muestra en formato copiable.</p>
 <div id="tbl-sample-qc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sample-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_general_stats.txt</code>.
+Tabla&nbsp;5.5: Métricas principales por muestra extraídas de <code>multiqc_general_stats.txt</code>.
 </figcaption>
 <div aria-describedby="tbl-sample-qc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
+<col style="width: 12%">
 <col style="width: 12%">
 <col style="width: 12%">
 <col style="width: 12%">
@@ -948,7 +875,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 </colgroup>
 <thead>
 <tr class="header">
-<th>Sample</th>
+<th style="text-align: left;">Sample</th>
 <th style="text-align: right;">STAR reads (M)</th>
 <th style="text-align: right;">Mapped (%)</th>
 <th style="text-align: right;">Unique (%)</th>
@@ -960,7 +887,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 </thead>
 <tbody>
 <tr class="odd">
-<td>IT1G</td>
+<td style="text-align: left;">IT1G</td>
 <td style="text-align: right;">22.02</td>
 <td style="text-align: right;">97.12</td>
 <td style="text-align: right;">90.72</td>
@@ -970,7 +897,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">8.23</td>
 </tr>
 <tr class="even">
-<td>P1G</td>
+<td style="text-align: left;">P1G</td>
 <td style="text-align: right;">26.00</td>
 <td style="text-align: right;">97.70</td>
 <td style="text-align: right;">89.65</td>
@@ -980,7 +907,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">5.88</td>
 </tr>
 <tr class="odd">
-<td>P2G</td>
+<td style="text-align: left;">P2G</td>
 <td style="text-align: right;">24.57</td>
 <td style="text-align: right;">97.19</td>
 <td style="text-align: right;">89.31</td>
@@ -990,7 +917,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">5.30</td>
 </tr>
 <tr class="even">
-<td>P31</td>
+<td style="text-align: left;">P31</td>
 <td style="text-align: right;">22.80</td>
 <td style="text-align: right;">97.60</td>
 <td style="text-align: right;">90.64</td>
@@ -1000,7 +927,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">4.80</td>
 </tr>
 <tr class="odd">
-<td>P32</td>
+<td style="text-align: left;">P32</td>
 <td style="text-align: right;">23.31</td>
 <td style="text-align: right;">97.65</td>
 <td style="text-align: right;">89.75</td>
@@ -1010,7 +937,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">4.77</td>
 </tr>
 <tr class="even">
-<td>P33</td>
+<td style="text-align: left;">P33</td>
 <td style="text-align: right;">42.92</td>
 <td style="text-align: right;">97.33</td>
 <td style="text-align: right;">91.01</td>
@@ -1020,7 +947,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">5.73</td>
 </tr>
 <tr class="odd">
-<td>P34</td>
+<td style="text-align: left;">P34</td>
 <td style="text-align: right;">20.73</td>
 <td style="text-align: right;">97.61</td>
 <td style="text-align: right;">90.95</td>
@@ -1030,7 +957,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">3.32</td>
 </tr>
 <tr class="even">
-<td>P35</td>
+<td style="text-align: left;">P35</td>
 <td style="text-align: right;">21.68</td>
 <td style="text-align: right;">97.84</td>
 <td style="text-align: right;">90.93</td>
@@ -1040,7 +967,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">3.50</td>
 </tr>
 <tr class="odd">
-<td>P36</td>
+<td style="text-align: left;">P36</td>
 <td style="text-align: right;">24.63</td>
 <td style="text-align: right;">97.90</td>
 <td style="text-align: right;">91.23</td>
@@ -1050,7 +977,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">4.51</td>
 </tr>
 <tr class="even">
-<td>P41</td>
+<td style="text-align: left;">P41</td>
 <td style="text-align: right;">24.76</td>
 <td style="text-align: right;">97.48</td>
 <td style="text-align: right;">89.27</td>
@@ -1060,7 +987,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">4.42</td>
 </tr>
 <tr class="odd">
-<td>P42</td>
+<td style="text-align: left;">P42</td>
 <td style="text-align: right;">28.11</td>
 <td style="text-align: right;">97.79</td>
 <td style="text-align: right;">90.39</td>
@@ -1070,7 +997,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">3.81</td>
 </tr>
 <tr class="even">
-<td>P43</td>
+<td style="text-align: left;">P43</td>
 <td style="text-align: right;">21.19</td>
 <td style="text-align: right;">96.44</td>
 <td style="text-align: right;">88.91</td>
@@ -1080,7 +1007,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">7.63</td>
 </tr>
 <tr class="odd">
-<td>P44</td>
+<td style="text-align: left;">P44</td>
 <td style="text-align: right;">25.42</td>
 <td style="text-align: right;">96.31</td>
 <td style="text-align: right;">86.56</td>
@@ -1090,7 +1017,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">6.47</td>
 </tr>
 <tr class="even">
-<td>P45</td>
+<td style="text-align: left;">P45</td>
 <td style="text-align: right;">23.60</td>
 <td style="text-align: right;">98.11</td>
 <td style="text-align: right;">90.85</td>
@@ -1100,7 +1027,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">6.10</td>
 </tr>
 <tr class="odd">
-<td>P46</td>
+<td style="text-align: left;">P46</td>
 <td style="text-align: right;">21.31</td>
 <td style="text-align: right;">97.41</td>
 <td style="text-align: right;">90.56</td>
@@ -1110,7 +1037,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">3.91</td>
 </tr>
 <tr class="even">
-<td>P47</td>
+<td style="text-align: left;">P47</td>
 <td style="text-align: right;">20.87</td>
 <td style="text-align: right;">96.49</td>
 <td style="text-align: right;">89.16</td>
@@ -1120,7 +1047,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">5.25</td>
 </tr>
 <tr class="odd">
-<td>P48</td>
+<td style="text-align: left;">P48</td>
 <td style="text-align: right;">25.52</td>
 <td style="text-align: right;">97.90</td>
 <td style="text-align: right;">91.71</td>
@@ -1130,7 +1057,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">4.23</td>
 </tr>
 <tr class="even">
-<td>P49</td>
+<td style="text-align: left;">P49</td>
 <td style="text-align: right;">22.58</td>
 <td style="text-align: right;">97.42</td>
 <td style="text-align: right;">90.50</td>
@@ -1140,7 +1067,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">5.58</td>
 </tr>
 <tr class="odd">
-<td>P50</td>
+<td style="text-align: left;">P50</td>
 <td style="text-align: right;">29.48</td>
 <td style="text-align: right;">98.25</td>
 <td style="text-align: right;">90.66</td>
@@ -1150,7 +1077,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">3.41</td>
 </tr>
 <tr class="even">
-<td>P51</td>
+<td style="text-align: left;">P51</td>
 <td style="text-align: right;">23.38</td>
 <td style="text-align: right;">97.28</td>
 <td style="text-align: right;">88.75</td>
@@ -1160,7 +1087,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">6.80</td>
 </tr>
 <tr class="odd">
-<td>P52</td>
+<td style="text-align: left;">P52</td>
 <td style="text-align: right;">24.66</td>
 <td style="text-align: right;">97.79</td>
 <td style="text-align: right;">90.42</td>
@@ -1170,7 +1097,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">3.54</td>
 </tr>
 <tr class="even">
-<td>PNKD</td>
+<td style="text-align: left;">PNKD</td>
 <td style="text-align: right;">25.15</td>
 <td style="text-align: right;">98.31</td>
 <td style="text-align: right;">89.02</td>
@@ -1180,7 +1107,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">4.52</td>
 </tr>
 <tr class="odd">
-<td>PNKIT</td>
+<td style="text-align: left;">PNKIT</td>
 <td style="text-align: right;">23.51</td>
 <td style="text-align: right;">97.32</td>
 <td style="text-align: right;">90.80</td>
@@ -1190,7 +1117,7 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 <td style="text-align: right;">9.67</td>
 </tr>
 <tr class="even">
-<td>PNKV</td>
+<td style="text-align: left;">PNKV</td>
 <td style="text-align: right;">20.15</td>
 <td style="text-align: right;">98.18</td>
 <td style="text-align: right;">90.44</td>
@@ -1205,49 +1132,17 @@ Tabla&nbsp;4.5: Métricas principales por muestra extraídas de <code>multiqc_ge
 </figure>
 </div>
 </section>
-<section id="cuantificación-con-salmon-y-matrices-resultantes" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="cuantificación-con-salmon-y-matrices-resultantes"><span class="header-section-number">4.11</span> Cuantificación con Salmon y matrices resultantes</h2>
-<p>Tras el alineamiento, el flujo <code>star_salmon</code> produjo cuantificaciones con Salmon y matrices agregadas a nivel de gen. Las salidas principales que alimentan el análisis downstream son:</p>
+<section id="salidas-para-downstream" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="salidas-para-downstream"><span class="header-section-number">5.10</span> Salidas para downstream</h2>
+<p>Tras el alineamiento, <code>star_salmon</code> produjo cuantificaciones con Salmon y matrices agregadas a nivel de gen. Las salidas principales que alimentan el análisis downstream son:</p>
 <pre class="text"><code>results/nfcore_rnaseq/star_salmon/salmon.merged.gene.SummarizedExperiment.rds
 results/nfcore_rnaseq/star_salmon/salmon.merged.gene_counts.tsv
 results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
 <p>La matriz <strong>gene-level counts</strong> se usa como entrada principal para <strong>DESeq2</strong>. La matriz <strong>TPM</strong> se conserva para exploración, visualización y comprobaciones de expresión relativa, pero no sustituye a los conteos en el modelado diferencial.</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Decisión downstream">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Decisión downstream
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Salmon gene-level</strong> es la matriz principal del proyecto. <code>featureCounts</code> y <code>HTSeq</code> quedan como recursos de sensibilidad o contraste técnico, no como fuente primaria de inferencia.</p>
-</div>
-</div>
 </section>
-<section id="implicaciones-para-el-análisis-biológico" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="implicaciones-para-el-análisis-biológico"><span class="header-section-number">4.12</span> Implicaciones para el análisis biológico</h2>
-<p>La calidad técnica del preprocesamiento tiene consecuencias directas para la interpretación biológica:</p>
-<ul>
-<li>Las tasas altas de alineamiento indican que las lecturas proceden mayoritariamente del organismo esperado y son compatibles con la referencia de rodaballo.</li>
-<li>La calidad Q30 y la retención fastp sugieren que no hay una degradación diferencial obvia que pueda confundirse con diferencias de expresión.</li>
-<li>La variabilidad de duplicación existe, pero se mantiene en un rango compatible con RNA-seq bulk y deberá interpretarse junto con PCA y profundidad de biblioteca.</li>
-<li>Las muestras <code>PNK*</code> no parecen fallar técnicamente en estas métricas; su exclusión posterior responde a criterios biológicos/de diseño, no a un colapso de preprocesamiento.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled" title="Conclusión de preprocesamiento">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Conclusión de preprocesamiento
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>El procesamiento primario generó una base cuantitativa adecuada para continuar con exploración de muestras, PCA, definición de contrastes y análisis diferencial. La evidencia técnica no sugiere que el patrón biológico del estudio vaya a estar dominado por baja calidad de FASTQ, mala compatibilidad con la referencia o fallos globales de alineamiento.</p>
-</div>
-</div>
+<section id="conclusión-del-bloque" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="conclusión-del-bloque"><span class="header-section-number">5.11</span> Conclusión del bloque</h2>
+<p>El procesamiento primario generó una base cuantitativa adecuada para exploración de muestras, PCA, definición de contrastes y expresión diferencial. No hay evidencia de que el patrón biológico del estudio vaya a estar dominado por baja calidad de FASTQ, mala compatibilidad con la referencia o fallos globales de alineamiento.</p>
 
 
 </section>
@@ -1277,7 +1172,7 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
     anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
+        if (clz.startsWith('code-annotation-')) {
           return true;
         }
       }
@@ -1297,11 +1192,11 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Copiado");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
+        tooltip = new bootstrap.Tooltip(button,
+          { trigger: "manual",
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();    
+        tooltip.show();
       }
       setTimeout(function() {
         if (tooltip) {
@@ -1353,6 +1248,11 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1378,7 +1278,7 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config); 
+      window.tippy(el, config);
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -1453,7 +1353,7 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined; 
+        let hash = undefined;
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -1481,7 +1381,7 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              } 
+              }
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -1505,7 +1405,7 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            } 
+            }
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -1545,7 +1445,7 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
+              // cook up a div (if necessary) and position it
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -1668,13 +1568,13 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/02_exp_design.html" class="pagination-link" aria-label="Materiales y métodos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Materiales y métodos</span></span>
-      </a>          
+      <a href="../chapters/03_results.html" class="pagination-link" aria-label="Extracción de ARN, control de calidad molecular y secuenciación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Extracción de ARN, control de calidad molecular y secuenciación</span></span>
+      </a>
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/03_results.html" class="pagination-link" aria-label="RNA Integrity Number (RIN): technical background">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">RNA Integrity Number (RIN): technical background</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/03_qc_multiqc.html" class="pagination-link" aria-label="Control de calidad integrado con MultiQC">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Control de calidad integrado con MultiQC</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1697,18 +1597,18 @@ results/nfcore_rnaseq/star_salmon/salmon.merged.gene_tpm.tsv</code></pre>
             slideConfig.href = srcAttr;
           }
         }
-      } 
+      }
     });
-  
+
     lightboxQuarto.on('slide_after_load', (data) => {
       const { slideIndex, slideNode, slideConfig, player, trigger } = data;
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(slideNode);
       }
     });
-  
+
   };
-  
+
 })();
           </script>
 

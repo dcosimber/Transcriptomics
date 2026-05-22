@@ -1,61 +1,57 @@
-# Introducción
+# Introducción, antecedentes y objetivos
 
-La pigmentación es un rasgo visible, integrador y económicamente relevante en acuicultura. En peces, el patrón de coloración refleja la organización de distintos tipos de cromatóforos, la regulación neuroendocrina del tegumento, la historia de desarrollo del individuo y la interacción con el ambiente de cría [@Nusslein-Volhard2017; @Vissio2021]. En especies planas, como el rodaballo (*Scophthalmus maximus*), esta dimensión adquiere una complejidad adicional: durante la metamorfosis se establece una asimetría corporal marcada, con una cara ocular normalmente pigmentada y una cara ciega reducida en pigmentación. Cuando este programa de diferenciación se altera, aparecen fenotipos de malpigmentación que pueden afectar al valor comercial, a la calidad percibida y a la interpretación biológica del estado del animal [@Venizelos1999; @Seikai1994; @Vissio2021].
+## Contexto biológico
 
-El rodaballo es una especie estratégica para la acuicultura marina europea y, de forma particular, para el sector gallego [@Fernandez-Gonzalez2021a]. Además, dispone de recursos genómicos consolidados, lo que facilita abordar preguntas funcionales mediante aproximaciones de expresión génica a escala transcriptómica [@Martinez2021]. En este contexto, el proyecto **HOLOFISHCOLOUR** plantea la malpigmentación no como un rasgo aislado, sino como un fenotipo complejo que puede emerger de la interacción entre **genoma**, **transcriptoma**, **histología**, **microbiota**, desarrollo y ambiente de cultivo.
+La pigmentación es un rasgo visible, integrador y económicamente relevante en acuicultura. En peces, el patrón de coloración refleja la distribución y el estado funcional de distintos tipos de cromatóforos, la regulación neuroendocrina del tegumento, el desarrollo del individuo y la interacción con el ambiente de cría [@Nusslein-Volhard2017; @Vissio2021]. En especies planas, como el rodaballo (*Scophthalmus maximus*), esta dimensión es especialmente compleja porque la metamorfosis establece una asimetría corporal clara: una cara ocular normalmente pigmentada y una cara ciega con pigmentación reducida.
 
-::: {.callout-note}
-## Idea central
+Cuando este programa de diferenciación se altera aparecen fenotipos de malpigmentación, entre ellos pseudoalbinismo, hipomelanosis, hipermelanosis o pigmentación ectópica de la cara ciega [@Venizelos1999; @Seikai1994; @Li2022a]. Estas alteraciones no son solo un problema estético o comercial. También pueden reflejar cambios en la diferenciación de la piel, en la presencia o actividad de cromatóforos, en señales endocrinas, en la matriz extracelular, en el desarrollo de la superficie corporal o en respuestas fisiológicas al ambiente de cultivo [@Vissio2021].
 
-La comparación de pieles pigmentadas y no pigmentadas, tanto en peces normales como en peces malpigmentados, permite buscar señales moleculares asociadas a la formación, mantenimiento o pérdida local de pigmentación. El RNA-seq aporta una lectura funcional del tejido: no dice solo qué variantes existen, sino qué programas biológicos están activos en cada región, qué tipos celulares pueden estar contribuyendo a la señal y qué rutas de desarrollo o mantenimiento tisular podrían estar alteradas.
+El rodaballo es una especie estratégica para la acuicultura marina europea y gallega [@Fernandez-Gonzalez2021a]. Además, dispone de recursos genómicos y anotaciones que permiten abordar preguntas funcionales mediante RNA-seq [@Martinez2021]. En este contexto, **HOLOFISHCOLOUR** estudia la malpigmentación como un fenotipo complejo en el que pueden converger genoma, transcriptoma, histología, microbiota, desarrollo y ambiente.
+
+::: {.callout-note title="Idea central"}
+La comparación de pieles pigmentadas y no pigmentadas, tanto en peces normales como pseudoalbinos, permite buscar señales moleculares asociadas a formación, mantenimiento, pérdida o aparición ectópica de pigmentación. El RNA-seq aporta una lectura funcional del tejido: informa qué programas biológicos están activos, qué tipos celulares pueden contribuir a la señal y qué rutas de desarrollo o mantenimiento tisular podrían estar alteradas.
 :::
 
-## Pigmentación y malpigmentación en peces planos
+## Pigmentación y asimetría en peces planos
 
-La coloración de la piel en peces depende principalmente de la distribución, abundancia y estado funcional de los cromatóforos. Entre ellos, los **melanóforos** participan en la síntesis y depósito de melanina, los **xantóforos** contribuyen a tonalidades amarillas o anaranjadas y los **iridóforos** generan efectos reflectantes. Estos tipos celulares derivan de linajes asociados a la cresta neural y se organizan durante el desarrollo bajo control de rutas de señalización, migración celular, diferenciación y comunicación tisular [@Nusslein-Volhard2017]. Por tanto, una diferencia de coloración puede reflejar cambios en la biogénesis de pigmentos, pero también cambios en la llegada, supervivencia o diferenciación de cromatóforos, o incluso en el estado de la matriz y el microambiente cutáneo.
+La coloración de la piel depende principalmente de la abundancia, localización y actividad de los cromatóforos. Los **melanóforos** participan en la síntesis y depósito de melanina; los **xantóforos** contribuyen a tonalidades amarillas o anaranjadas; y los **iridóforos** generan componentes reflectantes. Estos tipos celulares derivan de linajes asociados a la cresta neural y se organizan durante el desarrollo mediante rutas de migración, diferenciación, señalización y comunicación tisular [@Nusslein-Volhard2017].
 
-En peces planos, la pigmentación está íntimamente ligada a la metamorfosis. El establecimiento correcto de la cara ocular y la cara ciega implica una diferenciación asimétrica de la piel que ocurre de forma coordinada con la migración ocular, el remodelado craneofacial, cambios endocrinos y señales dependientes de luz. Estudios genómicos y transcriptómicos en lenguado japonés han propuesto un papel integrado de hormona tiroidea, ácido retinoico, fototransducción cutánea y gradientes locales de señalización en la generación de la asimetría [@Shao2017]. En rodaballo, la epidermis también cambia de forma marcada durante el desarrollo desde larva bilateral a juvenil plano, con aparición de células pigmentadas y modificaciones del mucus cutáneo post-metamórfico [@Landeira-Dabarca2021].
+En peces planos, la pigmentación queda ligada a la metamorfosis y a la diferenciación asimétrica de la piel. Estudios genómicos y transcriptómicos en lenguado japonés han propuesto un papel integrado de hormona tiroidea, ácido retinoico, fototransducción cutánea y gradientes locales de señalización en la generación de la asimetría [@Shao2017]. En rodaballo, la epidermis también cambia de forma marcada desde fases larvarias bilaterales hasta juveniles planos, con aparición de células pigmentadas y modificaciones del mucus cutáneo post-metamórfico [@Landeira-Dabarca2021].
 
-Los fenotipos anómalos más relevantes incluyen el **pseudoalbinismo**, caracterizado por pérdida o reducción de pigmentación donde debería existir coloración, y la **hipermelanosis** o **ambicoloration**, en la que aparecen manchas pigmentadas en regiones normalmente claras de la cara ciega [@Venizelos1999; @Seikai1994; @Li2022a]. Estas alteraciones no son meramente cosméticas: pueden indicar cambios en la diferenciación de la piel, en el estado de los cromatóforos, en rutas endocrinas y en respuestas al ambiente de cultivo [@Vissio2021]. También pueden tener componentes ambientales y nutricionales, como se ha observado en ensayos de intensidad lumínica, dieta, temperatura o enriquecimiento larvario en distintas especies planas [@Denson1997; @MacNamara2023].
+La evidencia acumulada sugiere que la malpigmentación es multifactorial. En lenguado senegalés, el pseudoalbinismo se ha asociado con cambios transcriptómicos en piel e intestino, además de modificaciones estructurales y del microbioma [@Pinto2019]. En lenguado japonés se han descrito redes mRNA-miRNA asociadas al albinismo, con genes y rutas vinculadas a melanogénesis y metabolismo de tirosina [@Wang2017]. En lenguado chino, los estudios de hipermelanosis han identificado genes candidatos y redes lncRNA-miRNA-mRNA implicadas en pigmentación de la cara ciega [@Li2022; @Li2022a]. Además, la sobreexpresión ectópica de **asip1** en peces planos puede inducir anomalías pigmentarias, reforzando que rutas de patrón dorso-ventral pueden reaparecer en posiciones inadecuadas [@Guillot2012].
 
-La evidencia acumulada sugiere que la malpigmentación es un rasgo **multifactorial**. En lenguado senegalés, el pseudoalbinismo se ha asociado con cambios transcriptómicos en piel e intestino, además de modificaciones estructurales y del microbioma [@Pinto2019]. En lenguado japonés se han descrito redes mRNA-miRNA asociadas al albinismo, con genes y rutas vinculadas a melanogénesis y metabolismo de tirosina [@Wang2017]. En lenguado chino, los estudios de hipermelanosis han identificado genes candidatos y redes lncRNA-miRNA-mRNA implicadas en la pigmentación de la cara ciega [@Li2022; @Li2022a]. Además, la sobreexpresión ectópica de **asip1** en peces planos puede inducir anomalías pigmentarias, reforzando que rutas de patrón dorso-ventral pueden reaparecer en posiciones inadecuadas [@Guillot2012]. Estos trabajos refuerzan una idea importante para este proyecto: la malpigmentación puede leerse como una alteración local de programas moleculares de desarrollo, diferenciación, señalización tisular y mantenimiento cutáneo.
-
-::: {.callout-important}
-## Marco interpretativo
-
+::: {.callout-important title="Marco interpretativo"}
 En HOLOFISHCOLOUR, la pregunta no es únicamente si una región tiene más o menos melanina. La pregunta más informativa es si una zona malpigmentada conserva el programa molecular esperado para su superficie o si expresa una combinación anómala de señales de **pigmentación**, **identidad anatómica**, **matriz extracelular**, **inmunidad**, **metabolismo** y **desarrollo**.
 :::
 
 ## Por qué RNA-seq
 
-El RNA-seq permite cuantificar la expresión de miles de genes de forma simultánea, sin restringir el análisis a una lista previa de candidatos. Esto es especialmente útil para un fenotipo como la pigmentación, donde pueden converger rutas de **melanogénesis**, metabolismo de aminoácidos y pigmentos, matriz extracelular, señalización neuroendocrina, respuesta inmune, estrés celular, comunicación entre tipos celulares y cambios en composición del tejido.
+El RNA-seq permite cuantificar la expresión de miles de genes de forma simultánea, sin restringir el análisis a una lista previa de candidatos. Esta aproximación es adecuada para un fenotipo como la pigmentación, donde pueden converger melanogénesis, metabolismo de aminoácidos y pigmentos, tráfico de melanosomas, matriz extracelular, señalización neuroendocrina, respuesta inmune, estrés celular, comunicación entre tipos celulares y cambios en la composición del tejido.
 
-En los últimos años, la transcriptómica se ha consolidado como una estrategia potente para estudiar fenotipos de coloración en peces. En rodaballo, se ha utilizado para explorar la regulación del color corporal bajo distintos espectros de luz, apuntando a genes como *tyr*, *tyrp1*, *dct*, *slc24a5* y *oca2*, además de rutas relacionadas con señalización neural y calcio [@Wu2024]. Estudios recientes en rodaballo dorado también señalan la implicación de tejidos reguladores, como hígado e hipófisis, y de rutas endocrinas relacionadas con hormona tiroidea [@Liu2026]. Aunque estos fenotipos no son idénticos a la malpigmentación observada en HOLOFISHCOLOUR, proporcionan un marco comparativo valioso para interpretar genes y procesos que puedan aparecer diferencialmente expresados.
+En rodaballo, la transcriptómica se ha utilizado para estudiar regulación del color corporal bajo distintos espectros de luz, con genes como *tyr*, *tyrp1*, *dct*, *slc24a5* y *oca2*, además de rutas relacionadas con señalización neural y calcio [@Wu2024]. Estudios recientes en rodaballo dorado también apuntan a tejidos reguladores y rutas endocrinas relacionadas con hormona tiroidea [@Liu2026]. Aunque estos fenotipos no son idénticos al pseudoalbinismo observado en HOLOFISHCOLOUR, proporcionan un marco útil para interpretar genes y procesos que aparezcan diferencialmente expresados.
 
-La ventaja del RNA-seq frente a un enfoque exclusivamente candidato es que permite distinguir entre varios escenarios biológicos. Una región clara puede estarlo por reducción de genes terminales de melanogénesis; por pérdida o menor diferenciación de melanóforos; por un microambiente cutáneo que impide la pigmentación; o por una identidad de superficie desplazada hacia un programa tipo cara ciega. De forma análoga, una región oscura ectópica puede reflejar activación local de melanogénesis, presencia de tipos celulares pigmentarios, remodelado del tejido o reactivación de rutas de patrón anatómico.
+La ventaja del RNA-seq frente a un enfoque exclusivamente candidato es que permite distinguir entre escenarios biológicos. Una región clara puede estarlo por reducción de genes terminales de melanogénesis, por menor presencia o diferenciación de melanóforos, por un microambiente cutáneo que limita la pigmentación o por desplazamiento hacia un programa de superficie ciega. Una región oscura ectópica puede reflejar activación local de melanogénesis, presencia de tipos celulares pigmentarios, remodelado del tejido o reactivación de rutas de patrón anatómico.
 
-::: {.callout-tip}
-## Lectura biológica
-
-Si aparecen genes clásicos de pigmentación, como *tyr*, *tyrp1*, *dct*, *mc1r*, *oca2*, *slc24a5* o *slc45a2*, la interpretación será directa hacia melanogénesis, tráfico de melanosomas o diferenciación de melanóforos. Si aparecen rutas de colágeno, matriz extracelular, inmunidad, estrés, Wnt, ácido retinoico, hormona tiroidea o señalización neural, la lectura será más amplia: la diferencia pigmentaria podría estar ligada al estado funcional del tejido, no únicamente al número de melanóforos.
+::: {.callout-tip title="Lectura biológica"}
+Si aparecen genes clásicos de pigmentación, como *tyr*, *tyrp1*, *dct*, *mc1r*, *oca2*, *slc24a5* o *slc45a2*, la interpretación se orienta hacia melanogénesis, tráfico de melanosomas o diferenciación de melanóforos. Si aparecen rutas de colágeno, matriz extracelular, inmunidad, estrés, Wnt, ácido retinoico, hormona tiroidea o señalización neural, la lectura debe ampliarse: la diferencia pigmentaria podría estar ligada al estado funcional del tejido, no solo al número de melanóforos.
 :::
 
 ::: {#tbl-expected-signals}
-| Señal esperada en RNA-seq | Genes/rutas orientativas | Interpretación biológica |
+| Señal esperada en RNA-seq | Genes o rutas orientativas | Interpretación biológica |
 |:--|:--|:--|
 | Melanogénesis terminal | *tyr*, *tyrp1*, *dct*, metabolismo de tirosina | Producción activa de melanina o mayor abundancia/actividad de melanóforos. |
 | Biogénesis y tráfico de melanosomas | *pmel*, *oca2*, *slc24a5*, *slc45a2*, *mlph/mlpha* | Maduración, transporte o depósito de pigmento. |
-| Especificación de cromatóforos/cresta neural | *sox10*, *mitf*, rutas Wnt y migración celular | Diferenciación o mantenimiento de linajes pigmentarios. |
-| Patrón anatómico de peces planos | asimetría, ácido retinoico, hormona tiroidea, fototransducción cutánea | Reprogramación de identidad ocular/blind o señal posicional alterada. |
-| Microambiente cutáneo | colágenos, matriz extracelular, adhesión, epidermis | Cambios en estructura de piel que pueden favorecer o limitar cromatóforos. |
-| Estado fisiológico o estrés | inmunidad, respuesta inflamatoria, metabolismo, señal neuroendocrina | Pigmentación asociada a condición del tejido o ambiente de cultivo. |
+| Especificación de cromatóforos y cresta neural | *sox10*, *mitf*, rutas Wnt y migración celular | Diferenciación o mantenimiento de linajes pigmentarios. |
+| Patrón anatómico de peces planos | Asimetría, ácido retinoico, hormona tiroidea, fototransducción cutánea | Reprogramación de identidad ocular/ciega o señal posicional alterada. |
+| Microambiente cutáneo | Colágenos, matriz extracelular, adhesión, epidermis | Cambios en estructura de piel que pueden favorecer o limitar cromatóforos. |
+| Estado fisiológico o estrés | Inmunidad, inflamación, metabolismo, señal neuroendocrina | Pigmentación asociada a condición del tejido o ambiente de cultivo. |
 
-: Claves de interpretación para relacionar resultados de expresión diferencial con mecanismos biológicos plausibles.
+: Claves de interpretación para relacionar expresión diferencial con mecanismos biológicos plausibles.
 :::
 
 ## Evidencia transcriptómica previa
 
-La @tbl-literature-summary resume trabajos especialmente relevantes para situar el análisis de HOLOFISHCOLOUR. La selección prioriza estudios de peces planos, rodaballo y fenotipos de pigmentación abordados mediante transcriptómica o aproximaciones multi-ómicas.
+La @tbl-literature-summary resume trabajos relevantes para situar el análisis de HOLOFISHCOLOUR. La selección prioriza peces planos, rodaballo y fenotipos de pigmentación abordados con transcriptómica o aproximaciones multi-ómicas.
 
 ::: {#tbl-literature-summary}
 | Referencia | Especie | Fenotipo o contraste | Aportación para HOLOFISHCOLOUR |
@@ -65,122 +61,45 @@ La @tbl-literature-summary resume trabajos especialmente relevantes para situar 
 | Shao et al. [@Shao2017] | Lenguado japonés | Asimetría de peces planos | Integra genoma y transcriptoma, destacando hormona tiroidea, ácido retinoico y fototransducción en la asimetría. |
 | Guillot et al. [@Guillot2012] | Rodaballo y lenguado | Sobreexpresión de *asip1* | Propone una ruta de patrón dorso-ventral capaz de inducir anomalías pigmentarias en peces planos. |
 | Wang et al. [@Wang2017] | Lenguado japonés | Albinismo frente a pigmentación normal | Integra RNA-seq y miRNA-seq e identifica rutas de melanogénesis, metabolismo de tirosina y redes reguladoras. |
-| Pinto et al. [@Pinto2019] | Lenguado senegalés | Pseudoalbinismo | Conecta transcriptómica de piel e intestino con cambios estructurales y microbioma, reforzando la visión multi-ómica. |
+| Pinto et al. [@Pinto2019] | Lenguado senegalés | Pseudoalbinismo | Conecta transcriptómica de piel e intestino con cambios estructurales y microbioma. |
 | Li et al. [@Li2022a] | Lenguado chino | Hipermelanosis de la cara ciega | Propone genes candidatos de hipermelanosis, incluyendo transportadores y genes asociados a melanogénesis. |
 | Li et al. [@Li2022] | Lenguado chino | Hipermelanosis de la cara ciega | Construye redes lncRNA-miRNA-mRNA, útiles para interpretar regulación no codificante. |
-| Wu et al. [@Wu2024] | Rodaballo | Color corporal bajo distintos espectros de luz | Aporta genes y rutas de coloración en la misma especie, incluyendo melanogénesis, señalización neural y calcio. |
+| Wu et al. [@Wu2024] | Rodaballo | Color corporal bajo espectros de luz | Aporta genes y rutas de coloración en la misma especie, incluyendo melanogénesis, señalización neural y calcio. |
 | Liu et al. [@Liu2026] | Rodaballo | Coloración dorada frente a tipo salvaje | Sitúa la pigmentación del rodaballo en un marco transcriptómico y endocrino, con énfasis en hormona tiroidea. |
 | Blandon et al. [@Blandon2024] | Platija sureña | Pseudoalbinismo | Relaciona hipopigmentación con piel, cerebro, matriz extracelular, estrés ambiental e inmunidad. |
-| Marcoli et al. [@Marcoli2024] | Barramundi | Patrón raro de coloración tipo “panda” | Ejemplo multi-ómico de cómo fenotipos de color pueden combinar señales genéticas, transcriptómicas y regulatorias. |
+| Marcoli et al. [@Marcoli2024] | Barramundi | Patrón raro de coloración | Ejemplo multi-ómico de cómo fenotipos de color pueden combinar señales genéticas, transcriptómicas y regulatorias. |
 
 : Estudios de referencia para interpretar la transcriptómica de pigmentación en HOLOFISHCOLOUR.
 :::
 
 ## Hipótesis de trabajo
 
-El planteamiento de HOLOFISHCOLOUR parte de una hipótesis amplia: las regiones malpigmentadas del rodaballo no son equivalentes transcriptómicamente a una simple piel normal con más o menos melanina. En cambio, podrían representar estados tisulares mixtos, en los que se combinan señales de pigmentación, identidad de superficie, desarrollo, estructura cutánea y respuesta fisiológica.
+El análisis parte de una hipótesis amplia: las regiones malpigmentadas del rodaballo no son equivalentes transcriptómicamente a una piel normal con más o menos melanina. Podrían representar estados tisulares mixtos, donde se combinan señales de pigmentación, identidad de superficie, desarrollo, estructura cutánea y respuesta fisiológica.
 
-De esta hipótesis general derivan tres predicciones operativas:
+De esta hipótesis se derivan tres predicciones operativas:
 
-1. Las comparaciones entre piel ocular oscura y piel ciega clara de individuos normales deberían recuperar genes y términos relacionados con **melanogénesis**, **melanosomas** y **diferenciación de cromatóforos**.
-2. Las regiones ocular claras pseudoalbinas podrían mostrar una pérdida parcial de ese programa pigmentario, pero también señales de **matriz extracelular**, **migración celular** o **microambiente cutáneo** si la alteración no es únicamente terminal.
-3. Las regiones blind oscuras ectópicas podrían no reproducir exactamente el programa ocular oscuro normal; si activan rutas de desarrollo, músculo, epidermis, Wnt/retinoides o matriz, se interpretarán como un estado de pigmentación ectópica asociado a reprogramación tisular.
+- Las comparaciones entre piel ocular oscura y piel ciega clara de individuos normales deberían recuperar genes y términos relacionados con melanogénesis, melanosomas y diferenciación de cromatóforos.
+- Las regiones oculares claras pseudoalbinas podrían mostrar pérdida parcial de ese programa pigmentario, pero también señales de matriz extracelular, migración celular o microambiente cutáneo.
+- Las regiones oscuras ectópicas de la cara ciega podrían no reproducir exactamente el programa ocular oscuro normal; si activan rutas de desarrollo, músculo, epidermis, Wnt/retinoides o matriz, se interpretarán como un estado de pigmentación ectópica asociado a reprogramación tisular.
 
-## Objetivos del análisis transcriptómico
+## Objetivos del análisis
 
-El objetivo general de esta parte del proyecto es caracterizar el perfil transcriptómico de piel de rodaballo en regiones con distinta pigmentación y en individuos con fenotipo normal o malpigmentado. La intención es conectar los resultados de expresión diferencial con hipótesis mecanísticas plausibles, de forma que el análisis pueda alimentar posteriormente secciones de resultados y discusión de un manuscrito. A partir de ese objetivo general, el análisis se organiza en cinco metas:
+El objetivo general es caracterizar el perfil transcriptómico de piel de rodaballo en regiones con distinta pigmentación y en individuos con fenotipo normal o pseudoalbino. La intención es conectar los resultados de expresión diferencial con hipótesis mecanísticas plausibles y generar una base reproducible para discusión biológica y preparación de manuscrito.
 
-1. **Evaluar la calidad y coherencia de las bibliotecas RNA-seq**, desde las lecturas crudas hasta la asignación al genoma de referencia.
-2. **Comparar patrones de expresión génica** entre piel pigmentada y no pigmentada, considerando el fenotipo global del individuo y la cara corporal muestreada.
-3. **Identificar genes y rutas diferencialmente expresadas** potencialmente asociadas a melanogénesis, diferenciación celular, matriz extracelular, señalización endocrina o respuesta al ambiente.
-4. **Distinguir señales de pigmentación terminal de señales de identidad tisular**, desarrollo, microambiente cutáneo o composición celular.
-5. **Generar una base reproducible de resultados** que pueda integrarse con otras capas de HOLOFISHCOLOUR, como histología, genómica y microbioma.
+Los objetivos específicos son:
 
-## Diseño experimental
+- Evaluar la calidad y coherencia de las bibliotecas RNA-seq, desde el ARN inicial hasta la cuantificación génica.
+- Comparar patrones de expresión entre piel pigmentada y no pigmentada, considerando superficie corporal y fenotipo global del individuo.
+- Identificar genes y rutas asociados a melanogénesis, diferenciación celular, matriz extracelular, señalización endocrina o respuesta al ambiente.
+- Distinguir señales de pigmentación terminal de señales de identidad tisular, desarrollo, microambiente cutáneo o composición celular.
+- Documentar decisiones analíticas, umbrales y salidas para que el análisis pueda reproducirse y revisarse.
 
-El diseño parte de individuos de rodaballo con fenotipo **normal** y **malpigmentado**, seleccionados en los tanques **E6** y **E8**, donde las diferencias de pigmentación eran evidentes. En el tanque E6 se incluyeron descendientes de dos parejas parentales; en el tanque E8 se trabajó con una familia de medios hermanos, con una madre compartida y dos padres distintos. Esta estructura es importante porque permite interpretar los resultados teniendo en cuenta tanto el fenotipo de pigmentación como el posible componente familiar.
+## Estructura del análisis
 
-La unidad biológica principal de esta fase es la **piel**, muestreada en regiones pigmentadas y no pigmentadas. La @tbl-sample-groups resume la lógica experimental de las muestras procesadas en el flujo nf-core/rnaseq documentado en este libro.
+El informe se organiza como una cadena de evidencia. Primero se documenta el diseño experimental y la calidad del material biológico. Después se describe el procesamiento con `nf-core/rnaseq` y se auditan sus salidas con MultiQC y exploración estadística en R. Finalmente se interpretan los modelos de expresión diferencial y el enriquecimiento funcional.
 
-::: {#tbl-sample-groups}
-| Grupo | Fenotipo del individuo | Región muestreada | Interpretación esperada |
-|:--|:--|:--|:--|
-| Piel ocular pigmentada normal | Normal | Cara ocular, piel oscura | Referencia de pigmentación esperada en rodaballo. |
-| Piel ciega clara normal | Normal | Cara ciega, piel clara | Referencia de ausencia fisiológica de pigmentación. |
-| Piel oscura en malpigmentados | Malpigmentado | Cara ocular o ciega, piel pigmentada | Permite estudiar pigmentación mantenida o ectópica. |
-| Piel clara en malpigmentados | Malpigmentado | Cara ocular o ciega, piel no pigmentada | Permite estudiar pérdida local o ausencia anómala de pigmentación. |
-| Muestras complementarias | Normal, ambicolor o intestinal | Piel adicional o intestino | Material de apoyo para control, exploración o análisis integrativos posteriores. |
-
-: Estructura conceptual de los grupos de muestras incluidos en el análisis.
-:::
-
-## Muestras documentadas en este libro
-
-La @tbl-samples-intro recoge las muestras incluidas en la documentación bioinformática actual. La nomenclatura distingue muestras de piel (`P`) y muestras intestinales (`IT`). En capítulos posteriores, el control de calidad y el alineamiento se revisan a partir de los resultados generados por **nf-core/rnaseq** y **MultiQC** para este conjunto de bibliotecas.
-
-::: {#tbl-samples-intro}
-| Muestra | Tejido | Tanque | Individuo | Fenotipo | Cara | Pigmentación |
-|:--|:--|:--|:--|:--|:--|:--|
-| P31 | Piel | E6 | 46 | Normal | Ocular | Oscura |
-| P32 | Piel | E6 | 46 | Normal | Ciega | Clara |
-| P33 | Piel | E8 | 52 | Normal | Ocular | Oscura |
-| P34 | Piel | E8 | 52 | Normal | Ciega | Clara |
-| P35 | Piel | E8 | 70 | Normal | Ocular | Oscura |
-| P36 | Piel | E8 | 70 | Normal | Ciega | Clara |
-| P41 | Piel | E8 | 142 | Malpigmentado | Ocular | Oscura |
-| P42 | Piel | E8 | 142 | Malpigmentado | Ocular | Clara |
-| P43 | Piel | E8 | 142 | Malpigmentado | Ciega | Oscura |
-| P44 | Piel | E8 | 131 | Malpigmentado | Ciega | Clara |
-| P45 | Piel | E6 | 130 | Malpigmentado | Ocular | Oscura |
-| P46 | Piel | E6 | 130 | Malpigmentado | Ocular | Clara |
-| P47 | Piel | E6 | 130 | Malpigmentado | Ciega | Oscura |
-| P48 | Piel | E6 | 130 | Malpigmentado | Ciega | Clara |
-| P49 | Piel | E6 | 26 | Malpigmentado | Ocular | Oscura |
-| P50 | Piel | E6 | 26 | Malpigmentado | Ocular | Clara |
-| P51 | Piel | E6 | 26 | Malpigmentado | Ciega | Oscura |
-| P52 | Piel | E6 | 26 | Malpigmentado | Ciega | Clara |
-| P1G | Piel | ND | 56 | Normal | ND | ND |
-| P2G | Piel | ND | 34 | Normal | ND | ND |
-| PNKD | Piel | ND | ND | Ambicolor | ND | ND |
-| PNKV | Piel | ND | ND | Ambicolor | ND | ND |
-| IT1G | Intestino | ND | ND | ND | ND | ND |
-| ITPNK | Intestino | ND | ND | ND | ND | ND |
-
-: Muestras incluidas en la fase documentada del análisis RNA-seq.
-:::
-
-## Secuenciación y marco técnico
-
-Las bibliotecas RNA-seq se generaron a partir de mRNA enriquecido por selección de poli(A), con protocolo específico de hebra y secuenciación paired-end de 150 pb. La @tbl-rnaseq-specs sintetiza las especificaciones técnicas de la fase de secuenciación. Esta información se desarrolla con más detalle en los capítulos metodológicos, donde se documentan el preprocesamiento, el control de calidad, el alineamiento contra el genoma de referencia y la cuantificación de expresión.
-
-::: {#tbl-rnaseq-specs}
-| Parámetro | Descripción |
-|:--|:--|
-| Plataforma | Illumina NovaSeq X Plus |
-| Configuración de lectura | Paired-end, 2 x 150 pb |
-| Preparación de librerías | mRNA específico de hebra, enriquecido por poli(A) |
-| Criterio de calidad contratado | Al menos 85% de bases con Q30 o superior |
-| Salida mínima esperada | Al menos 6 Gb por muestra |
-| Servicio | Novogene, WOBI Plant and Animal Whole Genome Sequencing |
-
-: Especificaciones generales de las bibliotecas RNA-seq.
-:::
-
-## Estructura del análisis bioinformático
-
-El análisis documentado en este libro comienza con el procesamiento reproducible de las lecturas mediante **nf-core/rnaseq**, un flujo de trabajo que integra control de calidad, recorte o filtrado de lecturas, alineamiento, cuantificación y generación de informes agregados. La primera capa interpretativa se apoya en **MultiQC**, que permite revisar de forma conjunta métricas de calidad, complejidad, alineamiento y asignación de lecturas.
-
-La lógica del análisis es progresiva:
-
-1. **Preprocesamiento y control de calidad:** comprobar si las lecturas son suficientemente limpias, si la longitud y calidad son coherentes y si existen muestras problemáticas.
-2. **Alineamiento y cuantificación:** evaluar qué proporción de lecturas se asigna al genoma de referencia y qué fracción contribuye a regiones informativas para expresión génica.
-3. **Exploración de estructura global:** revisar agrupamientos, efectos de muestra, tejido, pigmentación o lote.
-4. **Expresión diferencial e interpretación funcional:** identificar genes y rutas asociados a las comparaciones biológicas de interés.
-
-::: {.callout-important}
-## Criterio de interpretación
-
-Las diferencias de expresión no deben interpretarse de forma aislada. En este proyecto se considerarán junto con el tipo de tejido, la localización corporal, el fenotipo del individuo, la calidad de la biblioteca y, cuando estén disponibles, evidencias histológicas o microbiológicas.
+::: {.callout-important title="Criterio de interpretación"}
+Las diferencias de expresión se interpretan junto con tipo de tejido, superficie corporal, pigmentación local, fenotipo del individuo, calidad de biblioteca y limitaciones del diseño. Este criterio evita convertir una lista de genes en una conclusión causal sin soporte experimental adicional.
 :::
 
 ## Referencias {.unnumbered}

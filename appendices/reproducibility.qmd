@@ -1,0 +1,88 @@
+# Reproducibilidad y decisiones analíticas
+
+## Proyecto Quarto
+
+El informe se renderiza como libro Quarto con salida en `docs/`, que es la carpeta publicada por GitHub Pages. La configuración principal vive en `_quarto.yml` y usa numeración automática de secciones mediante `number-sections: true`.
+
+```text
+quarto check
+quarto render
+```
+
+## Entorno de renderizado
+
+La comprobación local de Quarto detectó:
+
+- Quarto `1.8.27`;
+- Pandoc `3.6.3`;
+- R `4.5.3` desde el entorno conda `r45`;
+- `knitr` `1.51`;
+- `rmarkdown` `2.31`.
+
+El render del libro no requiere relanzar `nf-core/rnaseq` ni recalcular DESeq2; utiliza figuras, tablas y MultiQC ya exportados en el repositorio.
+
+## Decisiones de inclusión de muestras
+
+El análisis diferencial principal se restringe a muestras de piel. Las muestras de intestino y el bloque ambicolor/PNK se conservan para QC global, pero se excluyen de los modelos inferenciales principales.
+
+::: {#tbl-repro-samples}
+| Muestra | Motivo | Decisión |
+|:--|:--|:--|
+| `IT1G` | Tejido intestinal | Excluida de DE principal |
+| `PNKIT` | Tejido intestinal y bloque PNK | Excluida de DE principal |
+| `PNKD` | Bloque ambicolor/PNK exploratorio | Excluida de DE principal |
+| `PNKV` | Bloque ambicolor/PNK exploratorio | Excluida de DE principal |
+| `P1G` / `P2G` | Muestras normales complementarias | Retenidas tras inspección PCA |
+
+: Decisiones de inclusión y exclusión para el análisis principal.
+:::
+
+## Decisiones estadísticas
+
+- La matriz principal es **Salmon gene-level counts**.
+- DESeq2 es el marco principal de expresión diferencial.
+- `featureCounts` y `HTSeq` son recursos secundarios de sensibilidad.
+- Los genes se mantienen para modelado si tienen al menos **10 conteos en 3 muestras**.
+- El umbral interpretativo de DEG es **FDR < 0.05** y **`|log2FC| >= 1`**.
+- En los contrastes pareados se usa `turbot_id` cuando el diseño lo permite.
+- Los símbolos génicos son etiquetas; el identificador primario es siempre `ENSSMAG`.
+
+## Enriquecimiento funcional
+
+- El enriquecimiento se basa en una base GO custom para rodaballo.
+- ORA y GSEA se ejecutan con `clusterProfiler`.
+- KEGG no se ejecuta sin un mapeo validado `ENSSMAG -> KEGG`.
+- La interpretación LLM opcional de `clusterProfiler::interpret()` queda documentada como no ejecutada por falta de entorno compatible y credenciales configuradas.
+
+## Archivos principales
+
+```text
+tables/03_qc_r/sample_basic_qc_summary.tsv
+tables/03_qc_r/sample_distance_matrix_skin_core.tsv
+tables/05_de/deg_contrast_status.tsv
+tables/05_de/deg_direction_summary.tsv
+tables/05_de/deg_top50_by_contrast_annotated.tsv
+tables/05_de/deg_significant_all_contrasts_annotated.tsv
+tables/05_de/gene_effect_correlations.tsv
+tables/05_de/go_enrichment_combined_summary.tsv
+figures/03_qc_r/
+figures/05_de/
+multiqc/star_salmon/
+multiqc/bam_qc/
+```
+
+## Publicación
+
+El repositorio usa un workflow de GitHub Actions que despliega `docs/` en GitHub Pages cuando se empuja a `main`.
+
+```text
+.github/workflows/pages.yml
+```
+
+Por tanto, después de renderizar localmente, el sitio publicado se actualiza mediante:
+
+```text
+git add <archivos>
+git commit -m "Improve Transcriptomics Quarto report"
+git push origin main
+```

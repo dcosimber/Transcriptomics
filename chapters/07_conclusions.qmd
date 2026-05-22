@@ -1,0 +1,46 @@
+# Conclusiones integradas
+
+## Objetivo del bloque
+
+Este capítulo resume la lectura final del informe y separa resultados consolidados, limitaciones y próximos pasos. No introduce nuevos análisis; sintetiza la evidencia documentada en los capítulos anteriores.
+
+## Conclusiones principales
+
+El conjunto RNA-seq de HOLOFISHCOLOUR es técnicamente apto para análisis diferencial de piel. Las bibliotecas secuenciadas partieron de ARN con integridad mayoritariamente adecuada, el procesamiento con `nf-core/rnaseq` mostró alta retención de lecturas, alineamiento robusto contra la referencia de rodaballo y orientación de biblioteca coherente. Las muestras con señales técnicas moderadas se conservaron como puntos de vigilancia, no como exclusiones automáticas.
+
+Desde el punto de vista biológico, el contraste normal `N_OD_vs_N_BL` valida la estrategia del estudio: la piel ocular oscura normal recupera un programa pigmentario coherente, con genes y términos asociados a melanosomas, melanocitos y melanogénesis. Esta referencia permite evaluar si los estados pseudoalbinos conservan, pierden o reconfiguran el programa esperado.
+
+El pseudoalbinismo ocular muestra una conservación parcial del eje normal, pero no se comporta como una pérdida simple de pigmento. La señal de colágenos, matriz extracelular, metabolismo y desarrollo sugiere que la región ocular clara pseudoalbina puede representar un estado tisular alterado, con cambios en microambiente o composición celular además de pigmentación.
+
+La pigmentación ectópica de la cara ciega es el fenómeno más divergente. Los contrastes `P_BD_vs_P_BL` y `P_BD_vs_N_BL` no reproducen de forma limpia el programa ocular oscuro normal. La señal funcional apunta a desarrollo, estructura tisular, epidermis, músculo/contracción, metabolismo y posible reprogramación de identidad de superficie.
+
+::: {.callout-important title="Mensaje integrador"}
+La malpigmentación observada en HOLOFISHCOLOUR debe leerse como un fenómeno de tejido completo. Los genes de pigmentación son parte de la señal, pero los resultados sugieren que desarrollo, matriz extracelular, identidad de superficie y estado funcional de la piel son componentes necesarios para explicar el fenotipo.
+:::
+
+## Fortalezas del análisis
+
+- El informe conserva trazabilidad desde muestra, ARN, bibliotecas, pipeline, MultiQC, matrices y contrastes.
+- La inferencia principal se limita a piel, evitando mezclar tejido intestinal o muestras exploratorias ambicolor en los modelos DESeq2.
+- La matriz principal queda fijada como Salmon gene-level counts, con `ENSSMAG` como identificador estable.
+- El QC integra lecturas, alineamiento, duplicación, cuantificación, PCA y distancias entre muestras.
+- La interpretación funcional no se limita a genes individuales y contrasta GSEA, ORA y categorías dirigidas.
+
+## Limitaciones
+
+El tamaño muestral es limitado y algunos contrastes tienen potencia moderada. La estructura familiar y de tanque forma parte del contexto, pero no puede resolverse completamente en todos los modelos. La anotación funcional de rodaballo no es tan completa como la de especies modelo, por lo que varios genes significativos permanecen como identificadores `ENSSMAG` sin símbolo claro. Además, el RNA-seq bulk no distingue de forma directa si una señal procede de cambios de expresión por célula, cambios de abundancia de tipos celulares o una combinación de ambos.
+
+Estas limitaciones no invalidan los resultados, pero obligan a formular las conclusiones como hipótesis transcriptómicas sólidas que deben integrarse con histología, validación dirigida, anotación manual y otras capas de HOLOFISHCOLOUR.
+
+## Próximos pasos
+
+- Priorizar genes candidatos con señal fuerte y anotación interpretable, manteniendo los identificadores `ENSSMAG`.
+- Curar manualmente genes sin símbolo que aparecen en los primeros puestos de los contrastes.
+- Integrar los resultados con histología de piel y distribución de cromatóforos.
+- Revisar rutas de ácido retinoico, Wnt, cresta neural, matriz extracelular y melanogénesis como ejes candidatos.
+- Explorar sensibilidad con featureCounts/HTSeq solo para contrastes o genes donde exista duda técnica.
+- Preparar figuras finales de manuscrito a partir de PCA, resumen de DEGs, contrastes clave y enriquecimiento funcional.
+
+## Cierre
+
+El análisis RNA-seq de HOLOFISHCOLOUR proporciona una base bioinformática sólida para estudiar la malpigmentación en rodaballo. La evidencia más consistente es que los estados pseudoalbinos no son simples equivalentes claros u oscuros de piel normal. Son estados transcriptómicos propios, especialmente en la cara ciega pigmentada, donde la señal apunta a una reorganización más amplia del tejido.

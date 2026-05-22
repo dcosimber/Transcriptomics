@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Apéndice A — Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy – HOLOFISHCOLOUR transcriptomics</title>
+<title>9&nbsp; Enriquecimiento funcional e interpretación biológica – HOLOFISHCOLOUR transcriptomics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../appendices/reproducibility.html" rel="next">
-<link href="../chapters/07_conclusions.html" rel="prev">
+<link href="../chapters/07_conclusions.html" rel="next">
+<link href="../chapters/05_differential_expression.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -47,6 +67,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-7e34ecb6a0e7991f0346b0751d4a7c3f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -251,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/rna_extraction_protocol.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../appendices/rna_extraction_protocol.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06_functional_interpretation.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -333,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container">
-  <a href="../chapters/06_functional_interpretation.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/06_functional_interpretation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></span></a>
   </div>
 </li>
@@ -354,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
           <li class="sidebar-item">
   <div class="sidebar-item-container">
-  <a href="../appendices/rna_extraction_protocol.html" class="sidebar-item-text sidebar-link active">
+  <a href="../appendices/rna_extraction_protocol.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></span></a>
   </div>
 </li>
@@ -376,9 +399,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
 
   <ul>
-  <li><a href="#recolección-y-conservación-de-muestras" id="toc-recolección-y-conservación-de-muestras" class="nav-link active" data-scroll-target="#recolección-y-conservación-de-muestras"><span class="header-section-number">A.1</span> Recolección y conservación de muestras</a></li>
-  <li><a href="#homogeneización-con-perlas-cerámicas" id="toc-homogeneización-con-perlas-cerámicas" class="nav-link" data-scroll-target="#homogeneización-con-perlas-cerámicas"><span class="header-section-number">A.2</span> Homogeneización con perlas cerámicas</a></li>
-  <li><a href="#extracción-fenol-cloroformo-y-purificación-con-qiagen-rneasy" id="toc-extracción-fenol-cloroformo-y-purificación-con-qiagen-rneasy" class="nav-link" data-scroll-target="#extracción-fenol-cloroformo-y-purificación-con-qiagen-rneasy"><span class="header-section-number">A.3</span> Extracción fenol-cloroformo y purificación con QIAGEN RNeasy</a></li>
+  <li><a href="#objetivo-del-bloque" id="toc-objetivo-del-bloque" class="nav-link active" data-scroll-target="#objetivo-del-bloque"><span class="header-section-number">9.1</span> Objetivo del bloque</a></li>
+  <li><a href="#salidas-funcionales" id="toc-salidas-funcionales" class="nav-link" data-scroll-target="#salidas-funcionales"><span class="header-section-number">9.2</span> Salidas funcionales</a></li>
+  <li><a href="#eje-normal-de-pigmentación" id="toc-eje-normal-de-pigmentación" class="nav-link" data-scroll-target="#eje-normal-de-pigmentación"><span class="header-section-number">9.3</span> Eje normal de pigmentación</a></li>
+  <li><a href="#pseudoalbinismo-ocular" id="toc-pseudoalbinismo-ocular" class="nav-link" data-scroll-target="#pseudoalbinismo-ocular"><span class="header-section-number">9.4</span> Pseudoalbinismo ocular</a></li>
+  <li><a href="#pigmentación-ectópica-de-la-cara-ciega" id="toc-pigmentación-ectópica-de-la-cara-ciega" class="nav-link" data-scroll-target="#pigmentación-ectópica-de-la-cara-ciega"><span class="header-section-number">9.5</span> Pigmentación ectópica de la cara ciega</a></li>
+  <li><a href="#efecto-de-superficie-con-color-constante" id="toc-efecto-de-superficie-con-color-constante" class="nav-link" data-scroll-target="#efecto-de-superficie-con-color-constante"><span class="header-section-number">9.6</span> Efecto de superficie con color constante</a></li>
+  <li><a href="#integración-biológica" id="toc-integración-biológica" class="nav-link" data-scroll-target="#integración-biológica"><span class="header-section-number">9.7</span> Integración biológica</a></li>
+  <li><a href="#archivos-derivados" id="toc-archivos-derivados" class="nav-link" data-scroll-target="#archivos-derivados"><span class="header-section-number">9.8</span> Archivos derivados</a></li>
+  <li><a href="#limitaciones" id="toc-limitaciones" class="nav-link" data-scroll-target="#limitaciones"><span class="header-section-number">9.9</span> Limitaciones</a></li>
+  <li><a href="#conclusión-del-bloque" id="toc-conclusión-del-bloque" class="nav-link" data-scroll-target="#conclusión-del-bloque"><span class="header-section-number">9.10</span> Conclusión del bloque</a></li>
   </ul>
 </nav>
     </div>
@@ -386,9 +416,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendices/rna_extraction_protocol.html">Apéndices</a></li><li class="breadcrumb-item"><a href="../appendices/rna_extraction_protocol.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Apéndice A — Protocolo de extracción de ARN con TRIzol y columnas Phase Lock Gel Heavy</h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Enriquecimiento funcional e interpretación biológica</span></h1>
 </div>
 
 
@@ -405,106 +435,261 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Este anexo recoge el protocolo de extracción de ARN total utilizado como referencia experimental para las muestras del proyecto HOLOFISHCOLOUR. El procedimiento combina homogeneización en TRIzol, separación de fases con columnas Phase Lock Gel Heavy y purificación final en columnas QIAGEN RNeasy con digestión de ADN en columna.</p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Seguridad">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Advertencia</span>Seguridad
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Los pasos que implican TRIzol, fenol-cloroformo o cloroformo deben realizarse en campana extractora, usando el equipo de protección individual adecuado y siguiendo las normas de gestión de residuos químicos del laboratorio.</p>
-</div>
-</div>
-<section id="recolección-y-conservación-de-muestras" class="level2" data-number="A.1">
-<h2 data-number="A.1" class="anchored" data-anchor-id="recolección-y-conservación-de-muestras"><span class="header-section-number">A.1</span> Recolección y conservación de muestras</h2>
-<p>Las muestras pueden conservarse en RNAlater, manteniéndolas un mínimo de 24 h a 4 °C antes de su almacenamiento a -80 °C. Alternativamente, pueden conservarse directamente en TRIzol a -80 °C.</p>
-<p>Para muestras de peces enteros, pesar la muestra y añadir 1 mL de TRIzol por cada 100 mg de tejido.</p>
-<ol type="1">
-<li>Transferir la muestra a un tubo Eppendorf con 750 µL de TRIzol.</li>
-<li>Si se utiliza homogeneización con perlas, añadir dos perlas cerámicas por tubo.</li>
-</ol>
-</section>
-<section id="homogeneización-con-perlas-cerámicas" class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="homogeneización-con-perlas-cerámicas"><span class="header-section-number">A.2</span> Homogeneización con perlas cerámicas</h2>
-<p>La homogeneización se realizó con perlas cerámicas de circonio de 3 mm.</p>
-<ol type="1">
-<li>Utilizar tubos Eppendorf Safe-Lock originales y sellarlos con parafilm para evitar derrames.</li>
-<li>Colocar las muestras en el TissueLyser Retsch MM 400.</li>
-<li>Ejecutar el siguiente programa de homogeneización:
+<section id="objetivo-del-bloque" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="objetivo-del-bloque"><span class="header-section-number">9.1</span> Objetivo del bloque</h2>
+<p>Este capítulo traduce los resultados de expresión diferencial a procesos biológicos. No busca inflar la lista de términos significativos, sino identificar qué programas funcionales explican mejor los contrastes: pigmentación normal, pérdida local de pigmentación en superficie ocular, pigmentación ectópica en la cara ciega e interacción entre superficie y color.</p>
+<p>El análisis funcional se realizó con anotaciones Gene Ontology específicas del proyecto y herramientas de <code>clusterProfiler</code> <span class="citation" data-cites="Yu2012">[<a href="01_intro.html#ref-Yu2012" role="doc-biblioref">1</a>]</span>. Se usaron dos enfoques complementarios:</p>
 <ul>
-<li>2 min a 30 Hz.</li>
-<li>Enfriar las muestras durante 1 min.</li>
-<li>2 min a 30 Hz.</li>
-</ul></li>
-<li>En campana extractora, transferir el homogeneizado a un tubo nuevo.</li>
-<li>Conservar las perlas para su limpieza y reutilización posterior.</li>
-<li>Centrifugar las muestras durante 10 min a 4 °C y 12,000 rpm.</li>
-<li>Transferir cuidadosamente el sobrenadante a un tubo nuevo. El pellet debe evitarse porque puede obstruir las columnas RNeasy.</li>
-</ol>
+<li><strong>GSEA</strong>, que evalúa cambios coordinados a lo largo de toda la lista ordenada de genes;</li>
+<li><strong>ORA</strong>, que resume términos sobrerrepresentados entre genes filtrados como diferencialmente expresados.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Criterio de lectura">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Criterio de lectura
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>GSEA es más útil para detectar programas distribuidos y cambios modestos pero coherentes. ORA es más directa para genes filtrados por FDR y magnitud de cambio. En este informe se interpretan como evidencias complementarias, no como resultados intercambiables.</p>
+</div>
+</div>
 </section>
-<section id="extracción-fenol-cloroformo-y-purificación-con-qiagen-rneasy" class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="extracción-fenol-cloroformo-y-purificación-con-qiagen-rneasy"><span class="header-section-number">A.3</span> Extracción fenol-cloroformo y purificación con QIAGEN RNeasy</h2>
-<div class="callout callout-style-default callout-important callout-titled" title="Trabajo en campana">
+<section id="salidas-funcionales" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="salidas-funcionales"><span class="header-section-number">9.2</span> Salidas funcionales</h2>
+<p>Las figuras principales resumen GO por contraste, mientras que las tablas descargables conservan todos los términos seleccionados y categorías dirigidas. La interpretación se apoya en <code>go_enrichment_combined_summary.tsv</code> y <code>development_neural_crest_summary.tsv</code>, ambos incluidos como recursos del libro.</p>
+<div id="fig-functional-go-summary" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-functional-go-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Dotplot GSEA de términos GO resumidos por contraste."><img src="../figures/05_de/enrichment/go_gsea_dotplot_all_contrasts.png" class="img-fluid figure-img"></a></p>
+<figcaption>Dotplot GSEA de términos GO resumidos por contraste.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Dotplot ORA de términos GO resumidos por contraste."><img src="../figures/05_de/enrichment/go_ora_dotplot_all_contrasts.png" class="img-fluid figure-img"></a></p>
+<figcaption>Dotplot ORA de términos GO resumidos por contraste.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-functional-go-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9.1: Resumen funcional de términos GO por contraste. GSEA captura cambios coordinados a lo largo de la lista ordenada; ORA resume términos sobrerrepresentados entre genes filtrados.
+</figcaption>
+</figure>
+</div>
+<div id="fig-functional-development-neural-crest" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-functional-development-neural-crest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/05_de/enrichment/development_neural_crest_terms.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;9.2: Resumen dirigido de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste."><img src="../figures/05_de/enrichment/development_neural_crest_terms.png" class="img-fluid figure-img" style="width:95.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-functional-development-neural-crest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9.2: Resumen dirigido de términos de desarrollo, cresta neural, Wnt/retinoides, migración y pigmentación por contraste.
+</figcaption>
+</figure>
+</div>
+<div id="fig-functional-comparecluster" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-functional-comparecluster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../figures/05_de/enrichment/comparecluster_go_ora_dotplot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;9.3: Comparación de términos GO ORA mediante compareCluster."><img src="../figures/05_de/enrichment/comparecluster_go_ora_dotplot.png" class="img-fluid figure-img" style="width:95.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-functional-comparecluster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9.3: Comparación de términos GO ORA mediante compareCluster.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-functional-selected" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-functional-selected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;9.1: Términos funcionales seleccionados de categorías dirigidas. El signo del efecto indica enriquecimiento hacia genes con log2FC positivo o negativo según el contraste.
+</figcaption>
+<div aria-describedby="tbl-functional-selected-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Contraste</th>
+<th style="text-align: left;">Categoría</th>
+<th style="text-align: left;">Término principal</th>
+<th style="text-align: right;">Efecto</th>
+<th style="text-align: right;">FDR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>N_OD_vs_N_BL</code></td>
+<td style="text-align: left;">Pigmentación/melanocito</td>
+<td style="text-align: left;"><code>CC: melanosome</code></td>
+<td style="text-align: right;">2.39</td>
+<td style="text-align: right;">4.04e-06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>N_OD_vs_N_BL</code></td>
+<td style="text-align: left;">Cresta neural</td>
+<td style="text-align: left;"><code>BP: neural crest cell migration</code></td>
+<td style="text-align: right;">-1.53</td>
+<td style="text-align: right;">3.22e-02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>N_OD_vs_N_BL</code></td>
+<td style="text-align: left;">Wnt/retinoides</td>
+<td style="text-align: left;"><code>BP: positive regulation of Wnt signaling pathway</code></td>
+<td style="text-align: right;">-2.22</td>
+<td style="text-align: right;">4.98e-04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>P_OD_vs_P_OL</code></td>
+<td style="text-align: left;">Desarrollo/patterning</td>
+<td style="text-align: left;"><code>BP: skeletal muscle thin filament assembly</code></td>
+<td style="text-align: right;">2.40</td>
+<td style="text-align: right;">2.20e-05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>P_OD_vs_P_OL</code></td>
+<td style="text-align: left;">Retinoides</td>
+<td style="text-align: left;"><code>MF: retinoic acid binding</code></td>
+<td style="text-align: right;">-1.85</td>
+<td style="text-align: right;">4.34e-02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>P_BD_vs_P_BL</code></td>
+<td style="text-align: left;">Pigmentación/melanocito</td>
+<td style="text-align: left;"><code>CC: melanosome</code></td>
+<td style="text-align: right;">-2.08</td>
+<td style="text-align: right;">3.18e-03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>P_BD_vs_N_BL</code></td>
+<td style="text-align: left;">Desarrollo/patterning</td>
+<td style="text-align: left;"><code>BP: skeletal muscle tissue development</code></td>
+<td style="text-align: right;">2.92</td>
+<td style="text-align: right;">7.17e-18</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>P_OL_vs_N_OD</code></td>
+<td style="text-align: left;">Wnt/retinoides</td>
+<td style="text-align: left;"><code>BP: Wnt signaling pathway</code></td>
+<td style="text-align: right;">2.15</td>
+<td style="text-align: right;">1.56e-06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>P_OL_vs_N_OD</code></td>
+<td style="text-align: left;">Cresta neural</td>
+<td style="text-align: left;"><code>BP: neural crest cell migration</code></td>
+<td style="text-align: right;">1.83</td>
+<td style="text-align: right;">2.77e-03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>P_surface_x_pigmentation</code></td>
+<td style="text-align: left;">Desarrollo/patterning</td>
+<td style="text-align: left;"><code>BP: multicellular organism development</code></td>
+<td style="text-align: right;">1.74</td>
+<td style="text-align: right;">6.27e-03</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="eje-normal-de-pigmentación" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="eje-normal-de-pigmentación"><span class="header-section-number">9.3</span> Eje normal de pigmentación</h2>
+<p>El contraste <code>N_OD_vs_N_BL</code> funciona como referencia fisiológica. Los genes más altos en piel ocular oscura normal incluyen marcadores de pigmentación y melanocitos, como <code>tyrp1b</code>, <code>TYRP1</code>, <code>tyr</code>, <code>mlpha</code> y <code>sox10</code>. El enriquecimiento funcional confirma esa lectura: términos como <strong>melanosome</strong>, <strong>melanocyte differentiation</strong>, <strong>melanosome organization</strong> y <strong>melanin biosynthetic process</strong> aparecen asociados al lado ocular oscuro.</p>
+<p>La dirección opuesta del contraste no es un simple “apagado” de pigmentación. También aparecen términos relacionados con matriz extracelular, angiogénesis, guía axonal, desarrollo y señalización. Esto sugiere que la diferencia entre cara ocular y cara ciega combina pigmentación con identidad tisular y organización de la piel.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lectura del eje normal">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Trabajo en campana
+<span class="screen-reader-only">Tip</span>Lectura del eje normal
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Los pasos iniciales de separación con cloroformo deben realizarse en campana extractora. A partir de la recuperación de la fase acuosa, el procedimiento puede continuar fuera de la campana.</p>
+<p>El eje normal valida el diseño: la comparación entre piel ocular oscura y piel ciega clara recupera el programa pigmentario esperado. Esta referencia es esencial para interpretar si las regiones pseudoalbinas conservan, pierden o reconfiguran ese programa.</p>
 </div>
 </div>
-<ol type="1">
-<li>Centrifugar las columnas Phase Lock Gel Heavy de 2 mL durante 1 min a 4 °C y 10,000 rpm antes de su uso.</li>
-<li>Añadir 200 µL de cloroformo a cada muestra homogeneizada en 750 µL de TRIzol.</li>
-<li>Mezclar bien pipeteando arriba y abajo.</li>
-<li>Transferir la mezcla a las columnas Phase Lock Gel Heavy.</li>
-<li>Centrifugar durante 15 min a 12,000 rpm.</li>
-<li>Transferir cuidadosamente el sobrenadante, correspondiente a la fase acuosa clara, a tubos nuevos.</li>
-<li>Añadir un volumen 1:1 de etanol al 70 % y mezclar pipeteando. No centrifugar en este paso.</li>
-<li>Transferir la mezcla a columnas QIAGEN RNeasy. Si el volumen supera la capacidad máxima de 700 µL por columna, repetir la carga con el volumen restante.</li>
-<li>Centrifugar durante 30 s a 13,000 rpm y descartar el flujo a través.</li>
-<li>Añadir 350 µL de buffer RW1 a la columna.</li>
-<li>Centrifugar durante 30 s a 13,000 rpm y descartar el flujo a través.</li>
-<li>Preparar una mezcla con 10 µL de DNasa I y 70 µL de buffer RDD por muestra, usando el QIAGEN DNase Kit.</li>
-<li>Añadir 80 µL de la mezcla de DNasa directamente en el centro de la membrana de la columna, sin tocarla con la punta de la pipeta.</li>
-<li>Incubar a temperatura ambiente durante 15 min.</li>
-<li>Añadir 350 µL de buffer RW1 a la columna.</li>
-<li>Centrifugar durante 30 s a 13,000 rpm y descartar el flujo a través.</li>
-<li>Añadir 700 µL de buffer RW1 a la columna.</li>
-<li>Centrifugar durante 30 s a 13,000 rpm y descartar el flujo a través.</li>
-<li>Añadir 500 µL de buffer RPE a la columna.</li>
-<li>Centrifugar durante 30 s a 13,000 rpm y descartar el flujo a través.</li>
-<li>Añadir 500 µL de buffer RPE a la columna.</li>
-<li>Centrifugar durante 2 min a 13,000 rpm.</li>
-<li>Cambiar el tubo colector de la columna por uno nuevo y desechar el anterior con el flujo a través.</li>
-<li>Centrifugar durante 2 min a 13,000 rpm para secar la membrana. Realizar 1 min con la columna en una orientación y 1 min con la columna girada 180°.</li>
-<li>Desechar el tubo de colección y colocar la columna en un tubo Eppendorf limpio para recoger la muestra.</li>
-<li>Añadir 35 µL de agua libre de RNasa directamente en el centro de la membrana.</li>
-<li>Centrifugar durante 1 min a 13,000 rpm para eluir el ARN.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Nota opcional sobre separación de fases">
+</section>
+<section id="pseudoalbinismo-ocular" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="pseudoalbinismo-ocular"><span class="header-section-number">9.4</span> Pseudoalbinismo ocular</h2>
+<p>El contraste <code>P_OD_vs_P_OL</code> compara dos regiones de la misma superficie en individuos pseudoalbinos: una zona ocular oscura y una zona ocular clara. La señal diferencial es clara, pero no reproduce de forma completa el eje normal. Los genes destacados incluyen colágenos y señales de matriz extracelular, como <code>col10a1a</code> y <code>col5a2b</code>, además de genes relacionados con metabolismo lipídico como <code>dgat2</code>.</p>
+<p>Esta combinación sugiere que la pérdida local de pigmentación ocular no se explica únicamente por ausencia de genes terminales de melanogénesis. Puede implicar cambios en el microambiente cutáneo, composición celular, matriz o estado de diferenciación de la piel. En términos prácticos, el pseudoalbinismo ocular parece una alteración local del tejido, no solo una reducción de melanina.</p>
+<p>El contraste <code>P_OL_vs_N_OD</code> refuerza esta idea. La región ocular clara pseudoalbina se diferencia del estado ocular oscuro normal con una lista más pequeña de genes, sesgada hacia genes más altos en <code>N_OD</code>, compatible con pérdida parcial del programa normal esperado.</p>
+</section>
+<section id="pigmentación-ectópica-de-la-cara-ciega" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="pigmentación-ectópica-de-la-cara-ciega"><span class="header-section-number">9.5</span> Pigmentación ectópica de la cara ciega</h2>
+<p>La pigmentación oscura en la cara ciega pseudoalbina es el componente más divergente del análisis. El contraste <code>P_BD_vs_N_BL</code> es el que produce más genes diferencialmente expresados y muestra una señal funcional amplia. Aparecen términos de desarrollo, estructura tisular, epidermis, músculo/contracción y metabolismo mitocondrial.</p>
+<p>El contraste <code>P_BD_vs_P_BL</code>, que compara regiones oscuras y claras dentro de la superficie ciega pseudoalbina, no reproduce de forma limpia el eje melanogénico normal. De hecho, algunos términos de melanosoma aparecen con dirección opuesta a la esperada si <code>P_BD</code> fuese simplemente una copia de la piel ocular oscura.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Hipótesis de trabajo">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Nota opcional sobre separación de fases
+<span class="screen-reader-only">Importante</span>Hipótesis de trabajo
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Dependiendo de las densidades relativas de la fase orgánica y la fase acuosa, el gel de las columnas Phase Lock puede no separarse correctamente. Para reducir este problema, se pueden añadir hasta 0.2 mL de agua libre de RNasa a la muestra antes de la separación de fases.</p>
+<p>La pigmentación ectópica de la cara ciega parece representar un estado tisular reprogramado. Puede incluir pigmentación, pero también señales de identidad de superficie, estructura, matriz, metabolismo y composición celular. Esta lectura es más coherente con los resultados que una explicación basada solo en activación terminal de melanogénesis.</p>
 </div>
 </div>
+</section>
+<section id="efecto-de-superficie-con-color-constante" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="efecto-de-superficie-con-color-constante"><span class="header-section-number">9.6</span> Efecto de superficie con color constante</h2>
+<p>Los contrastes puente ayudan a separar color y superficie. <code>P_OL_vs_P_BL</code> compara regiones claras pseudoalbinas de superficie ocular y ciega; <code>P_BD_vs_P_OD</code> compara regiones oscuras pseudoalbinas de superficie ciega y ocular. Ambos contrastes indican que el mismo color macroscópico no implica equivalencia transcriptómica.</p>
+<p>En <code>P_BD_vs_P_OD</code>, todos los genes filtrados significativos son positivos, con señales de componentes contráctiles y manejo de calcio, como <code>mybpc2a</code>, <code>casq1a</code> y <code>atp2a1l</code>. Esto refuerza que la región ciega oscura pseudoalbina no es una copia molecular de la región ocular oscura.</p>
+<p>El modelo <code>P_surface_x_pigmentation</code> identifica una lista pequeña de genes con interacción superficie por pigmentación. La lista incluye <code>crabp1a</code>, relacionado con ácido retinoico, y <code>dgat2</code>, relacionado con metabolismo lipídico. Al ser un contraste más estricto, su señal es más reducida, pero biológicamente interesante porque apunta a genes cuyo efecto dark/light cambia según la superficie.</p>
+</section>
+<section id="integración-biológica" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="integración-biológica"><span class="header-section-number">9.7</span> Integración biológica</h2>
+<p>Los resultados apoyan una interpretación en capas:</p>
+<ul>
+<li>La pigmentación normal recupera el programa melanocítico esperado.</li>
+<li>El pseudoalbinismo ocular conserva parte de ese eje, pero incorpora señales de matriz y estado tisular.</li>
+<li>La pigmentación ectópica de la cara ciega es más divergente y probablemente combina pigmentación con reprogramación de superficie.</li>
+<li>Las rutas de desarrollo, cresta neural, Wnt/retinoides y matriz extracelular aparecen como ejes interpretativos clave para conectar el fenotipo macroscópico con biología de piel.</li>
+</ul>
+<p>Esta lectura no excluye una contribución directa de melanóforos o melanogénesis. Más bien indica que la malpigmentación observada en HOLOFISHCOLOUR debe interpretarse como un fenómeno tisular, donde los genes de pigmento forman parte de un programa más amplio.</p>
+</section>
+<section id="archivos-derivados" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="archivos-derivados"><span class="header-section-number">9.8</span> Archivos derivados</h2>
+<p>Los archivos principales para revisar o reutilizar la interpretación funcional son:</p>
+<ul>
+<li><a href="../tables/05_de/go_enrichment_combined_summary.tsv">Resumen combinado de enriquecimiento GO</a></li>
+<li><a href="../tables/05_de/development_neural_crest_summary.tsv">Resumen de categorías desarrollo/cresta neural</a></li>
+<li><a href="../tables/05_de/deg_significant_all_contrasts_annotated.tsv">Todos los DEGs significativos anotados</a></li>
+<li><a href="../tables/05_de/deg_top50_by_contrast_annotated.tsv">Top 50 genes anotados por contraste</a></li>
+</ul>
+</section>
+<section id="limitaciones" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="limitaciones"><span class="header-section-number">9.9</span> Limitaciones</h2>
+<p>La interpretación funcional depende de la anotación disponible para rodaballo y de la calidad de los mapeos GO. Los genes sin símbolo funcional local no deben descartarse; pueden contener señales relevantes pendientes de curación. Además, los términos enriquecidos no identifican por sí solos el tipo celular responsable de la señal. Para validar mecanismos concretos será necesario integrar histología, marcadores celulares, anotación manual dirigida o experimentos funcionales.</p>
+</section>
+<section id="conclusión-del-bloque" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="conclusión-del-bloque"><span class="header-section-number">9.10</span> Conclusión del bloque</h2>
+<p>El pseudoalbinismo en este conjunto no se explica únicamente por apagado terminal de melanogénesis. La señal transcriptómica apunta a una combinación de programas pigmentarios, desarrollo/cresta neural, Wnt/retinoides, matriz extracelular, epidermis, metabolismo y estructura tisular. La pigmentación ectópica de la cara ciega es el patrón más divergente y constituye el candidato más fuerte para análisis integrativos posteriores.</p>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Yu2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Yu G., Wang L. G., Han Y., He Q. Y. <span>ClusterProfiler: An R package for comparing biological themes among gene clusters</span>. OMICS A Journal of Integrative Biology; 2012; 16(5):284-287. doi:<a href="https://doi.org/10.1089/OMI.2011.0118">10.1089/OMI.2011.0118</a> <a href="https://scholar.google.com/scholar_url?url=https://journals.sagepub.com/doi/pdf/10.1089/omi.2011.0118&amp;hl=es&amp;sa=T&amp;oi=ucasa&amp;ct=ufr&amp;ei=EKklaa7fM9ToieoP5Py5yQs&amp;scisig=ABGrvjJFFYw7AZsFKPSB1zuPuJZM">https://scholar.google.com/scholar_url?url=https://journals.sagepub.com/doi/pdf/10.1089/omi.2011.0118&amp;hl=es&amp;sa=T&amp;oi=ucasa&amp;ct=ufr&amp;ei=EKklaa7fM9ToieoP5Py5yQs&amp;scisig=ABGrvjJFFYw7AZsFKPSB1zuPuJZM</a></div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -928,17 +1113,49 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/07_conclusions.html" class="pagination-link" aria-label="Conclusiones integradas">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusiones integradas</span></span>
+      <a href="../chapters/05_differential_expression.html" class="pagination-link" aria-label="Expresión diferencial">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Expresión diferencial</span></span>
       </a>
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../appendices/reproducibility.html" class="pagination-link" aria-label="Reproducibilidad y decisiones analíticas">
-        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Reproducibilidad y decisiones analíticas</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/07_conclusions.html" class="pagination-link" aria-label="Conclusiones integradas">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conclusiones integradas</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      }
+    });
+
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+
+  };
+
+})();
+          </script>
 
 
 
