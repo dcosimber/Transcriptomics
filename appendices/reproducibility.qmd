@@ -21,6 +21,8 @@ La comprobación local de Quarto detectó:
 
 El render del libro no requiere relanzar `nf-core/rnaseq` ni recalcular DESeq2; utiliza figuras, tablas y MultiQC ya exportados en el repositorio.
 
+El capítulo de expresión diferencial añade una capa ligera de síntesis con `scripts/prepare_de_chapter_tables.R`. Este script no cambia los modelos estadísticos: separa los DEGs anotados por contraste, resume genes destacados por dirección y prepara tablas descargables para la lectura del capítulo.
+
 ## Decisiones de inclusión de muestras
 
 El análisis diferencial principal se restringe a muestras de piel. Las muestras de intestino y el bloque ambicolor/PNK se conservan para QC global, pero se excluyen de los modelos inferenciales principales.
@@ -63,12 +65,15 @@ tables/05_de/deg_contrast_status.tsv
 tables/05_de/deg_direction_summary.tsv
 tables/05_de/deg_top50_by_contrast_annotated.tsv
 tables/05_de/deg_significant_all_contrasts_annotated.tsv
+tables/05_de/by_contrast/
+tables/05_de/chapter_summaries/
 tables/05_de/gene_effect_correlations.tsv
 tables/05_de/go_enrichment_combined_summary.tsv
 figures/03_qc_r/
 figures/05_de/
 multiqc/star_salmon/
 multiqc/bam_qc/
+scripts/prepare_de_chapter_tables.R
 ```
 
 ## Publicación

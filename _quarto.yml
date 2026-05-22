@@ -5,6 +5,7 @@ project:
     - figures/
     - images/
     - multiqc/
+    - scripts/
     - tables/
 
 lang: es
