@@ -30,6 +30,12 @@ jobs:
         with:
           enablement: true
 
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render Quarto site
+        run: quarto render
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

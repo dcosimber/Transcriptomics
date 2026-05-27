@@ -25,6 +25,16 @@ El diseño incluyó individuos con pigmentación normal y peces pseudoalbinos/ma
 : Individuos y bloques biológicos representados en la documentación RNA-seq.
 :::
 
+## Contexto familiar de las muestras RNA-seq
+
+La selección de individuos para transcriptómica se realizó dentro de dos tanques con estructura familiar conocida. El tanque **E6** contiene dos familias principales, **FAM 5** y **FAM 6**, mientras que el tanque **E8** contiene **FAM 8** y **FAM 9**. Esta información no define por sí sola los contrastes de expresión diferencial, que se plantean a nivel de tejido, superficie y pigmentación local, pero sí es importante para interpretar el origen biológico de las muestras y detectar posibles confusiones entre fenotipo, tanque y parentesco.
+
+Para documentar esta estructura, se recalcularon PCA genómicos independientes usando subconjuntos de individuos definidos por tanque y familia. Los individuos seleccionados para RNA-seq se proyectaron y etiquetaron sobre estos PCA para comprobar su posición dentro de la estructura familiar. En los ficheros genómicos se usa una numeración actualizada en la que los individuos normales van de `N-01` a `N-80` y los pseudoalbinos de `A-01` a `A-80`; por tanto, el individuo transcriptómico histórico **E8-A-142** corresponde al identificador genómico actual **E8-A-62**.
+
+La @fig-family-pca-rnaseq muestra que las muestras transcriptómicas quedan distribuidas de forma coherente con la asignación familiar: **E6-N-46** se sitúa en **FAM 5**, **E6-A-24** y **E6-A-12** en **FAM 6**, **E8-N-70** en **FAM 8**, y **E8-N-52** junto con **E8-A-62** en **FAM 9**. Esta comprobación refuerza que el diseño transcriptómico incluye individuos de ambos tanques y de las familias esperadas, y proporciona una capa adicional de trazabilidad para las comparaciones downstream.
+
+![PCA genómicos recalculados por tanque y familia para contextualizar las muestras seleccionadas para RNA-seq. Los puntos rojos indican los individuos incluidos en el diseño transcriptómico.](../figures/02_exp_design/family_structure_pca_transcriptomics_samples.jpg){#fig-family-pca-rnaseq fig-align="center"}
+
 ## Muestreo de piel
 
 Se tomaron fragmentos de piel de aproximadamente **20 mg** con material de disección estéril. Los fragmentos se rasparon cuidadosamente con la cuchilla del bisturí para retirar músculo adherido y reducir interferencias de tejido subyacente en la señal transcriptómica.
