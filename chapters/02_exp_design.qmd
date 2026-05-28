@@ -33,7 +33,7 @@ Para documentar esta estructura, se recalcularon PCA genómicos independientes u
 
 La @fig-family-pca-rnaseq muestra que las muestras transcriptómicas quedan distribuidas de forma coherente con la asignación familiar: **E6-N-46** se sitúa en **FAM 5**, **E6-A-24** y **E6-A-12** en **FAM 6**, **E8-N-70** en **FAM 8**, y **E8-N-52** junto con **E8-A-62** en **FAM 9**. Esta comprobación refuerza que el diseño transcriptómico incluye individuos de ambos tanques y de las familias esperadas, y proporciona una capa adicional de trazabilidad para las comparaciones downstream.
 
-![PCA genómicos recalculados por tanque y familia para contextualizar las muestras seleccionadas para RNA-seq. Los puntos rojos indican los individuos incluidos en el diseño transcriptómico.](../figures/02_exp_design/family_structure_pca_transcriptomics_samples.jpg){#fig-family-pca-rnaseq fig-align="center"}
+![PCA genómicos recalculados por tanque y familia para contextualizar las muestras seleccionadas para RNA-seq. Los puntos rojos indican los individuos incluidos en el diseño transcriptómico.](../figures/02_exp_design/family_structure_pca_transcriptomics_samples.svg){#fig-family-pca-rnaseq fig-align="center" width="100%"}
 
 ## Muestreo de piel
 
