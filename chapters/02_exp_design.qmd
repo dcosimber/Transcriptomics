@@ -1,18 +1,18 @@
 # Diseño experimental, muestreo y definición de grupos
 
-## Objetivo del bloque
+## Resumen
 
-Este capítulo documenta la procedencia de los animales, la lógica del muestreo y la definición de grupos usada en el análisis transcriptómico. Su función es separar con claridad tres niveles que a menudo se mezclan: el fenotipo global del pez, la superficie corporal muestreada y el estado de pigmentación local de cada fragmento de piel.
+Este capítulo documenta el diseño experimental del estudio, que incluye los animales de experimentación, la lógica empleada para llevar a cabo el muestreo y la definición de grupos usada en el análisis transcriptómico posterior.
 
 ## Animales de experimentación
 
-Se estudiaron juveniles de rodaballo (*Scophthalmus maximus*) procedentes de los tanques **E6** y **E8** del Pescanova Biomarine Center, en O Grove, España. Los peces pertenecían a familias del programa de selección genética para crecimiento y se mantuvieron en tanques cuadrados negros conectados a un sistema de circulación abierto con agua de mar filtrada y tratada con luz UV. Las condiciones generales de cultivo fueron temperatura controlada en torno a **18 ± 1 ºC**, salinidad aproximada de **32 ± 2 ppt**, fotoperiodo de **14 h de luz y 10 h de oscuridad**, y densidad de cultivo cercana a **6 kg/m²**.
+Se estudiaron juveniles de rodaballo (*Scophthalmus maximus*) procedentes de los tanques **E6** y **E8** del Pescanova Biomarine Center, en el municipio de O Grove, Pontevedra, España (aprox. **42.47°N, 8.90°W**). Los peces pertenecían a familias del programa de selección genética para crecimiento y se mantuvieron en tanques cuadrados negros conectados a un sistema de circulación abierto con agua de mar filtrada y tratada con luz UV (sistema RAS abierto). Las condiciones generales de cultivo fueron: temperatura controlada en torno a **18 ± 1 ºC**, salinidad aproximada de **32 ± 2 ppt**, fotoperiodo de **14 h de luz y 10 h de oscuridad**, y densidad de cultivo cercana a **6 kg/m²**.
 
-El diseño incluyó individuos con pigmentación normal y peces pseudoalbinos/malpigmentados. En el tanque E6 se incluyeron descendientes de dos parejas parentales distintas. En el tanque E8 se trabajó con una estructura de medios hermanos, con una madre compartida y padres distintos. Esta estructura familiar no se usa como eje principal de inferencia en los modelos actuales, pero sí forma parte del contexto necesario para interpretar el diseño.
+El diseño incluyó individuos con fenotipo pigmentario normal y peces con fenotipo malpigmentado. En el tanque E6 se incluyeron descendientes de dos parejas parentales distintas, mientras que en el tanque E8 se trabajó con una estructura de medios hermanos, con una madre compartida y padres distintos. Esta estructura familiar no se usa como eje principal de inferencia en los modelos actuales, pero sí forma parte del contexto necesario para interpretar el diseño.
 
 ::: {#tbl-fish-design}
 | ID experimental | Tanque | Individuo | Fenotipo | Uso en el informe |
-|:--|:--|:--|:--|:--|
+|:--------------|:--------------|:--------------|:--------------|:--------------|
 | E6-N-46 | E6 | 46 | Normal | Piel ocular oscura y piel ciega clara normales |
 | E8-N-52 | E8 | 52 | Normal | Piel ocular oscura y piel ciega clara normales |
 | E8-N-70 | E8 | 70 | Normal | Piel ocular oscura y piel ciega clara normales |
@@ -25,11 +25,15 @@ El diseño incluyó individuos con pigmentación normal y peces pseudoalbinos/ma
 : Individuos y bloques biológicos representados en la documentación RNA-seq.
 :::
 
-## Contexto familiar de las muestras RNA-seq
+## Contexto familiar de las muestras 
 
-La selección de individuos para transcriptómica se realizó dentro de dos tanques con estructura familiar conocida. El tanque **E6** contiene dos familias principales, **FAM 5** y **FAM 6**, mientras que el tanque **E8** contiene **FAM 8** y **FAM 9**. Esta información no define por sí sola los contrastes de expresión diferencial, que se plantean a nivel de tejido, superficie y pigmentación local, pero sí es importante para interpretar el origen biológico de las muestras y detectar posibles confusiones entre fenotipo, tanque y parentesco.
+La selección de individuos para el análisis transcriptómico se realizó dentro de dos tanques con estructura familiar conocida. El tanque **E6** contiene las **familias 5** y **6**, mientras que el tanque **E8** contiene las **familias 8** y **9**. Esta información se obtuvo en un trabajo previo donde se estudió la arquitectura genética de la malpigmentación en diferentes familias de rodaballos y es importante para interpretar el origen biológico de las muestras y detectar posibles confusiones entre fenotipo, tanque y parentesco.
 
-Para documentar esta estructura, se recalcularon PCA genómicos independientes usando subconjuntos de individuos definidos por tanque y familia. Los individuos seleccionados para RNA-seq se proyectaron y etiquetaron sobre estos PCA para comprobar su posición dentro de la estructura familiar. En los ficheros genómicos se usa una numeración actualizada en la que los individuos normales van de `N-01` a `N-80` y los pseudoalbinos de `A-01` a `A-80`; por tanto, el individuo transcriptómico histórico **E8-A-142** corresponde al identificador genómico actual **E8-A-62**.
+Para documentar esta estructura, se utilizaron los ficheros PLINK binarios del genotipado con chip de 5K SNPs (`.bed`, `.bim` y `.fam`) como matriz genómica de partida. A partir de ese conjunto se generaron subconjuntos por tanque y familia: E6 completo, E6-FAM5, E6-FAM6, E8 completo, E8-FAM8 y E8-FAM9. Para cada subconjunto se recalculó un PCA genómico independiente con PLINK; las coordenadas de los individuos proceden de los ficheros `.eigenvec`, y los porcentajes de varianza explicada por PC1 y PC2 se calcularon a partir de los autovalores de los ficheros `.eigenval`. Finalmente, los individuos seleccionados para RNA-seq se proyectaron y etiquetaron sobre estos PCA para comprobar su posición dentro de la estructura familiar.
+
+::: {.callout-note title="Nota sobre identificadores"}
+En los ficheros genómicos se usa una numeración actualizada en la que los individuos normales van de `N-01` a `N-80` y los pseudoalbinos de `A-01` a `A-80`; por tanto, el individuo transcriptómico histórico **E8-A-142** corresponde al identificador genómico actual **E8-A-62**.
+:::
 
 La @fig-family-pca-rnaseq muestra que las muestras transcriptómicas quedan distribuidas de forma coherente con la asignación familiar: **E6-N-46** se sitúa en **FAM 5**, **E6-A-24** y **E6-A-12** en **FAM 6**, **E8-N-70** en **FAM 8**, y **E8-N-52** junto con **E8-A-62** en **FAM 9**. Esta comprobación refuerza que el diseño transcriptómico incluye individuos de ambos tanques y de las familias esperadas, y proporciona una capa adicional de trazabilidad para las comparaciones downstream.
 
@@ -41,15 +45,15 @@ Se tomaron fragmentos de piel de aproximadamente **20 mg** con material de disec
 
 En peces normales se recogieron dos tipos de piel:
 
-- piel ocular pigmentada, correspondiente al estado oscuro esperado;
-- piel ciega clara, correspondiente al estado fisiológicamente no pigmentado.
+-   piel ocular pigmentada, correspondiente al estado oscuro esperado;
+-   piel ciega clara, correspondiente al estado fisiológicamente no pigmentado.
 
 En peces pseudoalbinos se recogieron cuatro tipos de piel:
 
-- piel ocular oscura, correspondiente a pigmentación mantenida;
-- piel ocular clara, correspondiente a pérdida local de pigmentación;
-- piel ciega oscura, correspondiente a pigmentación ectópica;
-- piel ciega clara, correspondiente al estado claro de la superficie ciega en el contexto pseudoalbino.
+-   piel ocular oscura, correspondiente a pigmentación mantenida;
+-   piel ocular clara, correspondiente a pérdida local de pigmentación;
+-   piel ciega oscura, correspondiente a pigmentación ectópica;
+-   piel ciega clara, correspondiente al estado claro de la superficie ciega en el contexto pseudoalbino.
 
 ![Zonas de muestreo de piel para el análisis transcriptómico. Las regiones delimitadas en amarillo corresponden a zonas claras y las delimitadas en rojo a zonas pigmentadas.](../figures/02_exp_design/sampling_sites.png){#fig-sampling-sites fig-align="center"}
 
@@ -59,7 +63,7 @@ La unidad biológica principal de este informe es la muestra de piel. Cada muest
 
 ::: {#tbl-sample-groups}
 | Grupo | Fenotipo del individuo | Región muestreada | Interpretación esperada |
-|:--|:--|:--|:--|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | Piel ocular oscura normal | Normal | Cara ocular, piel oscura | Referencia fisiológica de pigmentación esperada |
 | Piel ciega clara normal | Normal | Cara ciega, piel clara | Referencia fisiológica de ausencia de pigmentación |
 | Piel ocular oscura pseudoalbina | Pseudoalbino | Cara ocular, piel oscura | Pigmentación mantenida dentro de un fenotipo alterado |
@@ -77,7 +81,7 @@ La @tbl-samples-design recoge las muestras procesadas en la documentación bioin
 
 ::: {#tbl-samples-design}
 | Muestra | Tejido | Tanque | Individuo | Fenotipo | Superficie | Pigmentación | Uso principal |
-|:--|:--|:--|:--|:--|:--|:--|:--|
+|:--------|:--------|:--------|:--------|:--------|:--------|:--------|:--------|
 | P31 | Piel | E6 | 46 | Normal | Ocular | Oscura | DE principal |
 | P32 | Piel | E6 | 46 | Normal | Ciega | Clara | DE principal |
 | P33 | Piel | E8 | 52 | Normal | Ocular | Oscura | DE principal |
@@ -112,7 +116,7 @@ Los contrastes se diseñaron para responder preguntas biológicas concretas, evi
 
 ::: {#tbl-contrast-logic}
 | Contraste | Pregunta | Lectura esperada |
-|:--|:--|:--|
+|:-----------------------|:-----------------------|:-----------------------|
 | `N_OD_vs_N_BL` | ¿Cómo difiere la piel ocular oscura normal de la piel ciega clara normal? | Eje fisiológico de pigmentación y superficie |
 | `P_OD_vs_P_OL` | ¿Qué cambia entre zonas oculares oscuras y claras pseudoalbinas? | Pérdida local de pigmentación en superficie ocular |
 | `P_BD_vs_P_BL` | ¿Qué cambia entre zonas ciegas oscuras y claras pseudoalbinas? | Pigmentación ectópica en superficie ciega |
