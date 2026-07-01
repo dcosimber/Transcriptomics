@@ -1,0 +1,25 @@
+sample	turbot_id	tissue	phenotype	malpigmentation_type	surface	pigmentation	condition	group_code	group_label	territory_status	included_in_analysis	exclusion_reason
+P31	46	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected	TRUE	NA
+P32	46	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected	TRUE	NA
+P33	52	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected	TRUE	NA
+P34	52	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected	TRUE	NA
+P35	70	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected	TRUE	NA
+P36	70	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected	TRUE	NA
+P41	142	Skin	Malpigmented	Pseudoalbinism	Ocular	Dark	Skin_Malpigmented_Pseudoalbinism_Ocular_Dark	P_OD	Pseudoalbino ocular dark	locally_expected_within_pseudoalbino	TRUE	NA
+P42	142	Skin	Malpigmented	Pseudoalbinism	Ocular	Light	Skin_Malpigmented_Pseudoalbinism_Ocular_Light	P_OL	Pseudoalbino ocular light	abnormal_ocular_hypopigmented	TRUE	NA
+P43	142	Skin	Malpigmented	Pseudoalbinism	Blind	Dark	Skin_Malpigmented_Pseudoalbinism_Blind_Dark	P_BD	Pseudoalbino blind dark	abnormal_blind_ectopic_dark	TRUE	NA
+P44	142	Skin	Malpigmented	Pseudoalbinism	Blind	Light	Skin_Malpigmented_Pseudoalbinism_Blind_Light	P_BL	Pseudoalbino blind light	locally_expected_within_pseudoalbino	TRUE	NA
+P45	24	Skin	Malpigmented	Pseudoalbinism	Ocular	Dark	Skin_Malpigmented_Pseudoalbinism_Ocular_Dark	P_OD	Pseudoalbino ocular dark	locally_expected_within_pseudoalbino	TRUE	NA
+P46	24	Skin	Malpigmented	Pseudoalbinism	Ocular	Light	Skin_Malpigmented_Pseudoalbinism_Ocular_Light	P_OL	Pseudoalbino ocular light	abnormal_ocular_hypopigmented	TRUE	NA
+P47	24	Skin	Malpigmented	Pseudoalbinism	Blind	Dark	Skin_Malpigmented_Pseudoalbinism_Blind_Dark	P_BD	Pseudoalbino blind dark	abnormal_blind_ectopic_dark	TRUE	NA
+P48	24	Skin	Malpigmented	Pseudoalbinism	Blind	Light	Skin_Malpigmented_Pseudoalbinism_Blind_Light	P_BL	Pseudoalbino blind light	locally_expected_within_pseudoalbino	TRUE	NA
+P49	12	Skin	Malpigmented	Pseudoalbinism	Ocular	Dark	Skin_Malpigmented_Pseudoalbinism_Ocular_Dark	P_OD	Pseudoalbino ocular dark	locally_expected_within_pseudoalbino	TRUE	NA
+P50	12	Skin	Malpigmented	Pseudoalbinism	Ocular	Light	Skin_Malpigmented_Pseudoalbinism_Ocular_Light	P_OL	Pseudoalbino ocular light	abnormal_ocular_hypopigmented	TRUE	NA
+P51	12	Skin	Malpigmented	Pseudoalbinism	Blind	Light	Skin_Malpigmented_Pseudoalbinism_Blind_Light	P_BL	Pseudoalbino blind light	locally_expected_within_pseudoalbino	TRUE	NA
+P52	12	Skin	Malpigmented	Pseudoalbinism	Blind	Dark	Skin_Malpigmented_Pseudoalbinism_Blind_Dark	P_BD	Pseudoalbino blind dark	abnormal_blind_ectopic_dark	TRUE	NA
+P1G	G	Skin	Normal	NA	Ocular	Dark	Skin_Normal_Ocular_Dark	N_OD	Normal ocular dark	normal_expected	TRUE	NA
+P2G	G	Skin	Normal	NA	Blind	Light	Skin_Normal_Blind_Light	N_BL	Normal blind light	normal_expected	TRUE	NA
+IT1G	G	Gut	Normal	NA	NA	NA	Gut_Normal	G_N	Gut normal	normal_expected	FALSE	excluded_tissue_Gut
+PNKD	PNK	Skin	Malpigmented	Ambicoloration	Ocular	Dark	Skin_Malpigmented_Ambicoloration_Ocular_Dark	A_OD	Ambicoloration ocular dark	ambicoloration_exploratory	FALSE	excluded_sample_config
+PNKV	PNK	Skin	Malpigmented	Ambicoloration	Blind	Dark	Skin_Malpigmented_Ambicoloration_Blind_Dark	A_BD	Ambicoloration blind dark	ambicoloration_exploratory	FALSE	excluded_sample_config
+PNKIT	PNK	Gut	Malpigmented	Ambicoloration	NA	NA	Gut_Malpigmented_Ambicoloration	G_A	Gut ambicoloration	ambicoloration_exploratory	FALSE	excluded_tissue_Gut

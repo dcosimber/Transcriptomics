@@ -61,6 +61,14 @@ short_label <- c(
   P_BD_vs_N_BL = "Pseudoalbino: ciega oscura vs Normal: ciega clara"
 )
 
+contrast_meta_path <- file.path(project_dir, "config", "contrast_metadata.tsv")
+if (file.exists(contrast_meta_path)) {
+  contrast_meta <- read_tsv(contrast_meta_path)
+  contrast_order <- contrast_meta$contrast
+  contrast_label <- stats::setNames(contrast_meta$label, contrast_meta$contrast)
+  short_label <- stats::setNames(contrast_meta$short_label, contrast_meta$contrast)
+}
+
 status <- status[match(contrast_order, status$contrast), ]
 status$label <- unname(contrast_label[status$contrast])
 status$short_label <- unname(short_label[status$contrast])

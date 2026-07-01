@@ -56,6 +56,18 @@ contrast_question <- c(
   P_BD_vs_N_BL = "Pseudoalbino: superficie ciega oscura frente a Normal: superficie ciega clara."
 )
 
+contrast_meta_path <- file.path(project_dir, "config", "contrast_metadata.tsv")
+if (file.exists(contrast_meta_path)) {
+  contrast_meta <- read.delim(contrast_meta_path, sep = "\t", quote = "", stringsAsFactors = FALSE, check.names = FALSE)
+  contrast_order <- contrast_meta$contrast
+  short_label <- stats::setNames(contrast_meta$short_label, contrast_meta$contrast)
+  contrast_question <- stats::setNames(contrast_meta$biological_question, contrast_meta$contrast)
+  plot_label <- stats::setNames(
+    vapply(contrast_meta$short_label, function(x) paste(strwrap(x, width = 24), collapse = "\n"), character(1)),
+    contrast_meta$contrast
+  )
+}
+
 tables_dir <- file.path(project_dir, "tables", "06_functional")
 figures_dir <- file.path(project_dir, "figures", "06_functional")
 dir.create(tables_dir, showWarnings = FALSE, recursive = TRUE)

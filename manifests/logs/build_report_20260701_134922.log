@@ -1,0 +1,27 @@
+[build] quarto_dir=/mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics
+[build] analysis_dir=/mnt/lustre/scratch/nlsas/home/otras/pia/dci/holofish_rnaseq/analysis
+[build] r_env=r45
+[build] started=2026-07-01T13:49:22+02:00
+[build] skipping export
+[build] preparing DE chapter tables
+Generated DE chapter tables in /mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics/tables/05_de/chapter_summaries
+[build] preparing functional chapter assets
+Generated functional chapter tables in /mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics/tables/06_functional
+Generated functional chapter figures in /mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics/figures/06_functional
+[build] rendering Quarto
+[ 1/12] index.qmd
+[ 2/12] chapters/01_intro.qmd
+[ 3/12] chapters/02_exp_design.qmd
+[ 4/12] chapters/03_results.qmd
+[ 5/12] chapters/02_methods_nfcore.qmd
+[ 6/12] chapters/03_qc_multiqc.qmd
+[ 7/12] chapters/04_alignment_quant.qmd
+[ 8/12] chapters/05_differential_expression.qmd
+[ 9/12] chapters/06_functional_interpretation.qmd
+[10/12] chapters/07_conclusions.qmd
+[11/12] appendices/rna_extraction_protocol.md
+[12/12] appendices/reproducibility.qmd
+
+Output created: docs/index.html
+
+[build] finished=2026-07-01T13:50:14+02:00
