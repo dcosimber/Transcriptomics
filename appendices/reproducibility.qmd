@@ -4,9 +4,18 @@
 
 El informe se renderiza como libro Quarto con salida en `docs/`, que es la carpeta publicada por GitHub Pages. La configuración principal vive en `_quarto.yml` y usa numeración automática de secciones mediante `number-sections: true`.
 
+El flujo recomendado para preparar el informe es:
+
 ```text
-quarto check
-quarto render
+scripts/build_report.sh --no-render
+```
+
+Ese comando exporta los activos curados desde el proyecto de análisis, prepara
+las tablas derivadas de los capítulos y deja un log fechado en
+`manifests/logs/`. Para regenerar también el sitio publicado en `docs/`, usa:
+
+```text
+scripts/build_report.sh
 ```
 
 ## Entorno de renderizado
@@ -19,7 +28,12 @@ La comprobación local de Quarto detectó:
 - `knitr` `1.51`;
 - `rmarkdown` `2.31`.
 
-El render del libro no requiere relanzar `nf-core/rnaseq` ni recalcular DESeq2; utiliza figuras, tablas y MultiQC ya exportados en el repositorio.
+El render del libro no requiere relanzar `nf-core/rnaseq` ni recalcular DESeq2; utiliza figuras, tablas y MultiQC ya exportados en el repositorio. La exportación oficial se ejecuta desde `scripts/build_report.sh`, que llama a `/mnt/lustre/scratch/nlsas/home/otras/pia/dci/holofish_rnaseq/analysis/scripts/export_quarto_assets.R`. El manifiesto de trazabilidad queda duplicado en:
+
+```text
+manifests/quarto_export_manifest.tsv
+/mnt/lustre/scratch/nlsas/home/otras/pia/dci/holofish_rnaseq/analysis/manifests/publication/quarto_export_manifest.tsv
+```
 
 El capítulo de expresión diferencial añade una capa ligera de síntesis con `scripts/prepare_de_chapter_tables.R`. Este script no cambia los modelos estadísticos: separa los DEGs anotados por contraste, resume genes destacados por dirección y prepara tablas descargables para la lectura del capítulo.
 
@@ -79,6 +93,9 @@ multiqc/star_salmon/
 multiqc/bam_qc/
 scripts/prepare_de_chapter_tables.R
 scripts/prepare_functional_chapter_assets.R
+scripts/build_report.sh
+manifests/quarto_export_manifest.tsv
+manifests/logs/
 ```
 
 ## Publicación

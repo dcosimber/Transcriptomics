@@ -1,0 +1,12 @@
+[build] quarto_dir=/mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics
+[build] analysis_dir=/mnt/lustre/scratch/nlsas/home/otras/pia/dci/holofish_rnaseq/analysis
+[build] r_env=r45
+[build] started=2026-07-01T10:03:05+02:00
+[build] skipping export
+[build] preparing DE chapter tables
+Generated DE chapter tables in /mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics/tables/05_de/chapter_summaries
+[build] preparing functional chapter assets
+Generated functional chapter tables in /mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics/tables/06_functional
+Generated functional chapter figures in /mnt/lustre/scratch/nlsas/home/otras/pia/dci/github_repositories/Transcriptomics/figures/06_functional
+[build] render skipped
+[build] finished=2026-07-01T10:03:30+02:00
