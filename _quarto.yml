@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  post-render:
+    - scripts/format_html_captions.py
   resources:
     - figures/
     - images/
